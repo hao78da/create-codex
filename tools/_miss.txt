@@ -1,0 +1,8 @@
+assets/icons/mod_cbc_nuclear.png
+assets/icons/mod_cp_tweaks.png
+assets/icons/mod_create_amazing_trading.png
+assets/icons/mod_create_applied_kinetics.png
+assets/icons/mod_create_cardboard_things.png
+assets/icons/mod_create_clothes.png
+assets/icons/mod_create_compact_transmission.png
+assets/icons/mod_create_cultivation_craft.png

@@ -108,75 +108,115 @@ body.leaving .topbar,body.leaving .hint,body.leaving .enter{opacity:0;transition
   var ORBIT2 = 150;              // 二级节点离父节点的距离
   var separatedFor = -1;
   var NSCALE = 1;                // 球体缩放，按一级节点数量自动收紧
+  var SPOKE_SLOT = 40;           // 一条射线上相邻两球的间距
+  var spokeAng = [];             // 每条射线的角度
+  var spokeStart = [];           // 每条线的起始长度比例
+  var spokeGap = [];             // 每条线内部相邻球的间距
+  function hashId(s){
+    var h = 0;
+    for (var i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) % 1000003;
+    return h;
+  }
   function relayout(){
     separatedFor = -1;
-    var n = 0;
-    for (var i = 0; i < MODS.length; i++) if (MODS[i].level === 1) n++;
-    n = Math.max(6, n);
-    var per = n * 104;                       // 每节点预留弧长（只算图标，不留文字）
-    var b = per / (2 * Math.PI * 1.16);
-    b = Math.max(240, Math.min(560, b));
-    ORBITX = Math.round(b * 1.35);
+    var l1 = [];
+    for (var i = 0; i < MODS.length; i++) if (MODS[i].level === 1) l1.push(MODS[i]);
+    var n = l1.length;
+
+    // ── 射线分组 ──
+    // 每条线最多挂 MAXPS 个，射线数随节点增长
+    var MAXPS = 2;
+    var spokes = Math.max(10, Math.ceil(n / MAXPS));
+    spokes = Math.min(spokes, 78);
+
+    // 每条线的基础间距（球直径 + 空隙）
+    var RING_SLOT = Math.max(30, Math.min(44, 780 / spokes));
+    var need = RING_SLOT * 2;
+    var b = Math.max(250, Math.min(400, need * 1.6));
+    ORBITX = Math.round(b * 1.34);
     ORBITY = Math.round(b);
-    NSCALE = Math.min(1, 20 / n);
-    // 每个模组的连线长度略有差别：按 id 做确定性抖动，看起来更自然
-    // 双环交错：偶数号在内环、奇数号在外环，角度错开半步
-    var ring = [[], []];
-    for (var i = 0; i < MODS.length; i++){
-      var mm = MODS[i];
-      if (mm.level !== 1) continue;
-      ring[i % 2].push(mm);
+    ORBIT2 = 150;
+
+    var baseR = Math.min(R0 * 0.46, RING_SLOT * 0.42);
+    NSCALE = Math.max(0.30, Math.min(1, baseR / (R0 * 0.46)));
+    SPOKE_SLOT = RING_SLOT;
+
+    // ── 射线角度：均分后加抖动，避免机械感 ──
+    var seed = 20261110;
+    function rnd(){
+      seed = (seed * 1103515245 + 12345) & 0x7fffffff;
+      return seed / 0x7fffffff;
     }
-    var RFA = 0.62, RFB = 1.06;      // 内环 / 外环
-    for (var r = 0; r < 2; r++){
-      var arr = ring[r], k = arr.length;
-      if (!k) continue;
-      var step = Math.PI * 2 / k;
-      var base = -Math.PI / 2 + (r ? 0.04 : 0);
-      for (var j = 0; j < k; j++){
-        arr[j].ang = base + step * j;
-        var hh = 0, iid = String(arr[j].id);
-        for (var q = 0; q < iid.length; q++) hh = (hh * 31 + iid.charCodeAt(q)) % 1000;
-        arr[j].rf = 0.52 + (hh % 70) / 100;   // 距离随机（按 id 哈希，刷新不变）
-      }
+    spokeAng.length = 0;
+    var step = Math.PI * 2 / spokes;
+    var angCur = -Math.PI / 2 + step * (rnd() * 0.5);
+    for (var s2 = 0; s2 < spokes; s2++){
+      spokeAng.push(angCur);
+      // 步长抖动 ±38%，让疏密不均
+      angCur += step * (0.62 + rnd() * 0.76);
+    }
+
+    // ── 每条线的独立起始长度与间距 ──
+    // spokeStart[k]：这条线从多远开始
+    // spokeGap[k]  ：这条线上两个球的间隔
+    spokeStart.length = 0;
+    spokeGap.length = 0;
+    for (var g0 = 0; g0 < spokes; g0++){
+      // 起始半径：基准 26%~74% 随机，长短交错
+      spokeStart.push(0.26 + rnd() * 0.48);
+      // 间距：0.85~1.35 倍基准
+      spokeGap.push(RING_SLOT * (0.85 + rnd() * 0.5));
+    }
+
+    // ── 分配节点到射线 ──
+    var arr = l1.slice();
+    arr.sort(function(a, b2){
+      return hashId(a.id) - hashId(b2.id) || (a.id < b2.id ? -1 : 1);
+    });
+    var slotCnt = new Array(spokes);
+    for (var t0 = 0; t0 < spokes; t0++) slotCnt[t0] = 0;
+    for (var q = 0; q < arr.length; q++){
+      var m = arr[q];
+      var best = 0;
+      for (var z = 1; z < spokes; z++) if (slotCnt[z] < slotCnt[best]) best = z;
+      m._spoke = best;
+      m._slot = slotCnt[best];
+      slotCnt[best]++;
+      m.ang = spokeAng[best];
+      m.rf = 1;
+    }
+
+    for (var w = 0; w < MODS.length; w++){
+      if (MODS[w].level === 2) MODS[w].rf = 1;
     }
   }
-  // 让任意两个图标至少隔开 gap 像素：只微调半径（必要时轻推角度）
+
   function separateNodes(){
-    var list = [];
-    for (var i = 0; i < MODS.length; i++) if (MODS[i].level === 1) list.push(MODS[i]);
-    var gap = R0 * 0.46 * NSCALE * 4.0;   // 两个半径再多一点空隙
-    for (var it = 0; it < 200; it++){
-      var moved = false;
-      for (var a = 0; a < list.length; a++){
-        for (var b = a + 1; b < list.length; b++){
-          var A = list[a], B = list[b];
-          var ax = Math.cos(A.ang) * ORBITX * A.rf, ay = Math.sin(A.ang) * ORBITY * A.rf;
-          var bx = Math.cos(B.ang) * ORBITX * B.rf, by = Math.sin(B.ang) * ORBITY * B.rf;
-          var dx = ax - bx, dy = ay - by, d = Math.hypot(dx, dy);
-          if (d >= gap || d < 0.001) continue;
-          var need = (gap - d) / 2;
-          if (Math.abs(A.rf - B.rf) > 0.02){
-            if (A.rf > B.rf) A.rf = Math.min(1.45, A.rf + need / ORBITX);
-            else B.rf = Math.min(1.45, B.rf + need / ORBITX);
-          } else {
-            A.ang += 0.012; B.ang -= 0.012;
-          }
-          moved = true;
-        }
-      }
-      if (!moved) break;
-    }
+    // 新布局按射线 + slot 精确排布，不需要旧的碰撞推挤逻辑
+    return;
   }
 
   function fitView(){
     if (separatedFor !== MODS.length){ separateNodes(); separatedFor = MODS.length; }
     if (userZoomed) return;
-    var pad = 90;
-    var lpad = 165;   // 外侧文字预留
-    var zx = (W - (pad + lpad) * 2) / (2 * (ORBITX + R0 * 0.46 * NSCALE));
-    var zy = (H - pad * 2) / (2 * (ORBITY + R0 * 0.46 * NSCALE + 40));
-    view.z = Math.max(0.52, Math.min(1.12, Math.min(zx, zy)));
+    var pad = 64;
+    var lpad = 96;    // 外侧文字预留
+    // 先按最新参数把节点摆一次，再按真实坐标算包围盒
+    for (var i0 = 0; i0 < MODS.length; i0++){
+      if (MODS[i0].grow === undefined) MODS[i0].grow = 1;
+      place(MODS[i0]);
+    }
+    var maxX = 1, maxY = 1;
+    for (var i = 0; i < MODS.length; i++){
+      var mm = MODS[i];
+      if (mm.level === 0) continue;
+      var rr = baseRadius(mm);
+      if (Math.abs(mm.bx) + rr > maxX) maxX = Math.abs(mm.bx) + rr;
+      if (Math.abs(mm.by) + rr > maxY) maxY = Math.abs(mm.by) + rr;
+    }
+    var zx = (W - (pad + lpad) * 2) / (2 * maxX);
+    var zy = (H - pad * 2) / (2 * maxY);
+    view.z = Math.max(0.62, Math.min(1.55, Math.min(zx, zy)));
     view.x = W / 2;
     view.y = H / 2;
   }       // 二级附属离父节点的距离
@@ -584,8 +624,9 @@ body.leaving .topbar,body.leaving .hint,body.leaving .enter{opacity:0;transition
 
   function baseRadius(m){
     if (m.level === 0) return R0;
-    if (m.level === 1) return R0 * 0.46 * NSCALE;
-    return R0 * 0.34 * NSCALE;
+    // 射线布局下，球半径由射线上相邻间距决定，并保底 11px
+    if (m.level === 1) return Math.max(11, Math.min(R0 * 0.46, SPOKE_SLOT * 0.40));
+    return Math.max(7, Math.min(R0 * 0.34, SPOKE_SLOT * 0.30));
   }
 
   function place(m){
@@ -593,9 +634,18 @@ body.leaving .topbar,body.leaving .hint,body.leaving .enter{opacity:0;transition
     if (!par){ m.bx = 0; m.by = 0; return; }
     var px = par.bx, py = par.by;
     if (m.level === 1){
-      var _rf = m.rf || 1;
-      m.bx = px + Math.cos(m.ang) * ORBITX * _rf * m.grow;
-      m.by = py + Math.sin(m.ang) * ORBITY * _rf * m.grow;
+      // 沿射线排开：起始半径 + slot * 间距
+      var sp = (m._spoke === undefined) ? 0 : m._spoke;
+      var slot = (m._slot || 0);
+      var startRf = (spokeStart[sp] !== undefined) ? spokeStart[sp] : 0.42;
+      var gap = (spokeGap[sp] !== undefined) ? spokeGap[sp] : SPOKE_SLOT;
+      var baseR = ORBITY * startRf + slot * gap;
+      var ex = ORBITX / ORBITY;                 // 椭圆比
+      // 同一线的第二个球略微偏角，让线看起来不是笔直的
+      var jitter = slot ? (0.06 + (sp % 3) * 0.02) * (slot % 2 ? 1 : -1) : 0;
+      var aa = m.ang + jitter;
+      m.bx = px + Math.cos(aa) * baseR * ex * m.grow;
+      m.by = py + Math.sin(aa) * baseR * m.grow;
     } else {
       var sib = par.kids.indexOf(m);
       var gap = baseRadius(par) * 2.0 + 14;
@@ -645,6 +695,7 @@ body.leaving .topbar,body.leaving .hint,body.leaving .enter{opacity:0;transition
   }
 
   var L1N = 99;
+  (function(){ var c=0; for(var i=0;i<MODS.length;i++) if(MODS[i].level===1) c++; L1N=c; })();
   var LABELS_ALWAYS = false;   // 节点太多时只显示悬停/聚焦的标签
   function drawNode(m, t, hovered){
     if (m.v < 0.02) return;
@@ -857,17 +908,48 @@ body.leaving .topbar,body.leaving .hint,body.leaving .enter{opacity:0;transition
     ctx.beginPath(); ctx.ellipse(c0[0], c0[1], ORBITX * view.z, ORBITY * view.z, 0, 0, 6.284); ctx.stroke();
     ctx.restore();
 
-    // 从属连线（实线）：父 → 子
+    // 从属连线：同一条射线只画一根主干，沿线节点挂在主干上
+    // —— 先把一级节点按射线分组，每条射线取最远的那个点作为终点
+    var spokeEnd = {};   // spoke 索引 -> {x, y, hot, v, ang}
     for (var a = 0; a < MODS.length; a++){
       var m = MODS[a];
-      if (!m.parent) continue;
-      var par = byId[m.parent];
+      if (!m.parent || m.level !== 1) continue;
       if (m.v < 0.02) continue;
-      var p1 = toScreen(par.bx, par.by), p2 = toScreen(m.bx, m.by);
-      var hot = (hover === m || hover === par);
-      ctx.beginPath(); ctx.moveTo(p1[0], p1[1]); ctx.lineTo(p2[0], p2[1]);
-      ctx.strokeStyle = hot ? 'rgba(240,200,116,.55)' : 'rgba(217,164,65,' + (0.20 * m.v) + ')';
-      ctx.lineWidth = hot ? 1.8 : 1.1;
+      var sp = (m._spoke === undefined) ? -1 : m._spoke;
+      var key = sp >= 0 ? sp : ('x' + a);
+      var dist = Math.hypot(m.bx, m.by);
+      var cur = spokeEnd[key];
+      if (!cur || dist > cur.dist){
+        spokeEnd[key] = { x: m.bx, y: m.by, dist: dist, v: m.v,
+                          hot: (hover === m), ang: m.ang };
+      } else if (hover === m){
+        spokeEnd[key].hot = true;
+      }
+    }
+    // 画主干（每个射线一条）
+    for (var key2 in spokeEnd){
+      var e = spokeEnd[key2];
+      var p2s = toScreen(e.x, e.y);
+      ctx.beginPath();
+      ctx.moveTo(c0[0], c0[1]);
+      ctx.lineTo(p2s[0], p2s[1]);
+      ctx.strokeStyle = e.hot ? 'rgba(240,200,116,.62)'
+                              : 'rgba(217,164,65,' + (0.22 * e.v) + ')';
+      ctx.lineWidth = e.hot ? 1.9 : 1.15;
+      ctx.setLineDash([]);
+      ctx.stroke();
+    }
+    // 二级节点（真正的父子链）仍单独画短线
+    for (var a2 = 0; a2 < MODS.length; a2++){
+      var m2 = MODS[a2];
+      if (!m2.parent || m2.level !== 2) continue;
+      if (m2.v < 0.02) continue;
+      var par2 = byId[m2.parent];
+      var q1s = toScreen(par2.bx, par2.by), q2s = toScreen(m2.bx, m2.by);
+      var hot2 = (hover === m2 || hover === par2);
+      ctx.beginPath(); ctx.moveTo(q1s[0], q1s[1]); ctx.lineTo(q2s[0], q2s[1]);
+      ctx.strokeStyle = hot2 ? 'rgba(240,200,116,.55)' : 'rgba(217,164,65,' + (0.20 * m2.v) + ')';
+      ctx.lineWidth = hot2 ? 1.8 : 1.1;
       ctx.setLineDash([]);
       ctx.stroke();
     }

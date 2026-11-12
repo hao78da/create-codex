@@ -1,6 +1,34 @@
 # Create Codex · 机械动力物品教学图鉴
 
+[![在线浏览](https://img.shields.io/badge/%E5%9C%A8%E7%BA%BF%E6%B5%8F%E8%A7%88-hao78da.github.io%2Fcreate--codex-d9a441?style=for-the-badge&logo=githubpages&logoColor=black)](https://hao78da.github.io/create-codex/)
+[![740 物品](https://img.shields.io/badge/%E7%89%A9%E5%93%81-740-d9a441?style=flat-square)](#)
+[![断链](https://img.shields.io/badge/%E6%96%AD%E9%93%BE-0-3fb950?style=flat-square)](#)
+[![License](https://img.shields.io/badge/%E8%84%9A%E6%9C%AC-MIT-blue?style=flat-square)](LICENSE)
+[![Content](https://img.shields.io/badge/%E6%95%99%E7%A8%8B-CC%20BY--NC--SA%204.0-lightgrey?style=flat-square)](#)
+
+> **👉 在线打开：<https://hao78da.github.io/create-codex/>**
+>
+> 不用下载、不用装环境，点开就是关系图。
+
 一个纯静态的《我的世界》Create（机械动力）模组中文教学站，覆盖模组内 **740 个物品与方块**。
+
+---
+
+## 想在自己的电脑上跑 / 继续写？
+
+```bash
+git clone https://github.com/hao78da/create-codex.git
+cd create-codex/tools
+python gen_site.py        # 重新生成全部页面
+python validate_all2.py   # 自检：页数 / 引用数 / 断链数
+```
+
+- 需要 Python 3.10+，无第三方依赖（生成器只用标准库）
+- 生成结果直接写到仓库根目录（`index.html`、`catalog.html`、`items/`、`tags/` …）
+- 具体怎么加一个附属模组，见 [`tools/README.md`](tools/README.md)
+- 想参与内容或脚本，见 [`CONTRIBUTING.md`](CONTRIBUTING.md)
+
+## 怎么用
 
 ## 怎么用
 

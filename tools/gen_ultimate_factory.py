@@ -15,9 +15,10 @@ import zipfile
 SITE = ROOT
 ICONS = os.path.join(SITE, "assets", "icons")
 OUT = os.path.join(SITE, "addon-ultimate-factory.html")
-JAR = r"D:\frontend\_raw\mods_intake\create_ultimate_factory-2.2.4-forge-1.20.1.jar"
-DATA = json.load(io.open(r"D:\frontend\_raw\out\data.json", encoding="utf-8"))
-MC_ZH = json.load(io.open(r"D:\frontend\_raw\out\mc_zh.json", encoding="utf-8"))
+JAR = os.path.join(WORK, "mods_intake", "create_ultimate_factory-2.2.4-forge-1.20.1.jar")
+_DATA_JSON = json.load(io.open(os.path.join(DATA, "data.json"), encoding="utf-8"))
+MC_ZH = json.load(io.open(os.path.join(DATA, "mc_zh.json"), encoding="utf-8"))
+DATA = _DATA_JSON
 
 items = DATA["items"]
 vanilla = {k: v for k, v in DATA.get("vanilla", {}).items()} if isinstance(DATA.get("vanilla"), dict) else {}

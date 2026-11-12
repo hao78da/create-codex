@@ -541,7 +541,7 @@ TAG_EXTRA.update({
 })
 
 # Load tag definitions shipped in the Create repo (create/forge/minecraft/curios/quark).
-TAG_DIR = r"D:\frontend\_raw\create\Create-mc1.20.1-dev\src\generated\resources\data"
+TAG_DIR = os.path.join(DATA, "create_tags")
 _local_tags = {}
 for _root, _dirs, _files in os.walk(TAG_DIR):
     for _f in _files:

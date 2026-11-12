@@ -20,7 +20,7 @@ import glob
 import json
 
 SITE = ROOT
-DATA = r"D:\frontend\_raw\out\data.json"
+DATA = os.path.join(ROOT, "tools", "data", "data.json")
 
 
 def _load_site_maps():
@@ -51,7 +51,7 @@ def _load_site_maps():
 
     # 中文名 -> minecraft id（用于中文 chip 指向原版页）
     try:
-        for k, v in json.load(io.open(r"D:\frontend\_raw\out\mc_zh.json", encoding="utf-8")).items():
+        for k, v in json.load(io.open(os.path.join(ROOT, "tools", "data", "mc_zh.json"), encoding="utf-8")).items():
             for pref in ("item.minecraft.", "block.minecraft."):
                 if k.startswith(pref) and v:
                     items.setdefault(v.strip().lower(), "vanilla/%s.html" % k[len(pref):])

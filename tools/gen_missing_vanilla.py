@@ -16,8 +16,8 @@ import urllib.request
 SITE = ROOT
 ICONS = os.path.join(SITE, "assets", "icons")
 TPL = io.open(os.path.join(SITE, "vanilla", "bamboo.html"), encoding="utf-8").read()
-MC_ZH = json.load(io.open(r"D:\frontend\_raw\out\mc_zh.json", encoding="utf-8"))
-MISSING = json.load(io.open(r"D:\frontend\_raw\out\missing_vanilla.json", encoding="utf-8"))
+MC_ZH = json.load(io.open(os.path.join(DATA, "mc_zh.json"), encoding="utf-8"))
+MISSING = json.load(io.open(os.path.join(DATA, "missing_vanilla.json"), encoding="utf-8"))
 
 
 def title_case(slug):

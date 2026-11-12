@@ -56,6 +56,13 @@ body.leaving .topbar,body.leaving .hint,body.leaving .enter{opacity:0;transition
   animation:veilOut 1.6s ease .12s forwards}
 @keyframes veilOut{from{opacity:1}to{opacity:0;visibility:hidden}}
 @media (prefers-reduced-motion:reduce){#veil{animation-duration:.01s}}
+
+@media (max-width:620px){
+  .legend{display:none}
+  .hint{left:12px !important;right:12px;text-align:center;font-size:11px;line-height:1.4;bottom:12px !important}
+  .enter{left:12px !important;right:12px !important;bottom:42px !important;text-align:center;padding:11px 0;font-size:13px}
+  .brand small{font-size:9px}
+}
 </style>
 </head>
 <body>
@@ -84,7 +91,12 @@ body.leaving .topbar,body.leaving .hint,body.leaving .enter{opacity:0;transition
 (function(){
   var cv = document.getElementById('sky');
   var ctx = cv.getContext('2d');
-  var W = 0, H = 0, dpr = Math.min(window.devicePixelRatio || 1, 2);
+  var W = 0, H = 0;
+  var MOBILE = matchMedia('(pointer: coarse)').matches || Math.min(window.innerWidth, window.innerHeight) < 620;
+  var dpr = Math.min(window.devicePixelRatio || 1, MOBILE ? 1.5 : 2);
+  var MAX_STARS = MOBILE ? 150 : 520;
+  var MIN_FRAME = MOBILE ? 33 : 0;   // 手机锁 30fps
+  var _lastFrame = 0, _bg = null, _bgT = 0, _bgW = 0, _bgH = 0;
   var STATIC = /(\?|&)static=1/.test(location.search);
   var view = { x: 0, y: 0, z: 1 };
   var FOCUS = null;
@@ -301,11 +313,17 @@ body.leaving .topbar,body.leaving .hint,body.leaving .enter{opacity:0;transition
     }
   }
 
+  var MOBILE_HINT = '拖动平移 · 双指缩放 · 点球进入';
+  (function(){
+    var h = document.querySelector('.hint');
+    if (h && MOBILE) h.textContent = MOBILE_HINT;
+  })();
+
   var stars = [];
   (function makeStars(){
     var seed = 20261110;
     function r(){ seed = (seed * 1103515245 + 12345) & 0x7fffffff; return seed / 0x7fffffff; }
-    for (var i = 0; i < 520; i++){
+    for (var i = 0; i < MAX_STARS; i++){
       stars.push({ x: (r() - .5) * 5200, y: (r() - .5) * 3600,
                    r: .5 + r() * 1.5, a: .18 + r() * .55, t: r() * 6.28 });
     }
@@ -452,6 +470,10 @@ body.leaving .topbar,body.leaving .hint,body.leaving .enter{opacity:0;transition
   var hover = null;
 
   function draw(t){
+    if (!STATIC && MIN_FRAME && t - _lastFrame < MIN_FRAME){
+      requestAnimationFrame(draw); return;
+    }
+    _lastFrame = t;
     if (!dragging && (vel.x || vel.y)){
       view.x += vel.x; view.y += vel.y;
       vel.x *= FRICTION; vel.y *= FRICTION;
@@ -460,65 +482,68 @@ body.leaving .topbar,body.leaving .hint,body.leaving .enter{opacity:0;transition
     advance();
     ctx.clearRect(0, 0, W, H);
 
-    // 背景：深空底 + 紫蓝星云（缓慢漂移）+ 极轻噪点 + 暗角
-    var g = ctx.createRadialGradient(W * .5, H * .46, 30, W * .5, H * .46, Math.max(W, H) * .85);
-    g.addColorStop(0, 'rgba(22,20,26,0.96)');
-    g.addColorStop(.45, 'rgba(11,11,16,0.98)');
-    g.addColorStop(1, 'rgba(4,4,7,1)');
-    ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+    // 背景：离屏缓存，每 900ms 重画一次（星云漂移很慢，没必要每帧算）
+    if (!_bg || _bgW !== W || _bgH !== H){ _bg = document.createElement('canvas'); _bg.width = W; _bg.height = H; _bgT = 0; _bgW = W; _bgH = H; }
+    if (t - _bgT > 900 || !_bgT){
+      _bgT = t || 1;
+      var bg = _bg.getContext('2d');
+      bg.clearRect(0, 0, W, H);
+      var g = bg.createRadialGradient(W * .5, H * .46, 30, W * .5, H * .46, Math.max(W, H) * .85);
+      g.addColorStop(0, 'rgba(22,20,26,0.96)');
+      g.addColorStop(.45, 'rgba(11,11,16,0.98)');
+      g.addColorStop(1, 'rgba(4,4,7,1)');
+      bg.fillStyle = g; bg.fillRect(0, 0, W, H);
 
-    // 星云中心随极慢的正弦漂移（周期约 90 秒），肉眼几乎察觉不到，但画面不是死的
-    var tx = t * 0.001;
-    var px1 = W * (.34 + .020 * Math.sin(tx * .21)), py1 = H * (.28 + .016 * Math.cos(tx * .17));
-    var px2 = W * (.72 + .022 * Math.cos(tx * .18)), py2 = H * (.74 + .018 * Math.sin(tx * .23));
+      var tx = _bgT * 0.001;
+      var px1 = W * (.34 + .020 * Math.sin(tx * .21)), py1 = H * (.28 + .016 * Math.cos(tx * .17));
+      var px2 = W * (.72 + .022 * Math.cos(tx * .18)), py2 = H * (.74 + .018 * Math.sin(tx * .23));
+      var mix = 0.5 + 0.5 * Math.sin(_bgT * 0.00009);
+      function mixc(a, b, k){ return [Math.round(a[0]+(b[0]-a[0])*k),
+                                     Math.round(a[1]+(b[1]-a[1])*k),
+                                     Math.round(a[2]+(b[2]-a[2])*k)]; }
+      var c1 = mixc([96,72,150], [58,66,150], mix), c1b = mixc([70,52,120], [46,52,120], mix);
+      var c2 = mixc([36,74,140], [70,54,140], 1 - mix), c2b = mixc([26,54,104], [52,44,112], 1 - mix);
 
-    // 色相缓慢流动：紫 ⇄ 蓝，周期约 70 秒
-    var mix = 0.5 + 0.5 * Math.sin(t * 0.00009);
-    function mixc(a, b, k){ return [Math.round(a[0]+(b[0]-a[0])*k),
-                                   Math.round(a[1]+(b[1]-a[1])*k),
-                                   Math.round(a[2]+(b[2]-a[2])*k)]; }
-    var PUR1 = [96,72,150], BLU1 = [58,66,150];
-    var PUR2 = [36,74,140], BLU2 = [70,54,140];
-    var c1 = mixc(PUR1, BLU1, mix), c1b = mixc([70,52,120], [46,52,120], mix);
-    var c2 = mixc(PUR2, BLU2, 1 - mix), c2b = mixc([26,54,104], [52,44,112], 1 - mix);
+      var n1 = bg.createRadialGradient(px1, py1, 0, px1, py1, Math.max(W, H) * .62);
+      n1.addColorStop(0, 'rgba(' + c1.join(',') + ',0.13)');
+      n1.addColorStop(.5, 'rgba(' + c1b.join(',') + ',0.06)');
+      n1.addColorStop(1, 'rgba(0,0,0,0)');
+      bg.fillStyle = n1; bg.fillRect(0, 0, W, H);
 
-    var n1 = ctx.createRadialGradient(px1, py1, 0, px1, py1, Math.max(W, H) * .62);
-    n1.addColorStop(0, 'rgba(' + c1.join(',') + ',0.13)');
-    n1.addColorStop(.5, 'rgba(' + c1b.join(',') + ',0.06)');
-    n1.addColorStop(1, 'rgba(0,0,0,0)');
-    ctx.fillStyle = n1; ctx.fillRect(0, 0, W, H);
+      var n2 = bg.createRadialGradient(px2, py2, 0, px2, py2, Math.max(W, H) * .58);
+      n2.addColorStop(0, 'rgba(' + c2.join(',') + ',0.12)');
+      n2.addColorStop(.55, 'rgba(' + c2b.join(',') + ',0.05)');
+      n2.addColorStop(1, 'rgba(0,0,0,0)');
+      bg.fillStyle = n2; bg.fillRect(0, 0, W, H);
 
-    var n2 = ctx.createRadialGradient(px2, py2, 0, px2, py2, Math.max(W, H) * .58);
-    n2.addColorStop(0, 'rgba(' + c2.join(',') + ',0.12)');
-    n2.addColorStop(.55, 'rgba(' + c2b.join(',') + ',0.05)');
-    n2.addColorStop(1, 'rgba(0,0,0,0)');
-    ctx.fillStyle = n2; ctx.fillRect(0, 0, W, H);
+      var band = bg.createLinearGradient(W * .1, H * .85, W * .9, H * .1);
+      band.addColorStop(0, 'rgba(0,0,0,0)');
+      band.addColorStop(.42, 'rgba(66,54,120,0.05)');
+      band.addColorStop(.58, 'rgba(40,72,130,0.05)');
+      band.addColorStop(1, 'rgba(0,0,0,0)');
+      bg.fillStyle = band; bg.fillRect(0, 0, W, H);
 
-    var band = ctx.createLinearGradient(W * .1, H * .85, W * .9, H * .1);
-    band.addColorStop(0, 'rgba(0,0,0,0)');
-    band.addColorStop(.42, 'rgba(66,54,120,0.05)');
-    band.addColorStop(.58, 'rgba(40,72,130,0.05)');
-    band.addColorStop(1, 'rgba(0,0,0,0)');
-    ctx.fillStyle = band; ctx.fillRect(0, 0, W, H);
-
-    // 2% 噪点，压掉大面积渐变在 8bit 屏上的条带
-    if (!window.__NOISE){
-      var nc = document.createElement('canvas'); nc.width = nc.height = 128;
-      var nx = nc.getContext('2d'); var nd = nx.createImageData(128, 128);
-      for (var ni = 0; ni < nd.data.length; ni += 4){
-        var v = 128 + (Math.random() * 60 - 30);
-        nd.data[ni] = nd.data[ni+1] = nd.data[ni+2] = v; nd.data[ni+3] = 255;
+      if (!MOBILE){
+        if (!window.__NOISE){
+          var nc = document.createElement('canvas'); nc.width = nc.height = 128;
+          var nx = nc.getContext('2d'); var nd = nx.createImageData(128, 128);
+          for (var ni = 0; ni < nd.data.length; ni += 4){
+            var v = 128 + (Math.random() * 60 - 30);
+            nd.data[ni] = nd.data[ni+1] = nd.data[ni+2] = v; nd.data[ni+3] = 255;
+          }
+          nx.putImageData(nd, 0, 0); window.__NOISE = nc;
+        }
+        bg.save(); bg.globalAlpha = .022; bg.globalCompositeOperation = 'overlay';
+        bg.fillStyle = bg.createPattern(window.__NOISE, 'repeat');
+        bg.fillRect(0, 0, W, H); bg.restore();
       }
-      nx.putImageData(nd, 0, 0); window.__NOISE = nc;
-    }
-    ctx.save(); ctx.globalAlpha = .022; ctx.globalCompositeOperation = 'overlay';
-    ctx.fillStyle = ctx.createPattern(window.__NOISE, 'repeat');
-    ctx.fillRect(0, 0, W, H); ctx.restore();
 
-    var vg = ctx.createRadialGradient(W / 2, H / 2, Math.min(W, H) * .28, W / 2, H / 2, Math.max(W, H) * .8);
-    vg.addColorStop(0, 'rgba(0,0,0,0)');
-    vg.addColorStop(1, 'rgba(0,0,0,0.52)');
-    ctx.fillStyle = vg; ctx.fillRect(0, 0, W, H);
+      var vg = bg.createRadialGradient(W / 2, H / 2, Math.min(W, H) * .28, W / 2, H / 2, Math.max(W, H) * .8);
+      vg.addColorStop(0, 'rgba(0,0,0,0)');
+      vg.addColorStop(1, 'rgba(0,0,0,0.52)');
+      bg.fillStyle = vg; bg.fillRect(0, 0, W, H);
+    }
+    ctx.drawImage(_bg, 0, 0, W, H);
 
     for (var i = 0; i < stars.length; i++){
       var s = stars[i], p = toScreen(s.x, s.y);

@@ -53,7 +53,8 @@ def _open(url, timeout=60):
 def pick_modrinth(slug):
     """返回 (version, url, filename, size) 或 None"""
     try:
-        vs = json.loads(_open(MR_API % slug, 40).read().decode())
+        with _open(MR_API % slug, 40) as r:
+            vs = json.loads(r.read().decode())
     except Exception:
         return None
     for v in vs:
@@ -73,8 +74,8 @@ def pick_curseforge(slug, retries=3):
     data = None
     for i in range(retries):
         try:
-            r = _open(CF_WIDGET % slug, 40)
-            data = json.loads(r.read().decode())
+            with _open(CF_WIDGET % slug, 40) as r:
+                data = json.loads(r.read().decode())
             break
         except Exception as e:
             code = getattr(e, 'code', '')
@@ -107,13 +108,14 @@ def save(slug, url, dst, expect):
         return 'exists', os.path.getsize(dst)
     req = urllib.request.Request(url)
     t0 = time.time()
+    r = None
     try:
         r = _opener.open(req, timeout=120)
         n = 0
         tmp = dst + '.part'
         with open(tmp, 'wb') as fh:
             while True:
-                b = fh and r.read(262144)
+                b = r.read(262144)
                 if not b:
                     break
                 fh.write(b)
@@ -128,7 +130,13 @@ def save(slug, url, dst, expect):
         for p in (dst + '.part',):
             if os.path.exists(p):
                 os.remove(p)
-        return 'fail %s' % type(e).__name__, 0
+        return 'fail %s: %s' % (type(e).__name__, str(e)[:40]), 0
+    finally:
+        if r is not None:
+            try:
+                r.close()
+            except Exception:
+                pass
 
 
 def main():

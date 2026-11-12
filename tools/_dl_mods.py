@@ -17,9 +17,23 @@ os.makedirs(RAW, exist_ok=True)
 
 API = 'https://api.modrinth.com/v2/project/%s/version'
 
+# 代理：设 MODS_PROXY 环境变量即可，例如
+#   set MODS_PROXY=http://127.0.0.1:7890
+# 不设则直连。代理同时用于 API 查询和文件下载。
+_PROXY = os.environ.get('MODS_PROXY', '').strip()
+if _PROXY:
+    _opener = urllib.request.build_opener(
+        urllib.request.ProxyHandler({'http': _PROXY, 'https': _PROXY}))
+else:
+    _opener = urllib.request.build_opener()
+
+
+def _open(url, timeout):
+    return _opener.open(url, timeout=timeout)
+
 
 def pick(slug):
-    vs = json.loads(urllib.request.urlopen(API % slug, timeout=40).read().decode())
+    vs = json.loads(_open(API % slug, 40).read().decode())
     for v in vs:
         if '1.20.1' in v.get('game_versions', []) and (
                 'forge' in v.get('loaders', []) or 'neoforge' in v.get('loaders', [])):
@@ -36,7 +50,7 @@ def download(slug, url, dst, expect):
     req = urllib.request.Request(url, headers={'User-Agent': 'create-codex/1.0'})
     t0 = time.time()
     try:
-        r = urllib.request.urlopen(req, timeout=90)
+        r = _open(req, 90)
         n = 0
         tmp = dst + '.part'
         with open(tmp, 'wb') as f:

@@ -279,13 +279,32 @@ body.leaving .topbar,body.leaving .hint,body.leaving .enter{opacity:0;transition
   var LINKS = [];
 
   var byId = {};
+  // 图标加载失败时的兜底链：Create 本体 logo → 扳手 → 止血贴 logo
+  var FALLBACK_ICONS = [
+    'assets/icons/create_logo.png',
+    'assets/icons/3d_create_wrench.png',
+    'assets/icons/halitosis_logo.png'
+  ];
+  function swapIcon(m){
+    if (m.fb === undefined) m.fb = -1;
+    m.fb++;
+    var next = m.fb < FALLBACK_ICONS.length
+      ? FALLBACK_ICONS[m.fb]
+      : FALLBACK_ICONS[FALLBACK_ICONS.length - 1];
+    m.img = new Image();
+    m.img.onload = function(){ if (!STATIC) requestAnimationFrame(draw); };
+    m.img.onerror = function(){ if (m.fb < FALLBACK_ICONS.length - 1) swapIcon(m); };
+    m.img.src = next;
+  }
   MODS.forEach(function(m){
     byId[m.id] = m;
     m.kids = [];
     m.v = m.level <= 1 ? 1 : 0;      // 可见度（0..1），二级默认收起
     m.open = false;                   // 是否已展开
     m.grow = m.level <= 1 ? 1 : 0;    // 从父节点「长出来」的进度
-    m.img = new Image(); m.img.src = m.icon;
+    m.img = new Image();
+    m.img.onerror = function(){ swapIcon(m); };
+    m.img.src = m.icon;
   });
   MODS.forEach(function(m){ if (m.parent) byId[m.parent].kids.push(m); });
   window.__CODE__ = { MODS: MODS, byId: byId, draw: draw };

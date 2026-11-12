@@ -1,0 +1,70 @@
+create:small_bogey | 小转向架 | Small Bogey | NO-RECIPE
+create:extendo_grip | 伸缩机械手 | Extendo Grip | mechanical_crafting
+create:mechanical_plough | 动力犁 | Mechanical Plough | crafting_shaped
+create:pulse_extender | 脉冲延长器 | Pulse Extender | crafting_shaped
+create:redstone_requester | 红石请求器 | Redstone Requester | crafting_shaped,crafting_shapeless
+create:stock_link | 仓储链接站 | Stock Link | crafting_shaped,crafting_shapeless
+create:analog_lever | 模拟拉杆 | Analog Lever | crafting_shaped
+create:blaze_burner | 烈焰人燃烧室 | Blaze Burner | NO-RECIPE
+create:shadow_steel | 暗影钢 | Shadow Steel | NO-RECIPE
+create:controls | 列车驾驶台 | Train Controls | crafting_shaped
+create:mechanical_pump | 动力泵 | Mechanical Pump | crafting_shapeless
+create:speedometer | 转速表 | Speedometer | crafting_shaped,crafting_shapeless
+create:weighted_ejector | 弹射置物台 | Weighted Ejector | crafting_shaped
+create:brass_belt_funnel | 黄铜传送带漏斗 | Brass Belt Funnel | NO-RECIPE
+create:fluid_pipe | 流体管道 | Fluid Pipe | crafting_shaped
+create:polished_rose_quartz | 磨制玫瑰石英 | Polished Rose Quartz | sandpaper_polishing
+create:smart_chute | 智能溜槽 | Smart Chute | crafting_shaped
+create:clipboard | 剪贴板 | Clipboard | crafting_shaped,crafting_shapeless
+create:experience_nugget | 经验颗粒 | Nugget of Experience | crafting_shapeless,crushing
+create:schematicannon | 蓝图加农炮 | Schematicannon | crafting_shaped
+create:spout | 注液器 | Spout | crafting_shaped
+create:andesite_door | 安山门 | Andesite Door | crafting_shapeless
+create:small_granite_brick_slab | 花岗岩小砖块台阶 | Small Granite Brick Slab | crafting_shaped,stonecutting
+create:small_limestone_brick_slab | 石灰岩小砖块台阶 | Small Limestone Brick Slab | crafting_shaped,stonecutting
+create:small_scoria_brick_slab | 熔渣小砖块台阶 | Small Scoria Brick Slab | crafting_shaped,stonecutting
+create:mechanical_harvester | 动力收割机 | Mechanical Harvester | crafting_shaped
+create:rope_pulley | 绳索滑轮 | Rope Pulley | crafting_shaped
+create:small_granite_brick_stairs | 花岗岩小砖块楼梯 | Small Granite Brick Stairs | crafting_shaped,stonecutting
+create:small_limestone_brick_stairs | 石灰岩小砖块楼梯 | Small Limestone Brick Stairs | crafting_shaped,stonecutting
+create:small_scoria_brick_stairs | 熔渣小砖块楼梯 | Small Scoria Brick Stairs | crafting_shaped,stonecutting
+create:chute | 溜槽 | Chute | crafting_shaped
+create:small_dripstone_brick_slab | 滴水石小砖块台阶 | Small Dripstone Brick Slab | crafting_shaped,stonecutting
+create:small_tuff_brick_slab | 凝灰岩小砖块台阶 | Small Tuff Brick Slab | crafting_shaped,stonecutting
+create:stressometer | 应力表 | Stressometer | crafting_shapeless
+create:gantry_carriage | 起重机取物器 | Gantry Carriage | crafting_shaped
+create:mechanical_roller | 动力压路机 | Mechanical Roller | crafting_shaped
+create:polished_cut_dripstone_wall | 磨制切制滴水石墙 | Polished Cut Dripstone Wall | crafting_shaped,stonecutting
+create:small_deepslate_brick_slab | 深板岩小砖块台阶 | Small Deepslate Brick Slab | crafting_shaped,stonecutting
+create:small_diorite_brick_slab | 闪长岩小砖块台阶 | Small Diorite Brick Slab | crafting_shaped,stonecutting
+create:small_dripstone_brick_stairs | 滴水石小砖块楼梯 | Small Dripstone Brick Stairs | crafting_shaped,stonecutting
+create:small_tuff_brick_stairs | 凝灰岩小砖块楼梯 | Small Tuff Brick Stairs | crafting_shaped,stonecutting
+create:super_glue | 强力胶 | Super Glue | crafting_shaped
+create:polished_cut_deepslate_wall | 磨制切制深板岩墙 | Polished Cut Deepslate Wall | crafting_shaped,stonecutting
+create:polished_cut_diorite_wall | 磨制切制闪长岩墙 | Polished Cut Diorite Wall | crafting_shaped,stonecutting
+create:polished_cut_dripstone_stairs | 磨制切制滴水石楼梯 | Polished Cut Dripstone Stairs | crafting_shaped,stonecutting
+create:small_deepslate_brick_stairs | 深板岩小砖块楼梯 | Small Deepslate Brick Stairs | crafting_shaped,stonecutting
+create:small_diorite_brick_stairs | 闪长岩小砖块楼梯 | Small Diorite Brick Stairs | crafting_shaped,stonecutting
+create:fluid_tank | 流体储罐 | Fluid Tank | crafting_shaped
+create:polished_cut_deepslate_stairs | 磨制切制深板岩楼梯 | Polished Cut Deepslate Stairs | crafting_shaped,stonecutting
+create:polished_cut_diorite_stairs | 磨制切制闪长岩楼梯 | Polished Cut Diorite Stairs | crafting_shaped,stonecutting
+create:small_granite_brick_wall | 花岗岩小砖块墙 | Small Granite Brick Wall | crafting_shaped,stonecutting
+create:small_limestone_brick_wall | 石灰岩小砖块墙 | Small Limestone Brick Wall | crafting_shaped,stonecutting
+create:small_ochrum_brick_slab | 赭金砂小砖块台阶 | Small Ochrum Brick Slab | crafting_shaped,stonecutting
+create:small_scoria_brick_wall | 熔渣小砖块墙 | Small Scoria Brick Wall | crafting_shaped,stonecutting
+create:cut_dripstone_brick_slab | 切制滴水石砖块台阶 | Cut Dripstone Brick Slab | crafting_shaped,stonecutting
+create:hand_crank | 手摇曲柄 | Hand Crank | crafting_shaped
+create:item_drain | 分液池 | Item Drain | crafting_shaped
+create:small_ochrum_brick_stairs | 赭金砂小砖块楼梯 | Small Ochrum Brick Stairs | crafting_shaped,stonecutting
+create:small_veridium_brick_slab | 辉绿岩小砖块台阶 | Small Veridium Brick Slab | crafting_shaped,stonecutting
+create:cut_deepslate_brick_slab | 切制深板岩砖块台阶 | Cut Deepslate Brick Slab | crafting_shaped,stonecutting
+create:cut_diorite_brick_slab | 切制闪长岩砖块台阶 | Cut Diorite Brick Slab | crafting_shaped,stonecutting
+create:small_dripstone_brick_wall | 滴水石小砖块墙 | Small Dripstone Brick Wall | crafting_shaped,stonecutting
+create:small_tuff_brick_wall | 凝灰岩小砖块墙 | Small Tuff Brick Wall | crafting_shaped,stonecutting
+create:small_veridium_brick_stairs | 辉绿岩小砖块楼梯 | Small Veridium Brick Stairs | crafting_shaped,stonecutting
+create:flywheel | 飞轮 | Flywheel | crafting_shaped
+create:gearshift | 反转齿轮箱 | Gearshift | crafting_shapeless
+create:mechanical_piston | 动力活塞 | Mechanical Piston | crafting_shaped
+create:schematic_and_quill | 蓝图与笔 | Schematic And Quill | crafting_shapeless
+create:small_deepslate_brick_wall | 深板岩小砖块墙 | Small Deepslate Brick Wall | crafting_shaped,stonecutting
+create:small_diorite_brick_wall | 闪长岩小砖块墙 | Small Diorite Brick Wall | crafting_shaped,stonecutting

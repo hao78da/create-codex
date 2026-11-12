@@ -1,0 +1,9 @@
+=== create:small_granite_brick_slab
+{"type": "crafting_shaped", "mod": "minecraft", "file": "small_granite_brick_slab", "results": [{"id": "create:small_granite_brick_slab", "count": 6}], "pattern": ["XXX"], "key": {"X": {"id": "create:small_granite_bricks", "count": 1}}}
+{"type": "stonecutting", "mod": "minecraft", "file": "small_granite_brick_slab_from_stone_types_granite_stonecutting", "ingredients": [{"tag": "create:stone_types/granite", "count": 1}], "results": [{"id": "create:small_granite_brick_slab", "count": 1}]}
+=== create:polished_cut_dripstone_wall
+{"type": "crafting_shaped", "mod": "minecraft", "file": "polished_cut_dripstone_wall", "results": [{"id": "create:polished_cut_dripstone_wall", "count": 6}], "pattern": ["XXX", "XXX"], "key": {"X": {"id": "create:polished_cut_dripstone", "count": 1}}}
+{"type": "stonecutting", "mod": "minecraft", "file": "polished_cut_dripstone_wall_from_stone_types_dripstone_stonecutting", "ingredients": [{"tag": "create:stone_types/dripstone", "count": 1}], "results": [{"id": "create:polished_cut_dripstone_wall", "count": 1}]}
+=== create:cut_diorite_brick_slab
+{"type": "crafting_shaped", "mod": "minecraft", "file": "cut_diorite_brick_slab", "results": [{"id": "create:cut_diorite_brick_slab", "count": 6}], "pattern": ["XXX"], "key": {"X": {"id": "create:cut_diorite_bricks", "count": 1}}}
+{"type": "stonecutting", "mod": "minecraft", "file": "cut_diorite_brick_slab_from_stone_types_diorite_stonecutting", "ingredients": [{"tag": "create:stone_types/diorite", "count": 1}], "results": [{"id": "create:cut_diorite_brick_slab", "count": 1}]}

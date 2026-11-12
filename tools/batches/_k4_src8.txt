@@ -1,0 +1,73 @@
+﻿=== wrench ===
+IWrenchable.java:10: import com.simibubi.create.content.kinetics.base.RotatedPillarKineticBlock;
+IWrenchable.java:22: import net.minecraft.world.level.block.state.BlockState;
+IWrenchable.java:28: default InteractionResult onWrenched(BlockState state, UseOnContext context) {
+IWrenchable.java:31: BlockState rotated = getRotatedBlockState(state, context.getClickedFace());
+IWrenchable.java:32: if (!rotated.canSurvive(level, context.getClickedPos()))
+IWrenchable.java:35: KineticBlockEntity.switchToBlockState(level, pos, updateAfterWrenched(rotated, context));
+IWrenchable.java:37: if (level.getBlockState(pos) != state)
+IWrenchable.java:38: playRotateSound(level, pos);
+IWrenchable.java:43: default BlockState updateAfterWrenched(BlockState newState, UseOnContext context) {
+IWrenchable.java:44: //		return newState;
+IWrenchable.java:45: return Block.updateFromNeighbourShapes(newState, context.getLevel(), context.getClickedPos());
+IWrenchable.java:48: default InteractionResult onSneakWrenched(BlockState state, UseOnContext context) {
+IWrenchable.java:56: BlockEvent.BreakEvent event = new BlockEvent.BreakEvent(world, pos, world.getBlockState(pos), player);
+IWrenchable.java:62: Block.getDrops(state, serverLevel, pos, world.getBlockEntity(pos), player, context.getItemInHand())
+IWrenchable.java:69: state.spawnAfterBreak(serverLevel, pos, ItemStack.EMPTY, true);
+IWrenchable.java:79: static void playRotateSound(Level level, BlockPos pos) {
+IWrenchable.java:80: AllSoundEvents.WRENCH_ROTATE.playOnServer(level, pos, 1, Create.RANDOM.nextFloat() + .5f);
+IWrenchable.java:83: default BlockState getRotatedBlockState(BlockState originalState, Direction targetedFace) {
+=== funnel supportsFiltering ===
+		if (blockState == null)
+			return false;
+		if (!(blockState.getBlock() instanceof FunnelBlock))
+			return false;
+		if (blockState.getValue(FunnelBlock.EXTRACTING))
+			return false;
+		return FunnelBlock.getFunnelFacing(blockState) == Direction.UP;
+	}
+
+	private boolean supportsFiltering() {
+		BlockState blockState = getBlockState();
+		return AllBlocks.BRASS_BELT_FUNNEL.has(blockState) || AllBlocks.BRASS_FUNNEL.has(blockState);
+	}
+
+	private ItemStack handleDirectBeltInput(TransportedItemStack stack, Direction side, boolean simulate) {
+		ItemStack inserted = stack.stack;
+		if (!filtering.test(inserted))
+			return inserted;
+		if (determineCurrentMode() == Mode.PAUSED)
+			return inserted;
+		if (simulate)
+			invManipulation.simulate();
+		if (!simulate)
+			onTransfer(inserted);
+		return invManipulation.insert(inserted);
+	}
+
+	public void flap(boolean inward) {
+		if (!level.isClientSide) {
+			AllPackets.getChannel()
+				.send(packetTarget(), new FunnelFlapPacket(this, inward));
+		} else {
+			flap.setValue(inward ? -1 : 1);
+			AllSoundEvents.FUNNEL_FLAP.playAt(level, worldPosition, 1, 1, true);
+=== deployer ===
+BeltDeployerCallbacks.java:17: import com.simibubi.create.content.kinetics.deployer.DeployerBlockEntity.Mode;
+BeltDeployerCallbacks.java:43: if (blockEntity.mode == Mode.PUNCH)
+BeltDeployerCallbacks.java:50: if (blockEntity.redstoneLocked)
+BeltDeployerCallbacks.java:89: if (blockEntity.redstoneLocked)
+DeployerActorVisual.java:9: import com.simibubi.create.AllPartialModels;
+DeployerActorVisual.java:20: import dev.engine_room.flywheel.lib.model.Models;
+DeployerActorVisual.java:21: import dev.engine_room.flywheel.lib.model.baked.PartialModel;
+DeployerActorVisual.java:47: DeployerBlockEntity.Mode mode = NBTHelper.readEnum(context.blockEntityData, "Mode", DeployerBlockEntity.Mode.class);
+DeployerActorVisual.java:48: PartialModel handPose = DeployerRenderer.getHandPose(mode);
+DeployerActorVisual.java:58: pole = instancerProvider.instancer(InstanceTypes.TRANSFORMED, Models.partial(AllPartialModels.DEPLOYER_POLE)).createInstance();
+DeployerActorVisual.java:59: hand = instancerProvider.instancer(InstanceTypes.TRANSFORMED, Models.partial(handPose)).createInstance();
+DeployerActorVisual.java:62: shaft = instancerProvider.instancer(AllInstanceTypes.ROTATING, Models.partial(AllPartialModels.SHAFT))
+DeployerBlock.java:78: withBlockEntityDo(context.getLevel(), context.getClickedPos(), DeployerBlockEntity::changeMode);
+DeployerBlock.java:153: withBlockEntityDo(world, pos, DeployerBlockEntity::redstoneUpdate);
+DeployerBlock.java:159: withBlockEntityDo(world, pos, DeployerBlockEntity::redstoneUpdate);
+DeployerBlockEntity.java:14: import com.simibubi.create.AllPartialModels;
+DeployerBlockEntity.java:29: import dev.engine_room.flywheel.lib.model.baked.PartialModel;
+DeployerBlockEntity.java:73: protected Mode mode;

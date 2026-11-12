@@ -1,0 +1,33 @@
+﻿=== ArmBlock/Entity key ===
+ArmBlockEntity.java:58: List<ArmInteractionPoint> inputs;
+ArmBlockEntity.java:59: List<ArmInteractionPoint> outputs;
+ArmBlockEntity.java:82: protected int lastInputIndex = -1;
+ArmBlockEntity.java:83: protected int lastOutputIndex = -1;
+ArmBlockEntity.java:87: SEARCH_INPUTS, MOVE_TO_INPUT, SEARCH_OUTPUTS, MOVE_TO_OUTPUT, DANCING
+ArmBlockEntity.java:92: inputs = new ArrayList<>();
+ArmBlockEntity.java:93: outputs = new ArrayList<>();
+ArmBlockEntity.java:96: phase = Phase.SEARCH_INPUTS;
+ArmBlockEntity.java:110: tooltipWarmup = 15;
+ArmBlockEntity.java:119: CreateLang.translateDirect("logistics.when_multiple_outputs_available"), this, new SelectionModeValueBox());
+ArmBlockEntity.java:130: boolean targetReached = tickMovementProgress();
+ArmBlockEntity.java:135: if (phase == Phase.MOVE_TO_INPUT) {
+ArmBlockEntity.java:145: if (phase == Phase.MOVE_TO_INPUT)
+ArmBlockEntity.java:147: else if (phase == Phase.MOVE_TO_OUTPUT)
+ArmBlockEntity.java:149: else if (phase == Phase.SEARCH_INPUTS || phase == Phase.DANCING)
+ArmBlockEntity.java:152: if (targetReached)
+ArmBlockEntity.java:162: if (chasedPointProgress < .5f)
+ArmBlockEntity.java:164: if (phase == Phase.SEARCH_INPUTS || phase == Phase.DANCING)
+ArmBlockEntity.java:166: if (phase == Phase.SEARCH_OUTPUTS)
+ArmBlockEntity.java:171: boolean hasMusic = checkForMusicAmong(inputs) || checkForMusicAmong(outputs);
+ArmBlockEntity.java:173: phase = hasMusic ? Phase.DANCING : Phase.SEARCH_INPUTS;
+ArmBlockEntity.java:197: boolean targetReachedPreviously = chasedPointProgress >= 1;
+ArmBlockEntity.java:198: chasedPointProgress += Math.min(256, Math.abs(getSpeed())) / 1024f;
+ArmBlockEntity.java:202: return !targetReachedPreviously && chasedPointProgress >= 1;
+ArmBlockEntity.java:213: if (chasedPointProgress < .5f)
+ArmBlockEntity.java:217: float progress = chasedPointProgress == 1 ? 1 : (chasedPointProgress % .5f) * 2;
+ArmBlockEntity.java:243: if (phase == Phase.MOVE_TO_INPUT && chasedPointIndex < inputs.size())
+ArmBlockEntity.java:244: return inputs.get(chasedPointIndex);
+ArmBlockEntity.java:245: if (phase == Phase.MOVE_TO_OUTPUT && chasedPointIndex < outputs.size())
+ArmBlockEntity.java:246: return outputs.get(chasedPointIndex);
+=== config files ===
+AllConfigs.java, CClient.java, CCommon.java, CEquipment.java, CFluids.java, CKinetics.java, CLogistics.java, CRecipes.java, CSchematics.java, CServer.java, CStress.java, CTrains.java, CWorldGen.java

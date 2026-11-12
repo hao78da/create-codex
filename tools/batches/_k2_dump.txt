@@ -1,0 +1,248 @@
+=== 01 create:small_bogey | 小转向架 | Small Bogey
+
+=== 02 create:extendo_grip | 伸缩机械手 | Extendo Grip
+R[mechanical_crafting] pat=[' L ', ' R ', 'SSS', 'SSS', ' H '] key={"H": {"id": "create:brass_hand", "count": 1}, "L": {"tag": "forge:ingots/brass", "count": 1}, "R": {"id": "create:precision_mechanism", "count": 1}, "S": {"tag": "forge:rods/wooden", "count": 1}} res=[{"id": "create:extendo_grip", "count": 1}] x={"mod": "create", "file": "mechanical_crafting/extendo_grip", "acceptMirrored": false}
+
+=== 03 create:mechanical_plough | 动力犁 | Mechanical Plough
+R[crafting_shaped] pat=['III', 'AAA', ' C '] key={"A": {"id": "create:andesite_alloy", "count": 1}, "C": {"id": "create:andesite_casing", "count": 1}, "I": {"tag": "forge:plates/iron", "count": 1}} res=[{"id": "create:mechanical_plough", "count": 1}] x={"mod": "minecraft", "file": "crafting/kinetics/mechanical_plough"}
+
+=== 04 create:pulse_extender | 脉冲延长器 | Pulse Extender
+R[crafting_shaped] pat=['  T', 'RCT', 'SSS'] key={"C": {"tag": "forge:plates/brass", "count": 1}, "R": {"tag": "forge:dusts/redstone", "count": 1}, "S": {"tag": "forge:stone", "count": 1}, "T": {"id": "minecraft:redstone_torch", "count": 1}} res=[{"id": "create:pulse_extender", "count": 1}] x={"mod": "minecraft", "file": "crafting/logistics/pulse_extender"}
+
+=== 05 create:redstone_requester | 红石请求器 | Redstone Requester
+R[crafting_shaped] pat=['C', 'A', 'B'] key={"A": {"id": "create:stock_link", "count": 1}, "B": {"tag": "forge:ingots/iron", "count": 1}, "C": {"tag": "forge:dusts/redstone", "count": 1}} res=[{"id": "create:redstone_requester", "count": 1}] x={"mod": "minecraft", "file": "crafting/logistics/redstone_requester"}
+R[crafting_shapeless] ing=[{"id": "create:redstone_requester", "count": 1}] res=[{"id": "create:redstone_requester", "count": 1}] x={"mod": "minecraft", "file": "crafting/logistics/redstone_requester_clear"}
+
+=== 06 create:stock_link | 仓储链接站 | Stock Link
+R[crafting_shaped] pat=['C', 'B'] key={"B": {"id": "create:item_vault", "count": 1}, "C": {"id": "create:transmitter", "count": 1}} res=[{"id": "create:stock_link", "count": 1}] x={"mod": "minecraft", "file": "crafting/logistics/stock_link"}
+R[crafting_shapeless] ing=[{"id": "create:stock_link", "count": 1}] res=[{"id": "create:stock_link", "count": 1}] x={"mod": "minecraft", "file": "crafting/logistics/stock_link_clear"}
+
+=== 07 create:analog_lever | 模拟拉杆 | Analog Lever
+R[crafting_shaped] pat=['P', 'S'] key={"P": {"tag": "forge:rods/wooden", "count": 1}, "S": {"id": "create:andesite_casing", "count": 1}} res=[{"id": "create:analog_lever", "count": 1}] x={"mod": "minecraft", "file": "crafting/kinetics/analog_lever"}
+
+=== 08 create:blaze_burner | 烈焰人燃烧室 | Blaze Burner
+
+=== 09 create:shadow_steel | 暗影钢 | Shadow Steel
+
+=== 10 create:controls | 列车驾驶台 | Train Controls
+R[crafting_shaped] pat=['B', 'C', 'I'] key={"B": {"id": "minecraft:lever", "count": 1}, "C": {"id": "create:railway_casing", "count": 1}, "I": {"id": "create:precision_mechanism", "count": 1}} res=[{"id": "create:controls", "count": 1}] x={"mod": "minecraft", "file": "crafting/kinetics/controls"}
+
+=== 11 create:mechanical_pump | 动力泵 | Mechanical Pump
+R[crafting_shapeless] ing=[{"id": "create:cogwheel", "count": 1}, {"id": "create:fluid_pipe", "count": 1}] res=[{"id": "create:mechanical_pump", "count": 1}] x={"mod": "minecraft", "file": "crafting/kinetics/mechanical_pump"}
+
+=== 12 create:speedometer | 转速表 | Speedometer
+R[crafting_shaped] pat=['C', 'A'] key={"A": {"id": "create:andesite_casing", "count": 1}, "C": {"id": "minecraft:compass", "count": 1}} res=[{"id": "create:speedometer", "count": 1}] x={"mod": "minecraft", "file": "crafting/kinetics/speedometer"}
+R[crafting_shapeless] ing=[{"id": "create:stressometer", "count": 1}] res=[{"id": "create:speedometer", "count": 1}] x={"mod": "minecraft", "file": "crafting/kinetics/speedometer_from_conversion"}
+
+=== 13 create:weighted_ejector | 弹射置物台 | Weighted Ejector
+R[crafting_shaped] pat=['A', 'D', 'I'] key={"A": {"tag": "forge:plates/gold", "count": 1}, "D": {"id": "create:depot", "count": 1}, "I": {"id": "create:cogwheel", "count": 1}} res=[{"id": "create:weighted_ejector", "count": 1}] x={"mod": "minecraft", "file": "crafting/kinetics/weighted_ejector"}
+
+=== 14 create:brass_belt_funnel | 黄铜传送带漏斗 | Brass Belt Funnel
+
+=== 15 create:fluid_pipe | 流体管道 | Fluid Pipe
+R[crafting_shaped] pat=['SCS'] key={"C": {"tag": "forge:ingots/copper", "count": 1}, "S": {"tag": "forge:plates/copper", "count": 1}} res=[{"id": "create:fluid_pipe", "count": 4}] x={"mod": "minecraft", "file": "crafting/kinetics/fluid_pipe"}
+R[crafting_shaped] pat=['S', 'C', 'S'] key={"C": {"tag": "forge:ingots/copper", "count": 1}, "S": {"tag": "forge:plates/copper", "count": 1}} res=[{"id": "create:fluid_pipe", "count": 4}] x={"mod": "minecraft", "file": "crafting/kinetics/fluid_pipe_vertical"}
+
+=== 16 create:polished_rose_quartz | 磨制玫瑰石英 | Polished Rose Quartz
+R[sandpaper_polishing] ing=[{"id": "create:rose_quartz", "count": 1}] res=[{"id": "create:polished_rose_quartz", "count": 1}] x={"mod": "create", "file": "sandpaper_polishing/rose_quartz"}
+
+=== 17 create:smart_chute | 智能溜槽 | Smart Chute
+R[crafting_shaped] pat=['I', 'S', 'P'] key={"I": {"tag": "forge:plates/brass", "count": 1}, "P": {"id": "create:electron_tube", "count": 1}, "S": {"id": "create:chute", "count": 1}} res=[{"id": "create:smart_chute", "count": 1}] x={"mod": "minecraft", "file": "crafting/kinetics/smart_chute"}
+
+=== 18 create:clipboard | 剪贴板 | Clipboard
+R[crafting_shaped] pat=['A', 'P', 'G'] key={"A": {"id": "create:andesite_alloy", "count": 1}, "G": {"tag": "minecraft:planks", "count": 1}, "P": {"id": "minecraft:paper", "count": 1}} res=[{"id": "create:clipboard", "count": 1}] x={"mod": "minecraft", "file": "crafting/appliances/clipboard"}
+R[crafting_shapeless] ing=[{"id": "create:clipboard", "count": 1}] res=[{"id": "create:clipboard", "count": 1}] x={"mod": "minecraft", "file": "crafting/appliances/clipboard_clear"}
+
+=== 19 create:experience_nugget | 经验颗粒 | Nugget of Experience
+R[crafting_shapeless] ing=[{"id": "create:experience_block", "count": 1}] res=[{"id": "create:experience_nugget", "count": 9}] x={"mod": "minecraft", "file": "crafting/materials/experience_nugget_from_block"}
+R[crushing] ing=[{"tag": "forge:ores/aluminum", "count": 1}] res=[{"id": "create:experience_nugget", "count": 1}] x={"mod": "create", "file": "aluminum_ore", "processingTime": 400}
+R[crushing] ing=[{"id": "minecraft:coal_ore", "count": 1}] res=[{"id": "create:experience_nugget", "count": 1}] x={"mod": "create", "file": "coal_ore", "processingTime": 150}
+R[crushing] ing=[{"id": "minecraft:copper_ore", "count": 1}] res=[{"id": "create:experience_nugget", "count": 1}] x={"mod": "create", "file": "copper_ore", "processingTime": 250}
+
+=== 20 create:schematicannon | 蓝图加农炮 | Schematicannon
+R[crafting_shaped] pat=[' I ', 'LIL', 'SDS'] key={"D": {"id": "minecraft:dispenser", "count": 1}, "I": {"id": "minecraft:iron_block", "count": 1}, "L": {"tag": "minecraft:logs", "count": 1}, "S": {"id": "minecraft:smooth_stone", "count": 1}} res=[{"id": "create:schematicannon", "count": 1}] x={"mod": "minecraft", "file": "crafting/schematics/schematicannon"}
+
+=== 21 create:spout | 注液器 | Spout
+R[crafting_shaped] pat=['T', 'P'] key={"P": {"id": "minecraft:dried_kelp", "count": 1}, "T": {"id": "create:copper_casing", "count": 1}} res=[{"id": "create:spout", "count": 1}] x={"mod": "minecraft", "file": "crafting/kinetics/spout"}
+
+=== 22 create:andesite_door | 安山门 | Andesite Door
+R[crafting_shapeless] ing=[{"tag": "minecraft:wooden_doors", "count": 1}, {"id": "create:andesite_casing", "count": 1}] res=[{"id": "create:andesite_door", "count": 1}] x={"mod": "minecraft", "file": "crafting/kinetics/andesite_door"}
+
+=== 23 create:small_granite_brick_slab | 花岗岩小砖块台阶 | Small Granite Brick Slab
+R[crafting_shaped] pat=['XXX'] key={"X": {"id": "create:small_granite_bricks", "count": 1}} res=[{"id": "create:small_granite_brick_slab", "count": 6}] x={"mod": "minecraft", "file": "small_granite_brick_slab"}
+R[stonecutting] ing=[{"tag": "create:stone_types/granite", "count": 1}] res=[{"id": "create:small_granite_brick_slab", "count": 1}] x={"mod": "minecraft", "file": "small_granite_brick_slab_from_stone_types_granite_stonecutting"}
+
+=== 24 create:small_limestone_brick_slab | 石灰岩小砖块台阶 | Small Limestone Brick Slab
+R[crafting_shaped] pat=['XXX'] key={"X": {"id": "create:small_limestone_bricks", "count": 1}} res=[{"id": "create:small_limestone_brick_slab", "count": 6}] x={"mod": "minecraft", "file": "small_limestone_brick_slab"}
+R[stonecutting] ing=[{"tag": "create:stone_types/limestone", "count": 1}] res=[{"id": "create:small_limestone_brick_slab", "count": 1}] x={"mod": "minecraft", "file": "small_limestone_brick_slab_from_stone_types_limestone_stonecutting"}
+
+=== 25 create:small_scoria_brick_slab | 熔渣小砖块台阶 | Small Scoria Brick Slab
+R[crafting_shaped] pat=['XXX'] key={"X": {"id": "create:small_scoria_bricks", "count": 1}} res=[{"id": "create:small_scoria_brick_slab", "count": 6}] x={"mod": "minecraft", "file": "small_scoria_brick_slab"}
+R[stonecutting] ing=[{"tag": "create:stone_types/scoria", "count": 1}] res=[{"id": "create:small_scoria_brick_slab", "count": 1}] x={"mod": "minecraft", "file": "small_scoria_brick_slab_from_stone_types_scoria_stonecutting"}
+
+=== 26 create:mechanical_harvester | 动力收割机 | Mechanical Harvester
+R[crafting_shaped] pat=['AIA', 'AIA', ' C '] key={"A": {"id": "create:andesite_alloy", "count": 1}, "C": {"id": "create:andesite_casing", "count": 1}, "I": {"tag": "forge:plates/iron", "count": 1}} res=[{"id": "create:mechanical_harvester", "count": 1}] x={"mod": "minecraft", "file": "crafting/kinetics/mechanical_harvester"}
+
+=== 27 create:rope_pulley | 绳索滑轮 | Rope Pulley
+R[crafting_shaped] pat=['B', 'C', 'I'] key={"B": {"id": "create:andesite_casing", "count": 1}, "C": {"tag": "minecraft:wool", "count": 1}, "I": {"tag": "forge:plates/iron", "count": 1}} res=[{"id": "create:rope_pulley", "count": 1}] x={"mod": "minecraft", "file": "crafting/kinetics/rope_pulley"}
+
+=== 28 create:small_granite_brick_stairs | 花岗岩小砖块楼梯 | Small Granite Brick Stairs
+R[crafting_shaped] pat=['X  ', 'XX ', 'XXX'] key={"X": {"id": "create:small_granite_bricks", "count": 1}} res=[{"id": "create:small_granite_brick_stairs", "count": 4}] x={"mod": "minecraft", "file": "small_granite_brick_stairs"}
+R[stonecutting] ing=[{"tag": "create:stone_types/granite", "count": 1}] res=[{"id": "create:small_granite_brick_stairs", "count": 1}] x={"mod": "minecraft", "file": "small_granite_brick_stairs_from_stone_types_granite_stonecutting"}
+
+=== 29 create:small_limestone_brick_stairs | 石灰岩小砖块楼梯 | Small Limestone Brick Stairs
+R[crafting_shaped] pat=['X  ', 'XX ', 'XXX'] key={"X": {"id": "create:small_limestone_bricks", "count": 1}} res=[{"id": "create:small_limestone_brick_stairs", "count": 4}] x={"mod": "minecraft", "file": "small_limestone_brick_stairs"}
+R[stonecutting] ing=[{"tag": "create:stone_types/limestone", "count": 1}] res=[{"id": "create:small_limestone_brick_stairs", "count": 1}] x={"mod": "minecraft", "file": "small_limestone_brick_stairs_from_stone_types_limestone_stonecutting"}
+
+=== 30 create:small_scoria_brick_stairs | 熔渣小砖块楼梯 | Small Scoria Brick Stairs
+R[crafting_shaped] pat=['X  ', 'XX ', 'XXX'] key={"X": {"id": "create:small_scoria_bricks", "count": 1}} res=[{"id": "create:small_scoria_brick_stairs", "count": 4}] x={"mod": "minecraft", "file": "small_scoria_brick_stairs"}
+R[stonecutting] ing=[{"tag": "create:stone_types/scoria", "count": 1}] res=[{"id": "create:small_scoria_brick_stairs", "count": 1}] x={"mod": "minecraft", "file": "small_scoria_brick_stairs_from_stone_types_scoria_stonecutting"}
+
+=== 31 create:chute | 溜槽 | Chute
+R[crafting_shaped] pat=['A', 'I', 'A'] key={"A": {"tag": "forge:plates/iron", "count": 1}, "I": {"tag": "forge:ingots/iron", "count": 1}} res=[{"id": "create:chute", "count": 4}] x={"mod": "minecraft", "file": "crafting/kinetics/chute"}
+
+=== 32 create:small_dripstone_brick_slab | 滴水石小砖块台阶 | Small Dripstone Brick Slab
+R[crafting_shaped] pat=['XXX'] key={"X": {"id": "create:small_dripstone_bricks", "count": 1}} res=[{"id": "create:small_dripstone_brick_slab", "count": 6}] x={"mod": "minecraft", "file": "small_dripstone_brick_slab"}
+R[stonecutting] ing=[{"tag": "create:stone_types/dripstone", "count": 1}] res=[{"id": "create:small_dripstone_brick_slab", "count": 1}] x={"mod": "minecraft", "file": "small_dripstone_brick_slab_from_stone_types_dripstone_stonecutting"}
+
+=== 33 create:small_tuff_brick_slab | 凝灰岩小砖块台阶 | Small Tuff Brick Slab
+R[crafting_shaped] pat=['XXX'] key={"X": {"id": "create:small_tuff_bricks", "count": 1}} res=[{"id": "create:small_tuff_brick_slab", "count": 6}] x={"mod": "minecraft", "file": "small_tuff_brick_slab"}
+R[stonecutting] ing=[{"tag": "create:stone_types/tuff", "count": 1}] res=[{"id": "create:small_tuff_brick_slab", "count": 1}] x={"mod": "minecraft", "file": "small_tuff_brick_slab_from_stone_types_tuff_stonecutting"}
+
+=== 34 create:stressometer | 应力表 | Stressometer
+R[crafting_shapeless] ing=[{"id": "create:speedometer", "count": 1}] res=[{"id": "create:stressometer", "count": 1}] x={"mod": "minecraft", "file": "crafting/kinetics/stressometer_from_conversion"}
+
+=== 35 create:gantry_carriage | 起重机取物器 | Gantry Carriage
+R[crafting_shaped] pat=['B', 'C', 'I'] key={"B": {"tag": "minecraft:wooden_slabs", "count": 1}, "C": {"id": "create:andesite_casing", "count": 1}, "I": {"id": "create:cogwheel", "count": 1}} res=[{"id": "create:gantry_carriage", "count": 1}] x={"mod": "minecraft", "file": "crafting/kinetics/gantry_carriage"}
+
+=== 36 create:mechanical_roller | 动力压路机 | Mechanical Roller
+R[crafting_shaped] pat=['A', 'C', 'I'] key={"A": {"id": "create:electron_tube", "count": 1}, "C": {"id": "create:andesite_casing", "count": 1}, "I": {"id": "create:crushing_wheel", "count": 1}} res=[{"id": "create:mechanical_roller", "count": 1}] x={"mod": "minecraft", "file": "crafting/kinetics/mechanical_roller"}
+
+=== 37 create:polished_cut_dripstone_wall | 磨制切制滴水石墙 | Polished Cut Dripstone Wall
+R[crafting_shaped] pat=['XXX', 'XXX'] key={"X": {"id": "create:polished_cut_dripstone", "count": 1}} res=[{"id": "create:polished_cut_dripstone_wall", "count": 6}] x={"mod": "minecraft", "file": "polished_cut_dripstone_wall"}
+R[stonecutting] ing=[{"tag": "create:stone_types/dripstone", "count": 1}] res=[{"id": "create:polished_cut_dripstone_wall", "count": 1}] x={"mod": "minecraft", "file": "polished_cut_dripstone_wall_from_stone_types_dripstone_stonecutting"}
+
+=== 38 create:small_deepslate_brick_slab | 深板岩小砖块台阶 | Small Deepslate Brick Slab
+R[crafting_shaped] pat=['XXX'] key={"X": {"id": "create:small_deepslate_bricks", "count": 1}} res=[{"id": "create:small_deepslate_brick_slab", "count": 6}] x={"mod": "minecraft", "file": "small_deepslate_brick_slab"}
+R[stonecutting] ing=[{"tag": "create:stone_types/deepslate", "count": 1}] res=[{"id": "create:small_deepslate_brick_slab", "count": 1}] x={"mod": "minecraft", "file": "small_deepslate_brick_slab_from_stone_types_deepslate_stonecutting"}
+
+=== 39 create:small_diorite_brick_slab | 闪长岩小砖块台阶 | Small Diorite Brick Slab
+R[crafting_shaped] pat=['XXX'] key={"X": {"id": "create:small_diorite_bricks", "count": 1}} res=[{"id": "create:small_diorite_brick_slab", "count": 6}] x={"mod": "minecraft", "file": "small_diorite_brick_slab"}
+R[stonecutting] ing=[{"tag": "create:stone_types/diorite", "count": 1}] res=[{"id": "create:small_diorite_brick_slab", "count": 1}] x={"mod": "minecraft", "file": "small_diorite_brick_slab_from_stone_types_diorite_stonecutting"}
+
+=== 40 create:small_dripstone_brick_stairs | 滴水石小砖块楼梯 | Small Dripstone Brick Stairs
+R[crafting_shaped] pat=['X  ', 'XX ', 'XXX'] key={"X": {"id": "create:small_dripstone_bricks", "count": 1}} res=[{"id": "create:small_dripstone_brick_stairs", "count": 4}] x={"mod": "minecraft", "file": "small_dripstone_brick_stairs"}
+R[stonecutting] ing=[{"tag": "create:stone_types/dripstone", "count": 1}] res=[{"id": "create:small_dripstone_brick_stairs", "count": 1}] x={"mod": "minecraft", "file": "small_dripstone_brick_stairs_from_stone_types_dripstone_stonecutting"}
+
+=== 41 create:small_tuff_brick_stairs | 凝灰岩小砖块楼梯 | Small Tuff Brick Stairs
+R[crafting_shaped] pat=['X  ', 'XX ', 'XXX'] key={"X": {"id": "create:small_tuff_bricks", "count": 1}} res=[{"id": "create:small_tuff_brick_stairs", "count": 4}] x={"mod": "minecraft", "file": "small_tuff_brick_stairs"}
+R[stonecutting] ing=[{"tag": "create:stone_types/tuff", "count": 1}] res=[{"id": "create:small_tuff_brick_stairs", "count": 1}] x={"mod": "minecraft", "file": "small_tuff_brick_stairs_from_stone_types_tuff_stonecutting"}
+
+=== 42 create:super_glue | 强力胶 | Super Glue
+R[crafting_shaped] pat=['AS', 'NA'] key={"A": {"tag": "forge:slimeballs", "count": 1}, "N": {"tag": "forge:nuggets/iron", "count": 1}, "S": {"tag": "forge:plates/iron", "count": 1}} res=[{"id": "create:super_glue", "count": 1}] x={"mod": "minecraft", "file": "crafting/kinetics/super_glue"}
+
+=== 43 create:polished_cut_deepslate_wall | 磨制切制深板岩墙 | Polished Cut Deepslate Wall
+R[crafting_shaped] pat=['XXX', 'XXX'] key={"X": {"id": "create:polished_cut_deepslate", "count": 1}} res=[{"id": "create:polished_cut_deepslate_wall", "count": 6}] x={"mod": "minecraft", "file": "polished_cut_deepslate_wall"}
+R[stonecutting] ing=[{"tag": "create:stone_types/deepslate", "count": 1}] res=[{"id": "create:polished_cut_deepslate_wall", "count": 1}] x={"mod": "minecraft", "file": "polished_cut_deepslate_wall_from_stone_types_deepslate_stonecutting"}
+
+=== 44 create:polished_cut_diorite_wall | 磨制切制闪长岩墙 | Polished Cut Diorite Wall
+R[crafting_shaped] pat=['XXX', 'XXX'] key={"X": {"id": "create:polished_cut_diorite", "count": 1}} res=[{"id": "create:polished_cut_diorite_wall", "count": 6}] x={"mod": "minecraft", "file": "polished_cut_diorite_wall"}
+R[stonecutting] ing=[{"tag": "create:stone_types/diorite", "count": 1}] res=[{"id": "create:polished_cut_diorite_wall", "count": 1}] x={"mod": "minecraft", "file": "polished_cut_diorite_wall_from_stone_types_diorite_stonecutting"}
+
+=== 45 create:polished_cut_dripstone_stairs | 磨制切制滴水石楼梯 | Polished Cut Dripstone Stairs
+R[crafting_shaped] pat=['X  ', 'XX ', 'XXX'] key={"X": {"id": "create:polished_cut_dripstone", "count": 1}} res=[{"id": "create:polished_cut_dripstone_stairs", "count": 4}] x={"mod": "minecraft", "file": "polished_cut_dripstone_stairs"}
+R[stonecutting] ing=[{"tag": "create:stone_types/dripstone", "count": 1}] res=[{"id": "create:polished_cut_dripstone_stairs", "count": 1}] x={"mod": "minecraft", "file": "polished_cut_dripstone_stairs_from_stone_types_dripstone_stonecutting"}
+
+=== 46 create:small_deepslate_brick_stairs | 深板岩小砖块楼梯 | Small Deepslate Brick Stairs
+R[crafting_shaped] pat=['X  ', 'XX ', 'XXX'] key={"X": {"id": "create:small_deepslate_bricks", "count": 1}} res=[{"id": "create:small_deepslate_brick_stairs", "count": 4}] x={"mod": "minecraft", "file": "small_deepslate_brick_stairs"}
+R[stonecutting] ing=[{"tag": "create:stone_types/deepslate", "count": 1}] res=[{"id": "create:small_deepslate_brick_stairs", "count": 1}] x={"mod": "minecraft", "file": "small_deepslate_brick_stairs_from_stone_types_deepslate_stonecutting"}
+
+=== 47 create:small_diorite_brick_stairs | 闪长岩小砖块楼梯 | Small Diorite Brick Stairs
+R[crafting_shaped] pat=['X  ', 'XX ', 'XXX'] key={"X": {"id": "create:small_diorite_bricks", "count": 1}} res=[{"id": "create:small_diorite_brick_stairs", "count": 4}] x={"mod": "minecraft", "file": "small_diorite_brick_stairs"}
+R[stonecutting] ing=[{"tag": "create:stone_types/diorite", "count": 1}] res=[{"id": "create:small_diorite_brick_stairs", "count": 1}] x={"mod": "minecraft", "file": "small_diorite_brick_stairs_from_stone_types_diorite_stonecutting"}
+
+=== 48 create:fluid_tank | 流体储罐 | Fluid Tank
+R[crafting_shaped] pat=['B', 'C', 'B'] key={"B": {"tag": "forge:plates/copper", "count": 1}, "C": {"tag": "forge:barrels/wooden", "count": 1}} res=[{"id": "create:fluid_tank", "count": 1}] x={"mod": "minecraft", "file": "crafting/kinetics/fluid_tank"}
+
+=== 49 create:polished_cut_deepslate_stairs | 磨制切制深板岩楼梯 | Polished Cut Deepslate Stairs
+R[crafting_shaped] pat=['X  ', 'XX ', 'XXX'] key={"X": {"id": "create:polished_cut_deepslate", "count": 1}} res=[{"id": "create:polished_cut_deepslate_stairs", "count": 4}] x={"mod": "minecraft", "file": "polished_cut_deepslate_stairs"}
+R[stonecutting] ing=[{"tag": "create:stone_types/deepslate", "count": 1}] res=[{"id": "create:polished_cut_deepslate_stairs", "count": 1}] x={"mod": "minecraft", "file": "polished_cut_deepslate_stairs_from_stone_types_deepslate_stonecutting"}
+
+=== 50 create:polished_cut_diorite_stairs | 磨制切制闪长岩楼梯 | Polished Cut Diorite Stairs
+R[crafting_shaped] pat=['X  ', 'XX ', 'XXX'] key={"X": {"id": "create:polished_cut_diorite", "count": 1}} res=[{"id": "create:polished_cut_diorite_stairs", "count": 4}] x={"mod": "minecraft", "file": "polished_cut_diorite_stairs"}
+R[stonecutting] ing=[{"tag": "create:stone_types/diorite", "count": 1}] res=[{"id": "create:polished_cut_diorite_stairs", "count": 1}] x={"mod": "minecraft", "file": "polished_cut_diorite_stairs_from_stone_types_diorite_stonecutting"}
+
+=== 51 create:small_granite_brick_wall | 花岗岩小砖块墙 | Small Granite Brick Wall
+R[crafting_shaped] pat=['XXX', 'XXX'] key={"X": {"id": "create:small_granite_bricks", "count": 1}} res=[{"id": "create:small_granite_brick_wall", "count": 6}] x={"mod": "minecraft", "file": "small_granite_brick_wall"}
+R[stonecutting] ing=[{"tag": "create:stone_types/granite", "count": 1}] res=[{"id": "create:small_granite_brick_wall", "count": 1}] x={"mod": "minecraft", "file": "small_granite_brick_wall_from_stone_types_granite_stonecutting"}
+
+=== 52 create:small_limestone_brick_wall | 石灰岩小砖块墙 | Small Limestone Brick Wall
+R[crafting_shaped] pat=['XXX', 'XXX'] key={"X": {"id": "create:small_limestone_bricks", "count": 1}} res=[{"id": "create:small_limestone_brick_wall", "count": 6}] x={"mod": "minecraft", "file": "small_limestone_brick_wall"}
+R[stonecutting] ing=[{"tag": "create:stone_types/limestone", "count": 1}] res=[{"id": "create:small_limestone_brick_wall", "count": 1}] x={"mod": "minecraft", "file": "small_limestone_brick_wall_from_stone_types_limestone_stonecutting"}
+
+=== 53 create:small_ochrum_brick_slab | 赭金砂小砖块台阶 | Small Ochrum Brick Slab
+R[crafting_shaped] pat=['XXX'] key={"X": {"id": "create:small_ochrum_bricks", "count": 1}} res=[{"id": "create:small_ochrum_brick_slab", "count": 6}] x={"mod": "minecraft", "file": "small_ochrum_brick_slab"}
+R[stonecutting] ing=[{"tag": "create:stone_types/ochrum", "count": 1}] res=[{"id": "create:small_ochrum_brick_slab", "count": 1}] x={"mod": "minecraft", "file": "small_ochrum_brick_slab_from_stone_types_ochrum_stonecutting"}
+
+=== 54 create:small_scoria_brick_wall | 熔渣小砖块墙 | Small Scoria Brick Wall
+R[crafting_shaped] pat=['XXX', 'XXX'] key={"X": {"id": "create:small_scoria_bricks", "count": 1}} res=[{"id": "create:small_scoria_brick_wall", "count": 6}] x={"mod": "minecraft", "file": "small_scoria_brick_wall"}
+R[stonecutting] ing=[{"tag": "create:stone_types/scoria", "count": 1}] res=[{"id": "create:small_scoria_brick_wall", "count": 1}] x={"mod": "minecraft", "file": "small_scoria_brick_wall_from_stone_types_scoria_stonecutting"}
+
+=== 55 create:cut_dripstone_brick_slab | 切制滴水石砖块台阶 | Cut Dripstone Brick Slab
+R[crafting_shaped] pat=['XXX'] key={"X": {"id": "create:cut_dripstone_bricks", "count": 1}} res=[{"id": "create:cut_dripstone_brick_slab", "count": 6}] x={"mod": "minecraft", "file": "cut_dripstone_brick_slab"}
+R[stonecutting] ing=[{"tag": "create:stone_types/dripstone", "count": 1}] res=[{"id": "create:cut_dripstone_brick_slab", "count": 1}] x={"mod": "minecraft", "file": "cut_dripstone_brick_slab_from_stone_types_dripstone_stonecutting"}
+
+=== 56 create:hand_crank | 手摇曲柄 | Hand Crank
+R[crafting_shaped] pat=['CCC', '  A'] key={"A": {"id": "create:andesite_alloy", "count": 1}, "C": {"tag": "minecraft:planks", "count": 1}} res=[{"id": "create:hand_crank", "count": 1}] x={"mod": "minecraft", "file": "crafting/kinetics/hand_crank"}
+
+=== 57 create:item_drain | 分液池 | Item Drain
+R[crafting_shaped] pat=['P', 'S'] key={"P": {"id": "minecraft:iron_bars", "count": 1}, "S": {"id": "create:copper_casing", "count": 1}} res=[{"id": "create:item_drain", "count": 1}] x={"mod": "minecraft", "file": "crafting/kinetics/item_drain"}
+
+=== 58 create:small_ochrum_brick_stairs | 赭金砂小砖块楼梯 | Small Ochrum Brick Stairs
+R[crafting_shaped] pat=['X  ', 'XX ', 'XXX'] key={"X": {"id": "create:small_ochrum_bricks", "count": 1}} res=[{"id": "create:small_ochrum_brick_stairs", "count": 4}] x={"mod": "minecraft", "file": "small_ochrum_brick_stairs"}
+R[stonecutting] ing=[{"tag": "create:stone_types/ochrum", "count": 1}] res=[{"id": "create:small_ochrum_brick_stairs", "count": 1}] x={"mod": "minecraft", "file": "small_ochrum_brick_stairs_from_stone_types_ochrum_stonecutting"}
+
+=== 59 create:small_veridium_brick_slab | 辉绿岩小砖块台阶 | Small Veridium Brick Slab
+R[crafting_shaped] pat=['XXX'] key={"X": {"id": "create:small_veridium_bricks", "count": 1}} res=[{"id": "create:small_veridium_brick_slab", "count": 6}] x={"mod": "minecraft", "file": "small_veridium_brick_slab"}
+R[stonecutting] ing=[{"tag": "create:stone_types/veridium", "count": 1}] res=[{"id": "create:small_veridium_brick_slab", "count": 1}] x={"mod": "minecraft", "file": "small_veridium_brick_slab_from_stone_types_veridium_stonecutting"}
+
+=== 60 create:cut_deepslate_brick_slab | 切制深板岩砖块台阶 | Cut Deepslate Brick Slab
+R[crafting_shaped] pat=['XXX'] key={"X": {"id": "create:cut_deepslate_bricks", "count": 1}} res=[{"id": "create:cut_deepslate_brick_slab", "count": 6}] x={"mod": "minecraft", "file": "cut_deepslate_brick_slab"}
+R[stonecutting] ing=[{"tag": "create:stone_types/deepslate", "count": 1}] res=[{"id": "create:cut_deepslate_brick_slab", "count": 1}] x={"mod": "minecraft", "file": "cut_deepslate_brick_slab_from_stone_types_deepslate_stonecutting"}
+
+=== 61 create:cut_diorite_brick_slab | 切制闪长岩砖块台阶 | Cut Diorite Brick Slab
+R[crafting_shaped] pat=['XXX'] key={"X": {"id": "create:cut_diorite_bricks", "count": 1}} res=[{"id": "create:cut_diorite_brick_slab", "count": 6}] x={"mod": "minecraft", "file": "cut_diorite_brick_slab"}
+R[stonecutting] ing=[{"tag": "create:stone_types/diorite", "count": 1}] res=[{"id": "create:cut_diorite_brick_slab", "count": 1}] x={"mod": "minecraft", "file": "cut_diorite_brick_slab_from_stone_types_diorite_stonecutting"}
+
+=== 62 create:small_dripstone_brick_wall | 滴水石小砖块墙 | Small Dripstone Brick Wall
+R[crafting_shaped] pat=['XXX', 'XXX'] key={"X": {"id": "create:small_dripstone_bricks", "count": 1}} res=[{"id": "create:small_dripstone_brick_wall", "count": 6}] x={"mod": "minecraft", "file": "small_dripstone_brick_wall"}
+R[stonecutting] ing=[{"tag": "create:stone_types/dripstone", "count": 1}] res=[{"id": "create:small_dripstone_brick_wall", "count": 1}] x={"mod": "minecraft", "file": "small_dripstone_brick_wall_from_stone_types_dripstone_stonecutting"}
+
+=== 63 create:small_tuff_brick_wall | 凝灰岩小砖块墙 | Small Tuff Brick Wall
+R[crafting_shaped] pat=['XXX', 'XXX'] key={"X": {"id": "create:small_tuff_bricks", "count": 1}} res=[{"id": "create:small_tuff_brick_wall", "count": 6}] x={"mod": "minecraft", "file": "small_tuff_brick_wall"}
+R[stonecutting] ing=[{"tag": "create:stone_types/tuff", "count": 1}] res=[{"id": "create:small_tuff_brick_wall", "count": 1}] x={"mod": "minecraft", "file": "small_tuff_brick_wall_from_stone_types_tuff_stonecutting"}
+
+=== 64 create:small_veridium_brick_stairs | 辉绿岩小砖块楼梯 | Small Veridium Brick Stairs
+R[crafting_shaped] pat=['X  ', 'XX ', 'XXX'] key={"X": {"id": "create:small_veridium_bricks", "count": 1}} res=[{"id": "create:small_veridium_brick_stairs", "count": 4}] x={"mod": "minecraft", "file": "small_veridium_brick_stairs"}
+R[stonecutting] ing=[{"tag": "create:stone_types/veridium", "count": 1}] res=[{"id": "create:small_veridium_brick_stairs", "count": 1}] x={"mod": "minecraft", "file": "small_veridium_brick_stairs_from_stone_types_veridium_stonecutting"}
+
+=== 65 create:flywheel | 飞轮 | Flywheel
+R[crafting_shaped] pat=['CCC', 'CAC', 'CCC'] key={"A": {"id": "create:shaft", "count": 1}, "C": {"tag": "forge:ingots/brass", "count": 1}} res=[{"id": "create:flywheel", "count": 1}] x={"mod": "minecraft", "file": "crafting/kinetics/flywheel"}
+
+=== 66 create:gearshift | 反转齿轮箱 | Gearshift
+R[crafting_shapeless] ing=[{"id": "create:andesite_casing", "count": 1}, {"id": "create:cogwheel", "count": 1}, {"tag": "forge:dusts/redstone", "count": 1}] res=[{"id": "create:gearshift", "count": 1}] x={"mod": "minecraft", "file": "crafting/kinetics/gearshift"}
+
+=== 67 create:mechanical_piston | 动力活塞 | Mechanical Piston
+R[crafting_shaped] pat=['B', 'C', 'I'] key={"B": {"tag": "minecraft:wooden_slabs", "count": 1}, "C": {"id": "create:andesite_casing", "count": 1}, "I": {"id": "create:piston_extension_pole", "count": 1}} res=[{"id": "create:mechanical_piston", "count": 1}] x={"mod": "minecraft", "file": "crafting/kinetics/mechanical_piston"}
+
+=== 68 create:schematic_and_quill | 蓝图与笔 | Schematic And Quill
+R[crafting_shapeless] ing=[{"id": "create:empty_schematic", "count": 1}, {"tag": "forge:feathers", "count": 1}] res=[{"id": "create:schematic_and_quill", "count": 1}] x={"mod": "minecraft", "file": "crafting/schematics/schematic_and_quill"}
+
+=== 69 create:small_deepslate_brick_wall | 深板岩小砖块墙 | Small Deepslate Brick Wall
+R[crafting_shaped] pat=['XXX', 'XXX'] key={"X": {"id": "create:small_deepslate_bricks", "count": 1}} res=[{"id": "create:small_deepslate_brick_wall", "count": 6}] x={"mod": "minecraft", "file": "small_deepslate_brick_wall"}
+R[stonecutting] ing=[{"tag": "create:stone_types/deepslate", "count": 1}] res=[{"id": "create:small_deepslate_brick_wall", "count": 1}] x={"mod": "minecraft", "file": "small_deepslate_brick_wall_from_stone_types_deepslate_stonecutting"}
+
+=== 70 create:small_diorite_brick_wall | 闪长岩小砖块墙 | Small Diorite Brick Wall
+R[crafting_shaped] pat=['XXX', 'XXX'] key={"X": {"id": "create:small_diorite_bricks", "count": 1}} res=[{"id": "create:small_diorite_brick_wall", "count": 6}] x={"mod": "minecraft", "file": "small_diorite_brick_wall"}
+R[stonecutting] ing=[{"tag": "create:stone_types/diorite", "count": 1}] res=[{"id": "create:small_diorite_brick_wall", "count": 1}] x={"mod": "minecraft", "file": "small_diorite_brick_wall_from_stone_types_diorite_stonecutting"}
+

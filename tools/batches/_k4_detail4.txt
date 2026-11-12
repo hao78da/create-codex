@@ -1,0 +1,23 @@
+create:copper_nugget :: {"type": "crushing", "mod": "create", "file": "tuff", "ingredients": [{"id": "minecraft:tuff", "count": 1}], "results": [{"id": "create:copper_nugget", "count": 1}], "processingTime": 350}
+create:copper_nugget :: {"type": "crushing", "mod": "create", "file": "veridium", "ingredients": [{"id": "create:veridium", "count": 1}], "results": [{"id": "create:copper_nugget", "count": 1}], "processingTime": 250}
+create:crushed_raw_copper :: {"type": "crushing", "mod": "create", "file": "crushing/veridium", "processingTime": 250, "ingredients": [{"id": "create:veridium", "count": 1}], "results": [{"id": "create:crushed_raw_copper", "count": 1}, {"id": "create:copper_nugget", "count": 1}]}
+create:crushed_raw_copper :: {"type": "crushing", "mod": "create", "file": "veridium", "ingredients": [{"id": "create:veridium", "count": 1}], "results": [{"id": "create:crushed_raw_copper", "count": 1}], "processingTime": 250}
+create:crushed_raw_gold :: {"type": "crushing", "mod": "create", "file": "crushing/ochrum", "processingTime": 250, "ingredients": [{"id": "create:ochrum", "count": 1}], "results": [{"id": "create:crushed_raw_gold", "count": 1}, {"id": "minecraft:gold_nugget", "count": 1}]}
+create:crushed_raw_gold :: {"type": "crushing", "mod": "create", "file": "ochrum", "ingredients": [{"id": "create:ochrum", "count": 1}], "results": [{"id": "create:crushed_raw_gold", "count": 1}], "processingTime": 250}
+create:crushed_raw_iron :: {"type": "crushing", "mod": "create", "file": "crushing/crimsite", "processingTime": 250, "ingredients": [{"id": "create:crimsite", "count": 1}], "results": [{"id": "create:crushed_raw_iron", "count": 1}, {"id": "minecraft:iron_nugget", "count": 1}]}
+create:crushed_raw_iron :: {"type": "crushing", "mod": "create", "file": "crimsite", "ingredients": [{"id": "create:crimsite", "count": 1}], "results": [{"id": "create:crushed_raw_iron", "count": 1}], "processingTime": 250}
+create:crushed_raw_zinc :: {"type": "crushing", "mod": "create", "file": "crushing/asurine", "processingTime": 250, "ingredients": [{"id": "create:asurine", "count": 1}], "results": [{"id": "create:crushed_raw_zinc", "count": 1}, {"id": "create:zinc_nugget", "count": 1}]}
+create:crushed_raw_zinc :: {"type": "crushing", "mod": "create", "file": "asurine", "ingredients": [{"id": "create:asurine", "count": 1}], "results": [{"id": "create:crushed_raw_zinc", "count": 1}], "processingTime": 250}
+create:zinc_nugget :: {"type": "crushing", "mod": "create", "file": "asurine", "ingredients": [{"id": "create:asurine", "count": 1}], "results": [{"id": "create:zinc_nugget", "count": 1}], "processingTime": 250}
+create:zinc_nugget :: {"type": "crushing", "mod": "create", "file": "tuff", "ingredients": [{"id": "minecraft:tuff", "count": 1}], "results": [{"id": "create:zinc_nugget", "count": 1}], "processingTime": 350}
+
+=== sleepers tag / misc tags ===
+items/sleepers.json: {
+  "values": [
+    "minecraft:stone_slab",
+    "minecraft:smooth_stone_slab",
+    "minecraft:andesite_slab"
+  ]
+}
+
+=== worldgen strata dirs ===

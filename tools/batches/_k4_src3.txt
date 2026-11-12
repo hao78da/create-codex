@@ -1,0 +1,53 @@
+﻿=== funnel redstone/filter ===
+FunnelBlockEntity.java:21: import com.simibubi.create.foundation.blockEntity.behaviour.filtering.FilteringBehaviour;
+FunnelBlockEntity.java:49: private FilteringBehaviour filtering;
+FunnelBlockEntity.java:72: if (state.getOptionalValue(BlockStateProperties.POWERED)
+FunnelBlockEntity.java:103: // Redstone resets the extraction cooldown
+FunnelBlockEntity.java:243: if (!supportsAmountOnFilter())
+FunnelBlockEntity.java:245: int amountToExtract = invManipulation.getAmountFromFilter();
+FunnelBlockEntity.java:246: if (!filtering.isActive())
+FunnelBlockEntity.java:252: if (!supportsAmountOnFilter() || !filtering.isActive())
+FunnelBlockEntity.java:254: return invManipulation.getModeFromFilter();
+FunnelBlockEntity.java:270: filtering = new FilteringBehaviour(this, new FunnelFilterSlotPositioning());
+FunnelBlockEntity.java:271: filtering.showCountWhen(this::supportsAmountOnFilter);
+FunnelBlockEntity.java:272: filtering.onlyActiveWhen(this::supportsFiltering);
+FunnelBlockEntity.java:273: filtering.withCallback($ -> invVersionTracker.reset());
+FunnelBlockEntity.java:274: behaviours.add(filtering);
+FunnelBlockEntity.java:281: private boolean supportsAmountOnFilter() {
+FunnelBlockEntity.java:306: private boolean supportsFiltering() {
+FunnelBlockEntity.java:313: if (!filtering.test(inserted))
+AbstractFunnelBlock.java:13: import com.simibubi.create.foundation.blockEntity.behaviour.filtering.FilteringBehaviour;
+AbstractFunnelBlock.java:43: public static final BooleanProperty POWERED = BlockStateProperties.POWERED;
+AbstractFunnelBlock.java:47: registerDefaultState(defaultBlockState().setValue(POWERED, false)
+AbstractFunnelBlock.java:58: return withWater(defaultBlockState().setValue(POWERED, context.getLevel()
+AbstractFunnelBlock.java:81: super.createBlockStateDefinition(builder.add(POWERED, WATERLOGGED));
+AbstractFunnelBlock.java:99: boolean previouslyPowered = state.getValue(POWERED);
+AbstractFunnelBlock.java:100: if (previouslyPowered != worldIn.hasNeighborSignal(pos))
+AbstractFunnelBlock.java:101: worldIn.setBlock(pos, state.cycle(POWERED), 2);
+AbstractFunnelBlock.java:105: FilteringBehaviour filter = BlockEntityBehaviour.get(worldIn, pos, FilteringBehaviour.TYPE);
+AbstractFunnelBlock.java:109: if (filter != null && !filter.test(toInsert))
+BrassFunnelBlock.java:21: .setValue(POWERED, state.getValue(POWERED));
+FunnelBlock.java:10: import com.simibubi.create.foundation.blockEntity.behaviour.filtering.FilteringBehaviour;
+FunnelBlock.java:61: return blockstate.setValue(POWERED, state.getValue(POWERED));
+=== press modes ===
+BeltPressingCallbacks.java:16: import com.simibubi.create.content.kinetics.press.PressingBehaviour.Mode;
+BeltPressingCallbacks.java:31: behaviour.start(Mode.BELT);
+MechanicalPressBlock.java:6: import com.simibubi.create.content.processing.basin.BasinBlock;
+MechanicalPressBlock.java:40: return !BasinBlock.isBasin(worldIn, pos.below());
+MechanicalPressBlockEntity.java:10: import com.simibubi.create.content.kinetics.press.PressingBehaviour.Mode;
+MechanicalPressBlockEntity.java:12: import com.simibubi.create.content.processing.basin.BasinBlockEntity;
+MechanicalPressBlockEntity.java:13: import com.simibubi.create.content.processing.basin.BasinOperatingBlockEntity;
+MechanicalPressBlockEntity.java:42: public class MechanicalPressBlockEntity extends BasinOperatingBlockEntity implements PressingBehaviourSpecifics {
+MechanicalPressBlockEntity.java:65: registerAwardables(behaviours, AllAdvancements.PRESS, AllAdvancements.COMPACTING,
+MechanicalPressBlockEntity.java:84: public boolean tryProcessInBasin(boolean simulate) {
+MechanicalPressBlockEntity.java:85: applyBasinRecipe();
+MechanicalPressBlockEntity.java:87: Optional<BasinBlockEntity> basin = getBasin();
+MechanicalPressBlockEntity.java:88: if (basin.isPresent()) {
+MechanicalPressBlockEntity.java:89: SmartInventory inputs = basin.get()
+MechanicalPressBlockEntity.java:173: if (pressingBehaviour.onBasin() && matchBasinRecipe(currentRecipe)
+MechanicalPressBlockEntity.java:174: && getBasin().filter(BasinBlockEntity::canContinueProcessing)
+MechanicalPressBlockEntity.java:176: startProcessingBasin();
+MechanicalPressBlockEntity.java:178: basinChecker.scheduleUpdate();
+MechanicalPressBlockEntity.java:204: || recipe.getType() == AllRecipeTypes.COMPACTING.getType();
+MechanicalPressBlockEntity.java:228: public void startProcessingBasin() {
+=== crushing speed ===

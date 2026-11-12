@@ -1,0 +1,31 @@
+﻿=== arm files ===
+\content\equipment\armor\AllArmorMaterials.java
+\content\equipment\armor\BacktankArmorLayer.java
+\content\equipment\armor\BaseArmorItem.java
+\content\equipment\armor\CardboardArmorHandler.java
+\content\equipment\armor\CardboardArmorHandlerClient.java
+\content\equipment\armor\CardboardArmorItem.java
+\content\equipment\armor\CardboardArmorStealthOverlay.java
+\content\equipment\armor\TrimmableArmorModelGenerator.java
+\content\equipment\hats\CreateHatArmorLayer.java
+\content\kinetics\mechanicalArm\AllArmInteractionPointTypes.java
+\content\kinetics\mechanicalArm\ArmAngleTarget.java
+\content\kinetics\mechanicalArm\ArmBlock.java
+\content\kinetics\mechanicalArm\ArmBlockEntity.java
+\content\kinetics\mechanicalArm\ArmInteractionPoint.java
+\content\kinetics\mechanicalArm\ArmInteractionPointHandler.java
+\content\kinetics\mechanicalArm\ArmInteractionPointType.java
+\content\kinetics\mechanicalArm\ArmItem.java
+\content\kinetics\mechanicalArm\ArmPlacementPacket.java
+\content\kinetics\mechanicalArm\ArmRenderer.java
+\content\kinetics\mechanicalArm\ArmVisual.java
+\foundation\gui\menu\ClearMenuPacket.java
+\foundation\item\CustomArmPoseItem.java
+\foundation\item\CustomRenderedArmorItem.java
+\foundation\item\LayeredArmorItem.java
+\foundation\mixin\ArmorTrimMixin.java
+\foundation\mixin\accessor\HumanoidArmorLayerAccessor.java
+\foundation\mixin\client\HumanoidArmorLayerMixin.java
+\infrastructure\ponder\scenes\ArmScenes.java
+
+=== config defaults ===

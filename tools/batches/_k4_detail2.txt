@@ -1,0 +1,243 @@
+== machine/material items ==
+
+### create:ochrum | Ochrum | tooltip=null
+  recipes(1):
+   - {"type": "stonecutting", "mod": "minecraft", "file": "ochrum_from_stone_types_ochrum_stonecutting", "ingredients": [{"tag": "create:stone_types/ochrum", "count": 1}], "results": [{"id": "create:ochrum", "count": 1}]}
+  used_in(3):
+   * create:crushed_raw_gold [crushing] -> ""
+   * create:crushed_raw_gold [crushing] -> ""
+   * create:ochrum_pillar [stonecutting] -> ""
+
+### create:scorchia | Scorchia | tooltip=null
+  recipes(2):
+   - {"type": "crafting_shaped", "mod": "minecraft", "file": "crafting/palettes/scorchia", "results": [{"id": "create:scorchia", "count": 8}], "pattern": ["###", "#D#", "###"], "key": {"#": {"id": "create:scoria", "count": 1}, "D": {"tag": "forge:dyes/black", "count": 1}}}
+   - {"type": "stonecutting", "mod": "minecraft", "file": "scorchia_from_stone_types_scorchia_stonecutting", "ingredients": [{"tag": "create:stone_types/scorchia", "count": 1}], "results": [{"id": "create:scorchia", "count": 1}]}
+  used_in(1):
+   * create:scorchia_pillar [stonecutting] -> ""
+
+### create:scoria | Scoria | tooltip=null
+  recipes(2):
+   - {"type": "stonecutting", "mod": "minecraft", "file": "scoria_from_stone_types_scoria_stonecutting", "ingredients": [{"tag": "create:stone_types/scoria", "count": 1}], "results": [{"id": "create:scoria", "count": 1}]}
+   - {"type": "smelting", "mod": "minecraft", "file": "scoria", "ingredients": [{"id": "minecraft:soul_sand", "count": 1}], "results": [{"id": "create:scoria", "count": 1}]}
+  used_in(2):
+   * create:scorchia [crafting_shaped] -> ""
+   * create:scoria_pillar [stonecutting] -> ""
+
+### create:crimsite | Crimsite | tooltip=null
+  recipes(1):
+   - {"type": "stonecutting", "mod": "minecraft", "file": "crimsite_from_stone_types_crimsite_stonecutting", "ingredients": [{"tag": "create:stone_types/crimsite", "count": 1}], "results": [{"id": "create:crimsite", "count": 1}]}
+  used_in(3):
+   * create:crimsite_pillar [stonecutting] -> ""
+   * create:crushed_raw_iron [crushing] -> ""
+   * create:crushed_raw_iron [crushing] -> ""
+
+### create:brass_funnel | Brass Funnel | tooltip=null
+  recipes(1):
+   - {"type": "crafting_shaped", "mod": "minecraft", "file": "crafting/logistics/brass_funnel", "results": [{"id": "create:brass_funnel", "count": 2}], "pattern": ["E", "A", "K"], "key": {"A": {"tag": "forge:ingots/brass", "count": 1}, "E": {"id": "create:electron_tube", "count": 1}, "K": {"id": "minecraft:dried_kelp", "count": 1}}}
+  used_in(0):
+
+### create:powdered_obsidian | Powdered Obsidian | tooltip=null
+  recipes(2):
+   - {"type": "crushing", "mod": "create", "file": "crushing/obsidian", "processingTime": 500, "ingredients": [{"id": "minecraft:obsidian", "count": 1}], "results": [{"id": "create:powdered_obsidian", "count": 1}, {"id": "minecraft:obsidian", "count": 1}]}
+   - {"type": "crushing", "mod": "create", "file": "obsidian", "ingredients": [{"id": "minecraft:obsidian", "count": 1}], "results": [{"id": "create:powdered_obsidian", "count": 1}], "processingTime": 500}
+  used_in(0):
+
+### create:track | Train Track | tooltip=null
+  recipes(1):
+   - {"type": "sequenced_assembly", "mod": "create", "file": "sequenced_assembly/track", "loops": 1, "ingredient": {"tag": "create:sleepers", "count": 1}, "results": [{"id": "create:track", "count": 1}], "sequence": [{"type": "deploying", "ingredients": [{"id": "create:incomplete_track", "count": 1}], "results": [{"id": "create:incomplete_track", "count": 1}]}, {"type": "deploying", "ingredients": [{"id": "create:incomplete_track", "count": 1}], "results": [{"id": "create:incomplete_track", "count": 1}]}, {"type": "pressing", "ingredients": [{"id": "create:incomplete_track", "count": 1}], "results": [{"id": "create:in
+  used_in(4):
+   * create:track_observer [crafting_shapeless] -> ""
+   * create:track_observer [crafting_shapeless] -> ""
+   * create:track_signal [crafting_shapeless] -> ""
+   * create:track_station [crafting_shapeless] -> ""
+
+### create:mechanical_saw | Mechanical Saw | tooltip=null
+  recipes(1):
+   - {"type": "crafting_shaped", "mod": "minecraft", "file": "crafting/kinetics/mechanical_saw", "results": [{"id": "create:mechanical_saw", "count": 1}], "pattern": [" A ", "AIA", " C "], "key": {"A": {"tag": "forge:plates/iron", "count": 1}, "C": {"id": "create:andesite_casing", "count": 1}, "I": {"tag": "forge:ingots/iron", "count": 1}}}
+  used_in(0):
+
+### create:andesite_funnel | Andesite Funnel | tooltip=null
+  recipes(1):
+   - {"type": "crafting_shaped", "mod": "minecraft", "file": "crafting/logistics/andesite_funnel", "results": [{"id": "create:andesite_funnel", "count": 2}], "pattern": ["A", "K"], "key": {"A": {"id": "create:andesite_alloy", "count": 1}, "K": {"id": "minecraft:dried_kelp", "count": 1}}}
+  used_in(0):
+
+### create:vertical_gearbox | Vertical Gearbox | tooltip=null
+  recipes(2):
+   - {"type": "crafting_shaped", "mod": "minecraft", "file": "crafting/kinetics/vertical_gearbox", "results": [{"id": "create:vertical_gearbox", "count": 1}], "pattern": ["C C", " B ", "C C"], "key": {"B": {"id": "create:andesite_casing", "count": 1}, "C": {"id": "create:cogwheel", "count": 1}}}
+   - {"type": "crafting_shapeless", "mod": "minecraft", "file": "crafting/kinetics/vertical_gearbox_from_conversion", "ingredients": [{"id": "create:gearbox", "count": 1}], "results": [{"id": "create:vertical_gearbox", "count": 1}]}
+  used_in(1):
+   * create:gearbox [crafting_shapeless] -> ""
+
+### create:mechanical_arm | Mechanical Arm | tooltip=null
+  recipes(1):
+   - {"type": "crafting_shaped", "mod": "minecraft", "file": "crafting/kinetics/mechanical_arm", "results": [{"id": "create:mechanical_arm", "count": 1}], "pattern": ["LLA", "L  ", "IC "], "key": {"A": {"id": "create:andesite_alloy", "count": 1}, "C": {"id": "create:brass_casing", "count": 1}, "I": {"id": "create:precision_mechanism", "count": 1}, "L": {"tag": "forge:plates/brass", "count": 1}}}
+  used_in(0):
+
+### create:brass_sheet | Brass Sheet | tooltip=null
+  recipes(2):
+   - {"type": "pressing", "mod": "create", "file": "pressing/brass_ingot", "ingredients": [{"tag": "forge:ingots/brass", "count": 1}], "results": [{"id": "create:brass_sheet", "count": 1}]}
+   - {"type": "pressing", "mod": "create", "file": "brass_ingot", "ingredients": [{"tag": "forge:ingots/brass", "count": 1}], "results": [{"id": "create:brass_sheet", "count": 1}]}
+  used_in(0):
+
+### create:mechanical_crafter | Mechanical Crafter | tooltip=null
+  recipes(1):
+   - {"type": "crafting_shaped", "mod": "minecraft", "file": "crafting/kinetics/mechanical_crafter", "results": [{"id": "create:mechanical_crafter", "count": 3}], "pattern": ["B", "C", "R"], "key": {"B": {"id": "create:electron_tube", "count": 1}, "C": {"id": "create:brass_casing", "count": 1}, "R": {"id": "minecraft:crafting_table", "count": 1}}}
+  used_in(0):
+
+### create:mechanical_press | Mechanical Press | tooltip=null
+  recipes(1):
+   - {"type": "crafting_shaped", "mod": "minecraft", "file": "crafting/kinetics/mechanical_press", "results": [{"id": "create:mechanical_press", "count": 1}], "pattern": ["S", "C", "I"], "key": {"C": {"id": "create:andesite_casing", "count": 1}, "I": {"tag": "forge:storage_blocks/iron", "count": 1}, "S": {"id": "create:shaft", "count": 1}}}
+  used_in(0):
+
+### create:gearbox | Gearbox | tooltip=null
+  recipes(2):
+   - {"type": "crafting_shaped", "mod": "minecraft", "file": "crafting/kinetics/gearbox", "results": [{"id": "create:gearbox", "count": 1}], "pattern": [" C ", "CBC", " C "], "key": {"B": {"id": "create:andesite_casing", "count": 1}, "C": {"id": "create:cogwheel", "count": 1}}}
+   - {"type": "crafting_shapeless", "mod": "minecraft", "file": "crafting/kinetics/gearbox_from_conversion", "ingredients": [{"id": "create:vertical_gearbox", "count": 1}], "results": [{"id": "create:gearbox", "count": 1}]}
+  used_in(1):
+   * create:vertical_gearbox [crafting_shapeless] -> ""
+
+### create:millstone | Millstone | tooltip=null
+  recipes(1):
+   - {"type": "crafting_shaped", "mod": "minecraft", "file": "crafting/kinetics/millstone", "results": [{"id": "create:millstone", "count": 1}], "pattern": ["C", "S", "I"], "key": {"C": {"id": "create:cogwheel", "count": 1}, "I": {"tag": "forge:stone", "count": 1}, "S": {"id": "create:andesite_casing", "count": 1}}}
+  used_in(0):
+
+### create:rose_quartz | Rose Quartz | tooltip=null
+  recipes(1):
+   - {"type": "crafting_shapeless", "mod": "minecraft", "file": "crafting/materials/rose_quartz", "ingredients": [{"tag": "forge:gems/quartz", "count": 1}, {"tag": "forge:dusts/redstone", "count": 1}, {"tag": "forge:dusts/redstone", "count": 1}, {"tag": "forge:dusts/redstone", "count": 1}, {"tag": "forge:dusts/redstone", "count": 1}, {"tag": "forge:dusts/redstone", "count": 1}, {"tag": "forge:dusts/redstone", "count": 1}, {"tag": "forge:dusts/redstone", "count": 1}, {"tag": "forge:dusts/redstone", "count": 1}], "results": [{"id": "create:rose_quartz", "count": 1}]}
+  used_in(6):
+   * create:polished_rose_quartz [sandpaper_polishing] -> ""
+   * create:rose_quartz_block [stonecutting] -> ""
+   * create:rose_quartz_lamp [crafting_shapeless] -> ""
+   * create:rose_quartz_tiles [crafting_shapeless] -> ""
+   * create:rose_quartz_tiles [stonecutting] -> ""
+   * create:small_rose_quartz_tiles [crafting_shapeless] -> ""
+
+### create:deployer | Deployer | tooltip=null
+  recipes(1):
+   - {"type": "crafting_shaped", "mod": "minecraft", "file": "crafting/kinetics/deployer", "results": [{"id": "create:deployer", "count": 1}], "pattern": ["B", "C", "I"], "key": {"B": {"id": "create:electron_tube", "count": 1}, "C": {"id": "create:andesite_casing", "count": 1}, "I": {"id": "create:brass_hand", "count": 1}}}
+  used_in(0):
+
+### create:zinc_ingot | Zinc Ingot | tooltip=null
+  recipes(5):
+   - {"type": "crafting_shaped", "mod": "minecraft", "file": "crafting/materials/zinc_ingot_from_compacting", "results": [{"id": "create:zinc_ingot", "count": 1}], "pattern": ["###", "###", "###"], "key": {"#": {"tag": "forge:nuggets/zinc", "count": 1}}}
+   - {"type": "crafting_shapeless", "mod": "minecraft", "file": "crafting/materials/zinc_ingot_from_decompacting", "ingredients": [{"tag": "forge:storage_blocks/zinc", "count": 1}], "results": [{"id": "create:zinc_ingot", "count": 9}]}
+   - {"type": "blasting", "mod": "minecraft", "file": "zinc_ingot_from_crushed", "ingredients": [{"id": "create:crushed_raw_zinc", "count": 1}], "results": [{"id": "create:zinc_ingot", "count": 1}]}
+   - {"type": "blasting", "mod": "minecraft", "file": "zinc_ingot_from_ore", "ingredients": [{"tag": "forge:ores/zinc", "count": 1}], "results": [{"id": "create:zinc_ingot", "count": 1}]}
+   - {"type": "blasting", "mod": "minecraft", "file": "zinc_ingot_from_raw_ore", "ingredients": [{"tag": "forge:raw_materials/zinc", "count": 1}], "results": [{"id": "create:zinc_ingot", "count": 1}]}
+  used_in(0):
+
+### create:rotation_speed_controller | Rotation Speed Controller | tooltip=null
+  recipes(1):
+   - {"type": "crafting_shaped", "mod": "minecraft", "file": "crafting/kinetics/rotation_speed_controller", "results": [{"id": "create:rotation_speed_controller", "count": 1}], "pattern": ["B", "C"], "key": {"B": {"id": "create:precision_mechanism", "count": 1}, "C": {"id": "create:brass_casing", "count": 1}}}
+  used_in(0):
+
+### create:basin | Basin | tooltip=null
+  recipes(1):
+   - {"type": "crafting_shaped", "mod": "minecraft", "file": "crafting/kinetics/basin", "results": [{"id": "create:basin", "count": 1}], "pattern": ["A A", "AAA"], "key": {"A": {"id": "create:andesite_alloy", "count": 1}}}
+  used_in(0):
+
+### create:iron_sheet | Iron Sheet | tooltip=null
+  recipes(2):
+   - {"type": "pressing", "mod": "create", "file": "pressing/iron_ingot", "ingredients": [{"tag": "forge:ingots/iron", "count": 1}], "results": [{"id": "create:iron_sheet", "count": 1}]}
+   - {"type": "pressing", "mod": "create", "file": "iron_ingot", "ingredients": [{"tag": "forge:ingots/iron", "count": 1}], "results": [{"id": "create:iron_sheet", "count": 1}]}
+  used_in(0):
+
+### create:crushing_wheel | Crushing Wheel | tooltip=null
+  recipes(1):
+   - {"type": "mechanical_crafting", "mod": "create", "file": "mechanical_crafting/crushing_wheel", "acceptMirrored": false, "results": [{"id": "create:crushing_wheel", "count": 2}], "pattern": [" AAA ", "AAPAA", "APSPA", "AAPAA", " AAA "], "key": {"A": {"id": "create:andesite_alloy", "count": 1}, "P": {"tag": "minecraft:planks", "count": 1}, "S": {"tag": "forge:stone", "count": 1}}}
+  used_in(1):
+   * create:mechanical_roller [crafting_shaped] -> ""
+
+### create:large_water_wheel | Large Water Wheel | tooltip=null
+  recipes(1):
+   - {"type": "crafting_shaped", "mod": "minecraft", "file": "crafting/kinetics/large_water_wheel", "results": [{"id": "create:large_water_wheel", "count": 1}], "pattern": ["SSS", "SCS", "SSS"], "key": {"C": {"id": "create:water_wheel", "count": 1}, "S": {"tag": "minecraft:planks", "count": 1}}}
+  used_in(0):
+
+### create:copper_sheet | Copper Sheet | tooltip=null
+  recipes(2):
+   - {"type": "pressing", "mod": "create", "file": "pressing/copper_ingot", "ingredients": [{"tag": "forge:ingots/copper", "count": 1}], "results": [{"id": "create:copper_sheet", "count": 1}]}
+   - {"type": "pressing", "mod": "create", "file": "copper_ingot", "ingredients": [{"tag": "forge:ingots/copper", "count": 1}], "results": [{"id": "create:copper_sheet", "count": 1}]}
+  used_in(0):
+
+### create:sturdy_sheet | Sturdy Sheet | tooltip=null
+  recipes(1):
+   - {"type": "sequenced_assembly", "mod": "create", "file": "sequenced_assembly/sturdy_sheet", "loops": 1, "ingredient": {"tag": "forge:dusts/obsidian", "count": 1}, "results": [{"id": "create:sturdy_sheet", "count": 1}], "sequence": [{"type": "filling", "ingredients": [{"id": "create:unprocessed_obsidian_sheet", "count": 1}, {"fluid": "minecraft:lava", "amount": 500}], "results": [{"id": "create:unprocessed_obsidian_sheet", "count": 1}]}, {"type": "pressing", "ingredients": [{"id": "create:unprocessed_obsidian_sheet", "count": 1}], "results": [{"id": "create:unprocessed_obsidian_sheet", "count": 1}]}, {"type": "pres
+  used_in(0):
+
+### create:belt | Belt | tooltip=null
+  recipes(0):
+  used_in(1):
+   * create:belt_connector [crafting_shaped] -> ""
+
+### create:large_cogwheel | Large Cogwheel | tooltip=null
+  recipes(4):
+   - {"type": "crafting_shapeless", "mod": "minecraft", "file": "crafting/kinetics/large_cogwheel", "ingredients": [{"id": "create:shaft", "count": 1}, {"tag": "minecraft:planks", "count": 1}, {"tag": "minecraft:planks", "count": 1}], "results": [{"id": "create:large_cogwheel", "count": 1}]}
+   - {"type": "crafting_shapeless", "mod": "minecraft", "file": "crafting/kinetics/large_cogwheel_from_little", "ingredients": [{"id": "create:cogwheel", "count": 1}, {"tag": "minecraft:planks", "count": 1}], "results": [{"id": "create:large_cogwheel", "count": 1}]}
+   - {"type": "deploying", "mod": "create", "file": "deploying/large_cogwheel", "ingredients": [{"id": "create:cogwheel", "count": 1}, {"tag": "minecraft:planks", "count": 1}], "results": [{"id": "create:large_cogwheel", "count": 1}]}
+   - {"type": "deploying", "mod": "create", "file": "large_cogwheel", "ingredients": [{"id": "create:cogwheel", "count": 1}, {"tag": "minecraft:planks", "count": 1}], "results": [{"id": "create:large_cogwheel", "count": 1}]}
+  used_in(2):
+   * create:chain_conveyor [crafting_shaped] -> ""
+   * create:precision_mechanism [sequenced_assembly] -> ""
+
+### create:cogwheel | Cogwheel | tooltip=null
+  recipes(3):
+   - {"type": "crafting_shapeless", "mod": "minecraft", "file": "crafting/kinetics/cogwheel", "ingredients": [{"id": "create:shaft", "count": 1}, {"tag": "minecraft:planks", "count": 1}], "results": [{"id": "create:cogwheel", "count": 1}]}
+   - {"type": "deploying", "mod": "create", "file": "deploying/cogwheel", "ingredients": [{"id": "create:shaft", "count": 1}, {"tag": "minecraft:planks", "count": 1}], "results": [{"id": "create:cogwheel", "count": 1}]}
+   - {"type": "deploying", "mod": "create", "file": "cogwheel", "ingredients": [{"id": "create:shaft", "count": 1}, {"tag": "minecraft:planks", "count": 1}], "results": [{"id": "create:cogwheel", "count": 1}]}
+  used_in(15):
+   * create:brown_toolbox [crafting_shaped] -> ""
+   * create:gantry_carriage [crafting_shaped] -> ""
+   * create:gearbox [crafting_shaped] -> ""
+   * create:gearshift [crafting_shapeless] -> ""
+   * create:large_cogwheel [crafting_shapeless] -> ""
+   * create:large_cogwheel [deploying] -> ""
+   * create:large_cogwheel [deploying] -> ""
+   * create:mechanical_mixer [crafting_shaped] -> ""
+   * create:mechanical_pump [crafting_shapeless] -> ""
+   * create:millstone [crafting_shaped] -> ""
+   * create:precision_mechanism [sequenced_assembly] -> ""
+   * create:sequenced_gearshift [crafting_shapeless] -> ""
+   * create:vertical_gearbox [crafting_shaped] -> ""
+   * create:weighted_ejector [crafting_shaped] -> ""
+
+### create:precision_mechanism | Precision Mechanism | tooltip=null
+  recipes(1):
+   - {"type": "sequenced_assembly", "mod": "create", "file": "sequenced_assembly/precision_mechanism", "loops": 5, "ingredient": {"tag": "forge:plates/gold", "count": 1}, "results": [{"id": "create:precision_mechanism", "count": 1}, {"id": "create:golden_sheet", "count": 1}, {"id": "create:andesite_alloy", "count": 1}, {"id": "create:cogwheel", "count": 1}, {"id": "minecraft:gold_nugget", "count": 1}, {"id": "create:shaft", "count": 1}, {"id": "create:crushed_raw_gold", "count": 1}, {"id": "minecraft:iron_ingot", "count": 1}, {"id": "minecraft:clock", "count": 1}], "sequence": [{"type": "deploying", "ingredients": [{"
+  used_in(7):
+   * create:controls [crafting_shaped] -> ""
+   * create:extendo_grip [mechanical_crafting] -> ""
+   * create:factory_gauge [crafting_shapeless] -> ""
+   * create:mechanical_arm [crafting_shaped] -> ""
+   * create:potato_cannon [mechanical_crafting] -> ""
+   * create:rotation_speed_controller [crafting_shaped] -> ""
+   * create:wand_of_symmetry [mechanical_crafting] -> ""
+
+### create:wrench | Wrench | tooltip=null
+  recipes(1):
+   - {"type": "crafting_shaped", "mod": "minecraft", "file": "crafting/kinetics/wrench", "results": [{"id": "create:wrench", "count": 1}], "pattern": ["GG", "GP", " S"], "key": {"G": {"tag": "forge:plates/gold", "count": 1}, "P": {"id": "create:cogwheel", "count": 1}, "S": {"tag": "forge:rods/wooden", "count": 1}}}
+  used_in(0):
+
+== recipe types ==
+{"crafting_shaped": 355, "crafting_shapeless": 268, "mixing": 5, "stonecutting": 304, "item_application": 8, "compacting": 2, "filling": 10, "pressing": 10, "crushing": 175, "deploying": 136, "splashing": 6, "mechanical_crafting": 4, "haunting": 1, "smithing_transform": 6, "sandpaper_polishing": 1, "sequenced_assembly": 3, "smelting": 1, "cutting": 2, "milling": 2, "blasting": 3}
+
+## create:milling -> outputs(0): 
+
+## create:cutting -> outputs(0): 
+
+## create:pressing -> outputs(0): 
+
+## create:crushing -> outputs(0): 
+
+## create:sanding -> outputs(0): 
+
+## create:polishing -> outputs(0): 
+
+## create:mixing -> outputs(0): 
+
+## create:compacting -> outputs(0): 
+
+## create:filling -> outputs(0): 
+
+## create:deploying -> outputs(0): 
+
+## create:item_application -> outputs(0): 

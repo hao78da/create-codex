@@ -1,0 +1,189 @@
+=== create:extendo_grip
+   item.create.extendo_grip.tooltip.behaviour1 = Increases _reach distance_ of items used in the _Main-Hand_.
+   item.create.extendo_grip.tooltip.behaviour2 = _No_ _Durability_ will be used. Instead, _Air_ _pressure_ is drained from the Tank
+   item.create.extendo_grip.tooltip.condition1 = When in Off-Hand
+   item.create.extendo_grip.tooltip.condition2 = While wearing Backtank
+   item.create.extendo_grip.tooltip.summary = Greatly _increases reach distance_ of the wielder. Can be powered with _Air_ _Pressure_ from a _Backtank_
+=== create:mechanical_plough
+   create.ponder.mechanical_plough.header = Using Mechanical Ploughs on Contraptions
+   create.ponder.mechanical_plough.text_1 = Whenever Ploughs are moved as part of an animated Contraption...
+   create.ponder.mechanical_plough.text_2 = ...they will break blocks without a solid collision hitbox
+   create.ponder.mechanical_plough.text_3 = Additionally, ploughs can create farmland
+   create.ponder.mechanical_plough.text_4 = ...they can also launch entities without hurting them
+=== create:pulse_extender
+   create.ponder.pulse_extender.header = Controlling signals using Pulse Extenders
+   create.ponder.pulse_extender.text_1 = Pulse Extenders can lengthen a signal passing through
+   create.ponder.pulse_extender.text_2 = They activate after a short delay...
+   create.ponder.pulse_extender.text_3 = ...and cool down for the configured duration
+   create.ponder.pulse_extender.text_4 = Using the value panel, the discharge time can be configured
+   create.ponder.pulse_extender.text_5 = The configured duration can range up to an hour
+=== create:redstone_requester
+   create.ponder.redstone_requester.header = Automated orders with Redstone Requesters
+   create.ponder.redstone_requester.text_1 = Right-click a Stock link before placement to connect to its network
+   create.ponder.redstone_requester.text_2 = Just like Stock tickers, Redstone requesters can order items from the logistics network
+   create.ponder.redstone_requester.text_3 = Right-click the requester to open its configuration UI
+   create.ponder.redstone_requester.text_4 = The order set in the UI will be requested on every redstone pulse
+   create.ponder.redstone_requester.text_5 = Alternatively, the requester can be fully configured before placement
+=== create:stock_link
+   create.ponder.stock_link.header = Logistics Networks and the Stock Link
+   create.ponder.stock_link.text_1 = When placed, Stock Links create a new stock network
+   create.ponder.stock_link.text_2 = Right-click an existing link before placing it to bind them
+   create.ponder.stock_link.text_3 = Stock-linked packagers make their inventory available to the network
+   create.ponder.stock_link.text_4 = Other components on the network can now find and request their items
+   create.ponder.stock_link.text_5 = On request, items from the inventories will be placed into packages
+=== create:analog_lever
+   create.ponder.analog_lever.header = Controlling signals using the Analog Lever
+   create.ponder.analog_lever.text_1 = Analog Levers make for a compact and precise source of redstone power
+   create.ponder.analog_lever.text_2 = Right-click to increase its analog power output
+   create.ponder.analog_lever.text_3 = Right-click while Sneaking to decrease the power output again
+=== create:blaze_burner
+   create.ponder.blaze_burner.header = Feeding Blaze Burners
+   create.ponder.blaze_burner.text_1 = Blaze Burners can provide Heat to Items processed in a Basin
+   create.ponder.blaze_burner.text_2 = For this, the Blaze has to be fed with flammable items
+   create.ponder.blaze_burner.text_3 = With a Blaze Cake, the Burner can reach an even stronger level of heat
+   create.ponder.blaze_burner.text_4 = The feeding process can be automated using Deployers or Mechanical Arms
+   create.ponder.empty_blaze_burner.header = Using Empty Blaze Burners
+=== create:controls
+   create.ponder.contraption_controls.header = Using Contraption Controls
+   create.ponder.contraption_controls.text_1 = Actors on moving contraptions are always active by default
+   create.ponder.contraption_controls.text_2 = Contraption Controls can be used to toggle them on the fly
+   create.ponder.contraption_controls.text_3 = They can be attached anywhere on the contraption
+   create.ponder.contraption_controls.text_4 = While disassembled, the filter can be changed to target specific types of actors
+   create.ponder.contraption_controls.text_5 = If it is redstone-activated during assembly...
+=== create:mechanical_pump
+   create.ponder.mechanical_pump_flow.header = Fluid Transportation using Mechanical Pumps
+   create.ponder.mechanical_pump_flow.text_1 = Mechanical Pumps govern the flow of their attached pipe networks
+   create.ponder.mechanical_pump_flow.text_2 = Their arrow indicates the direction of flow
+   create.ponder.mechanical_pump_flow.text_3 = The network behind is now pulling fluids...
+   create.ponder.mechanical_pump_flow.text_4 = ...while the network in front is transferring it outward
+   create.ponder.mechanical_pump_flow.text_5 = The pumps direction is unaffected by the input rotation
+=== create:speedometer
+   create.ponder.speedometer.header = Monitoring Kinetic information using the Speedometer
+   create.ponder.speedometer.text_1 = The Speedometer displays the current Speed of attached components
+   create.ponder.speedometer.text_2 = When wearing Engineers' Goggles, the player can get more detailed information from the Gauge
+   create.ponder.speedometer.text_3 = Comparators can emit analog Restone Signals relative to the Speedometer's measurements
+=== create:weighted_ejector
+   create.ponder.weighted_ejector.header = Using Weighted Ejectors
+   create.ponder.weighted_ejector.text_1 = Sneak and Right-Click holding an Ejector to select its target location
+   create.ponder.weighted_ejector.text_10 = It is now limited to this stack size, and only activates when its held stack reaches this amount
+   create.ponder.weighted_ejector.text_11 = Mobs and Players will always trigger an Ejector when stepping on it
+   create.ponder.weighted_ejector.text_2 = The placed ejector will now launch objects to the marked location
+   create.ponder.weighted_ejector.text_3 = A valid target can be at any height or distance within range
+=== create:fluid_pipe
+   create.ponder.encased_fluid_pipe.header = Encasing Fluid Pipes
+   create.ponder.encased_fluid_pipe.text_1 = Copper Casing can be used to decorate Fluid Pipes
+   create.ponder.encased_fluid_pipe.text_2 = Aside from being concealed, Encased Pipes are locked into their connectivity state
+   create.ponder.encased_fluid_pipe.text_3 = It will no longer react to any neighbouring blocks being added or removed
+   create.ponder.fluid_pipe_flow.header = Moving Fluids using Copper Pipes
+   create.ponder.fluid_pipe_flow.text_1 = Fluid Pipes can connect two or more fluid sources and targets
+=== create:smart_chute
+   create.ponder.smart_chute.header = Filtering Items using Smart Chutes
+   create.ponder.smart_chute.text_1 = Smart Chutes are vertical chutes with additional control
+   create.ponder.smart_chute.text_2 = Items in the filter slot specify what to extract or transfer
+   create.ponder.smart_chute.text_3 = Use the value panel to specify the extracted stack size
+   create.ponder.smart_chute.text_4 = Redstone power will prevent Smart Chutes from acting.
+=== create:clipboard
+   block.create.clipboard.tooltip.behaviour1 = Opens the _Interface_. _Sneak-Click_ to _place_ it on a surface.
+   block.create.clipboard.tooltip.behaviour2 = Some blocks' _settings_, such as filters, can be _copied (R-Click)_ and _applied (L-Click)_ elsewhere.
+   block.create.clipboard.tooltip.condition1 = When R-Clicked
+   block.create.clipboard.tooltip.condition2 = When Used on Blocks
+   block.create.clipboard.tooltip.summary = _Keeps your notes_ and makes you look more professional.
+=== create:experience_nugget
+   item.create.experience_nugget.tooltip.behaviour1 = _Redeems_ _Experience_ points contained within.
+   item.create.experience_nugget.tooltip.condition1 = When Used
+   item.create.experience_nugget.tooltip.summary = A speck of _inspiration_ from your fantastic inventions.
+=== create:schematicannon
+   block.create.schematicannon.tooltip.behaviour1 = Opens the _Interface_
+   block.create.schematicannon.tooltip.condition1 = When R-Clicked
+   block.create.schematicannon.tooltip.summary = Shoots blocks to recreate a deployed _Schematic_ in the World. Uses items from adjacent Inventories and _Gunpowder_ as fuel.
+=== create:spout
+   create.ponder.spout_filling.header = Filling Items using a Spout
+   create.ponder.spout_filling.text_1 = The Spout can fill fluid holding items provided beneath it
+   create.ponder.spout_filling.text_2 = The content of a Spout cannot be accessed manually
+   create.ponder.spout_filling.text_3 = Instead, Pipes can be used to supply it with fluids
+   create.ponder.spout_filling.text_4 = The Input items can be placed on a Depot under the Spout
+   create.ponder.spout_filling.text_5 = When items are provided on a belt...
+=== create:mechanical_harvester
+   create.ponder.mechanical_harvester.header = Using Mechanical Harvesters on Contraptions
+   create.ponder.mechanical_harvester.text_1 = Whenever Harvesters are moved as part of an animated Contraption...
+   create.ponder.mechanical_harvester.text_2 = They will harvest and reset any mature crops on their way
+=== create:rope_pulley
+   create.ponder.rope_pulley.header = Moving Structures using Rope Pulleys
+   create.ponder.rope_pulley.text_1 = Rope Pulleys can move blocks vertically when given Rotational Force
+   create.ponder.rope_pulley.text_2 = Direction and Speed of movement depend on the Rotational Input
+   create.ponder.rope_pulley_attachment.header = Moving Pulleys as part of a Contraption
+   create.ponder.rope_pulley_attachment.text_1 = Whenever Pulleys are themselves being moved by a Contraption...
+   create.ponder.rope_pulley_attachment.text_2 = ...its attached structure will be dragged with it
+=== create:chute
+   create.ponder.chute.header = Transporting Items downward via Chutes
+   create.ponder.chute.text_1 = Chutes can transport items vertically from and to inventories
+   create.ponder.chute.text_2 = Using the Wrench, a window can be created
+   create.ponder.chute.text_3 = Using Industrial Iron Blocks, chutes can be encased
+   create.ponder.chute.text_4 = Placing chutes targeting the side faces of another will make it diagonal
+   create.ponder.chute_upward.header = Transporting Items upward via Chutes
+=== create:stressometer
+   create.ponder.stressometer.header = Monitoring Kinetic information using the Stressometer
+   create.ponder.stressometer.text_1 = The Stressometer displays the current Stress Capacity of the attached kinetic network
+   create.ponder.stressometer.text_2 = When wearing Engineers' Goggles, the player can get more detailed information from the Gauge
+   create.ponder.stressometer.text_3 = Comparators can emit analog Restone Signals relative to the Stressometer's measurements
+=== create:gantry_carriage
+   create.ponder.gantry_carriage.header = Using Gantry Carriages
+   create.ponder.gantry_carriage.text_1 = Gantry Carriages can mount to and slide along a Gantry Shaft.
+   create.ponder.gantry_carriage.text_2 = Gantry setups can move attached Blocks.
+=== create:mechanical_roller
+   create.ponder.mechanical_roller_fill.header = Filling terrain with the Roller
+   create.ponder.mechanical_roller_fill.text_1 = While disassembled, rollers can be set to other modes
+   create.ponder.mechanical_roller_fill.text_2 = The 'fill' modes can help to bridge gaps between pavement and terrain
+   create.ponder.mechanical_roller_fill.text_3 = On 'straight fill', they will place simple columns down to the surface
+   create.ponder.mechanical_roller_fill.text_4 = On 'sloped fill', layers placed further down will increase in size
+   create.ponder.mechanical_roller_fill.text_5 = As opposed to 'clear & pave', neither of these modes will cause the rollers to break existing blocks
+=== create:super_glue
+   create.ponder.super_glue.header = Attaching blocks using Super Glue
+   create.ponder.super_glue.text_1 = Super Glue groups blocks together into moving contraptions
+   create.ponder.super_glue.text_2 = Clicking two endpoints creates a new 'glued' area
+   create.ponder.super_glue.text_3 = To remove a box, punch it with the glue item in hand
+   create.ponder.super_glue.text_4 = Adjacent blocks sharing an area will pull each other along
+   create.ponder.super_glue.text_5 = Overlapping glue volumes will move together
+=== create:fluid_tank
+   create.ponder.creative_fluid_tank.header = Creative Fluid Tanks
+   create.ponder.creative_fluid_tank.text_1 = Creative Fluid Tanks can be used to provide a bottomless supply of fluid
+   create.ponder.creative_fluid_tank.text_2 = Right-Click with a fluid containing item to configure it
+   create.ponder.creative_fluid_tank.text_3 = Pipe Networks can now endlessly draw the assigned fluid from the tank
+   create.ponder.creative_fluid_tank.text_4 = Any Fluids pushed back into a Creative Fluid Tank will be voided
+   create.ponder.fluid_tank_sizes.header = Dimensions of a Fluid tank
+=== create:hand_crank
+   create.ponder.hand_crank.header = Generating Rotational Force using Hand Cranks
+   create.ponder.hand_crank.text_1 = Hand Cranks can be used by players to apply rotational force manually
+   create.ponder.hand_crank.text_2 = Hold Right-Click to rotate it Counter-Clockwise
+   create.ponder.hand_crank.text_3 = Sneak and Hold Right-Click to rotate it Clockwise
+=== create:item_drain
+   create.ponder.item_drain.header = Emptying Fluid Containers using Item Drains
+   create.ponder.item_drain.text_1 = Item Drains can extract fluids from items
+   create.ponder.item_drain.text_2 = Right-click it to pour fluids from your held item into it
+   create.ponder.item_drain.text_3 = When items are inserted from the side...
+   create.ponder.item_drain.text_4 = ...they roll across, emptying out their contained fluid
+   create.ponder.item_drain.text_5 = Pipe Networks can now pull the fluid from the drains' internal buffer
+=== create:flywheel
+   block.create.flywheel.tooltip.behaviour1 = Starts spinning.
+   block.create.flywheel.tooltip.condition1 = When Powered by Kinetics
+   block.create.flywheel.tooltip.summary = _Embellish_ your _Machines_ with this imposing Wheel of Brass.
+=== create:gearshift
+   create.ponder.chain_gearshift.header = Controlling rotational speed with Chain Gearshifts
+   create.ponder.chain_gearshift.text_1 = Unpowered Chain Gearshifts behave exactly like Chain Drives
+   create.ponder.chain_gearshift.text_2 = When Powered, the speed transmitted to other Chain Drives in the row is doubled
+   create.ponder.chain_gearshift.text_3 = Whenever the Powered Gearshift is not at the source, its speed will be halved instead
+   create.ponder.chain_gearshift.text_4 = In both cases, Chain Drives in the row always run at 2x the speed of the Powered Gearshift
+   create.ponder.chain_gearshift.text_5 = Using analog signals, the ratio can be adjusted more precisely between 1 and 2
+=== create:mechanical_piston
+   create.ponder.mechanical_piston.header = Moving Structures using Mechanical Pistons
+   create.ponder.mechanical_piston.text_1 = Mechanical Pistons can move blocks in front of them
+   create.ponder.mechanical_piston.text_2 = Speed and direction of movement depend on the Rotational Input
+   create.ponder.mechanical_piston.text_3 = Sticky Mechanical Pistons can pull the attached blocks back
+   create.ponder.mechanical_piston_modes.header = Movement Modes of the Mechanical Piston
+   create.ponder.mechanical_piston_modes.text_1 = Whenever Pistons stop moving, the moved structure reverts to blocks
+=== create:schematic_and_quill
+   item.create.schematic_and_quill.tooltip.behaviour1 = Select two _corner points_ using _R-Click_. Hold _Ctrl_ and Scroll to select locations mid-air.
+   item.create.schematic_and_quill.tooltip.behaviour2 = _Ctrl-Scroll_ on the faces to adjust the size, then R-Click again to Save.
+   item.create.schematic_and_quill.tooltip.condition1 = Creating a selection
+   item.create.schematic_and_quill.tooltip.condition2 = Adjusting and Saving
+   item.create.schematic_and_quill.tooltip.summary = Used for _saving a Structure_ in your world to a _.nbt file_.

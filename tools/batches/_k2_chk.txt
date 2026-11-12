@@ -1,0 +1,125 @@
+create:railway_casing	列车机壳	R:item_application
+create:brass_casing	黄铜机壳	R:item_application
+create:andesite_casing	安山机壳	R:item_application
+create:copper_casing	铜机壳	R:item_application
+create:small_bogey	小转向架	R:none
+create:large_bogey	大转向架	R:none
+create:track	列车轨道	R:sequenced_assembly
+create:controls	列车驾驶台	R:crafting_shaped
+create:brass_funnel	黄铜漏斗	R:crafting_shaped
+create:andesite_funnel	安山漏斗	R:crafting_shaped
+create:brass_belt_funnel	黄铜传送带漏斗	R:none
+create:andesite_belt_funnel	安山传送带漏斗	R:none
+create:mechanical_press	动力冲压机	R:crafting_shaped
+create:mechanical_mixer	动力搅拌器	R:crafting_shaped
+create:basin	工作盆	R:crafting_shaped
+create:depot	置物台	R:crafting_shapeless
+create:belt	传送带	R:none
+create:encased_fan	鼓风机	R:crafting_shaped
+create:mechanical_arm	动力臂	R:crafting_shaped
+create:deployer	机械手	R:crafting_shaped
+create:stock_ticker	仓储发报机	R:crafting_shaped,crafting_shapeless
+create:packager	打包机	R:crafting_shaped,crafting_shapeless
+create:item_vault	物品保险库	R:crafting_shaped
+create:schematic	蓝图	R:none
+create:empty_schematic	空白蓝图	R:crafting_shapeless
+create:schematic_table	蓝图桌	R:crafting_shaped
+create:experience_block	经验块	R:crafting_shaped
+create:sand_paper	砂纸	R:crafting_shapeless
+create:rose_quartz	玫瑰石英	R:crafting_shapeless
+create:electron_tube	电子管	R:crafting_shaped
+create:precision_mechanism	精密构件	R:sequenced_assembly
+create:blaze_cake	烈焰蛋糕	R:filling
+create:blaze_cake_base	烈焰蛋糕胚	R:compacting
+create:cinder_flour	余烬面粉	R:crushing
+create:empty_blaze_burner	空的烈焰人燃烧室	R:crafting_shaped
+create:shadow_steel_casing	暗影机壳	R:none
+create:refined_radiance_casing	光辉机壳	R:none
+create:chromatic_compound	异彩化合物	R:none
+create:refined_radiance	光辉石	R:none
+create:andesite_alloy	安山合金	R:crafting_shaped,crafting_shapeless,mixing
+create:brass_ingot	黄铜锭	R:crafting_shaped,crafting_shapeless,mixing
+create:copper_sheet	铜板	R:pressing
+create:iron_sheet	铁板	R:pressing
+create:copper_backtank	铜背罐	R:crafting_shaped
+create:brass_hand	黄铜手部零件	R:crafting_shaped
+create:piston_extension_pole	活塞杆	R:crafting_shaped
+create:gantry_shaft	起重机杆	R:crafting_shaped
+create:rotation_speed_controller	转速控制器	R:crafting_shaped
+create:encased_chain_drive	链式传动箱	R:crafting_shapeless
+create:gearbox	十字齿轮箱	R:crafting_shaped,crafting_shapeless
+create:vertical_gearbox	竖直十字齿轮箱	R:crafting_shaped,crafting_shapeless
+create:clutch	离合器	R:crafting_shapeless
+create:content_observer	智能侦测器	R:crafting_shaped
+create:threshold_switch	MISSING	R:none
+create:redstone_link	无线红石信号终端	R:crafting_shaped
+create:analog_lever	模拟拉杆	R:crafting_shaped
+create:pulse_repeater	脉冲中继器	R:crafting_shaped
+create:pulse_extender	脉冲延长器	R:crafting_shaped
+create:powered_latch	锁存器	R:crafting_shaped
+create:copper_valve_handle	铜阀门手轮	R:crafting_shaped,crafting_shapeless
+create:windmill_bearing	风车轴承	R:crafting_shaped
+create:mechanical_bearing	动力轴承	R:crafting_shaped
+create:linear_chassis	轴向底盘	R:crafting_shaped,crafting_shapeless
+create:sticker	黏着器	R:crafting_shaped
+create:cart_assembler	矿车装配站	R:crafting_shaped
+create:portable_storage_interface	移动式存储接口	R:crafting_shapeless
+create:controller_rail	控制铁轨	R:crafting_shaped
+create:track_station	列车站点	R:crafting_shapeless
+create:track_signal	列车信号机	R:crafting_shapeless
+create:train_door	列车门	R:crafting_shapeless
+create:item_drain	分液池	R:crafting_shaped
+create:spout	注液器	R:crafting_shaped
+create:fluid_tank	流体储罐	R:crafting_shaped
+create:smart_chute	智能溜槽	R:crafting_shaped
+create:chute	溜槽	R:crafting_shaped
+create:weighted_ejector	弹射置物台	R:crafting_shaped
+create:wrench	扳手	R:crafting_shaped
+create:goggles	工程师护目镜	R:crafting_shaped
+MISSING_CAND: []
+===== FunnelBlock.getStateForPlacement =====
+faultState(defaultBlockState().setValue(EXTRACTING, false));
+	}
+
+	public abstract BlockState getEquivalentBeltFunnel(BlockGetter world, BlockPos pos, BlockState state);
+
+	@Override
+	public BlockState getStateForPlacement(BlockPlaceContext context) {
+		BlockState state = super.getStateForPlacement(context);
+
+		boolean sneak = context.getPlayer() != null && context.getPlayer()
+			.isShiftKeyDown();
+		state = state.setValue(EXTRACTING, !sneak);
+
+		for (Direction direction : context.getNearestLookingDirections()) {
+			BlockState blockstate = state.setValue(FACING, direction.getOpposite());
+			if (blockstate.canSurvive(context.getLevel(), context.getClickedPos()))
+				return blockstate.setValue(POWERED, state.getValue(POWERED));
+		}
+
+		return state;
+	}
+
+	@Override
+	protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
+		super.createBlockStateDefinition(builder.add(EXTRACTING));
+	}
+
+	@Override
+	public void onRemove(BlockState state, Level world, BlockPos pos, BlockState newState, boolean isMoving) {
+		if (newState.getBlock() instanceof BeltFunnelBlock bfb && bfb.isOfSameType(this))
+			return;
+		super.onRemove(state, world, pos, newState, isMoving);
+	}
+
+	@Override
+	public void setPlacedBy(Level pLevel, BlockPos pPos, BlockState pState, LivingEntity pPlacer, ItemStack pStack) {
+		super.setPlacedBy(pLevel, pPos, pState, pPlacer, pStack);
+		AdvancementBehaviour.setPlacedBy(pLevel, pPos, pPlacer);
+	}
+
+	@Override
+	public InteractionResult use(BlockState state, Level worldIn, BlockPos pos, Player player, InteractionHand handIn,
+		BlockHitResult hit) {
+
+		ItemSt

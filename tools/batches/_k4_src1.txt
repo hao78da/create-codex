@@ -1,0 +1,64 @@
+﻿=== belt size/speed ===
+BeltBlockEntity.java:113: if (getSpeed() == 0)
+BeltBlockEntity.java:301: public float getBeltMovementSpeed() {
+BeltBlockEntity.java:302: return getSpeed() / 480f;
+BeltBlockEntity.java:305: public float getDirectionAwareBeltMovementSpeed() {
+BeltBlockEntity.java:310: return getBeltMovementSpeed() * offset;
+BeltBlockEntity.java:320: if (getSpeed() == 0)
+BeltBlockEntity.java:331: boolean movingPositively = (getSpeed() > 0 == (direction.getAxisDirection()
+BeltBlockEntity.java:345: if (getSpeed() == 0)
+BeltBlockEntity.java:356: if (getSpeed() < 0)
+BeltBlockEntity.java:372: return Direction.fromAxisAndDirection(axis, getBeltMovementSpeed() < 0 ^ axis == Axis.X ? NEGATIVE : POSITIVE);
+BeltBlockEntity.java:399: inventory.applyToEachWithin(index + .5f, maxDistanceFromCenter, processFunction);
+BeltBlockEntity.java:437: if (getSpeed() == 0)
+BeltBlockEntity.java:453: if (getSpeed() == 0)
+BeltBlockEntity.java:497: transportedStack.beltPosition = index + .5f - Math.signum(getDirectionAwareBeltMovementSpeed()) / 16f;
+BeltBlockEntity.java:514: getDirectionAwareBeltMovementSpeed() > 0 ? index - extraOffset : index + 1 + extraOffset;
+BeltBlock.java:304: .applyToEachWithin(belt.index + .5f, .55f, (transportedItemStack) -> {
+BeltBlock.java:548: if (bounds.getXsize() < .5f || bounds.getZsize() < .5f)
+BeltHelper.java:91: verticalMovement = verticalMovement * (Math.min(offset, controller.beltLength - .5f) - .5f);
+BeltHelper.java:95: .scale(offset - .5f);
+=== cogwheel ratio ===
+=== speed controller ===
+1: package com.simibubi.create.content.kinetics.speedController;
+31: public class SpeedControllerBlockEntity extends KineticBlockEntity {
+33: public static final int DEFAULT_SPEED = 16;
+34: public ScrollValueBehaviour targetSpeed;
+39: public SpeedControllerBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
+53: Integer max = AllConfigs.server().kinetics.maxRotationSpeed.get();
+55: targetSpeed = new KineticScrollValueBehaviour(CreateLang.translateDirect("kinetics.speed_controller.rotation_speed"),
+57: targetSpeed.between(-max, max);
+58: targetSpeed.value = DEFAULT_SPEED;
+59: targetSpeed.withCallback(i -> this.updateTargetRotation());
+60: behaviours.add(targetSpeed);
+63: registerAwardables(behaviours, AllAdvancements.SPEED_CONTROLLER);
+73: if (isCogwheelPresent() && getSpeed() != 0)
+74: award(AllAdvancements.SPEED_CONTROLLER);
+77: public static float getConveyedSpeed(KineticBlockEntity cogWheel, KineticBlockEntity speedControllerIn,
+79: if (!(speedControllerIn instanceof SpeedControllerBlockEntity))
+82: float speed = speedControllerIn.getTheoreticalSpeed();
+83: float wheelSpeed = cogWheel.getTheoreticalSpeed();
+84: float desiredOutputSpeed = getDesiredOutputSpeed(cogWheel, speedControllerIn, targetingController);
+86: float compareSpeed = targetingController ? speed : wheelSpeed;
+=== arm ===
+=== crafter ===
+MechanicalCrafterBlock.java:104: crafter.ejectWholeGrid();
+MechanicalCrafterBlock.java:174: crafter.ejectWholeGrid();
+MechanicalCrafterBlockEntity.java:21: import com.simibubi.create.content.kinetics.crafter.RecipeGridHandler.GroupedItems;
+MechanicalCrafterBlockEntity.java:261: if (RecipeGridHandler.getTargetingCrafter(this) != null) {
+MechanicalCrafterBlockEntity.java:269: isVirtual() ? scriptedResult : RecipeGridHandler.tryToApplyRecipe(level, groupedItems);
+MechanicalCrafterBlockEntity.java:273: groupedItems.grid.values()
+MechanicalCrafterBlockEntity.java:287: container.grid.put(Pair.of(i, 0), stack);
+MechanicalCrafterBlockEntity.java:296: ejectWholeGrid();
+MechanicalCrafterBlockEntity.java:309: MechanicalCrafterBlockEntity targetingCrafter = RecipeGridHandler.getTargetingCrafter(this);
+MechanicalCrafterBlockEntity.java:311: ejectWholeGrid();
+MechanicalCrafterBlockEntity.java:320: float pitch = targetingCrafter.groupedItems.grid.size() * 1 / 16f + .5f;
+MechanicalCrafterBlockEntity.java:350: if (!groupedItemsBeforeCraft.grid.isEmpty() && progress < .5f) {
+MechanicalCrafterBlockEntity.java:351: if (groupedItems.grid.containsKey(Pair.of(0, 0))) {
+MechanicalCrafterBlockEntity.java:352: ItemStack stack = groupedItems.grid.get(Pair.of(0, 0));
+MechanicalCrafterBlockEntity.java:405: ejectWholeGrid();
+MechanicalCrafterBlockEntity.java:413: for (Entry<Pair<Integer, Integer>, ItemStack> entry : groupedItems.grid.entrySet()) {
+MechanicalCrafterBlockEntity.java:428: inserted.forEach(groupedItems.grid::remove);
+MechanicalCrafterBlockEntity.java:429: if (groupedItems.grid.isEmpty())
+MechanicalCrafterBlockEntity.java:430: ejectWholeGrid();
+MechanicalCrafterBlockEntity.java:437: public void ejectWholeGrid() {

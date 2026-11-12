@@ -1,0 +1,163 @@
+BOM: False
+bytes: 88411
+ast.parse: OK, body=70
+条数: 70
+TSV 条数: 70
+缺失: ['create:small_granite_brick_slab', 'create:small_limestone_brick_slab', 'create:small_scoria_brick_slab', 'create:small_granite_brick_stairs', 'create:small_limestone_brick_stairs', 'create:small_scoria_brick_stairs', 'create:small_dripstone_brick_slab', 'create:small_tuff_brick_slab', 'create:small_deepslate_brick_slab', 'create:small_diorite_brick_slab', 'create:small_dripstone_brick_stairs', 'create:small_tuff_brick_stairs', 'create:small_deepslate_brick_stairs', 'create:small_diorite_brick_stairs', 'create:small_granite_brick_wall', 'create:small_limestone_brick_wall', 'create:small_ochrum_brick_slab', 'create:small_scoria_brick_wall', 'create:small_ochrum_brick_stairs', 'create:small_veridium_brick_slab', 'create:small_dripstone_brick_wall', 'create:small_tuff_brick_wall', 'create:small_veridium_brick_stairs', 'create:small_deepslate_brick_wall', 'create:small_diorite_brick_wall']
+多余: ['create:granite_brick_slab', 'create:limestone_brick_slab', 'create:scoria_brick_slab', 'create:granite_brick_stairs', 'create:limestone_brick_stairs', 'create:scoria_brick_stairs', 'create:dripstone_brick_slab', 'create:tuff_brick_slab', 'create:deepslate_brick_slab', 'create:diorite_brick_slab', 'create:dripstone_brick_stairs', 'create:tuff_brick_stairs', 'create:deepslate_brick_stairs', 'create:diorite_brick_stairs', 'create:granite_brick_wall', 'create:limestone_brick_wall', 'create:ochrum_brick_slab', 'create:scoria_brick_wall', 'create:ochrum_brick_stairs', 'create:veridium_brick_slab', 'create:dripstone_brick_wall', 'create:tuff_brick_wall', 'create:veridium_brick_stairs', 'create:deepslate_brick_wall', 'create:diorite_brick_wall']
+顺序与 TSV 一致: False
+
+最短 5 条:
+  create:deepslate_brick_wall 182 深板岩小砖墙
+  create:diorite_brick_wall 185 闪长岩小砖墙
+  create:tuff_brick_wall 187 凝灰岩小砖墙
+  create:cut_diorite_brick_slab 192 切制闪长岩砖台阶
+  create:dripstone_brick_wall 197 滴水石小砖墙
+最长: create:extendo_grip 380
+
+段落 <60 数: 400
+  create:small_bogey/搭配 54
+  create:extendo_grip/怎么用 57
+  create:mechanical_plough/怎么获得 55
+  create:mechanical_plough/进阶 59
+  create:pulse_extender/怎么获得 58
+  create:pulse_extender/怎么用 57
+  create:pulse_extender/常见坑 58
+  create:redstone_requester/怎么获得 56
+  create:redstone_requester/常见坑 58
+  create:stock_link/怎么获得 57
+  create:stock_link/怎么用 54
+  create:stock_link/进阶 59
+  create:stock_link/进阶 59
+  create:analog_lever/怎么获得 50
+  create:analog_lever/怎么获得 59
+  create:analog_lever/怎么用 58
+  create:analog_lever/怎么用 59
+  create:analog_lever/搭配 57
+  create:analog_lever/搭配 55
+  create:blaze_burner/怎么获得 53
+  create:blaze_burner/怎么获得 53
+  create:blaze_burner/怎么用 58
+  create:blaze_burner/怎么用 55
+  create:blaze_burner/进阶 50
+  create:blaze_burner/进阶 54
+  create:shadow_steel/怎么获得 55
+  create:shadow_steel/怎么获得 54
+  create:shadow_steel/怎么用 53
+  create:shadow_steel/进阶 54
+  create:shadow_steel/进阶 53
+  create:controls/怎么获得 51
+  create:controls/怎么获得 50
+  create:controls/怎么用 53
+  create:controls/怎么用 47
+  create:controls/常见坑 52
+  create:controls/常见坑 47
+  create:mechanical_pump/怎么获得 44
+  create:mechanical_pump/怎么获得 49
+  create:mechanical_pump/怎么用 48
+  create:mechanical_pump/怎么用 45
+段落 >90 数: 0
+
+跨条重复句数: 20
+  [create:controls,create:small_bogey] 空格把车导向最近的车站
+  [create:brass_belt_funnel,create:flywheel] 所以它到中期才做得起
+  [create:chute,create:smart_chute] 上面或者下面加一台鼓风机
+  [create:chute,create:smart_chute] 物品就能逆着重力往上走
+  [create:chute,create:smart_chute] 戴上护目镜能看清当前流向
+  [create:chute,create:smart_chute] 会自动变成斜向那一款
+  [create:item_drain,create:spout] 铜机壳则是铜板贴木头
+  [create:dripstone_brick_slab,create:scoria_brick_slab] 台阶不能当完整方块用
+  [create:mechanical_harvester,create:mechanical_roller] 拿在手里点地面不会有任何反应
+  [create:polished_cut_deepslate_wall,create:polished_cut_dripstone_wall] 但一块料只出 1 面
+  [create:polished_cut_deepslate_wall,create:polished_cut_dripstone_wall] 或者塞一段台阶打断连接
+  [create:deepslate_brick_slab,create:ochrum_brick_slab,create:veridium_brick_slab] 切石机一块料只换一个台阶
+  [create:diorite_brick_wall,create:granite_brick_wall,create:polished_cut_deepslate_wall] 工作台合成明显更划算
+  [create:deepslate_brick_wall,create:polished_cut_deepslate_wall] 墙会自动连接相邻方块
+  [create:deepslate_brick_stairs,create:veridium_brick_stairs] 否则从侧面能看到墙里的空隙
+  [create:cut_deepslate_brick_slab,create:polished_cut_deepslate_stairs] 尤其是有高差的平台边
+  [create:ochrum_brick_stairs,create:polished_cut_diorite_stairs,create:veridium_brick_stairs] 切石机一块料只出一件
+  [create:deepslate_brick_wall,create:diorite_brick_wall,create:dripstone_brick_wall,create:granite_brick_wall,create:scoria_brick_wall,create:tuff_brick_wall] 切石机一块料只出一面
+  [create:diorite_brick_wall,create:granite_brick_wall] 做水池围栏要垫整块方块
+  [create:deepslate_brick_wall,create:scoria_brick_wall] 深色墙在弱光下几乎全黑
+
+错误 209 条:
+  create:small_bogey 该节无 strong
+  create:extendo_grip 该节无 strong
+  create:pulse_extender 该节无 strong
+  create:pulse_extender 该节无 strong
+  create:redstone_requester 该节无 strong
+  create:stock_link 该节无 strong
+  create:analog_lever 该节无 strong
+  create:shadow_steel 该节无 strong
+  create:controls 该节无 strong
+  create:mechanical_pump 该节无 strong
+  create:mechanical_pump 该节无 strong
+  create:speedometer 该节无 strong
+  create:weighted_ejector 该节无 strong
+  create:brass_belt_funnel 该节无 strong
+  create:brass_belt_funnel 该节无 strong
+  create:smart_chute 该节无 strong
+  create:clipboard 该节无 strong
+  create:clipboard 该节无 strong
+  create:experience_nugget 该节无 strong
+  create:schematicannon 该节无 strong
+  create:andesite_door 总字数 259 < 260
+  create:granite_brick_slab 该节无 strong
+  create:granite_brick_slab 该节无 strong
+  create:granite_brick_slab related 不存在 create:granite_brick_stairs
+  create:granite_brick_slab related 不存在 create:granite_brick_wall
+  create:granite_brick_slab 不在 data.json
+  create:limestone_brick_slab 该节无 strong
+  create:limestone_brick_slab 该节无 strong
+  create:limestone_brick_slab 总字数 253 < 260
+  create:limestone_brick_slab related 不存在 create:limestone_brick_stairs
+  create:limestone_brick_slab related 不存在 create:limestone_brick_wall
+  create:limestone_brick_slab 不在 data.json
+  create:scoria_brick_slab 该节无 strong
+  create:scoria_brick_slab 总字数 245 < 260
+  create:scoria_brick_slab related 不存在 create:scoria_brick_stairs
+  create:scoria_brick_slab related 不存在 create:scoria_brick_wall
+  create:scoria_brick_slab 不在 data.json
+  create:rope_pulley 该节无 strong
+  create:rope_pulley 该节无 strong
+  create:granite_brick_stairs 该节无 strong
+  create:granite_brick_stairs 该节无 strong
+  create:granite_brick_stairs 总字数 253 < 260
+  create:granite_brick_stairs related 不存在 create:granite_brick_slab
+  create:granite_brick_stairs related 不存在 create:granite_brick_wall
+  create:granite_brick_stairs 不在 data.json
+  create:limestone_brick_stairs 该节无 strong
+  create:limestone_brick_stairs 该节无 strong
+  create:limestone_brick_stairs 总字数 247 < 260
+  create:limestone_brick_stairs related 不存在 create:limestone_brick_slab
+  create:limestone_brick_stairs related 不存在 create:limestone_brick_wall
+  create:limestone_brick_stairs 不在 data.json
+  create:scoria_brick_stairs 总字数 241 < 260
+  create:scoria_brick_stairs related 不存在 create:scoria_brick_slab
+  create:scoria_brick_stairs related 不存在 create:scoria_brick_wall
+  create:scoria_brick_stairs 不在 data.json
+  create:chute 该节无 strong
+  create:dripstone_brick_slab 该节无 strong
+  create:dripstone_brick_slab 总字数 240 < 260
+  create:dripstone_brick_slab related 不存在 create:dripstone_brick_stairs
+  create:dripstone_brick_slab related 不存在 create:dripstone_brick_wall
+  create:dripstone_brick_slab 不在 data.json
+  create:tuff_brick_slab 该节无 strong
+  create:tuff_brick_slab 该节无 strong
+  create:tuff_brick_slab 总字数 230 < 260
+  create:tuff_brick_slab related 不存在 create:tuff_brick_stairs
+  create:tuff_brick_slab related 不存在 create:tuff_brick_wall
+  create:tuff_brick_slab 不在 data.json
+  create:stressometer 该节无 strong
+  create:stressometer 总字数 258 < 260
+  create:gantry_carriage 总字数 249 < 260
+  create:mechanical_roller 该节无 strong
+  create:mechanical_roller 总字数 257 < 260
+  create:polished_cut_dripstone_wall 该节无 strong
+  create:polished_cut_dripstone_wall 总字数 242 < 260
+  create:polished_cut_dripstone_wall related 不存在 create:dripstone_brick_wall
+  create:deepslate_brick_slab 该节无 strong
+  create:deepslate_brick_slab 总字数 228 < 260
+  create:deepslate_brick_slab related 不存在 create:deepslate_brick_stairs
+  create:deepslate_brick_slab related 不存在 create:deepslate_brick_wall
+  create:deepslate_brick_slab 不在 data.json

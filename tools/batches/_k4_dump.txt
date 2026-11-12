@@ -1,0 +1,465 @@
+TOTAL 70
+
+=== create:layered_dripstone | 层叠滴水石 | Layered Dripstone
+kind=block icon=create_layered_dripstone.png
+-- recipes (1)
+   stonecutting ing=create:stone_types/dripstonex1 -> create:layered_dripstone x1 [layered_dripstone_from_stone_types_dripstone_stonecutting]
+-- ponder: null
+
+=== create:layered_tuff | 层叠凝灰岩 | Layered Tuff
+kind=block icon=create_layered_tuff.png
+-- recipes (1)
+   stonecutting ing=create:stone_types/tuffx1 -> create:layered_tuff x1 [layered_tuff_from_stone_types_tuff_stonecutting]
+-- ponder: null
+
+=== create:ochrum | 赭金砂 | Ochrum
+kind=block icon=create_ochrum.png
+-- recipes (1)
+   stonecutting ing=create:stone_types/ochrumx1 -> create:ochrum x1 [ochrum_from_stone_types_ochrum_stonecutting]
+-- ponder: null
+
+=== create:ochrum_pillar | 赭金砂柱 | Ochrum Pillar
+kind=block icon=create_ochrum_pillar.png
+-- recipes (1)
+   stonecutting ing=create:stone_types/ochrumx1 -> create:ochrum_pillar x1 [ochrum_pillar_from_stone_types_ochrum_stonecutting]
+-- ponder: null
+
+=== create:scorchia | 焦黑熔渣 | Scorchia
+kind=block icon=create_scorchia.png
+-- recipes (2)
+   crafting_shaped pattern=###/#D#/### key=#=create:scoria;D=forge:dyes/black -> create:scorchia x8 [crafting/palettes/scorchia]
+   stonecutting ing=create:stone_types/scorchiax1 -> create:scorchia x1 [scorchia_from_stone_types_scorchia_stonecutting]
+-- ponder: null
+
+=== create:layered_deepslate | 层叠深板岩 | Layered Deepslate
+kind=block icon=create_layered_deepslate.png
+-- recipes (1)
+   stonecutting ing=create:stone_types/deepslatex1 -> create:layered_deepslate x1 [layered_deepslate_from_stone_types_deepslate_stonecutting]
+-- ponder: null
+
+=== create:layered_diorite | 层叠闪长岩 | Layered Diorite
+kind=block icon=create_layered_diorite.png
+-- recipes (1)
+   stonecutting ing=create:stone_types/dioritex1 -> create:layered_diorite x1 [layered_diorite_from_stone_types_diorite_stonecutting]
+-- ponder: null
+
+=== create:scoria | 熔渣 | Scoria
+kind=block icon=create_scoria.png
+-- recipes (2)
+   stonecutting ing=create:stone_types/scoriax1 -> create:scoria x1 [scoria_from_stone_types_scoria_stonecutting]
+   smelting ing=minecraft:soul_sandx1 -> create:scoria x1 [scoria]
+-- ponder: null
+
+=== create:veridium_pillar | 辉绿岩柱 | Veridium Pillar
+kind=block icon=create_veridium_pillar.png
+-- recipes (1)
+   stonecutting ing=create:stone_types/veridiumx1 -> create:veridium_pillar x1 [veridium_pillar_from_stone_types_veridium_stonecutting]
+-- ponder: null
+
+=== create:crimsite | 绯红岩 | Crimsite
+kind=block icon=create_crimsite.png
+-- recipes (1)
+   stonecutting ing=create:stone_types/crimsitex1 -> create:crimsite x1 [crimsite_from_stone_types_crimsite_stonecutting]
+-- ponder: null
+
+=== create:small_granite_bricks | 花岗岩小砖块 | Small Granite Bricks
+kind=block icon=create_small_granite_bricks.png
+-- recipes (2)
+   crafting_shapeless ing=create:small_granite_brick_slabx1;create:small_granite_brick_slabx1 -> create:small_granite_bricks x1 [small_granite_brick_slab_recycling]
+   stonecutting ing=create:stone_types/granitex1 -> create:small_granite_bricks x1 [small_granite_bricks_from_stone_types_granite_stonecutting]
+-- ponder: null
+
+=== create:small_limestone_bricks | 石灰岩小砖块 | Small Limestone Bricks
+kind=block icon=create_small_limestone_bricks.png
+-- recipes (2)
+   crafting_shapeless ing=create:small_limestone_brick_slabx1;create:small_limestone_brick_slabx1 -> create:small_limestone_bricks x1 [small_limestone_brick_slab_recycling]
+   stonecutting ing=create:stone_types/limestonex1 -> create:small_limestone_bricks x1 [small_limestone_bricks_from_stone_types_limestone_stonecutting]
+-- ponder: null
+
+=== create:small_scoria_bricks | 熔渣小砖块 | Small Scoria Bricks
+kind=block icon=create_small_scoria_bricks.png
+-- recipes (2)
+   crafting_shapeless ing=create:small_scoria_brick_slabx1;create:small_scoria_brick_slabx1 -> create:small_scoria_bricks x1 [small_scoria_brick_slab_recycling]
+   stonecutting ing=create:stone_types/scoriax1 -> create:small_scoria_bricks x1 [small_scoria_bricks_from_stone_types_scoria_stonecutting]
+-- ponder: null
+
+=== create:brass_funnel | 黄铜漏斗 | Brass Funnel
+kind=block icon=create_brass_funnel.png
+-- recipes (1)
+   crafting_shaped pattern=E/A/K key=A=forge:ingots/brass;E=create:electron_tube;K=minecraft:dried_kelp -> create:brass_funnel x2 [crafting/logistics/brass_funnel]
+-- ponder: null
+
+=== create:layered_ochrum | 层叠赭金砂 | Layered Ochrum
+kind=block icon=create_layered_ochrum.png
+-- recipes (1)
+   stonecutting ing=create:stone_types/ochrumx1 -> create:layered_ochrum x1 [layered_ochrum_from_stone_types_ochrum_stonecutting]
+-- ponder: null
+
+=== create:crimsite_pillar | 绯红岩柱 | Crimsite Pillar
+kind=block icon=create_crimsite_pillar.png
+-- recipes (1)
+   stonecutting ing=create:stone_types/crimsitex1 -> create:crimsite_pillar x1 [crimsite_pillar_from_stone_types_crimsite_stonecutting]
+-- ponder: null
+
+=== create:layered_veridium | 层叠辉绿岩 | Layered Veridium
+kind=block icon=create_layered_veridium.png
+-- recipes (1)
+   stonecutting ing=create:stone_types/veridiumx1 -> create:layered_veridium x1 [layered_veridium_from_stone_types_veridium_stonecutting]
+-- ponder: null
+
+=== create:scorchia_pillar | 焦黑熔渣柱 | Scorchia Pillar
+kind=block icon=create_scorchia_pillar.png
+-- recipes (1)
+   stonecutting ing=create:stone_types/scorchiax1 -> create:scorchia_pillar x1 [scorchia_pillar_from_stone_types_scorchia_stonecutting]
+-- ponder: null
+
+=== create:small_dripstone_bricks | 滴水石小砖块 | Small Dripstone Bricks
+kind=block icon=create_small_dripstone_bricks.png
+-- recipes (2)
+   crafting_shapeless ing=create:small_dripstone_brick_slabx1;create:small_dripstone_brick_slabx1 -> create:small_dripstone_bricks x1 [small_dripstone_brick_slab_recycling]
+   stonecutting ing=create:stone_types/dripstonex1 -> create:small_dripstone_bricks x1 [small_dripstone_bricks_from_stone_types_dripstone_stonecutting]
+-- ponder: null
+
+=== create:small_tuff_bricks | 凝灰岩小砖块 | Small Tuff Bricks
+kind=block icon=create_small_tuff_bricks.png
+-- recipes (2)
+   crafting_shapeless ing=create:small_tuff_brick_slabx1;create:small_tuff_brick_slabx1 -> create:small_tuff_bricks x1 [small_tuff_brick_slab_recycling]
+   stonecutting ing=create:stone_types/tuffx1 -> create:small_tuff_bricks x1 [small_tuff_bricks_from_stone_types_tuff_stonecutting]
+-- ponder: null
+
+=== create:cut_dripstone_slab | 切制滴水石台阶 | Cut Dripstone Slab
+kind=block icon=create_cut_dripstone_slab.png
+-- recipes (2)
+   crafting_shaped pattern=XXX key=X=create:cut_dripstone -> create:cut_dripstone_slab x6 [cut_dripstone_slab]
+   stonecutting ing=create:stone_types/dripstonex1 -> create:cut_dripstone_slab x1 [cut_dripstone_slab_from_stone_types_dripstone_stonecutting]
+-- ponder: null
+
+=== create:small_deepslate_bricks | 深板岩小砖块 | Small Deepslate Bricks
+kind=block icon=create_small_deepslate_bricks.png
+-- recipes (2)
+   crafting_shapeless ing=create:small_deepslate_brick_slabx1;create:small_deepslate_brick_slabx1 -> create:small_deepslate_bricks x1 [small_deepslate_brick_slab_recycling]
+   stonecutting ing=create:stone_types/deepslatex1 -> create:small_deepslate_bricks x1 [small_deepslate_bricks_from_stone_types_deepslate_stonecutting]
+-- ponder: null
+
+=== create:small_diorite_bricks | 闪长岩小砖块 | Small Diorite Bricks
+kind=block icon=create_small_diorite_bricks.png
+-- recipes (2)
+   crafting_shapeless ing=create:small_diorite_brick_slabx1;create:small_diorite_brick_slabx1 -> create:small_diorite_bricks x1 [small_diorite_brick_slab_recycling]
+   stonecutting ing=create:stone_types/dioritex1 -> create:small_diorite_bricks x1 [small_diorite_bricks_from_stone_types_diorite_stonecutting]
+-- ponder: null
+
+=== create:cut_deepslate_slab | 切制深板岩台阶 | Cut Deepslate Slab
+kind=block icon=create_cut_deepslate_slab.png
+-- recipes (2)
+   crafting_shaped pattern=XXX key=X=create:cut_deepslate -> create:cut_deepslate_slab x6 [cut_deepslate_slab]
+   stonecutting ing=create:stone_types/deepslatex1 -> create:cut_deepslate_slab x1 [cut_deepslate_slab_from_stone_types_deepslate_stonecutting]
+-- ponder: null
+
+=== create:cut_diorite_slab | 切制闪长岩台阶 | Cut Diorite Slab
+kind=block icon=create_cut_diorite_slab.png
+-- recipes (2)
+   crafting_shaped pattern=XXX key=X=create:cut_diorite -> create:cut_diorite_slab x6 [cut_diorite_slab]
+   stonecutting ing=create:stone_types/dioritex1 -> create:cut_diorite_slab x1 [cut_diorite_slab_from_stone_types_diorite_stonecutting]
+-- ponder: null
+
+=== create:powdered_obsidian | 黑曜石粉末 | Powdered Obsidian
+kind=item icon=create_powdered_obsidian.png
+-- recipes (2)
+   crushing ing=minecraft:obsidianx1 -> create:powdered_obsidian x1,minecraft:obsidian x1 [crushing/obsidian]
+   crushing ing=minecraft:obsidianx1 -> create:powdered_obsidian x1 [obsidian]
+-- ponder: null
+
+=== create:layered_crimsite | 层叠绯红岩 | Layered Crimsite
+kind=block icon=create_layered_crimsite.png
+-- recipes (1)
+   stonecutting ing=create:stone_types/crimsitex1 -> create:layered_crimsite x1 [layered_crimsite_from_stone_types_crimsite_stonecutting]
+-- ponder: null
+
+=== create:layered_scorchia | 层叠焦黑熔渣 | Layered Scorchia
+kind=block icon=create_layered_scorchia.png
+-- recipes (1)
+   stonecutting ing=create:stone_types/scorchiax1 -> create:layered_scorchia x1 [layered_scorchia_from_stone_types_scorchia_stonecutting]
+-- ponder: null
+
+=== create:small_ochrum_bricks | 赭金砂小砖块 | Small Ochrum Bricks
+kind=block icon=create_small_ochrum_bricks.png
+-- recipes (2)
+   crafting_shapeless ing=create:small_ochrum_brick_slabx1;create:small_ochrum_brick_slabx1 -> create:small_ochrum_bricks x1 [small_ochrum_brick_slab_recycling]
+   stonecutting ing=create:stone_types/ochrumx1 -> create:small_ochrum_bricks x1 [small_ochrum_bricks_from_stone_types_ochrum_stonecutting]
+-- ponder: null
+
+=== create:polished_cut_dripstone | 磨制切制滴水石块 | Polished Cut Dripstone
+kind=block icon=create_polished_cut_dripstone.png
+-- recipes (2)
+   crafting_shapeless ing=create:polished_cut_dripstone_slabx1;create:polished_cut_dripstone_slabx1 -> create:polished_cut_dripstone x1 [polished_cut_dripstone_slab_recycling]
+   stonecutting ing=create:stone_types/dripstonex1 -> create:polished_cut_dripstone x1 [polished_cut_dripstone_from_stone_types_dripstone_stonecutting]
+-- ponder: null
+
+=== create:small_veridium_bricks | 辉绿岩小砖块 | Small Veridium Bricks
+kind=block icon=create_small_veridium_bricks.png
+-- recipes (2)
+   crafting_shapeless ing=create:small_veridium_brick_slabx1;create:small_veridium_brick_slabx1 -> create:small_veridium_bricks x1 [small_veridium_brick_slab_recycling]
+   stonecutting ing=create:stone_types/veridiumx1 -> create:small_veridium_bricks x1 [small_veridium_bricks_from_stone_types_veridium_stonecutting]
+-- ponder: null
+
+=== create:polished_cut_deepslate | 磨制切制深板岩 | Polished Cut Deepslate
+kind=block icon=create_polished_cut_deepslate.png
+-- recipes (2)
+   crafting_shapeless ing=create:polished_cut_deepslate_slabx1;create:polished_cut_deepslate_slabx1 -> create:polished_cut_deepslate x1 [polished_cut_deepslate_slab_recycling]
+   stonecutting ing=create:stone_types/deepslatex1 -> create:polished_cut_deepslate x1 [polished_cut_deepslate_from_stone_types_deepslate_stonecutting]
+-- ponder: null
+
+=== create:polished_cut_diorite | 磨制切制闪长岩 | Polished Cut Diorite
+kind=block icon=create_polished_cut_diorite.png
+-- recipes (2)
+   crafting_shapeless ing=create:polished_cut_diorite_slabx1;create:polished_cut_diorite_slabx1 -> create:polished_cut_diorite x1 [polished_cut_diorite_slab_recycling]
+   stonecutting ing=create:stone_types/dioritex1 -> create:polished_cut_diorite x1 [polished_cut_diorite_from_stone_types_diorite_stonecutting]
+-- ponder: null
+
+=== create:track | 列车轨道 | Train Track
+kind=block icon=create_track.png
+-- recipes (1)
+   sequenced_assembly -> create:track x1 [sequenced_assembly/track]
+-- ponder: null
+
+=== create:mechanical_saw | 动力锯 | Mechanical Saw
+kind=block icon=create_mechanical_saw.png
+-- recipes (1)
+   crafting_shaped pattern= A /AIA/ C  key=A=forge:plates/iron;C=create:andesite_casing;I=forge:ingots/iron -> create:mechanical_saw x1 [crafting/kinetics/mechanical_saw]
+-- ponder: null
+
+=== create:andesite_funnel | 安山漏斗 | Andesite Funnel
+kind=block icon=create_andesite_funnel.png
+-- recipes (1)
+   crafting_shaped pattern=A/K key=A=create:andesite_alloy;K=minecraft:dried_kelp -> create:andesite_funnel x2 [crafting/logistics/andesite_funnel]
+-- ponder: null
+
+=== create:small_crimsite_bricks | 绯红岩小砖块 | Small Crimsite Bricks
+kind=block icon=create_small_crimsite_bricks.png
+-- recipes (2)
+   crafting_shapeless ing=create:small_crimsite_brick_slabx1;create:small_crimsite_brick_slabx1 -> create:small_crimsite_bricks x1 [small_crimsite_brick_slab_recycling]
+   stonecutting ing=create:stone_types/crimsitex1 -> create:small_crimsite_bricks x1 [small_crimsite_bricks_from_stone_types_crimsite_stonecutting]
+-- ponder: null
+
+=== create:small_scorchia_bricks | 焦黑熔渣小砖块 | Small Scorchia Bricks
+kind=block icon=create_small_scorchia_bricks.png
+-- recipes (2)
+   crafting_shapeless ing=create:small_scorchia_brick_slabx1;create:small_scorchia_brick_slabx1 -> create:small_scorchia_bricks x1 [small_scorchia_brick_slab_recycling]
+   stonecutting ing=create:stone_types/scorchiax1 -> create:small_scorchia_bricks x1 [small_scorchia_bricks_from_stone_types_scorchia_stonecutting]
+-- ponder: null
+
+=== create:cut_crimsite_slab | 切制绯红岩台阶 | Cut Crimsite Slab
+kind=block icon=create_cut_crimsite_slab.png
+-- recipes (2)
+   crafting_shaped pattern=XXX key=X=create:cut_crimsite -> create:cut_crimsite_slab x6 [cut_crimsite_slab]
+   stonecutting ing=create:stone_types/crimsitex1 -> create:cut_crimsite_slab x1 [cut_crimsite_slab_from_stone_types_crimsite_stonecutting]
+-- ponder: null
+
+=== create:vertical_gearbox | 竖直十字齿轮箱 | Vertical Gearbox
+kind=item icon=None
+-- recipes (2)
+   crafting_shaped pattern=C C/ B /C C key=B=create:andesite_casing;C=create:cogwheel -> create:vertical_gearbox x1 [crafting/kinetics/vertical_gearbox]
+   crafting_shapeless ing=create:gearboxx1 -> create:vertical_gearbox x1 [crafting/kinetics/vertical_gearbox_from_conversion]
+-- ponder: null
+
+=== create:mechanical_arm | 动力臂 | Mechanical Arm
+kind=block icon=create_mechanical_arm.png
+-- recipes (1)
+   crafting_shaped pattern=LLA/L  /IC  key=A=create:andesite_alloy;C=create:brass_casing;I=create:precision_mechanism;L=forge:plates/brass -> create:mechanical_arm x1 [crafting/kinetics/mechanical_arm]
+-- ponder: null
+
+=== create:polished_cut_crimsite | 磨制切制绯红岩 | Polished Cut Crimsite
+kind=block icon=create_polished_cut_crimsite.png
+-- recipes (2)
+   crafting_shapeless ing=create:polished_cut_crimsite_slabx1;create:polished_cut_crimsite_slabx1 -> create:polished_cut_crimsite x1 [polished_cut_crimsite_slab_recycling]
+   stonecutting ing=create:stone_types/crimsitex1 -> create:polished_cut_crimsite x1 [polished_cut_crimsite_from_stone_types_crimsite_stonecutting]
+-- ponder: null
+
+=== create:brass_sheet | 黄铜板 | Brass Sheet
+kind=item icon=create_brass_sheet.png
+-- recipes (2)
+   pressing ing=forge:ingots/brassx1 -> create:brass_sheet x1 [pressing/brass_ingot]
+   pressing ing=forge:ingots/brassx1 -> create:brass_sheet x1 [brass_ingot]
+-- ponder: null
+
+=== create:mechanical_crafter | 动力合成器 | Mechanical Crafter
+kind=block icon=create_mechanical_crafter.png
+-- recipes (1)
+   crafting_shaped pattern=B/C/R key=B=create:electron_tube;C=create:brass_casing;R=minecraft:crafting_table -> create:mechanical_crafter x3 [crafting/kinetics/mechanical_crafter]
+-- ponder: null
+
+=== create:cut_dripstone_wall | 切制滴水石墙 | Cut Dripstone Wall
+kind=block icon=None
+-- recipes (2)
+   crafting_shaped pattern=XXX/XXX key=X=create:cut_dripstone -> create:cut_dripstone_wall x6 [cut_dripstone_wall]
+   stonecutting ing=create:stone_types/dripstonex1 -> create:cut_dripstone_wall x1 [cut_dripstone_wall_from_stone_types_dripstone_stonecutting]
+-- ponder: null
+
+=== create:mechanical_press | 动力冲压机 | Mechanical Press
+kind=block icon=create_mechanical_press.png
+-- recipes (1)
+   crafting_shaped pattern=S/C/I key=C=create:andesite_casing;I=forge:storage_blocks/iron;S=create:shaft -> create:mechanical_press x1 [crafting/kinetics/mechanical_press]
+-- ponder: null
+
+=== create:cut_deepslate_wall | 切制深板岩墙 | Cut Deepslate Wall
+kind=block icon=None
+-- recipes (2)
+   crafting_shaped pattern=XXX/XXX key=X=create:cut_deepslate -> create:cut_deepslate_wall x6 [cut_deepslate_wall]
+   stonecutting ing=create:stone_types/deepslatex1 -> create:cut_deepslate_wall x1 [cut_deepslate_wall_from_stone_types_deepslate_stonecutting]
+-- ponder: null
+
+=== create:cut_diorite_wall | 切制闪长岩墙 | Cut Diorite Wall
+kind=block icon=None
+-- recipes (2)
+   crafting_shaped pattern=XXX/XXX key=X=create:cut_diorite -> create:cut_diorite_wall x6 [cut_diorite_wall]
+   stonecutting ing=create:stone_types/dioritex1 -> create:cut_diorite_wall x1 [cut_diorite_wall_from_stone_types_diorite_stonecutting]
+-- ponder: null
+
+=== create:gearbox | 十字齿轮箱 | Gearbox
+kind=block icon=create_gearbox.png
+-- recipes (2)
+   crafting_shaped pattern= C /CBC/ C  key=B=create:andesite_casing;C=create:cogwheel -> create:gearbox x1 [crafting/kinetics/gearbox]
+   crafting_shapeless ing=create:vertical_gearboxx1 -> create:gearbox x1 [crafting/kinetics/gearbox_from_conversion]
+-- ponder: null
+
+=== create:millstone | 石磨 | Millstone
+kind=block icon=create_millstone.png
+-- recipes (1)
+   crafting_shaped pattern=C/S/I key=C=create:cogwheel;I=forge:stone;S=create:andesite_casing -> create:millstone x1 [crafting/kinetics/millstone]
+-- ponder: null
+
+=== create:cut_crimsite_wall | 切制绯红岩墙 | Cut Crimsite Wall
+kind=block icon=None
+-- recipes (2)
+   crafting_shaped pattern=XXX/XXX key=X=create:cut_crimsite -> create:cut_crimsite_wall x6 [cut_crimsite_wall]
+   stonecutting ing=create:stone_types/crimsitex1 -> create:cut_crimsite_wall x1 [cut_crimsite_wall_from_stone_types_crimsite_stonecutting]
+-- ponder: null
+
+=== create:rose_quartz | 玫瑰石英 | Rose Quartz
+kind=item icon=create_rose_quartz.png
+-- recipes (1)
+   crafting_shapeless ing=forge:gems/quartzx1;forge:dusts/redstonex1;forge:dusts/redstonex1;forge:dusts/redstonex1;forge:dusts/redstonex1;forge:dusts/redstonex1;forge:dusts/redstonex1;forge:dusts/redstonex1;forge:dusts/redstonex1 -> create:rose_quartz x1 [crafting/materials/rose_quartz]
+-- ponder: null
+
+=== create:deployer | 机械手 | Deployer
+kind=block icon=create_deployer.png
+-- recipes (1)
+   crafting_shaped pattern=B/C/I key=B=create:electron_tube;C=create:andesite_casing;I=create:brass_hand -> create:deployer x1 [crafting/kinetics/deployer]
+-- ponder: null
+
+=== create:zinc_ingot | 锌锭 | Zinc Ingot
+kind=item icon=create_zinc_ingot.png
+-- recipes (5)
+   crafting_shaped pattern=###/###/### key=#=forge:nuggets/zinc -> create:zinc_ingot x1 [crafting/materials/zinc_ingot_from_compacting]
+   crafting_shapeless ing=forge:storage_blocks/zincx1 -> create:zinc_ingot x9 [crafting/materials/zinc_ingot_from_decompacting]
+   blasting ing=create:crushed_raw_zincx1 -> create:zinc_ingot x1 [zinc_ingot_from_crushed]
+   blasting ing=forge:ores/zincx1 -> create:zinc_ingot x1 [zinc_ingot_from_ore]
+   blasting ing=forge:raw_materials/zincx1 -> create:zinc_ingot x1 [zinc_ingot_from_raw_ore]
+-- ponder: null
+
+=== create:rotation_speed_controller | 转速控制器 | Rotation Speed Controller
+kind=block icon=create_rotation_speed_controller.png
+-- recipes (1)
+   crafting_shaped pattern=B/C key=B=create:precision_mechanism;C=create:brass_casing -> create:rotation_speed_controller x1 [crafting/kinetics/rotation_speed_controller]
+-- ponder: null
+
+=== create:basin | 工作盆 | Basin
+kind=block icon=create_basin.png
+-- recipes (1)
+   crafting_shaped pattern=A A/AAA key=A=create:andesite_alloy -> create:basin x1 [crafting/kinetics/basin]
+-- ponder: null
+
+=== create:iron_sheet | 铁板 | Iron Sheet
+kind=item icon=create_iron_sheet.png
+-- recipes (2)
+   pressing ing=forge:ingots/ironx1 -> create:iron_sheet x1 [pressing/iron_ingot]
+   pressing ing=forge:ingots/ironx1 -> create:iron_sheet x1 [iron_ingot]
+-- ponder: null
+
+=== create:crushing_wheel | 粉碎轮 | Crushing Wheel
+kind=block icon=create_crushing_wheel.png
+-- recipes (1)
+   mechanical_crafting pattern= AAA /AAPAA/APSPA/AAPAA/ AAA  key=A=create:andesite_alloy;P=minecraft:planks;S=forge:stone -> create:crushing_wheel x2 [mechanical_crafting/crushing_wheel]
+-- ponder: null
+
+=== create:large_water_wheel | 大型水车 | Large Water Wheel
+kind=block icon=None
+-- recipes (1)
+   crafting_shaped pattern=SSS/SCS/SSS key=C=create:water_wheel;S=minecraft:planks -> create:large_water_wheel x1 [crafting/kinetics/large_water_wheel]
+-- ponder: null
+
+=== create:copper_sheet | 铜板 | Copper Sheet
+kind=item icon=create_copper_sheet.png
+-- recipes (2)
+   pressing ing=forge:ingots/copperx1 -> create:copper_sheet x1 [pressing/copper_ingot]
+   pressing ing=forge:ingots/copperx1 -> create:copper_sheet x1 [copper_ingot]
+-- ponder: null
+
+=== create:sturdy_sheet | 坚固板 | Sturdy Sheet
+kind=item icon=create_sturdy_sheet.png
+-- recipes (1)
+   sequenced_assembly -> create:sturdy_sheet x1 [sequenced_assembly/sturdy_sheet]
+-- ponder: null
+
+=== create:belt | 传送带 | Belt
+kind=block icon=create_belt.png
+-- recipes (0)
+-- ponder: null
+
+=== create:cut_dripstone | 切制滴水石块 | Cut Dripstone
+kind=block icon=create_cut_dripstone.png
+-- recipes (2)
+   crafting_shapeless ing=create:cut_dripstone_slabx1;create:cut_dripstone_slabx1 -> create:cut_dripstone x1 [cut_dripstone_slab_recycling]
+   stonecutting ing=create:stone_types/dripstonex1 -> create:cut_dripstone x1 [cut_dripstone_from_stone_types_dripstone_stonecutting]
+-- ponder: null
+
+=== create:cut_deepslate | 切制深板岩 | Cut Deepslate
+kind=block icon=create_cut_deepslate.png
+-- recipes (2)
+   crafting_shapeless ing=create:cut_deepslate_slabx1;create:cut_deepslate_slabx1 -> create:cut_deepslate x1 [cut_deepslate_slab_recycling]
+   stonecutting ing=create:stone_types/deepslatex1 -> create:cut_deepslate x1 [cut_deepslate_from_stone_types_deepslate_stonecutting]
+-- ponder: null
+
+=== create:cut_diorite | 切制闪长岩 | Cut Diorite
+kind=block icon=create_cut_diorite.png
+-- recipes (2)
+   crafting_shapeless ing=create:cut_diorite_slabx1;create:cut_diorite_slabx1 -> create:cut_diorite x1 [cut_diorite_slab_recycling]
+   stonecutting ing=create:stone_types/dioritex1 -> create:cut_diorite x1 [cut_diorite_from_stone_types_diorite_stonecutting]
+-- ponder: null
+
+=== create:large_cogwheel | 大齿轮 | Large Cogwheel
+kind=block icon=create_large_cogwheel.png
+-- recipes (4)
+   crafting_shapeless ing=create:shaftx1;minecraft:planksx1;minecraft:planksx1 -> create:large_cogwheel x1 [crafting/kinetics/large_cogwheel]
+   crafting_shapeless ing=create:cogwheelx1;minecraft:planksx1 -> create:large_cogwheel x1 [crafting/kinetics/large_cogwheel_from_little]
+   deploying ing=create:cogwheelx1;minecraft:planksx1 -> create:large_cogwheel x1 [deploying/large_cogwheel]
+   deploying ing=create:cogwheelx1;minecraft:planksx1 -> create:large_cogwheel x1 [large_cogwheel]
+-- ponder: null
+
+=== create:cut_crimsite | 切制绯红岩 | Cut Crimsite
+kind=block icon=create_cut_crimsite.png
+-- recipes (2)
+   crafting_shapeless ing=create:cut_crimsite_slabx1;create:cut_crimsite_slabx1 -> create:cut_crimsite x1 [cut_crimsite_slab_recycling]
+   stonecutting ing=create:stone_types/crimsitex1 -> create:cut_crimsite x1 [cut_crimsite_from_stone_types_crimsite_stonecutting]
+-- ponder: null
+
+=== create:cogwheel | 齿轮 | Cogwheel
+kind=block icon=create_cogwheel.png
+-- recipes (3)
+   crafting_shapeless ing=create:shaftx1;minecraft:planksx1 -> create:cogwheel x1 [crafting/kinetics/cogwheel]
+   deploying ing=create:shaftx1;minecraft:planksx1 -> create:cogwheel x1 [deploying/cogwheel]
+   deploying ing=create:shaftx1;minecraft:planksx1 -> create:cogwheel x1 [cogwheel]
+-- ponder: null
+
+=== create:precision_mechanism | 精密构件 | Precision Mechanism
+kind=item icon=create_precision_mechanism.png
+-- recipes (1)
+   sequenced_assembly -> create:precision_mechanism x1,create:golden_sheet x1,create:andesite_alloy x1,create:cogwheel x1,minecraft:gold_nugget x1,create:shaft x1,create:crushed_raw_gold x1,minecraft:iron_ingot x1,minecraft:clock x1 [sequenced_assembly/precision_mechanism]
+-- ponder: null
+
+=== create:wrench | 扳手 | Wrench
+kind=item icon=create_wrench.png
+-- recipes (1)
+   crafting_shaped pattern=GG/GP/ S key=G=forge:plates/gold;P=create:cogwheel;S=forge:rods/wooden -> create:wrench x1 [crafting/kinetics/wrench]
+-- ponder: null
+

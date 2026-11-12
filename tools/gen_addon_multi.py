@@ -1,0 +1,503 @@
+# -*- coding: utf-8 -*-
+# 本文件由 tools/ 内的构建脚本使用；路径全部相对仓库根目录。
+import os as _os
+ROOT = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+DATA = _os.path.join(ROOT, "tools", "data")
+WORK = _os.path.join(ROOT, "work")
+# -*- coding: utf-8 -*-
+"""通用附属页生成器：一个模组 → 一页（物品卡 + 配方）。"""
+import io
+import json
+import os
+import re
+import shutil
+import urllib.request as u
+import zipfile
+
+SITE = ROOT
+ICONS = os.path.join(SITE, 'assets', 'icons')
+MC_ZH = {}
+try:
+    _mz = json.load(io.open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "out", "mc_zh.json"), encoding="utf-8"))
+    MC_ZH = {k: v for k, v in _mz.items() if isinstance(v, str)}
+except Exception:
+    MC_ZH = {}
+
+RAW = _os.path.join(WORK, 'mods_intake')
+
+SEAT_ZH = {}
+for _c, _z in {'black': '黑色', 'blue': '蓝色', 'brown': '棕色', 'cyan': '青色', 'gray': '灰色', 'green': '绿色', 'light_blue': '浅蓝色', 'light_gray': '浅灰色', 'lime': '黄绿色', 'magenta': '品红色', 'orange': '橙色', 'pink': '粉色', 'purple': '紫色', 'red': '红色', 'white': '白色', 'yellow': '黄色'}.items():
+    SEAT_ZH[_c + '_modern_seat'] = _z + '现代座椅'
+    SEAT_ZH[_c + '_floor_seat'] = _z + '地板椅'
+
+MODS = [
+    dict(slug='create-cold-sweat', ns='cold_sweat', title='Create: Cold Sweat',
+         tag='把体温、水分和恶化的环境变成一套生存压力',
+         intro='不是新的动力机器，而是给生存加一层「环境」：体温、口渴、空气质量会随维度与天气变化，'
+               '配套的物件用来降温、补水、净化空气。',
+         groups=[('降温 / 保温', ('ice', 'cold', 'cool', 'fridge', 'snow')),
+                 ('饮水 / 食物', ('water', 'drink', 'canteen', 'purif', 'food')),
+                 ('空气 / 呼吸', ('air', 'oxygen', 'filter', 'mask', 'respir'))]),
+    dict(slug='create-more-features', ns='create_more_features', title='Create: More Features',
+         tag='给机械动力补一批零件与功能方块',
+         intro='一批独立的零件和功能方块，直接插进 Create 的产线里用，不改变原有玩法。',
+         groups=[]),
+    dict(slug='create-more-seats', ns='create_more_seats', title='Create: More Seats',
+         tag='给列车和结构补一批可坐的座椅',
+         intro='只做一件事：加更多样式的座椅，放在列车车厢或建筑里都能坐。',
+         groups=[]),
+    dict(slug='create-heat-js', ns='heats', title='Create: Heat JS',
+         tag='用 KubeJS 给机械动力加「热量」这套系统',
+         intro='基于 KubeJS 的热量机制：给方块和配方加上温度要求，让加热、熔化、烧炼有统一的温度线。'
+               '它本身是脚本库，玩法取决于整合包怎么调用。',
+         groups=[]),
+    dict(slug='create-unbreakable-armor', ns='create_unbreakable_armor', title='Create: Unbreakable Armor',
+         tag='把下界合金盔甲做成永不磨损',
+         intro='四件套盔甲，全部用动力合成器（机械合成）做：下界合金块 + 金块 + 红石，'
+               '成品带「无法破坏」属性，穿到死也不用修。',
+         groups=[]),
+    dict(slug='create-unbreakable-tools', ns='create_unbreakable_tools_series', title='Create: Unbreakable Tools',
+         tag='九件不毁下界合金工具',
+         intro='剑、镐、斧、锹、锄、剪刀、镐斧、小刀、打火石，九件全用动力合成器拼出来，'
+               '每件都是「无法破坏」。',
+         groups=[]),
+    dict(slug='unbreakable-netherite-pickaxe', ns='unbreakable_netherite_pickaxe', title='Unbreakable Netherite Pickaxe',
+         tag='单件：一把不会坏的下界合金镐',
+         intro='只加一把镐子，用下界合金块和金锭在动力合成器上拼成，耐久条不再消耗。',
+         groups=[]),
+    dict(slug='create-treadmill', ns='createtreadmill', title='Create: Treadmill',
+         tag='跑步机 + 女仆马达，把「走路」变成旋转动力',
+         intro='给女仆（Maid）用的跑步机：女仆在跑步机上跑，跑步机输出旋转动力。'
+               '配套的女仆马达可以直接把女仆装进动力结构里，是「生物动力」路线的小玩具。',
+         groups=[('跑步机 / 马达', ('treadmill', 'motor', 'maid')), ]),
+    dict(slug='kinetic-pixel', ns='kinetic_pixel', title='Kinetic Pixel',
+         tag='用 Create 产线造火器：枪管、激发器、各种弹药',
+         intro='把 Create 的加工体系接到轻武器上：抗压板、弹丸管、激发器、储气筒、各类蓝图，'
+               '最后在火器工台组装成枪。素材链很长，适合喜欢「造产线」的人。',
+         groups=[('抗压板 / 材料', ('compression', 'sheet', 'ingot', 'alloy')),
+                 ('枪管 / 激发器', ('barrel', 'exciter', 'piston', 'striker', 'cylinder')),
+                 ('弹药 / 蓝图', ('ammo', 'dart', 'shrapnel', 'whistle', 'blueprint', 'propellant', 'template')),
+                 ('棉花 / 作物', ('cotton', 'seed')), ]),
+
+    dict(slug='create-propulsion', ns='createpropulsion', title='Create: Propulsion',
+         tag='给机械动力加一套飞行器：推进器、机翼、线缆、光学镜头',
+         intro='把 Create 的旋转动力变成推力：固体/液体燃料推进器、离子推进器、矢量推进器，'
+               '配机翼、粘合与遥控结构；另有一条铂（Platinum）材料线和光学镜头（透镜、线缆）。',
+         groups=[('推进器', ('thruster',)),
+                 ('机翼与结构', ('wing', 'glue', 'tilt', 'contraption', 'adapter', 'reaction', 'assembly', 'assembler')),
+                 ('线缆与光学', ('cable', 'lens', 'optical', 'focus', 'invisib')),
+                 ('铂与材料', ('platinum', 'raw', 'ore', 'sheet', 'ingot', 'nugget', 'casing', 'tank', 'vessel')),
+                 ('燃料与推进剂', ('burner', 'fuel', 'oxidizer', 'turpentine', 'resin', 'coral'))]),
+    dict(slug='create-screw-it', ns='screwnstuff', title='Create: Screw It!',
+         tag='螺丝、钉子、支架：把方块真正拧在一起',
+         intro='给建筑和机械加「紧固件」：工业铁与锈蚀铁两种材质的螺丝、钉子、支架，'
+               '配锯（改长度）、螺丝刀（拧紧）、锤子（敲入），拼装时能对齐、能拆。',
+         groups=[('紧固件', ('screw', 'nail', 'bracket')),
+                 ('工具', ('hammer', 'saw', 'screwdriver'))]),
+    dict(slug='create-bread-and-beyond', ns='create_bread_and_beyond', title='Create: Bread and Beyond',
+         tag='面包、肉饼、芝士与下界三明治',
+         intro='一条吃的产线：面团 → 面包胚，生肉 → 肉饼 → 芝士汉堡，'
+               '还有下界/诡异两种菌岩三明治和一把刀。',
+         groups=[('面包与面团', ('dough', 'bread', 'bun')),
+                 ('肉与芝士', ('patty', 'meat', 'cheese', 'mince')),
+                 ('三明治与汉堡', ('sandwich', 'burger', 'loaf')),
+                 ('调料与工具', ('salt', 'knife'))]),
+
+
+    dict(slug='create-integrated-farming', ns='create_integrated_farming', title='Create: Integrated Farming',
+         tag='鸡鸭鹅的自动化养殖：栖架、渔网、真空收割',
+         intro='把「养动物」接进 Create 产线：各种栖架（鸡/鸭/鹅/火鸡）自动产蛋，'
+               '渔网捕鱼（含岩浆渔网），真空收割机范围收集掉落物。',
+         groups=[('鸡与火鸡', ('chicken', 'turkey')),
+                 ('鸭与鹅', ('duck', 'goose')),
+                 ('捕捞', ('fishing', 'net')),
+                 ('收获', ('harvest', 'vacuum', 'roost'))]),
+    dict(slug='simulated-coasters', ns='simulatedcoasters', title='Simulated Coasters',
+         tag='过山车轨道与车厢，接 Create 的机械结构',
+         intro='在 Create 的装置上加过山车：轨道、锚点、车厢、铆钉，还有红气球装饰。'
+               '轨道可以拼成弯道，车厢靠锚点定位。',
+         groups=[('轨道', ('track', 'anchor')),
+                 ('车厢', ('cart',)),
+                 ('零件与装饰', ('rivet', 'balloon'))]),
+    dict(slug='create-escalated', ns='escalated', title='Create: Escalated',
+         tag='自动扶梯：把传送带变成会走的楼梯',
+         intro='两个台阶方块（金属/木质），铺在机械传送带上就变成自动扶梯。'
+               '模组还带了「只靠扶梯爬 100 格」的成就。',
+         groups=[('扶梯台阶', ('steps', 'walkway'))]),
+
+]
+
+
+def fetch_jar(slug, ns):
+    # 本地 jar 优先（含非 1.20.1 Forge 的包）
+    _local = os.path.join(RAW, slug + '.jar')
+    if os.path.exists(_local):
+        return _local
+    local = os.path.join(RAW, slug + '.jar')
+    if os.path.exists(local):
+        return local
+    vs = json.load(u.urlopen('https://api.modrinth.com/v2/project/%s/version' % slug, timeout=25))
+    pick = None
+    for v in vs:
+        if '1.20.1' in v.get('game_versions', []) and ('forge' in v.get('loaders', []) or 'neoforge' in v.get('loaders', [])):
+            pick = v
+            break
+    if pick is None:
+        return None
+    f = next((x for x in pick['files'] if x['filename'].endswith('.jar')), pick['files'][0])
+    dst = os.path.join(RAW, slug + '.jar')
+    if not os.path.exists(dst):
+        open(dst, 'wb').write(u.urlopen(f['url'], timeout=120).read())
+    return dst
+
+
+def strip(t):
+    return re.sub(r'§.', '', t or '')
+
+
+def build(spec):
+    jar = fetch_jar(spec['slug'], spec['ns'])
+    if not jar:
+        print(spec['slug'], 'SKIP no 1.20.1 forge')
+        return
+    z = zipfile.ZipFile(jar)
+    ns = spec['ns']
+    # 真实命名空间（有的模组 jar 内 ns 与 slug 不同）
+    nss = set()
+    for n in z.namelist():
+        if n.startswith('assets/') and n.count('/') >= 2:
+            nss.add(n.split('/')[1])
+    nss = [x for x in nss if x != 'minecraft']
+    if nss and ns not in nss:
+        ns = sorted(nss)[0]
+
+    def rj(n):
+        try:
+            return json.loads(z.read(n).decode('utf-8-sig'))
+        except Exception:
+            return {}
+
+    lang = {}
+    for code in ('zh_cn', 'en_us'):
+        for n in z.namelist():
+            if n.endswith('lang/%s.json' % code) and '/%s/' % ns in n:
+                lang = rj(n)
+                break
+        if lang:
+            break
+
+    names = {}
+    for k, v in lang.items():
+        m = re.match(r'^(item|block)\.%s\.([a-z0-9_]+)$' % re.escape(ns), k)
+        if m:
+            names[m.group(2)] = strip(v).replace(' (%s)', '').replace('(%s)', '')
+
+    copied = {}
+
+    def icon(short):
+        # 名字与贴图不同名的特例（Screw It：industrial_iron_screw -> block/screw_industrial_iron）
+        _m = re.match(r'(industrial_iron|weathered_iron)_(screw|nail|bracket)$', short)
+        if _m:
+            _mat, _kind = _m.group(1), _m.group(2)
+            _cand = ('assets/%s/textures/block/bracket/1-1_%s.png' % (ns, _mat)) if _kind == 'bracket' \
+                    else ('assets/%s/textures/block/%s_%s.png' % (ns, _kind, _mat))
+            if _cand in z.namelist():
+                _dst = '%s_%s.png' % (ns, short)
+                if _dst not in copied:
+                    with z.open(_cand) as f, open(os.path.join(ICONS, _dst), 'wb') as o:
+                        shutil.copyfileobj(f, o)
+                    copied[_dst] = 1
+                return 'assets/icons/' + _dst
+        if os.path.exists(os.path.join(ICONS, 'cms_%s.png' % short)):
+            return 'assets/icons/cms_%s.png' % short
+        for k in ('item', 'block'):
+            nm = 'assets/%s/textures/%s/%s.png' % (ns, k, short)
+            if nm in z.namelist():
+                dst = '%s_%s.png' % (ns, short)
+                if dst not in copied:
+                    with z.open(nm) as f, open(os.path.join(ICONS, dst), 'wb') as o:
+                        shutil.copyfileobj(f, o)
+                    copied[dst] = 1
+                return 'assets/icons/' + dst
+        for pre in ('models/item/%s.json' % short, 'models/block/%s.json' % short):
+            nm = 'assets/%s/%s' % (ns, pre)
+            if nm in z.namelist():
+                for v in (rj(nm).get('textures') or {}).values():
+                    if isinstance(v, str) and not v.startswith('#'):
+                        p = 'assets/%s/textures/%s.png' % (ns, v.split(':')[-1])
+                        if p in z.namelist():
+                            dst = '%s_%s.png' % (ns, short)
+                            if dst not in copied:
+                                with z.open(p) as f, open(os.path.join(ICONS, dst), 'wb') as o:
+                                    shutil.copyfileobj(f, o)
+                                copied[dst] = 1
+                            return 'assets/icons/' + dst
+        for c in ('create_%s.png' % short, 'minecraft_%s.png' % short):
+            if os.path.exists(os.path.join(ICONS, c)):
+                return 'assets/icons/' + c
+        return ''
+
+    recs = {}
+    for n in z.namelist():
+        if (n.startswith('data/%s/recipes/' % ns) or n.startswith('data/%s/recipe/' % ns)) and n.endswith('.json'):
+            try:
+                d = rj(n)
+            except Exception:
+                continue
+            res = d.get('results') or d.get('result')
+            res = res if isinstance(res, list) else [res]
+            for x in res:
+                if isinstance(x, list):
+                    x = x[0] if x else None
+                if not isinstance(x, dict):
+                    continue
+                rid = x.get('item') or x.get('id') or ''
+                if isinstance(rid, dict):
+                    rid = rid.get('item') or rid.get('id') or ''
+                if isinstance(rid, str) and rid.startswith(ns + ':'):
+                    recs.setdefault(rid.split(':')[-1], d)
+
+    def nm(iid):
+        if not iid:
+            return ''
+        s = iid.split(':')[-1]
+        if iid.startswith(ns + ':'):
+            return SEAT_ZH.get(s) or names.get(s, s.replace('_', ' '))
+        if iid in MC_ZH:
+            return MC_ZH[iid]
+        try:
+            d = json.load(io.open(os.path.join(RAW, '..', 'out', 'data.json'), encoding='utf-8'))
+            v = (d.get('items') or {}).get(s) or (d.get('vanilla') or {}).get(s)
+            if isinstance(v, dict) and v.get('n'):
+                return v['n']
+        except Exception:
+            pass
+        return s.replace('_', ' ')
+
+    def sicon(iid):
+        s = iid.split(':')[-1]
+        if iid.startswith(ns + ':'):
+            return icon(s)
+        for c in ('3d_create_%s.png' % s, 'create_%s.png' % s, 'hh3d_%s.png' % s, 'minecraft_%s.png' % s):
+            if os.path.exists(os.path.join(ICONS, c)):
+                return 'assets/icons/' + c
+        return ''
+
+    def _href_for(iid):
+        if not iid or ':' not in iid:
+            return None
+        ns_, short_ = iid.split(':', 1)
+        if ns_ == 'create':
+            if os.path.exists(os.path.join(SITE, 'items', short_ + '.html')):
+                return 'items/' + short_ + '.html'
+        else:
+            if os.path.exists(os.path.join(SITE, 'vanilla', short_ + '.html')):
+                return 'vanilla/' + short_ + '.html'
+        return None
+
+    def chip(st):
+        if isinstance(st, list):
+            st = st[0] if st else {}
+        if not isinstance(st, dict):
+            st = {}
+        if not st:
+            return ''
+        if st.get('tag'):
+            tg = st['tag'].lstrip('#')
+            return '<span class="ch">#%s</span>' % tg.split('/')[-1].replace('_', ' ')
+        if st.get('fluid'):
+            _fl = st['fluid'].split(':')[-1]
+            _fh = 'vanilla/%s.html' % _fl if os.path.exists(os.path.join(SITE, 'vanilla', _fl + '.html')) else None
+            if _fh:
+                return '<a class="ch" href="%s">%s %dmB</a>' % (
+                    _fh, _fl.replace('_', ' '), st.get('amount') or 0)
+            return '<span class="ch">%s %dmB</span>' % (
+                st['fluid'].split(':')[-1].replace('_', ' '), st.get('amount') or 0)
+        iid = st.get('item') or st.get('id') or ''
+        ic = sicon(iid)
+        cnt = st.get('count') or 1
+        _h = _href_for(iid)
+        if _h:
+            return '<a class="ch" href="%s" title="%s">%s%s%s</a>' % (
+                _h, nm(iid), ('<img src="%s" alt="">' % ic) if ic else '', nm(iid),
+            (' ×%d' % cnt) if cnt > 1 else '')
+
+    def rec(d):
+        mach = {'minecraft:crafting_shaped': '工作台', 'minecraft:crafting_shapeless': '工作台',
+                'create:mechanical_crafting': '动力合成器'}.get(d.get('type'), '机械动力')
+        pat = d.get('pattern')
+        key = d.get('key') or {}
+        if not isinstance(key, dict):
+            key = {}
+        if pat:
+            w = max(len(x) for x in pat)
+            cells = []
+            for row in pat:
+                for ch in row.ljust(w, ' '):
+                    cells.append('<div class="cell empty"></div>' if ch == ' ' else
+                                 '<div class="cell">%s</div>' % chip(key.get(ch, {})))
+            while len(cells) % w:
+                cells.append('<div class="cell empty"></div>')
+            out = (d.get('results') or [d.get('result')])[0]
+            return ('<div class="rec"><div class="grid" style="grid-template-columns:repeat(%d,1fr)">%s</div><div class="arw">→</div>%s'
+                    '<span class="mach">%s</span></div>' % (w, ''.join(cells), chip(out), mach))
+        ings = d.get('ingredients') or []
+        agg, order = {}, []
+        for x in ings:
+            k = x.get('item') or x.get('fluid') or x.get('tag') or '?'
+            if k not in agg:
+                agg[k] = {'st': dict(x), 'n': 0}
+                order.append(k)
+            agg[k]['n'] += x.get('count') or 1
+        parts = []
+        for k in order:
+            st = dict(agg[k]['st'])
+            st['count'] = agg[k]['n']
+            parts.append(chip(st))
+        out = (d.get('results') or [d.get('result')])[0]
+        if isinstance(out, list):
+            out = out[0] if out else {}
+        return ('<div class="rec"><div class="chips">%s</div><div class="arw">→</div>%s'
+                '<span class="mach">%s</span></div>' % (''.join(parts), chip(out), mach))
+
+    order = sorted(names.keys())
+    _only = spec.get('only')
+    _skip = spec.get('skip') or ()
+    if _only:
+        order = [k for k in order if any(w in k for w in _only)]
+    if _skip:
+        order = [k for k in order if not any(w in k for w in _skip)]
+    groups = spec['groups']
+    buckets = []
+    if groups:
+        used = set()
+        for title, kws in groups:
+            keys = [k for k in order if k not in used and any(w in k for w in kws)]
+            used |= set(keys)
+            if keys:
+                buckets.append((title, keys))
+        rest = [k for k in order if k not in used]
+        if rest:
+            buckets.append(('其它', rest))
+    else:
+        buckets.append(('全部物品', order))
+
+    secs = []
+    for title, keys in buckets:
+        cards = []
+        for k in keys:
+            ic = icon(k)
+            if not ic:
+                _p = os.path.join(ICONS, '%s_%s.png' % (ns, k))
+                if os.path.exists(_p):
+                    ic = 'assets/icons/%s_%s.png' % (ns, k)
+            body = rec(recs[k]) if k in recs else '<div class="note2">没有工作台/机器配方</div>'
+            cards.append('<div class="card"><div class="ci">%s</div><div class="t"><b>%s</b>'
+                         '<small>%s:%s</small></div>%s</div>'
+                         % (('<img src="%s" alt="">' % ic) if ic else '', names[k], ns, k, body))
+        secs.append('<div class="blk"><h2>%s<span class="cnt">%d</span></h2>'
+                    '<div class="grid-items">%s</div></div>' % (title, len(keys), ''.join(cards)))
+
+    page = '''<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<title>%s · 附属模组 · Create Codex</title>
+<link rel="stylesheet" href="assets/style.css">
+<style>
+.wrap{max-width:1150px}
+.hero{padding:40px 0 14px;text-align:center}
+.hero img.big{width:96px;height:96px;border-radius:18px;background:#0d0b09}
+.hero h1{font-size:32px;margin:12px 0 4px}
+.hero .sub{color:var(--brass);font-size:14px;letter-spacing:.3em}
+.hero .tag{color:var(--muted);margin-top:8px}
+.grid-items{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:10px;align-items:start}
+.card{display:block;padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+.card .ci{float:left;width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:#14110c;border-radius:8px}
+.card .ci img{width:34px;height:34px;object-fit:contain;image-rendering:pixelated}
+.card .t{margin-left:54px;min-height:44px;display:flex;flex-direction:column;justify-content:center;gap:2px}
+.card .t b{font-size:13px}
+.card .t small{color:var(--muted);font-size:10px;word-break:break-all}
+.card .rec{clear:both;margin-top:10px;padding-top:8px;border-top:1px solid var(--line);display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.grid{display:grid;grid-template-columns:repeat(3,40px);gap:3px}
+.cell,.cell *{box-shadow:none!important;outline:none}
+.cell{width:40px;height:40px;display:flex;align-items:center;justify-content:center;background:#14110c;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.cell.empty{border-style:dashed;opacity:.45}
+.cell img{width:30px;height:30px;object-fit:contain;image-rendering:pixelated}
+.cell .ch{font-size:0;border:0;background:none;padding:0}
+.chips{display:flex;flex-wrap:wrap;gap:4px}
+.cell .ch:not(:has(img)){max-width:34px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:9px;line-height:1.1}
+.ch{display:inline-flex;align-items:center;gap:4px;font-size:11px;padding:3px 7px;border:1px solid var(--line);border-radius:999px;background:#14110c}
+.ch img{width:18px;height:18px;object-fit:contain;image-rendering:pixelated}
+.mach{color:var(--brass);font-size:10px}
+.arw{color:var(--muted)}
+.note2{color:var(--muted);font-size:11px}
+.ver{margin:18px 0;padding:10px 12px;border-left:2px solid var(--brass);background:#14110c;color:var(--muted);font-size:12px;line-height:1.7}
+</style></head><body>
+<header class="top"><div class="wrap"><a class="logo" href="index.html"><span class="gear"></span>CREATE CODEX</a>
+<nav><a href="catalog.html">全部物品</a><a href="tags.html">标签</a><a href="mods.html">模组</a><a class="on" href="mods.html">附属</a></nav></div></header>
+<main class="wrap">
+<div class="hero"><img class="big" src="assets/icons/mod_%s.png" alt="">
+<h1>%s</h1><div class="sub">附属模组</div><div class="tag">%s</div></div>
+<div class="blk"><h2>这是什么</h2><p>%s</p></div>
+<div class="ver"><b>命名空间：</b><code>%s</code>　<b>1.20.1 版本：</b>本页物品与配方直接取自该版本的 jar。</div>
+%s
+</main>
+<footer class="wrap foot">数据与图标来自 %s 的 1.20.1 jar · 本页不属于 Create 本体图鉴</footer>
+</body></html>''' % (spec['title'], spec['slug'].replace('-', '_'), spec['title'], spec['tag'],
+                     spec['intro'], ns, ''.join(secs), spec['title'])
+
+    out = os.path.join(SITE, 'addon-%s.html' % spec['slug'].replace('create-', ''))
+    io.open(out, 'w', encoding='utf-8').write(page)
+    print('%-28s %-18s items %-3d recipes %-3d -> %s'
+          % (spec['slug'], ns, len(names), len(recs), os.path.basename(out)))
+
+
+MODS += [
+    dict(slug='create-meat-blocks', ns='meatblocks', title='Create: Meat Blocks',
+         tag='把肉做成方块：可切片、可压缩、可烤',
+         intro='给 Create 加一整套「肉」的加工链：生肉块、熟肉块、压缩肉、切片机与培根机，'
+               '产线末端能直接吐出食物。名字取自模组语言文件（英文）。',
+         groups=[('生肉 / 熟肉', ('raw', 'cooked', 'meat', 'beef', 'pork', 'chicken')),
+                 ('压缩 / 加工', ('compressed', 'slice', 'bacon', 'grind', 'press'))]),
+    dict(slug='eatandesite', ns='eatandesite', title='EatAndesite',
+         tag='让你能吃安山岩',
+         intro='一个小玩笑模组：按住右键啃安山岩，每一口消耗一点饥饿度并短暂获得缓慢。'
+               '没有新增物品，只改了安山岩的交互。',
+         groups=[]),
+    dict(slug='create-reautomated', ns='createreautomated', title='Create ReAutomated',
+         tag='自动化零件的另一套做法',
+         intro='一批可自动化的零件与机器，走的是和 Create 本体不同的合成路线，'
+               '适合在整合包里替换掉手搓环节。名字取自模组语言文件（英文）。',
+         groups=[('零件', ('gear', 'shaft', 'cog', 'bearing', 'belt')),
+                 ('机器', ('machine', 'press', 'mixer', 'mill', 'drill', 'assembler'))]),
+]
+
+import sys as _sys0
+_ONLY = set(_sys0.argv[1:])
+MODS += [
+    dict(slug='create-reautomated-traces', ns='createreautomatedtraces', title='Create ReAutomated: Traces',
+         tag='ReAutomated 的补充包：更多零件与中间产物',
+         intro='Create ReAutomated 的附属，补上它依赖的中间产物与额外零件；'
+               '单独安装没有内容，需要和 ReAutomated 一起用。名字取自模组语言文件（英文）。',
+         groups=[('零件', ('gear', 'shaft', 'cog', 'bearing', 'trace')),
+                 ('机器', ('machine', 'press', 'mixer', 'mill', 'assembler'))]),
+]
+
+for m in MODS:
+    if _ONLY and m['slug'] not in _ONLY:
+        continue
+    try:
+        build(m)
+    except Exception as e:
+        import traceback
+        print(m['slug'], 'ERR', type(e).__name__, e)
+        traceback.print_exc()
+
+
+# ---- 页面后处理（chip 链接、空格子、anchors.js）----
+try:
+    import sys as _sys, os as _os
+    _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+    import addon_post as _ap
+    _ap.postprocess_all()
+except Exception as _e:
+    print("post-process skipped:", _e)

@@ -1,0 +1,62 @@
+﻿=== belt max length ===
+BeltConnectorItem.java:72: if (!validateAxis(world, firstPulley) || !firstPulley.closerThan(pos, maxLength() * 2)) {
+BeltConnectorItem.java:213: if (!second.closerThan(first, maxLength()))
+BeltConnectorItem.java:264: public static Integer maxLength() {
+BeltConnectorItem.java:265: return AllConfigs.server().kinetics.maxBeltLength.get();
+BeltConnectorHandler.java:78: if (!selected.closerThan(first, AllConfigs.server().kinetics.maxBeltLength.get()))
+BeltConnectorHandler.java:94: float length = (float) Math.max(x, Math.max(y, z));
+BeltConnectorHandler.java:112: float closest = Float.MAX_VALUE;
+BeltConnectorHandler.java:127: for (float f = 0; f < length; f += .0625f) {
+=== millstone ===
+MillingRecipe.java:28: protected int getMaxOutputCount() {
+MillstoneBlock.java:11: import net.minecraft.core.Direction;
+MillstoneBlock.java:12: import net.minecraft.core.Direction.Axis;
+MillstoneBlock.java:47: public boolean hasShaftTowards(LevelReader world, BlockPos pos, BlockState state, Direction face) {
+MillstoneBlock.java:48: return face == Direction.DOWN;
+MillstoneBlock.java:61: boolean emptyOutput = true;
+MillstoneBlock.java:62: IItemHandlerModifiable inv = millstone.outputInv;
+MillstoneBlock.java:63: for (int slot = 0; slot < inv.getSlots(); slot++) {
+MillstoneBlock.java:64: ItemStack stackInSlot = inv.getStackInSlot(slot);
+MillstoneBlock.java:65: if (!stackInSlot.isEmpty())
+MillstoneBlock.java:66: emptyOutput = false;
+MillstoneBlock.java:68: .placeItemBackInInventory(stackInSlot);
+MillstoneBlock.java:69: inv.setStackInSlot(slot, ItemStack.EMPTY);
+MillstoneBlock.java:72: if (emptyOutput) {
+MillstoneBlock.java:73: inv = millstone.inputInv;
+MillstoneBlock.java:74: for (int slot = 0; slot < inv.getSlots(); slot++) {
+MillstoneBlock.java:76: .placeItemBackInInventory(inv.getStackInSlot(slot));
+MillstoneBlock.java:77: inv.setStackInSlot(slot, ItemStack.EMPTY);
+MillstoneBlockEntity.java:8: import com.simibubi.create.content.kinetics.belt.behaviour.DirectBeltInputBehaviour;
+MillstoneBlockEntity.java:17: import net.minecraft.core.Direction;
+MillstoneBlockEntity.java:18: import net.minecraft.core.Direction.Axis;
+MillstoneBlockEntity.java:39: public ItemStackHandler inputInv;
+MillstoneBlockEntity.java:40: public ItemStackHandler outputInv;
+MillstoneBlockEntity.java:47: inputInv = new ItemStackHandler(1);
+MillstoneBlockEntity.java:48: outputInv = new ItemStackHandler(9);
+=== saw ===
+CuttingRecipe.java:26: public class CuttingRecipe extends ProcessingRecipe<RecipeWrapper> implements IAssemblyRecipe {
+CuttingRecipe.java:28: public CuttingRecipe(ProcessingRecipeParams params) {
+CuttingRecipe.java:29: super(AllRecipeTypes.CUTTING, params);
+CuttingRecipe.java:61: return CreateLang.translateDirect("recipe.assembly.cutting");
+CuttingRecipe.java:71: return () -> SequencedAssemblySubCategory.AssemblyCutting::new;
+SawBlock.java:11: import com.simibubi.create.content.kinetics.base.DirectionalAxisKineticBlock;
+SawBlock.java:21: import net.minecraft.core.Direction;
+SawBlock.java:22: import net.minecraft.core.Direction.Axis;
+SawBlock.java:23: import net.minecraft.core.Direction.AxisDirection;
+SawBlock.java:51: public class SawBlock extends DirectionalAxisKineticBlock implements IBE<SawBlockEntity> {
+SawBlock.java:68: Direction facing = stateForPlacement.getValue(FACING);
+SawBlock.java:69: return stateForPlacement.setValue(FLIPPED, facing.getAxis() == Axis.Y && context.getHorizontalDirection()
+SawBlock.java:70: .getAxisDirection() == AxisDirection.POSITIVE);
+SawBlock.java:74: public BlockState getRotatedBlockState(BlockState originalState, Direction targetedFace) {
+SawBlock.java:76: if (newState.getValue(FACING)
+SawBlock.java:89: if (state.getValue(FACING)
+SawBlock.java:104: if (state.getValue(FACING)
+SawBlock.java:119: return AllShapes.CASING_12PX.get(state.getValue(FACING));
+SawBlock.java:137: if (state.getOptionalValue(FACING)
+SawBlock.java:138: .orElse(Direction.WEST) != Direction.UP)
+SawBlock.java:190: return state.getValue(FACING)
+SawBlock.java:197: return isHorizontal(state) ? state.getValue(FACING)
+SawBlock.java:202: public boolean hasShaftTowards(LevelReader world, BlockPos pos, BlockState state, Direction face) {
+SawBlock.java:203: return isHorizontal(state) ? face == state.getValue(FACING)
+SawBlock.java:238: List<Direction> directions = IPlacementHelper.orderedByDistanceExceptAxis(pos, ray.getLocation(),
+=== arm reach ===

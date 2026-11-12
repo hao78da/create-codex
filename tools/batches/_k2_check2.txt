@@ -1,0 +1,153 @@
+段落总数 252
+按全部字符(去标签): <60 有 125, >90 有 0
+按纯汉字: <60 有 176, >90 有 0
+
+全部字符 <60 的段落:
+  create:controls/怎么获得/0  汉字52 字符59
+  create:speedometer/怎么获得/0  汉字44 字符50
+  create:weighted_ejector/怎么获得/0  汉字46 字符53
+  create:weighted_ejector/常见坑/0  汉字51 字符56
+  create:weighted_ejector/常见坑/1  汉字53 字符59
+  create:brass_belt_funnel/常见坑/0  汉字51 字符56
+  create:fluid_pipe/怎么获得/0  汉字48 字符56
+  create:fluid_pipe/怎么用/0  汉字52 字符58
+  create:polished_rose_quartz/常见坑/0  汉字52 字符57
+  create:smart_chute/怎么获得/0  汉字48 字符55
+  create:smart_chute/怎么用/0  汉字52 字符57
+  create:smart_chute/常见坑/0  汉字47 字符51
+  create:smart_chute/常见坑/1  汉字51 字符57
+  create:clipboard/怎么获得/0  汉字47 字符55
+  create:clipboard/怎么获得/1  汉字53 字符59
+  create:clipboard/常见坑/0  汉字51 字符56
+  create:experience_nugget/常见坑/0  汉字48 字符53
+  create:schematicannon/怎么获得/0  汉字47 字符53
+  create:schematicannon/常见坑/0  汉字52 字符58
+  create:spout/怎么获得/0  汉字43 字符49
+  create:spout/常见坑/0  汉字51 字符56
+  create:andesite_door/怎么获得/0  汉字50 字符57
+  create:andesite_door/怎么获得/1  汉字54 字符59
+  create:andesite_door/常见坑/0  汉字44 字符49
+  create:andesite_door/常见坑/1  汉字52 字符58
+  create:small_granite_brick_slab/怎么获得/0  汉字54 字符59
+  create:small_granite_brick_slab/怎么获得/1  汉字48 字符53
+  create:small_granite_brick_slab/怎么用/0  汉字50 字符55
+  create:small_granite_brick_slab/怎么用/1  汉字45 字符51
+  create:small_granite_brick_slab/常见坑/0  汉字49 字符53
+  create:small_granite_brick_slab/常见坑/1  汉字51 字符56
+  create:small_limestone_brick_slab/怎么获得/0  汉字35 字符39
+  create:small_limestone_brick_slab/怎么用/0  汉字51 字符56
+  create:small_limestone_brick_slab/怎么用/1  汉字53 字符58
+  create:small_limestone_brick_slab/常见坑/0  汉字43 字符48
+  create:small_limestone_brick_slab/常见坑/1  汉字46 字符51
+  create:small_scoria_brick_slab/怎么获得/0  汉字35 字符40
+  create:small_scoria_brick_slab/怎么获得/1  汉字47 字符51
+  create:small_scoria_brick_slab/怎么用/0  汉字44 字符48
+  create:small_scoria_brick_slab/怎么用/1  汉字46 字符52
+  create:small_scoria_brick_slab/常见坑/0  汉字43 字符49
+  create:small_scoria_brick_slab/常见坑/1  汉字48 字符53
+  create:mechanical_harvester/怎么获得/0  汉字41 字符46
+  create:mechanical_harvester/怎么获得/1  汉字40 字符46
+  create:mechanical_harvester/怎么用/0  汉字43 字符47
+  create:mechanical_harvester/怎么用/1  汉字42 字符47
+  create:mechanical_harvester/常见坑/0  汉字42 字符46
+  create:mechanical_harvester/常见坑/1  汉字44 字符49
+  create:rope_pulley/怎么获得/0  汉字36 字符42
+  create:rope_pulley/怎么获得/1  汉字41 字符45
+  create:rope_pulley/怎么用/0  汉字45 字符50
+  create:rope_pulley/怎么用/1  汉字45 字符50
+  create:rope_pulley/常见坑/0  汉字42 字符47
+  create:rope_pulley/常见坑/1  汉字40 字符44
+  create:small_granite_brick_stairs/怎么获得/0  汉字45 字符50
+  create:small_granite_brick_stairs/怎么获得/1  汉字50 字符55
+  create:small_granite_brick_stairs/怎么用/0  汉字47 字符53
+  create:small_granite_brick_stairs/怎么用/1  汉字41 字符45
+  create:small_granite_brick_stairs/常见坑/0  汉字44 字符49
+  create:small_granite_brick_stairs/常见坑/1  汉字43 字符48
+  create:small_limestone_brick_stairs/怎么获得/0  汉字34 字符37
+  create:small_limestone_brick_stairs/怎么获得/1  汉字43 字符46
+  create:small_limestone_brick_stairs/怎么用/0  汉字35 字符38
+  create:small_limestone_brick_stairs/怎么用/1  汉字44 字符49
+  create:small_limestone_brick_stairs/常见坑/0  汉字38 字符42
+  create:small_limestone_brick_stairs/常见坑/1  汉字40 字符44
+  create:small_scoria_brick_stairs/怎么获得/0  汉字37 字符41
+  create:small_scoria_brick_stairs/怎么获得/1  汉字39 字符43
+  create:small_scoria_brick_stairs/怎么用/0  汉字42 字符47
+  create:small_scoria_brick_stairs/怎么用/1  汉字39 字符44
+  create:small_scoria_brick_stairs/常见坑/0  汉字38 字符43
+  create:small_scoria_brick_stairs/常见坑/1  汉字36 字符40
+  create:chute/常见坑/0  汉字52 字符58
+  create:chute/常见坑/1  汉字52 字符58
+  create:small_dripstone_brick_slab/怎么用/0  汉字51 字符56
+  create:small_dripstone_brick_slab/常见坑/0  汉字48 字符53
+  create:small_dripstone_brick_slab/常见坑/1  汉字45 字符50
+  create:small_tuff_brick_slab/怎么获得/1  汉字46 字符51
+  create:small_tuff_brick_slab/怎么用/0  汉字53 字符58
+  create:small_tuff_brick_slab/怎么用/1  汉字40 字符44
+  create:small_tuff_brick_slab/常见坑/0  汉字47 字符53
+  create:small_tuff_brick_slab/常见坑/1  汉字43 字符48
+  create:stressometer/常见坑/1  汉字40 字符44
+  create:gantry_carriage/怎么获得/0  汉字50 字符55
+  create:gantry_carriage/怎么获得/1  汉字46 字符51
+  create:gantry_carriage/怎么用/1  汉字36 字符49
+  create:gantry_carriage/进阶/1  汉字37 字符41
+  create:mechanical_roller/怎么获得/0  汉字53 字符58
+  create:mechanical_roller/怎么获得/1  汉字42 字符46
+  create:mechanical_roller/怎么用/1  汉字43 字符47
+  create:mechanical_roller/进阶/1  汉字30 字符33
+  create:polished_cut_dripstone_wall/怎么获得/1  汉字41 字符45
+  create:polished_cut_dripstone_wall/怎么用/0  汉字47 字符52
+  create:polished_cut_dripstone_wall/怎么用/1  汉字35 字符39
+  create:polished_cut_dripstone_wall/常见坑/0  汉字37 字符41
+  create:polished_cut_dripstone_wall/常见坑/1  汉字40 字符44
+  create:small_deepslate_brick_slab/怎么获得/0  汉字50 字符54
+  create:small_deepslate_brick_slab/怎么获得/1  汉字42 字符46
+  create:small_deepslate_brick_slab/怎么用/0  汉字47 字符52
+  create:small_deepslate_brick_slab/怎么用/1  汉字33 字符37
+  create:small_deepslate_brick_slab/常见坑/0  汉字36 字符40
+  create:small_deepslate_brick_slab/常见坑/1  汉字36 字符40
+  create:small_diorite_brick_slab/怎么获得/0  汉字54 字符59
+  create:small_diorite_brick_slab/怎么获得/1  汉字36 字符39
+  create:small_diorite_brick_slab/怎么用/0  汉字47 字符52
+  create:small_diorite_brick_slab/怎么用/1  汉字37 字符41
+  create:small_diorite_brick_slab/常见坑/0  汉字40 字符44
+  create:small_diorite_brick_slab/常见坑/1  汉字35 字符38
+  create:small_dripstone_brick_stairs/怎么获得/0  汉字54 字符59
+  create:small_dripstone_brick_stairs/怎么获得/1  汉字36 字符40
+  create:small_dripstone_brick_stairs/怎么用/0  汉字51 字符57
+  create:small_dripstone_brick_stairs/怎么用/1  汉字28 字符31
+  create:small_dripstone_brick_stairs/常见坑/0  汉字44 字符49
+  create:small_dripstone_brick_stairs/常见坑/1  汉字38 字符43
+  create:small_tuff_brick_stairs/怎么获得/0  汉字49 字符54
+  create:small_tuff_brick_stairs/怎么获得/1  汉字39 字符43
+  create:small_tuff_brick_stairs/怎么用/0  汉字48 字符53
+  create:small_tuff_brick_stairs/怎么用/1  汉字33 字符37
+  create:small_tuff_brick_stairs/常见坑/0  汉字39 字符44
+  create:small_tuff_brick_stairs/常见坑/1  汉字36 字符40
+  create:super_glue/怎么获得/0  汉字51 字符57
+  create:super_glue/怎么获得/1  汉字41 字符45
+  create:super_glue/怎么用/0  汉字52 字符57
+  create:super_glue/怎么用/1  汉字41 字符44
+  create:super_glue/进阶/1  汉字32 字符36
+
+全部字符 >90 的段落:
+
+总汉字 <300 的条目 17 个:
+  create:small_scoria_brick_stairs 231
+  create:small_limestone_brick_stairs 234
+  create:small_deepslate_brick_slab 244
+  create:small_tuff_brick_stairs 244
+  create:rope_pulley 249
+  create:small_diorite_brick_slab 249
+  create:small_dripstone_brick_stairs 251
+  create:mechanical_harvester 252
+  create:polished_cut_dripstone_wall 255
+  create:small_scoria_brick_slab 263
+  create:small_granite_brick_stairs 270
+  create:super_glue 278
+  create:gantry_carriage 283
+  create:small_limestone_brick_slab 284
+  create:small_tuff_brick_slab 284
+  create:mechanical_roller 284
+  create:small_granite_brick_slab 297
+
+最小值 create:small_scoria_brick_stairs 231  最大值 create:small_bogey 420

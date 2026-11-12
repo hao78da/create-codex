@@ -1,0 +1,42 @@
+casing (6): andesite_casing, brass_casing, copper_casing, railway_casing, refined_radiance_casing, shadow_steel_casing
+station (1): track_station
+track (6): fake_track, incomplete_track, track, track_observer, track_signal, track_station
+sand (2): red_sand_paper, sand_paper
+schematic (5): empty_schematic, schematic, schematic_and_quill, schematic_table, schematicannon
+transmit (1): transmitter
+ticker (2): sticker, stock_ticker
+depot (1): depot
+mechanical_arm (1): mechanical_arm
+brass_hand (1): brass_hand
+precision (2): incomplete_precision_mechanism, precision_mechanism
+electron (1): electron_tube
+rose_quartz (6): polished_rose_quartz, rose_quartz, rose_quartz_block, rose_quartz_lamp, rose_quartz_tiles, small_rose_quartz_tiles
+cogwheel (6): andesite_encased_cogwheel, andesite_encased_large_cogwheel, brass_encased_cogwheel, brass_encased_large_cogwheel, cogwheel, large_cogwheel
+shaft (6): andesite_encased_shaft, brass_encased_shaft, gantry_shaft, metal_girder_encased_shaft, powered_shaft, shaft
+gearbox (2): gearbox, vertical_gearbox
+clutch (1): clutch
+rotation_speed (1): rotation_speed_controller
+bearing (3): clockwork_bearing, mechanical_bearing, windmill_bearing
+chassis (3): linear_chassis, radial_chassis, secondary_linear_chassis
+water_wheel (3): large_water_wheel, water_wheel, water_wheel_structure
+windmill (1): windmill_bearing
+creative_motor (1): creative_motor
+experience (2): experience_block, experience_nugget
+vault (1): item_vault
+packager (2): packager, repackager
+package (6): package, package_filter, package_frogport, packager, rare_package, repackager
+frogport (1): package_frogport
+postbox (16): black_postbox, blue_postbox, brown_postbox, cyan_postbox, gray_postbox, green_postbox, light_blue_postbox, light_gray_postbox, lime_postbox, magenta_postbox, orange_postbox, pink_postbox, purple_postbox, red_postbox
+redstone_link (1): redstone_link
+threshold (0): 
+powered (3): powered_latch, powered_shaft, powered_toggle_latch
+sticker (1): sticker
+deployer (1): deployer
+drill (1): mechanical_drill
+saw (1): mechanical_saw
+basin (1): basin
+blaze (6): blaze_burner, blaze_cake, blaze_cake_base, creative_blaze_cake, empty_blaze_burner, lit_blaze_burner
+cinder (1): cinder_flour
+andesite_alloy (2): andesite_alloy, andesite_alloy_block
+brass_ingot (1): brass_ingot
+copper (62): copper_backtank, copper_backtank_placeable, copper_bars, copper_casing, copper_diving_boots, copper_diving_helmet, copper_door, copper_ladder, copper_nugget, copper_scaffolding, copper_sheet, copper_shingle_slab, copper_shingle_stairs, copper_shingles

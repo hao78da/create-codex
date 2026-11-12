@@ -1,0 +1,12 @@
+=== create:small_bogey
+keys: ['id', 'n', 'en', 'icon', 'kind', 'recipes', 'ponder', 'tooltip']
+{"id": "create:small_bogey", "n": "小转向架", "en": "Small Bogey", "icon": "create_small_bogey.png", "kind": "block", "recipes": [], "ponder": null, "tooltip": null}
+=== create:blaze_burner
+keys: ['id', 'n', 'en', 'icon', 'kind', 'recipes', 'ponder', 'tooltip']
+{"id": "create:blaze_burner", "n": "烈焰人燃烧室", "en": "Blaze Burner", "icon": "create_blaze_burner.png", "kind": "block", "recipes": [], "ponder": null, "tooltip": null}
+=== create:shadow_steel
+keys: ['id', 'n', 'en', 'icon', 'kind', 'recipes', 'ponder', 'tooltip']
+{"id": "create:shadow_steel", "n": "暗影钢", "en": "Shadow Steel", "icon": "create_shadow_steel.png", "kind": "item", "recipes": [], "ponder": null, "tooltip": null}
+=== create:brass_belt_funnel
+keys: ['id', 'n', 'en', 'icon', 'kind', 'recipes', 'ponder', 'tooltip']
+{"id": "create:brass_belt_funnel", "n": "黄铜传送带漏斗", "en": "Brass Belt Funnel", "icon": "create_brass_belt_funnel.png", "kind": "block", "recipes": [], "ponder": null, "tooltip": null}

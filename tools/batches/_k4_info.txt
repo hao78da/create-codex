@@ -1,0 +1,87 @@
+== block_info ==
+create:layered_dripstone: {"blast_resistance": 1.0, "flammable": false, "hardness": 1.5, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": false}
+create:layered_tuff: {"blast_resistance": 6.0, "flammable": false, "hardness": 1.5, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": false}
+create:ochrum: {"blast_resistance": 0.75, "flammable": false, "hardness": 1.25, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": false}
+create:ochrum_pillar: {"blast_resistance": 0.75, "flammable": false, "hardness": 1.25, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": false}
+create:scorchia: {"blast_resistance": 6.0, "flammable": false, "hardness": 1.5, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": false}
+create:layered_deepslate: {"blast_resistance": 6.0, "flammable": false, "hardness": 3.0, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": false}
+create:layered_diorite: {"blast_resistance": 6.0, "flammable": false, "hardness": 1.5, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": false}
+create:scoria: {"blast_resistance": 6.0, "flammable": false, "hardness": 1.5, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": false}
+create:veridium_pillar: {"blast_resistance": 6.0, "flammable": false, "hardness": 1.25, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": false}
+create:crimsite: {"blast_resistance": 6.0, "flammable": false, "hardness": 1.25, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": false}
+create:small_granite_bricks: {"blast_resistance": 6.0, "flammable": false, "hardness": 1.5, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": false}
+create:small_limestone_bricks: {"blast_resistance": 0.8, "flammable": false, "hardness": 1.25, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": false}
+create:small_scoria_bricks: {"blast_resistance": 6.0, "flammable": false, "hardness": 1.5, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": false}
+create:brass_funnel: {"blast_resistance": 6.0, "flammable": false, "hardness": 3.0, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": true}
+create:layered_ochrum: {"blast_resistance": 0.75, "flammable": false, "hardness": 1.25, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": false}
+create:crimsite_pillar: {"blast_resistance": 6.0, "flammable": false, "hardness": 1.25, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": false}
+create:layered_veridium: {"blast_resistance": 6.0, "flammable": false, "hardness": 1.25, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": false}
+create:scorchia_pillar: {"blast_resistance": 6.0, "flammable": false, "hardness": 1.5, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": false}
+create:small_dripstone_bricks: {"blast_resistance": 1.0, "flammable": false, "hardness": 1.5, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": false}
+create:small_tuff_bricks: {"blast_resistance": 6.0, "flammable": false, "hardness": 1.5, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": false}
+create:cut_dripstone_slab: {"blast_resistance": 1.0, "flammable": false, "hardness": 1.5, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": true}
+create:small_deepslate_bricks: {"blast_resistance": 6.0, "flammable": false, "hardness": 3.0, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": false}
+create:small_diorite_bricks: {"blast_resistance": 6.0, "flammable": false, "hardness": 1.5, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": false}
+create:cut_deepslate_slab: {"blast_resistance": 6.0, "flammable": false, "hardness": 3.0, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": true}
+create:cut_diorite_slab: {"blast_resistance": 6.0, "flammable": false, "hardness": 1.5, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": true}
+create:powdered_obsidian: NOINFO
+create:layered_crimsite: {"blast_resistance": 6.0, "flammable": false, "hardness": 1.25, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": false}
+create:layered_scorchia: {"blast_resistance": 6.0, "flammable": false, "hardness": 1.5, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": false}
+create:small_ochrum_bricks: {"blast_resistance": 0.75, "flammable": false, "hardness": 1.25, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": false}
+create:polished_cut_dripstone: {"blast_resistance": 1.0, "flammable": false, "hardness": 1.5, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": false}
+create:small_veridium_bricks: {"blast_resistance": 6.0, "flammable": false, "hardness": 1.25, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": false}
+create:polished_cut_deepslate: {"blast_resistance": 6.0, "flammable": false, "hardness": 3.0, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": false}
+create:polished_cut_diorite: {"blast_resistance": 6.0, "flammable": false, "hardness": 1.5, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": false}
+create:track: {"blast_resistance": 0.8, "flammable": false, "hardness": 0.8, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": true}
+create:mechanical_saw: {"blast_resistance": 6.0, "flammable": false, "hardness": 1.5, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": false}
+create:andesite_funnel: {"blast_resistance": 6.0, "flammable": false, "hardness": 1.5, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": true}
+create:small_crimsite_bricks: {"blast_resistance": 6.0, "flammable": false, "hardness": 1.25, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": false}
+create:small_scorchia_bricks: {"blast_resistance": 6.0, "flammable": false, "hardness": 1.5, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": false}
+create:cut_crimsite_slab: {"blast_resistance": 6.0, "flammable": false, "hardness": 1.25, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": true}
+create:vertical_gearbox: NOINFO
+create:mechanical_arm: {"blast_resistance": 6.0, "flammable": false, "hardness": 3.0, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": false}
+create:polished_cut_crimsite: {"blast_resistance": 6.0, "flammable": false, "hardness": 1.25, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": false}
+create:brass_sheet: NOINFO
+create:mechanical_crafter: {"blast_resistance": 6.0, "flammable": false, "hardness": 3.0, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": false}
+create:cut_dripstone_wall: {"blast_resistance": 1.0, "flammable": false, "hardness": 1.5, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": true}
+create:mechanical_press: {"blast_resistance": 6.0, "flammable": false, "hardness": 1.5, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": false}
+create:cut_deepslate_wall: {"blast_resistance": 6.0, "flammable": false, "hardness": 3.0, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": true}
+create:cut_diorite_wall: {"blast_resistance": 6.0, "flammable": false, "hardness": 1.5, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": true}
+create:gearbox: {"blast_resistance": 6.0, "flammable": false, "hardness": 1.5, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": false}
+create:millstone: {"blast_resistance": 6.0, "flammable": false, "hardness": 1.5, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": false}
+create:cut_crimsite_wall: {"blast_resistance": 6.0, "flammable": false, "hardness": 1.25, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": true}
+create:rose_quartz: NOINFO
+create:deployer: {"blast_resistance": 6.0, "flammable": false, "hardness": 1.5, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": false}
+create:zinc_ingot: NOINFO
+create:rotation_speed_controller: {"blast_resistance": 6.0, "flammable": false, "hardness": 3.0, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": false}
+create:basin: {"blast_resistance": 6.0, "flammable": false, "hardness": 1.5, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": false}
+create:iron_sheet: NOINFO
+create:crushing_wheel: {"blast_resistance": 6.0, "flammable": false, "hardness": 1.5, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": false}
+create:large_water_wheel: {"blast_resistance": 2.0, "flammable": false, "hardness": 2.0, "ignited_by_lava": true, "luminous": false, "stackable": 64, "waterloggable": false}
+create:copper_sheet: NOINFO
+create:sturdy_sheet: NOINFO
+create:belt: {"blast_resistance": 0.8, "flammable": false, "hardness": 0.8, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": true}
+create:cut_dripstone: {"blast_resistance": 1.0, "flammable": false, "hardness": 1.5, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": false}
+create:cut_deepslate: {"blast_resistance": 6.0, "flammable": false, "hardness": 3.0, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": false}
+create:cut_diorite: {"blast_resistance": 6.0, "flammable": false, "hardness": 1.5, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": false}
+create:large_cogwheel: {"blast_resistance": 6.0, "flammable": false, "hardness": 1.5, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": true}
+create:cut_crimsite: {"blast_resistance": 6.0, "flammable": false, "hardness": 1.25, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": false}
+create:cogwheel: {"blast_resistance": 6.0, "flammable": false, "hardness": 1.5, "ignited_by_lava": false, "luminous": false, "stackable": 64, "waterloggable": true}
+create:precision_mechanism: NOINFO
+create:wrench: NOINFO
+
+== stone_types tags ==
+andesite.json (15): create:cut_andesite, create:cut_andesite_stairs, create:cut_andesite_wall, create:polished_cut_andesite, create:polished_cut_andesite_stairs, create:polished_cut_andesite_wall, create:cut_andesite_bricks, create:cut_andesite_brick_stairs, create:cut_andesite_brick_wall, create:small_andesite_bricks, create:small_andesite_brick_stairs, create:small_andesite_brick_wall, create:layered_andesite, create:andesite_pillar, minecraft:andesite
+asurine.json (15): create:cut_asurine, create:cut_asurine_stairs, create:cut_asurine_wall, create:polished_cut_asurine, create:polished_cut_asurine_stairs, create:polished_cut_asurine_wall, create:cut_asurine_bricks, create:cut_asurine_brick_stairs, create:cut_asurine_brick_wall, create:small_asurine_bricks, create:small_asurine_brick_stairs, create:small_asurine_brick_wall, create:layered_asurine, create:asurine_pillar, create:asurine
+calcite.json (15): create:cut_calcite, create:cut_calcite_stairs, create:cut_calcite_wall, create:polished_cut_calcite, create:polished_cut_calcite_stairs, create:polished_cut_calcite_wall, create:cut_calcite_bricks, create:cut_calcite_brick_stairs, create:cut_calcite_brick_wall, create:small_calcite_bricks, create:small_calcite_brick_stairs, create:small_calcite_brick_wall, create:layered_calcite, create:calcite_pillar, minecraft:calcite
+crimsite.json (15): create:cut_crimsite, create:cut_crimsite_stairs, create:cut_crimsite_wall, create:polished_cut_crimsite, create:polished_cut_crimsite_stairs, create:polished_cut_crimsite_wall, create:cut_crimsite_bricks, create:cut_crimsite_brick_stairs, create:cut_crimsite_brick_wall, create:small_crimsite_bricks, create:small_crimsite_brick_stairs, create:small_crimsite_brick_wall, create:layered_crimsite, create:crimsite_pillar, create:crimsite
+deepslate.json (15): create:cut_deepslate, create:cut_deepslate_stairs, create:cut_deepslate_wall, create:polished_cut_deepslate, create:polished_cut_deepslate_stairs, create:polished_cut_deepslate_wall, create:cut_deepslate_bricks, create:cut_deepslate_brick_stairs, create:cut_deepslate_brick_wall, create:small_deepslate_bricks, create:small_deepslate_brick_stairs, create:small_deepslate_brick_wall, create:layered_deepslate, create:deepslate_pillar, minecraft:deepslate
+diorite.json (15): create:cut_diorite, create:cut_diorite_stairs, create:cut_diorite_wall, create:polished_cut_diorite, create:polished_cut_diorite_stairs, create:polished_cut_diorite_wall, create:cut_diorite_bricks, create:cut_diorite_brick_stairs, create:cut_diorite_brick_wall, create:small_diorite_bricks, create:small_diorite_brick_stairs, create:small_diorite_brick_wall, create:layered_diorite, create:diorite_pillar, minecraft:diorite
+dripstone.json (15): create:cut_dripstone, create:cut_dripstone_stairs, create:cut_dripstone_wall, create:polished_cut_dripstone, create:polished_cut_dripstone_stairs, create:polished_cut_dripstone_wall, create:cut_dripstone_bricks, create:cut_dripstone_brick_stairs, create:cut_dripstone_brick_wall, create:small_dripstone_bricks, create:small_dripstone_brick_stairs, create:small_dripstone_brick_wall, create:layered_dripstone, create:dripstone_pillar, minecraft:dripstone_block
+granite.json (15): create:cut_granite, create:cut_granite_stairs, create:cut_granite_wall, create:polished_cut_granite, create:polished_cut_granite_stairs, create:polished_cut_granite_wall, create:cut_granite_bricks, create:cut_granite_brick_stairs, create:cut_granite_brick_wall, create:small_granite_bricks, create:small_granite_brick_stairs, create:small_granite_brick_wall, create:layered_granite, create:granite_pillar, minecraft:granite
+limestone.json (15): create:cut_limestone, create:cut_limestone_stairs, create:cut_limestone_wall, create:polished_cut_limestone, create:polished_cut_limestone_stairs, create:polished_cut_limestone_wall, create:cut_limestone_bricks, create:cut_limestone_brick_stairs, create:cut_limestone_brick_wall, create:small_limestone_bricks, create:small_limestone_brick_stairs, create:small_limestone_brick_wall, create:layered_limestone, create:limestone_pillar, create:limestone
+ochrum.json (15): create:cut_ochrum, create:cut_ochrum_stairs, create:cut_ochrum_wall, create:polished_cut_ochrum, create:polished_cut_ochrum_stairs, create:polished_cut_ochrum_wall, create:cut_ochrum_bricks, create:cut_ochrum_brick_stairs, create:cut_ochrum_brick_wall, create:small_ochrum_bricks, create:small_ochrum_brick_stairs, create:small_ochrum_brick_wall, create:layered_ochrum, create:ochrum_pillar, create:ochrum
+scorchia.json (15): create:cut_scorchia, create:cut_scorchia_stairs, create:cut_scorchia_wall, create:polished_cut_scorchia, create:polished_cut_scorchia_stairs, create:polished_cut_scorchia_wall, create:cut_scorchia_bricks, create:cut_scorchia_brick_stairs, create:cut_scorchia_brick_wall, create:small_scorchia_bricks, create:small_scorchia_brick_stairs, create:small_scorchia_brick_wall, create:layered_scorchia, create:scorchia_pillar, create:scorchia
+scoria.json (15): create:cut_scoria, create:cut_scoria_stairs, create:cut_scoria_wall, create:polished_cut_scoria, create:polished_cut_scoria_stairs, create:polished_cut_scoria_wall, create:cut_scoria_bricks, create:cut_scoria_brick_stairs, create:cut_scoria_brick_wall, create:small_scoria_bricks, create:small_scoria_brick_stairs, create:small_scoria_brick_wall, create:layered_scoria, create:scoria_pillar, create:scoria
+tuff.json (15): create:cut_tuff, create:cut_tuff_stairs, create:cut_tuff_wall, create:polished_cut_tuff, create:polished_cut_tuff_stairs, create:polished_cut_tuff_wall, create:cut_tuff_bricks, create:cut_tuff_brick_stairs, create:cut_tuff_brick_wall, create:small_tuff_bricks, create:small_tuff_brick_stairs, create:small_tuff_brick_wall, create:layered_tuff, create:tuff_pillar, minecraft:tuff
+veridium.json (15): create:cut_veridium, create:cut_veridium_stairs, create:cut_veridium_wall, create:polished_cut_veridium, create:polished_cut_veridium_stairs, create:polished_cut_veridium_wall, create:cut_veridium_bricks, create:cut_veridium_brick_stairs, create:cut_veridium_brick_wall, create:small_veridium_bricks, create:small_veridium_brick_stairs, create:small_veridium_brick_wall, create:layered_veridium, create:veridium_pillar, create:veridium

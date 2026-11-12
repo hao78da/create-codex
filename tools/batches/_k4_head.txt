@@ -1,0 +1,45 @@
+items=70 顺序匹配=True
+最短=182 平均=242
+低于260: create:cut_dripstone_slab(206), create:small_deepslate_bricks(188), create:small_diorite_bricks(187), create:cut_deepslate_slab(201), create:cut_diorite_slab(193), create:powdered_obsidian(185), create:layered_crimsite(187), create:layered_scorchia(196), create:small_ochrum_bricks(186), create:polished_cut_dripstone(189), create:small_veridium_bricks(189), create:polished_cut_deepslate(187), create:polished_cut_diorite(182), create:track(212), create:mechanical_saw(208), create:andesite_funnel(202), create:small_crimsite_bricks(184), create:small_scorchia_bricks(188), create:cut_crimsite_slab(195), create:vertical_gearbox(193), create:mechanical_arm(212), create:polished_cut_crimsite(186), create:brass_sheet(217), create:mechanical_crafter(214), create:cut_dripstone_wall(209), create:mechanical_press(210), create:cut_deepslate_wall(189), create:cut_diorite_wall(192), create:gearbox(199), create:millstone(188), create:cut_crimsite_wall(195), create:rose_quartz(198), create:deployer(193), create:zinc_ingot(194), create:rotation_speed_controller(197), create:basin(199), create:iron_sheet(200), create:crushing_wheel(202), create:large_water_wheel(184), create:copper_sheet(194), create:sturdy_sheet(205), create:belt(200), create:cut_dripstone(198), create:cut_deepslate(188), create:cut_diorite(192), create:large_cogwheel(213), create:cut_crimsite(198), create:cogwheel(202), create:precision_mechanism(205), create:wrench(195)
+create:small_granite_bricks	371		怎么获得:[66, 65] | 怎么用:[61, 60] | 搭配:[61, 58]
+create:small_limestone_bricks	352		怎么获得:[59, 59] | 怎么用:[60, 58] | 常见坑:[55, 61]
+create:small_scoria_bricks	375		怎么获得:[62, 68] | 怎么用:[64, 59] | 进阶:[63, 59]
+create:brass_funnel	381		怎么获得:[60, 63] | 怎么用:[65, 63] | 常见坑:[64, 66]
+create:layered_ochrum	363		怎么获得:[61, 64] | 怎么用:[66, 58] | 常见坑:[55, 59]
+create:crimsite_pillar	366		怎么获得:[60, 62] | 怎么用:[62, 60] | 进阶:[62, 60]
+create:layered_veridium	344		怎么获得:[60, 55] | 怎么用:[56, 57] | 搭配:[56, 60]
+create:scorchia_pillar	355		怎么获得:[57, 61] | 怎么用:[63, 57] | 常见坑:[59, 58]
+create:small_dripstone_bricks	342		怎么获得:[59, 58] | 怎么用:[56, 57] | 常见坑:[54, 58]
+create:small_tuff_bricks	346		怎么获得:[58, 61] | 进阶:[57, 54] | 搭配:[57, 59]
+create:small_deepslate_bricks	188		怎么获得:[32, 29] | 怎么用:[33, 30] | 常见坑:[37, 27]
+create:small_diorite_bricks	187		怎么获得:[27, 31] | 怎么用:[33, 31] | 搭配:[33, 32]
+create:small_ochrum_bricks	186		怎么获得:[28, 31] | 怎么用:[33, 33] | 常见坑:[26, 35]
+create:small_veridium_bricks	189		怎么获得:[29, 32] | 怎么用:[31, 29] | 进阶:[34, 34]
+create:small_crimsite_bricks	184		怎么获得:[30, 30] | 怎么用:[32, 29] | 进阶:[32, 31]
+create:small_scorchia_bricks	188		怎么获得:[34, 32] | 怎么用:[33, 26] | 常见坑:[33, 30]
+create:small_dripstone_bricks/常见坑: p 字数 54
+create:small_tuff_bricks/进阶: p 字数 54
+create:small_deepslate_bricks/怎么获得: p 字数 32
+create:small_deepslate_bricks/怎么获得: p 字数 29
+create:small_deepslate_bricks/怎么用: p 字数 33
+create:small_deepslate_bricks/怎么用: p 字数 30
+create:small_deepslate_bricks/常见坑: p 字数 37
+create:small_deepslate_bricks/常见坑: p 字数 27
+create:small_diorite_bricks/怎么获得: p 字数 27
+create:small_diorite_bricks/怎么获得: p 字数 31
+create:small_diorite_bricks/怎么用: p 字数 33
+create:small_diorite_bricks/怎么用: p 字数 31
+create:small_diorite_bricks/搭配: p 字数 33
+create:small_diorite_bricks/搭配: p 字数 32
+create:small_ochrum_bricks/怎么获得: p 字数 28
+create:small_ochrum_bricks/怎么获得: p 字数 31
+create:small_ochrum_bricks/怎么用: p 字数 33
+create:small_ochrum_bricks/怎么用: p 字数 33
+create:small_ochrum_bricks/常见坑: p 字数 26
+create:small_ochrum_bricks/常见坑: p 字数 35
+create:small_veridium_bricks/怎么获得: p 字数 29
+create:small_veridium_bricks/怎么获得: p 字数 32
+create:small_veridium_bricks/怎么用: p 字数 31
+create:small_veridium_bricks/怎么用: p 字数 29
+create:small_veridium_bricks/进阶: p 字数 34
+create:small_veridium_bricks/进阶: p 字数 34

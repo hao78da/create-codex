@@ -1,0 +1,2 @@
+﻿worldgen\configured_feature\striated_ores_nether.json
+worldgen\configured_feature\striated_ores_overworld.json

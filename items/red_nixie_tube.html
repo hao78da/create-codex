@@ -1,0 +1,60 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>红色辉光管 — Create 机械动力图鉴</title>
+<link rel="preload" href="../assets/fonts/Minecraft.ttf" as="font" crossorigin>
+<link rel="stylesheet" href="../assets/style.css">
+</head><body><header class="top"><div class="wrap"><a class="logo" href="../index.html"><span class="gear"></span><span>CREATE CODEX<small>机械动力图鉴</small></span></a><nav><a href="../tags.html">标签</a><a href="https://github.com/Creators-of-Create/Create" target="_blank" rel="noopener">源码</a></nav></div></header><main class="wrap rise"><div class="crumb"><a href="../index.html">首页</a> / <a href="../catalog.html">全部物品</a> / 红石与控制 / <span>红色辉光管</span></div><div class="item-hero"><img class="big" src="../assets/icons/create_red_nixie_tube.png" alt=""><div><h1>红色辉光管</h1><div class="en">Red Nixie Tube</div><div class="idline"><span class="copyid">create:red_nixie_tube</span><span class="badge">方块</span><a class="badge" href="../catalog.html#cat-redstone">红石与控制</a></div></div></div><p class="tagline">红色辉光管：警报、超载与急停的那一盏。</p><section class="blk"><h2>参数</h2><div class="params"><div class="param"><span>主色</span><b>警报红</b></div><div class="param"><span>显示</span><b>信号强度 / 剪贴板文本</b></div><div class="param"><span>改色</span><b>染料右键</b></div></div></section><section class="blk"><h2>详细教程</h2><div class="prose"><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">怎么用</h3><p>辉光管被红石充能时显示<strong>信号强度</strong>，这一点让红色特别适合做警报：信号越强，数字越大，视觉上也越急。用<strong>剪贴板</strong>可以把它固定成「停」或「危险」之类的字样。</p><p>配合<strong>显示链接器</strong>接上应力表，就能在产线过载时让红字亮起来，比单纯的红石灯更具体。</p><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">这个颜色适合哪</h3><p>红色辉光管适合<strong>急停面板、消防通道、超载提示</strong>：工厂入口的总闸、列车站的禁止通行牌、反应堆的警戒位。它和绿色管成对使用时，一眼就能读出「运行 / 停机」。</p><p>红管是唯一该用来报警的颜色：比橙管正、比品红热。库存告急、温度超限、列车晚点都用它；装饰性数字留给白管和黄管，别让红色天天亮着。</p><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">搭配与常见坑</h3><p>红色在红石灯、岩浆、下界砖旁边很不显眼，别把这些东西放在同一面墙上。整面墙都用红色等于没有警报，红色要稀缺才有意义。</p></div></section><section class="blk"><h2>获取方式</h2><div class="prose"><p>这个物品<strong>没有合成配方</strong>：它由工具或机器直接生成/放置（例如用扳手、连接器、部署器，或作为其他配方的产物）。具体见上方教程。</p></div></section><section class="blk"><h2>相关物品</h2><div class="related"><a class="chip" href="display_link.html"><img src="../assets/icons/3d_create_display_link.png" alt="" loading="lazy" decoding="async"><span>显示链接器</span></a><a class="chip" href="redstone_link.html"><img src="../assets/icons/3d_create_redstone_link.png" alt="" loading="lazy" decoding="async"><span>无线红石信号终端</span></a><a class="chip" href="display_board.html"><img src="../assets/icons/3d_create_display_board.png" alt="" loading="lazy" decoding="async"><span>翻牌显示器</span></a></div></section><div class="pager"><a href="raw_zinc_block.html">← 粗锌块</a><a href="../catalog.html">返回目录</a><a href="red_postbox.html">红色邮箱 →</a></div></main><footer><div class="wrap">
+<p>数据与图标来自 <a href="https://github.com/Creators-of-Create/Create" target="_blank" rel="noopener">Creators-of-Create/Create</a>（MIT）与 Minecraft 资源，仅用于学习与教学；Minecraft 版权归 Mojang 所有。</p>
+<p>标题字体 <a href="https://www.dafont.com/minecraft.font" target="_blank" rel="noopener">Minecraft（dafont.com）</a> · 配方与官方 Ponder 文本来自 Create 模组本地化文件（中文由模组自带）· 教程正文为本项目撰写：功能件逐条编写，同系列装饰件共用家族模板。</p>
+</div></footer>
+<div class="toast"></div><script>
+(function(){
+  var bar=document.querySelector('.searchbar input');
+  var cards=[].slice.call(document.querySelectorAll('#list .card'));
+  var btns=[].slice.call(document.querySelectorAll('.filters button'));
+  var empty=document.querySelector('.empty-msg');
+  var cat='all', q='';
+  var mod=(new URLSearchParams(location.search)).get('mod')||'';
+  var MODS={create:'\u673a\u68b0\u52a8\u529b'};
+  function apply(){
+    var n=0;
+    cards.forEach(function(c){
+      var okc=(cat==='all'||c.dataset.cat===cat);
+      var okm=!mod||c.dataset.mod===mod;
+      var okq=!q||c.dataset.k.indexOf(q)>-1;
+      var show=okc&&okq&&okm;
+      c.style.display=show?'':'none';
+      if(show)n++;
+    });
+    if(empty)empty.style.display=n?'none':'block';
+  }
+  (function(){
+    if(!mod) return;
+    var mb=document.getElementById('modbar'), mn=document.getElementById('modname');
+    if(mn) mn.textContent=MODS[mod]||mod;
+    if(mb) mb.hidden=false;
+  })();
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    btns.forEach(function(x){x.classList.remove('on')});
+    b.classList.add('on'); cat=b.dataset.cat; apply();
+  })});
+  if(bar){bar.addEventListener('input',function(){q=bar.value.trim().toLowerCase();apply();});}
+  (function(){
+    var h=location.hash;
+    if(h.indexOf('#cat-')===0){
+      var c=h.slice(5);
+      btns.forEach(function(b){ if(b.dataset.cat===c){ b.click(); } });
+    }
+  })();
+  document.querySelectorAll('.copyid').forEach(function(el){
+    el.addEventListener('click',function(){
+      var t=el.textContent.trim();
+      var done=function(){el.classList.add('ok');el.textContent='已复制';
+        setTimeout(function(){el.textContent=t;el.classList.remove('ok')},1200);};
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,done)}
+      else{var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();
+        try{document.execCommand('copy')}catch(e){}document.body.removeChild(ta);done();}
+    });
+  });
+})();
+</script></body></html>

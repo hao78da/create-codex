@@ -1,0 +1,36 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Create: Threaded Trains — Create Codex</title>
+<link rel="stylesheet" href="assets/style.css">
+<style>
+.pg{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.pg h1{font-family:'Minecraft','Noto Sans SC',monospace;font-size:30px;color:var(--brass);margin:26px 0 6px}
+.pg .sub{color:var(--muted);font-size:14px;margin-bottom:26px}
+.pg h2{font-size:19px;margin:34px 0 10px;color:var(--text);border-left:3px solid var(--brass);padding-left:10px}
+.pg p,.pg li{line-height:1.85;color:#cfc7b8;font-size:15px}
+.pg ul{padding-left:22px;margin:8px 0}
+.pg .note{background:#181410;border:1px solid var(--line);border-left:3px solid var(--brass);border-radius:6px;padding:10px 14px;margin:14px 0;color:#bfb6a6;font-size:14px}
+.pg table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px}
+.pg th,.pg td{border-bottom:1px solid var(--line);padding:8px 10px;text-align:left}
+.pg th{color:var(--brass);font-weight:600}
+</style></head><body>
+<header class="top"><div class="wrap"><span class="logo"><span class="gear"></span>CREATE CODEX<small>机械动力图鉴</small></span>
+<a class="backbtn" href="index.html">← 返回关系图</a></div></header>
+<div class="pg"><h1>Create: Threaded Trains</h1><p class="sub">把铁路网络的计算丢到独立线程，和服务器主 tick 并行跑。</p>
+<h2>这是什么</h2>
+<p>Create 的列车网络默认在服务器 tick 的末尾计算。网络一大、车厢一多，这一趟计算就会拖慢整个 tick。
+Threaded Trains 把这段计算挪到一个独立线程，在新 tick 开始时就同步启动，等两边都算完再结束 tick。</p>
+<p class="note"><b>类型：</b>纯性能模组，<b>不添加物品、方块、配方</b>。服务端装上就生效，单人游戏也可以直接用。</p>
+
+<h2>能改善什么</h2>
+<ul>
+<li>列车线路、信号、车站这些「铁路网络」的运算量，从主线程挪走</li>
+<li>大型网络下 tick 时间明显下降（作者在近 500 列车的服务器上测过）</li>
+<li>与原版和其它附属模组基本兼容，出问题可以直接移除，存档不受影响</li>
+</ul>
+
+<h2>怎么用</h2>
+<p>不需要任何操作：把 jar 放进 <code>mods</code> 文件夹即可。它没有方块、没有界面、没有配方，装上之后你能感知到的只有「大网络不卡了」。</p>
+<p>换版本前建议先备份存档——作者特别提醒过，alpha 版本可能有严重问题。</p>
+<p class="sub" style="margin-top:40px">本页不属于 Create 本体图鉴，只讲解这个附属模组本身的机制。</p>
+</div><script src="assets/anchors.js" defer></script></body></html>

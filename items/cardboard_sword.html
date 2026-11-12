@@ -1,0 +1,60 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>纸棍 — Create 机械动力图鉴</title>
+<link rel="preload" href="../assets/fonts/Minecraft.ttf" as="font" crossorigin>
+<link rel="stylesheet" href="../assets/style.css">
+</head><body><header class="top"><div class="wrap"><a class="logo" href="../index.html"><span class="gear"></span><span>CREATE CODEX<small>机械动力图鉴</small></span></a><nav><a href="../tags.html">标签</a><a href="https://github.com/Creators-of-Create/Create" target="_blank" rel="noopener">源码</a></nav></div></header><main class="wrap rise"><div class="crumb"><a href="../index.html">首页</a> / <a href="../catalog.html">全部物品</a> / 工具与装备 / <span>纸棍</span></div><div class="item-hero"><img class="big" src="../assets/icons/create_cardboard_sword.png" alt=""><div><h1>纸棍</h1><div class="en">Cardboard Sword</div><div class="idline"><span class="copyid">create:cardboard_sword</span><span class="badge">物品</span><a class="badge" href="../catalog.html#cat-tool">工具与装备</a></div></div></div><p class="tagline">纸棍：Bonk 一下，基本无害。</p><section class="blk"><h2>参数</h2><div class="params"><div class="param"><span>材料</span><b>纸板×2+木棍</b></div><div class="param"><span>定位</span><b>装饰/道具</b></div></div></section><section class="blk"><h2>详细教程</h2><div class="prose"><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">怎么获得</h3><p>有序合成：上两格各放一张<strong>纸板</strong>，最下面中间放一根<strong>木棍</strong>（标签 forge:rods/wooden），就是一把纸棍。两张纸板、一根棍，成本几乎为零，坏了再搓一把。</p><p>纸板来自压纸浆或拆纸板块，木棍随手砍树就有；因为它便宜到可以量产，很多人拿它当「没有武器时的武器」或者纯装饰道具。</p><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">怎么用</h3><p>它的官方说明写得很直白：Bonk，一把<strong>基本无害</strong>的强力武器。也就是说它能挥、有击退，但伤害极低，真要靠它打怪不现实，用来敲村民、敲铃、互相打闹倒是正好。</p><p>当道具用更合适：站台值班员举着纸棍指挥列车、玩家互殴的开场武器、或者干脆摆在<strong>置物板</strong>上当装饰，比铁剑有梗。</p><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">常见坑</h3><p>别指望它触发什么特殊效果，纸板件没有附魔价值，附魔台的经验投进去等于丢掉；也别拿它替换正经武器下矿。</p><p>它的耐久和纸板一样短，挥几下就报废，属于消耗品而不是装备；出门带一把意思一下就行，别当真家伙。</p></div></section><section class="blk"><h2>获取方式</h2><div class="recipes"><div class="recipe"><div class="recipe-head"><span class="machine">工作台</span></div><div class="craft"><div class="grid" style="--n:1"><div class="cell"><img src="../assets/icons/create_cardboard.png" alt="" loading="lazy" decoding="async"><em>纸板</em></div><div class="cell"><img src="../assets/icons/create_cardboard.png" alt="" loading="lazy" decoding="async"><em>纸板</em></div><div class="cell"><a class="tagcell hasi" href="../tags/forge_rods_wooden.html" title="#木棍"><img src="../assets/icons/minecraft_stick.png" alt="" loading="lazy" decoding="async"><i>#</i></a></div></div></div><div class="arrow">→</div><div class="outs"><a class="chip" href="../items/cardboard_sword.html"><img src="../assets/icons/create_cardboard_sword.png" alt="" loading="lazy" decoding="async"><span>纸棍</span><b>×1</b></a></div></div></div></section><section class="blk"><h2>相关物品</h2><div class="related"><a class="chip" href="cardboard.html"><img src="../assets/icons/create_cardboard.png" alt="" loading="lazy" decoding="async"><span>纸板</span></a><a class="chip" href="cardboard_helmet.html"><img src="../assets/icons/create_cardboard_helmet.png" alt="" loading="lazy" decoding="async"><span>纸板头盔</span></a><a class="chip" href="placard.html"><img src="../assets/icons/3d_create_placard.png" alt="" loading="lazy" decoding="async"><span>置物板</span></a></div></section><div class="pager"><a href="cardboard_leggings.html">← 纸板护腿</a><a href="../catalog.html">返回目录</a><a href="cart_assembler.html">矿车装配站 →</a></div></main><footer><div class="wrap">
+<p>数据与图标来自 <a href="https://github.com/Creators-of-Create/Create" target="_blank" rel="noopener">Creators-of-Create/Create</a>（MIT）与 Minecraft 资源，仅用于学习与教学；Minecraft 版权归 Mojang 所有。</p>
+<p>标题字体 <a href="https://www.dafont.com/minecraft.font" target="_blank" rel="noopener">Minecraft（dafont.com）</a> · 配方与官方 Ponder 文本来自 Create 模组本地化文件（中文由模组自带）· 教程正文为本项目撰写：功能件逐条编写，同系列装饰件共用家族模板。</p>
+</div></footer>
+<div class="toast"></div><script>
+(function(){
+  var bar=document.querySelector('.searchbar input');
+  var cards=[].slice.call(document.querySelectorAll('#list .card'));
+  var btns=[].slice.call(document.querySelectorAll('.filters button'));
+  var empty=document.querySelector('.empty-msg');
+  var cat='all', q='';
+  var mod=(new URLSearchParams(location.search)).get('mod')||'';
+  var MODS={create:'\u673a\u68b0\u52a8\u529b'};
+  function apply(){
+    var n=0;
+    cards.forEach(function(c){
+      var okc=(cat==='all'||c.dataset.cat===cat);
+      var okm=!mod||c.dataset.mod===mod;
+      var okq=!q||c.dataset.k.indexOf(q)>-1;
+      var show=okc&&okq&&okm;
+      c.style.display=show?'':'none';
+      if(show)n++;
+    });
+    if(empty)empty.style.display=n?'none':'block';
+  }
+  (function(){
+    if(!mod) return;
+    var mb=document.getElementById('modbar'), mn=document.getElementById('modname');
+    if(mn) mn.textContent=MODS[mod]||mod;
+    if(mb) mb.hidden=false;
+  })();
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    btns.forEach(function(x){x.classList.remove('on')});
+    b.classList.add('on'); cat=b.dataset.cat; apply();
+  })});
+  if(bar){bar.addEventListener('input',function(){q=bar.value.trim().toLowerCase();apply();});}
+  (function(){
+    var h=location.hash;
+    if(h.indexOf('#cat-')===0){
+      var c=h.slice(5);
+      btns.forEach(function(b){ if(b.dataset.cat===c){ b.click(); } });
+    }
+  })();
+  document.querySelectorAll('.copyid').forEach(function(el){
+    el.addEventListener('click',function(){
+      var t=el.textContent.trim();
+      var done=function(){el.classList.add('ok');el.textContent='已复制';
+        setTimeout(function(){el.textContent=t;el.classList.remove('ok')},1200);};
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,done)}
+      else{var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();
+        try{document.execCommand('copy')}catch(e){}document.body.removeChild(ta);done();}
+    });
+  });
+})();
+</script></body></html>

@@ -1,0 +1,686 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Create 机械动力 · 模组关系图</title>
+<link rel="icon" href="assets/icons/create_logo.png">
+<style>
+@font-face{font-family:'Minecraft';src:url('assets/fonts/Minecraft.ttf') format('truetype');font-display:swap}
+:root{--brass:#d9a441;--brass2:#f0c874;--line:rgba(217,164,65,.28)}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:#070605;color:#e8e0d2;overflow:hidden;
+  font-family:system-ui,-apple-system,'Segoe UI','Noto Sans SC','Microsoft YaHei',sans-serif}
+#sky{display:block;width:100vw;height:100vh;cursor:grab;touch-action:none}
+#sky.drag{cursor:grabbing}
+#sky.point{cursor:pointer}
+.topbar{position:fixed;inset:0 0 auto 0;display:flex;align-items:center;justify-content:space-between;
+  padding:16px 22px;pointer-events:none;z-index:3}
+.brand{display:flex;align-items:center;gap:12px;pointer-events:auto}
+.brand img{width:38px;height:38px;border-radius:50%;box-shadow:0 0 0 1px rgba(217,164,65,.45),0 0 22px rgba(217,164,65,.25)}
+.brand b{font-family:'Minecraft',monospace;font-size:17px;letter-spacing:.14em;color:var(--brass2);font-weight:400}
+.brand small{display:block;font-size:11px;color:#9c8f7c;letter-spacing:.24em;margin-top:1px}
+.nav{pointer-events:auto;display:flex;gap:18px;font-size:13px;color:#a99b86}
+.nav a{color:inherit;text-decoration:none}
+.nav a:hover{color:var(--brass2)}
+.legend{position:fixed;left:22px;bottom:66px;z-index:3;font-size:12px;color:#8d8071;
+  display:flex;flex-direction:column;gap:7px;pointer-events:none}
+.legend i{display:inline-block;width:26px;height:0;border-top:1.5px solid rgba(217,164,65,.55);
+  vertical-align:middle;margin-right:9px}
+.legend i.dash{border-top-style:dashed;border-top-color:rgba(150,190,255,.55)}
+.hint{position:fixed;left:0;right:0;bottom:14px;text-align:center;font-size:12px;color:#6f6455;
+  letter-spacing:.08em;z-index:3;pointer-events:none}
+.hint b{color:#a4937a;font-weight:500}
+.enter{position:fixed;right:22px;bottom:22px;z-index:3;
+  padding:9px 18px;border:1px solid var(--line);border-radius:999px;background:rgba(20,16,12,.75);
+  color:var(--brass2);font-size:13px;text-decoration:none;letter-spacing:.06em}
+.enter:hover{border-color:var(--brass);box-shadow:0 0 18px rgba(217,164,65,.18)}
+body.leaving .topbar,body.leaving .hint,body.leaving .enter{opacity:0;transition:opacity .28s ease}
+@keyframes brandPulse{
+  0%, 74%, 100%{box-shadow:0 0 0 1px rgba(217,164,65,.45), 0 0 22px rgba(217,164,65,.22)}
+  82%{box-shadow:0 0 0 2px rgba(240,200,116,.85), 0 0 34px rgba(240,200,116,.5)}
+}
+.brand img{animation:brandPulse 4.2s ease-in-out infinite}
+.brand:hover img{animation-play-state:paused;box-shadow:0 0 0 2px rgba(240,200,116,.9),0 0 30px rgba(240,200,116,.55)}
+.brand{text-decoration:none}
+</style>
+</head>
+<body>
+<canvas id="sky"></canvas>
+
+<div class="topbar">
+  <a class="brand" href="index.html" title="返回关系图">
+    <img src="assets/icons/create_logo.png" alt="Create">
+    <div><b>CREATE CODEX</b><small>机械动力 · 模组关系图</small></div>
+  </a>
+  <div class="nav">
+    <a href="tags.html">标签</a>
+    <a href="https://github.com/Creators-of-Create/Create" target="_blank" rel="noopener">源码</a>
+  </div>
+</div>
+
+<div class="legend">
+  <div><i></i>实线 = 附属</div>
+  <div id="leg-dash"><i class="dash"></i>虚线 = 联动</div>
+</div>
+<div class="hint">拖动平移 · 滚轮缩放 · <b>点本体进图鉴，点附属展开、再点进入</b></div>
+<a class="enter" href="mods.html">查看全部模组 →</a>
+
+<script>
+(function(){
+  var cv = document.getElementById('sky');
+  var ctx = cv.getContext('2d');
+  var W = 0, H = 0, dpr = Math.min(window.devicePixelRatio || 1, 2);
+  var STATIC = /(\?|&)static=1/.test(location.search);
+  var view = { x: 0, y: 0, z: 1 };
+  var FOCUS = null;
+  var labelBoxes = [];
+  var userZoomed = false;
+
+  var R0 = 84;
+  var ORBITX = 470, ORBITY = 300;
+  var ORBIT2 = 150;              // 二级节点离父节点的距离
+  var separatedFor = -1;
+  var NSCALE = 1;                // 球体缩放，按一级节点数量自动收紧
+  function relayout(){
+    separatedFor = -1;
+    var n = 0;
+    for (var i = 0; i < MODS.length; i++) if (MODS[i].level === 1) n++;
+    n = Math.max(6, n);
+    var per = n * 104;                       // 每节点预留弧长（只算图标，不留文字）
+    var b = per / (2 * Math.PI * 1.16);
+    b = Math.max(240, Math.min(560, b));
+    ORBITX = Math.round(b * 1.35);
+    ORBITY = Math.round(b);
+    NSCALE = Math.min(1, 20 / n);
+    // 每个模组的连线长度略有差别：按 id 做确定性抖动，看起来更自然
+    // 双环交错：偶数号在内环、奇数号在外环，角度错开半步
+    var ring = [[], []];
+    for (var i = 0; i < MODS.length; i++){
+      var mm = MODS[i];
+      if (mm.level !== 1) continue;
+      ring[i % 2].push(mm);
+    }
+    var RFA = 0.62, RFB = 1.06;      // 内环 / 外环
+    for (var r = 0; r < 2; r++){
+      var arr = ring[r], k = arr.length;
+      if (!k) continue;
+      var step = Math.PI * 2 / k;
+      var base = -Math.PI / 2 + (r ? 0.04 : 0);
+      for (var j = 0; j < k; j++){
+        arr[j].ang = base + step * j;
+        var hh = 0, iid = String(arr[j].id);
+        for (var q = 0; q < iid.length; q++) hh = (hh * 31 + iid.charCodeAt(q)) % 1000;
+        arr[j].rf = 0.52 + (hh % 70) / 100;   // 距离随机（按 id 哈希，刷新不变）
+      }
+    }
+  }
+  // 让任意两个图标至少隔开 gap 像素：只微调半径（必要时轻推角度）
+  function separateNodes(){
+    var list = [];
+    for (var i = 0; i < MODS.length; i++) if (MODS[i].level === 1) list.push(MODS[i]);
+    var gap = R0 * 0.46 * NSCALE * 4.0;   // 两个半径再多一点空隙
+    for (var it = 0; it < 200; it++){
+      var moved = false;
+      for (var a = 0; a < list.length; a++){
+        for (var b = a + 1; b < list.length; b++){
+          var A = list[a], B = list[b];
+          var ax = Math.cos(A.ang) * ORBITX * A.rf, ay = Math.sin(A.ang) * ORBITY * A.rf;
+          var bx = Math.cos(B.ang) * ORBITX * B.rf, by = Math.sin(B.ang) * ORBITY * B.rf;
+          var dx = ax - bx, dy = ay - by, d = Math.hypot(dx, dy);
+          if (d >= gap || d < 0.001) continue;
+          var need = (gap - d) / 2;
+          if (Math.abs(A.rf - B.rf) > 0.02){
+            if (A.rf > B.rf) A.rf = Math.min(1.45, A.rf + need / ORBITX);
+            else B.rf = Math.min(1.45, B.rf + need / ORBITX);
+          } else {
+            A.ang += 0.012; B.ang -= 0.012;
+          }
+          moved = true;
+        }
+      }
+      if (!moved) break;
+    }
+  }
+
+  function fitView(){
+    if (separatedFor !== MODS.length){ separateNodes(); separatedFor = MODS.length; }
+    if (userZoomed) return;
+    var pad = 90;
+    var lpad = 165;   // 外侧文字预留
+    var zx = (W - (pad + lpad) * 2) / (2 * (ORBITX + R0 * 0.46 * NSCALE));
+    var zy = (H - pad * 2) / (2 * (ORBITY + R0 * 0.46 * NSCALE + 40));
+    view.z = Math.max(0.52, Math.min(1.12, Math.min(zx, zy)));
+    view.x = W / 2;
+    view.y = H / 2;
+  }       // 二级附属离父节点的距离
+
+  // ── 数据：parent=null 即本体；links 为「联动」虚线 ────────────────────
+  var MODS = [
+{ id:'create', name:'机械动力', sub:'C R E A T E', level:0, ang:0,
+      icon:'assets/icons/create_logo.png', href:'catalog.html?mod=create',
+      tip:'740 个物品与方块', color:'#f0c874' },
+{ id:'dreams', name:'Dreams & Desires', sub:'DREAMS', level:1, parent:'create', ang:-1.411, rf:1.0,
+      icon:'assets/icons/addon_dreams.png', href:'addon-dreams.html', tip:'', off:-1, color:'#d9c7a8' },
+{ id:'goggles', name:'Create Goggles', sub:'GOGGLES', level:1, parent:'create', ang:-1.265, rf:0.84,
+      icon:'assets/icons/goggles_goggle_leather_helmet.png', href:'addon-goggles.html', tip:'', off:1, color:'#d9c7a8' },
+{ id:'bobber', name:'Fishing Bobber Detector', sub:'BOBBER', level:1, parent:'create', ang:-1.119, rf:1.0,
+      icon:'assets/icons/bobber_detector.png', href:'addon-bobber.html', tip:'', off:-1, color:'#d9c7a8' },
+{ id:'halitosis', name:'Create: Halitosis', sub:'HALITOSIS', level:1, parent:'create', ang:-0.972, rf:0.84,
+      icon:'assets/icons/halitosis_logo.png', href:'addon-halitosis.html', tip:'', off:1, color:'#d9c7a8' },
+{ id:'enchantment-industry', name:'Enchantment Industry', sub:'ENCHANTMENT-INDUSTRY', level:1, parent:'create', ang:-0.826, rf:1.0,
+      icon:'assets/icons/ei_apotheotic_affix_template.png', href:'addon-enchantment-industry.html', tip:'', off:-1, color:'#d9c7a8' },
+{ id:'trainutilities', name:'Create: Train Utilities', sub:'TRAINUTILITIES', level:1, parent:'create', ang:-0.68, rf:0.84,
+      icon:'assets/icons/tu_incomplete_processing_unit.png', href:'addon-trainutilities.html', tip:'', off:1, color:'#d9c7a8' },
+{ id:'twinks', name:'Create for twinks', sub:'TWINKS', level:1, parent:'create', ang:-0.534, rf:1.0,
+      icon:'assets/icons/minecraft_deepslate.png', href:'addon-twinks.html', tip:'', off:-1, color:'#d9c7a8' },
+{ id:'creative-items', name:'创造物品类（合集）', sub:'CREATIVE-ITEMS', level:1, parent:'create', ang:-0.388, rf:0.84,
+      icon:'assets/icons/create_creative_motor.png', href:'addon-creative-items.html', tip:'', off:1, color:'#d9c7a8' },
+{ id:'liberate', name:'Create: Liberate', sub:'LIBERATE', level:1, parent:'create', ang:-0.242, rf:1.0,
+      icon:'assets/icons/mod_create_liberate.png', href:'addon-liberate.html', tip:'', off:-1, color:'#d9c7a8' },
+{ id:'sweets', name:'Create: Sweets & Treats', sub:'SWEETS', level:1, parent:'create', ang:-0.096, rf:0.84,
+      icon:'assets/icons/sweets_apple_donut.png', href:'addon-sweets.html', tip:'', off:1, color:'#d9c7a8' },
+{ id:'cold-sweat', name:'Create: Cold Sweat', sub:'COLD-SWEAT', level:1, parent:'create', ang:0.05, rf:1.0,
+      icon:'assets/icons/mod_create_cold_sweat.png', href:'addon-cold-sweat.html', tip:'', off:-1, color:'#d9c7a8' },
+{ id:'heat-js', name:'Create: Heat JS', sub:'HEAT-JS', level:1, parent:'create', ang:0.197, rf:0.84,
+      icon:'assets/icons/mod_create_heat_js.png', href:'addon-heat-js.html', tip:'', off:1, color:'#d9c7a8' },
+{ id:'more-features', name:'Create: More Features', sub:'MORE-FEATURES', level:1, parent:'create', ang:0.343, rf:1.0,
+      icon:'assets/icons/mod_create_more_features.png', href:'addon-more-features.html', tip:'', off:-1, color:'#d9c7a8' },
+{ id:'more-seats', name:'Create: More Seats', sub:'MORE-SEATS', level:1, parent:'create', ang:0.489, rf:0.84,
+      icon:'assets/icons/mod_create_more_seats.png', href:'addon-more-seats.html', tip:'', off:1, color:'#d9c7a8' },
+{ id:'meat', name:'Meat Blocks', sub:'MEAT', level:1, parent:'create', ang:0.635, rf:1.0,
+      icon:'assets/icons/mod_create_meat_blocks.png', href:'addon-meat-blocks.html', tip:'31 个物品', off:-1, color:'#d9c7a8' },
+{ id:'reauto', name:'Create ReAutomated', sub:'REAUTOMATED', level:1, parent:'create', ang:0.781, rf:0.84,
+      icon:'assets/icons/mod_create_reautomated.png', href:'addon-reautomated.html', tip:'35 个物品', off:1, color:'#d9c7a8' },
+{ id:'eatandesite', name:'EatAndesite', sub:'EATANDESITE', level:1, parent:'create', ang:0.927, rf:1.0,
+      icon:'assets/icons/mod_eatandesite.png', href:'addon-eatandesite.html', tip:'能吃安山岩', off:-1, color:'#d9c7a8' },
+{ id:'reautomated-traces', name:'ReAutomated: Traces', sub:'TRACES', level:2, parent:'reauto', ang:1.073, rf:0.84,
+      icon:'assets/icons/mod_create_reautomated_traces.png', href:'addon-reautomated-traces.html', tip:'', off:1, color:'#d9c7a8' },
+{ id:'superheated', name:'Create: Superheated', sub:'SUPERHEATED', level:1, parent:'create', ang:1.219, rf:1.0,
+      icon:'assets/icons/mod_create_superheated.png', href:'addon-superheated.html', tip:'', off:-1, color:'#d9c7a8' },
+{ id:'artificial-meat', name:'Create: Artificial Meat', sub:'ARTIFICIAL-MEAT', level:1, parent:'create', ang:1.365, rf:0.84,
+      icon:'assets/icons/mod_artificial_meat.png', href:'addon-artificial-meat.html', tip:'', color:'#d9c7a8' },
+{ id:'feather', name:'Create: Feather', sub:'FEATHER', level:1, parent:'create', ang:1.512, rf:1.0,
+      icon:'assets/icons/mod_feather.png', href:'addon-feather.html', tip:'', color:'#d9c7a8' },
+{ id:'heatpipe', name:'Create: Heat Pipe', sub:'HEATPIPE', level:1, parent:'create', ang:1.658, rf:0.84,
+      icon:'assets/icons/mod_heatpipe.png', href:'addon-heatpipe.html', tip:'', color:'#d9c7a8' },
+{ id:'leather', name:'Create: Leather', sub:'LEATHER', level:1, parent:'create', ang:1.804, rf:1.0,
+      icon:'assets/icons/mod_leather.png', href:'addon-leather.html', tip:'', color:'#d9c7a8' },
+{ id:'realism', name:'Create: Realism', sub:'REALISM', level:1, parent:'create', ang:1.95, rf:0.84,
+      icon:'assets/icons/mod_realism.png', href:'addon-realism.html', tip:'', color:'#d9c7a8' },
+{ id:'threaded-trains', name:'Create: Threaded Trains', sub:'THREADED-TRAINS', level:1, parent:'create', ang:2.096, rf:1.0,
+      icon:'assets/icons/mod_threaded_trains.png', href:'addon-threaded-trains.html', tip:'', color:'#d9c7a8' },
+{ id:'kinetic-pixel', name:'Kinetic Pixel', sub:'KINETIC-PIXEL', level:1, parent:'create', ang:2.242, rf:0.84,
+      icon:'assets/icons/mod_kinetic_pixel.png', href:'addon-kinetic-pixel.html', tip:'', color:'#d9c7a8' },
+{ id:'treadmill', name:'Create: Treadmill', sub:'TREADMILL', level:1, parent:'create', ang:2.388, rf:1.0,
+      icon:'assets/icons/mod_create_treadmill.png', href:'addon-treadmill.html', tip:'', color:'#d9c7a8' },
+{ id:'unbreakable-armor', name:'Create: Unbreakable Armor', sub:'UNBREAKABLE-ARMOR', level:1, parent:'create', ang:2.534, rf:0.84,
+      icon:'assets/icons/mod_create_unbreakable_armor.png', href:'addon-unbreakable-armor.html', tip:'', color:'#d9c7a8' },
+{ id:'unbreakable-netherite-pickaxe', name:'Unbreakable Netherite Pickaxe', sub:'UNBREAKABLE-NETHERITE-PICKAXE', level:1, parent:'create', ang:2.681, rf:1.0,
+      icon:'assets/icons/mod_unbreakable_netherite_pickaxe.png', href:'addon-unbreakable-netherite-pickaxe.html', tip:'', color:'#d9c7a8' },
+{ id:'unbreakable-tools', name:'Create: Unbreakable Tools', sub:'UNBREAKABLE-TOOLS', level:1, parent:'create', ang:2.827, rf:0.84,
+      icon:'assets/icons/mod_create_unbreakable_tools.png', href:'addon-unbreakable-tools.html', tip:'', color:'#d9c7a8' },
+{ id:'break-it-all', name:'Create: Break It All', sub:'BREAK-IT-ALL', level:1, parent:'create', ang:2.973, rf:1.0,
+      icon:'assets/icons/3d_create_wrench.png', href:'addon-break-it-all.html', tip:'', color:'#d9c7a8' },
+{ id:'break-levitite', name:'Create: Break Levitite', sub:'BREAK-LEVITITE', level:1, parent:'create', ang:3.119, rf:0.84,
+      icon:'assets/icons/mod_break_levitite.png', href:'addon-break-levitite.html', tip:'', color:'#d9c7a8' },
+{ id:'dnd-bore-fix', name:'Create: D&D Bore Block Fix', sub:'DND-BORE-FIX', level:2, parent:'dreams', ang:3.265, rf:1.0,
+      icon:'assets/icons/mod_dnd_bore_fix.png', href:'addon-dnd-bore-fix.html', tip:'', color:'#d9c7a8' },
+{ id:'reactive-stress', name:'Create: Reactive Stress', sub:'REACTIVE-STRESS', level:1, parent:'create', ang:3.411, rf:0.84,
+      icon:'assets/icons/3d_create_wrench.png', href:'addon-reactive-stress.html', tip:'', color:'#d9c7a8' },
+{ id:'bread-and-beyond', name:'Create: Bread and Beyond', sub:'BREAD-AND-BEYOND', level:1, parent:'create', ang:3.557, rf:1.0,
+      icon:'assets/icons/mod_create_bread_and_beyond.png', href:'addon-bread-and-beyond.html', tip:'', color:'#d9c7a8' },
+{ id:'propulsion', name:'Create: Propulsion', sub:'PROPULSION', level:1, parent:'create', ang:3.703, rf:0.84,
+      icon:'assets/icons/mod_create_propulsion.png', href:'addon-propulsion.html', tip:'', color:'#d9c7a8' },
+{ id:'sb-create', name:'Sophisticated Backpacks Create Integration', sub:'SB-CREATE', level:1, parent:'create', ang:3.85, rf:1.0,
+      icon:'assets/icons/_unknown.png', href:'addon-sb-create.html', tip:'', color:'#d9c7a8' },
+{ id:'screw-it', name:'Create: Screw It!', sub:'SCREW-IT', level:1, parent:'create', ang:3.996, rf:0.84,
+      icon:'assets/icons/mod_create_screw_it.png', href:'addon-screw-it.html', tip:'', color:'#d9c7a8' },
+{ id:'ss-create', name:'Sophisticated Storage Create Integration', sub:'SS-CREATE', level:1, parent:'create', ang:4.142, rf:1.0,
+      icon:'assets/icons/_unknown.png', href:'addon-ss-create.html', tip:'', color:'#d9c7a8' },
+{ id:'escalated', name:'Create: Escalated', sub:'ESCALATED', level:1, parent:'create', ang:4.288, rf:0.84,
+      icon:'assets/icons/mod_create_escalated.png', href:'addon-escalated.html', tip:'', color:'#d9c7a8' },
+{ id:'integrated-farming', name:'Create: Integrated Farming', sub:'INTEGRATED-FARMING', level:1, parent:'create', ang:4.434, rf:1.0,
+      icon:'assets/icons/mod_create_integrated_farming.png', href:'addon-integrated-farming.html', tip:'', color:'#d9c7a8' },
+{ id:'simulated-coasters', name:'Simulated Coasters', sub:'SIMULATED-COASTERS', level:1, parent:'create', ang:4.58, rf:0.84,
+      icon:'assets/icons/mod_simulated_coasters.png', href:'addon-simulated-coasters.html', tip:'', color:'#d9c7a8' },
+    { id:'ultimate-factory', name:'Create: Ultimate Factory', sub:'ULTIMATE-FACTORY', level:1, parent:'create', ang:4.726, rf:1.0,
+      icon:'assets/icons/mod_create_ultimate_factory.png', href:'addon-ultimate-factory.html', tip:'', color:'#d9c7a8' },
+];
+
+  // 联动：两个模组之间有配方互通，画虚线（不是从属）
+  // 联动：两模组之间有真实的配方互通时才加（目前没有核实过的）
+  var LINKS = [];
+
+  var byId = {};
+  MODS.forEach(function(m){
+    byId[m.id] = m;
+    m.kids = [];
+    m.v = m.level <= 1 ? 1 : 0;      // 可见度（0..1），二级默认收起
+    m.open = false;                   // 是否已展开
+    m.grow = m.level <= 1 ? 1 : 0;    // 从父节点「长出来」的进度
+    m.img = new Image(); m.img.src = m.icon;
+  });
+  MODS.forEach(function(m){ if (m.parent) byId[m.parent].kids.push(m); });
+  window.__CODE__ = { MODS: MODS, byId: byId, draw: draw };
+
+  function baseRadius(m){
+    if (m.level === 0) return R0;
+    if (m.level === 1) return R0 * 0.46 * NSCALE;
+    return R0 * 0.34 * NSCALE;
+  }
+
+  function place(m){
+    var par = m.parent ? byId[m.parent] : null;
+    if (!par){ m.bx = 0; m.by = 0; return; }
+    var px = par.bx, py = par.by;
+    if (m.level === 1){
+      var _rf = m.rf || 1;
+      m.bx = px + Math.cos(m.ang) * ORBITX * _rf * m.grow;
+      m.by = py + Math.sin(m.ang) * ORBITY * _rf * m.grow;
+    } else {
+      var sib = par.kids.indexOf(m);
+      var gap = baseRadius(par) * 2.0 + 14;
+      m.ang = 0;
+      m.bx = px + ((sib < 0 ? 0 : sib) * 9);
+      m.by = py - ((sib < 0 ? 0 : sib) + 1) * gap * m.grow;
+    }
+  }
+
+  var stars = [];
+  (function makeStars(){
+    var seed = 20261110;
+    function r(){ seed = (seed * 1103515245 + 12345) & 0x7fffffff; return seed / 0x7fffffff; }
+    for (var i = 0; i < 520; i++){
+      stars.push({ x: (r() - .5) * 5200, y: (r() - .5) * 3600,
+                   r: .5 + r() * 1.5, a: .18 + r() * .55, t: r() * 6.28 });
+    }
+  })();
+
+  function resize(){
+    W = window.innerWidth; H = window.innerHeight;
+    cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
+    cv.style.width = W + 'px'; cv.style.height = H + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+
+  function toScreen(wx, wy){ return [wx * view.z + view.x, wy * view.z + view.y]; }
+  function toWorld(sx, sy){ return [(sx - view.x) / view.z, (sy - view.y) / view.z]; }
+
+  function advance(){
+    var moving = false;
+    for (var i = 0; i < MODS.length; i++){
+      var m = MODS[i];
+      var tv = (m.level <= 1 || m.parent && byId[m.parent].open) ? 1 : 0;
+      var tg = (m.level === 0 || m.level === 1) ? 1 : (byId[m.parent].open ? 1 : 0);
+      if (Math.abs(m.v - tv) > 0.002){ m.v += (tv - m.v) * 0.14; moving = true; } else m.v = tv;
+      if (Math.abs(m.grow - tg) > 0.002){ m.grow += (tg - m.grow) * 0.14; moving = true; } else m.grow = tg;
+      place(m);
+    }
+    return moving;
+  }
+
+  var L1N = 99;
+  var LABELS_ALWAYS = false;   // 节点太多时只显示悬停/聚焦的标签
+  function drawNode(m, t, hovered){
+    if (m.v < 0.02) return;
+    var c = toScreen(m.bx, m.by);
+    var R = baseRadius(m) * view.z * (0.55 + 0.45 * m.v) * (hovered ? 1.08 : 1);
+    if (c[0] < -R - 260 || c[0] > W + R + 260 || c[1] < -R - 260 || c[1] > H + R + 260) return;
+
+    var glow = ctx.createRadialGradient(c[0], c[1], R * .55, c[0], c[1], R * 1.9);
+    glow.addColorStop(0, 'rgba(217,164,65,' + (m.level === 0 ? .20 : .13) + ')');
+    glow.addColorStop(1, 'rgba(217,164,65,0)');
+    ctx.fillStyle = glow;
+    ctx.beginPath(); ctx.arc(c[0], c[1], R * 1.9, 0, 6.284); ctx.fill();
+
+    ctx.beginPath(); ctx.arc(c[0], c[1], R, 0, 6.284);
+    ctx.fillStyle = '#0e0c09'; ctx.fill();
+    ctx.lineWidth = Math.max(1.4, (m.level === 0 ? 2.2 : 1.6) * view.z);
+    ctx.strokeStyle = hovered ? 'rgba(240,200,116,.95)'
+      : 'rgba(217,164,65,' + (m.level === 0 ? '.85' : '.55') + ')';
+    ctx.stroke();
+
+    if (m.img && m.img.complete && m.img.naturalWidth){
+      ctx.save();
+      ctx.beginPath(); ctx.arc(c[0], c[1], Math.max(1, R - 5 * view.z), 0, 6.284); ctx.clip();
+      var d = (R - 5 * view.z) * 2;
+      ctx.imageSmoothingEnabled = m.id !== 'goggles';
+      ctx.drawImage(m.img, c[0] - d / 2, c[1] - d / 2, d, d);
+      ctx.restore();
+    }
+
+    if (m.level === 0){
+      var ph = 0.5 + 0.5 * Math.sin(t * .0016);
+      ctx.beginPath(); ctx.arc(c[0], c[1], R * (1.06 + .08 * ph), 0, 6.284);
+      ctx.strokeStyle = 'rgba(240,200,116,' + (0.22 - 0.12 * ph) + ')';
+      ctx.lineWidth = Math.max(1, 1.2 * view.z); ctx.stroke();
+    }
+
+    if (m.v < 0.55) return;   // 太小时不画字
+
+    var dir = m.level === 0 ? 1 : (m.off ? m.off : (m.by < -2 ? -1 : 1));
+    var fs = m.level === 0 ? 26 : (m.level === 1 ? (MODS.length > 34 ? 12 : 14) : 13);
+    var cdx = Math.cos(m.ang || 0), cdy = Math.sin(m.ang || 0);
+    var side = (m.level > 0 && Math.abs(cdx) > 0.62);
+    var lx = c[0], ly;
+    if (side) {
+      ctx.textAlign = cdx > 0 ? 'left' : 'right';
+      lx = c[0] + (cdx > 0 ? 1 : -1) * (R + 12);
+      ly = c[1] + 6;
+    } else {
+      ctx.textAlign = 'center';
+      var y0 = c[1] + dir * R;
+      ly = y0 + dir * Math.max(22, (m.level === 0 ? 40 : 30) * view.z);
+      if (m.level > 0 && L1N > 12) ly += dir * (((Math.cos((m.ang || 0) * 5) > 0) ? 0 : 12) * view.z);
+      var fsz = Math.round(Math.max(12, fs * view.z));
+      if (m.level > 0 && L1N > 12) fsz -= 2;
+      ctx.font = '600 ' + fsz + 'px system-ui,"Noto Sans SC","Microsoft YaHei",sans-serif';
+      var hw = ctx.measureText(m.name).width / 2;
+      lx = Math.min(Math.max(c[0], hw + 10), W - hw - 10);
+    }
+    var showLabel = LABELS_ALWAYS || m.level === 0 || hovered ||
+                    (FOCUS && (m === FOCUS || (m.parent === FOCUS.id)));
+    if (!showLabel) { ctx.globalAlpha = 1; return; }
+    ctx.fillStyle = m.color;
+    ctx.font = '600 ' + Math.round(Math.max(12, fs * view.z)) +
+               'px system-ui,"Noto Sans SC","Microsoft YaHei",sans-serif';
+    var stepY = Math.round(Math.max(14, 18 * view.z));
+    // 标签避让：和已经画过的标签重叠就往下挪
+    (function(){
+      var fsz = Math.round(Math.max(12, fs * view.z));
+      ctx.font = '600 ' + fsz + 'px system-ui,"Noto Sans SC","Microsoft YaHei",sans-serif';
+      var w = ctx.measureText(m.name).width;
+      var h = fsz * 2.7;
+      for (var guard = 0; guard < 14; guard++){
+        var b = [lx - w / 2, ly - h / 2, lx + w / 2, ly + h / 2];
+        var hit = false;
+        for (var bi = 0; bi < labelBoxes.length; bi++){
+          var o = labelBoxes[bi];
+          if (b[0] < o[2] && b[2] > o[0] && b[1] < o[3] && b[3] > o[1]){ hit = true; break; }
+        }
+        if (!hit){ labelBoxes.push(b); break; }
+        ly += Math.round(h * 0.85);
+      }
+      ctx.font = '600 ' + fsz + 'px system-ui,"Noto Sans SC","Microsoft YaHei",sans-serif';
+    })();
+    ctx.save();
+    ctx.globalAlpha *= 0.92;
+    var bw = ctx.measureText(m.name).width;
+    var bh = Math.round(fs * view.z) + 4;
+    ctx.fillStyle = 'rgba(10,8,6,.72)';
+    ctx.beginPath();
+    var rr = 4, bx = lx - bw / 2 - 4, by = ly - bh + 2, bwid = bw + 8;
+    ctx.moveTo(bx + rr, by);
+    ctx.arcTo(bx + bwid, by, bx + bwid, by + bh, rr);
+    ctx.arcTo(bx + bwid, by + bh, bx, by + bh, rr);
+    ctx.arcTo(bx, by + bh, bx, by, rr);
+    ctx.arcTo(bx, by, bx + bwid, by, rr);
+    ctx.fill();
+    ctx.restore();
+    ctx.fillText(m.name, lx, ly);
+    ctx.fillStyle = '#a4937a';
+    ctx.font = Math.round(Math.max(9, 12 * view.z)) + 'px "Minecraft",monospace';
+    if (!(m.level > 0 && L1N > 12)) ctx.fillText(m.sub, lx, ly + stepY);
+    if (m.level === 0){
+      ctx.fillStyle = '#6f6455';
+      ctx.font = Math.round(Math.max(9, 11.5 * view.z)) + 'px system-ui,sans-serif';
+      ctx.fillText(m.tip, lx, ly + stepY * 2);
+    }
+    // 有子节点但没展开：给个小提示点
+    if (m.kids.length && !m.open && m.level > 0){
+      ctx.fillStyle = 'rgba(240,200,116,.75)';
+      ctx.font = Math.round(Math.max(10, 12 * view.z)) + 'px system-ui,sans-serif';
+      ctx.fillText('＋' + m.kids.length, c[0], y0 + dir * Math.max(38, (m.level === 0 ? 96 : 68) * view.z));
+    }
+  }
+
+  var hover = null;
+
+  function draw(t){
+    if (!dragging && (vel.x || vel.y)){
+      view.x += vel.x; view.y += vel.y;
+      vel.x *= FRICTION; vel.y *= FRICTION;
+      if (Math.hypot(vel.x, vel.y) < 0.04){ vel.x = 0; vel.y = 0; }
+    }
+    advance();
+    ctx.clearRect(0, 0, W, H);
+
+    var g = ctx.createRadialGradient(W * .5, H * .5, 40, W * .5, H * .5, Math.max(W, H) * .78);
+    g.addColorStop(0, '#12100c'); g.addColorStop(.55, '#0b0908'); g.addColorStop(1, '#050403');
+    ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+
+    for (var i = 0; i < stars.length; i++){
+      var s = stars[i], p = toScreen(s.x, s.y);
+      if (p[0] < -20 || p[0] > W + 20 || p[1] < -20 || p[1] > H + 20) continue;
+      var tw = .72 + .28 * Math.sin(t * .0012 + s.t);
+      ctx.globalAlpha = s.a * tw;
+      ctx.fillStyle = '#e9dcc2';
+      ctx.beginPath(); ctx.arc(p[0], p[1], s.r * Math.min(1.6, view.z), 0, 6.284); ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+
+    var c0 = toScreen(0, 0);
+
+    // 一级轨道（虚线圆）
+    ctx.save();
+    ctx.strokeStyle = 'rgba(217,164,65,.10)';
+    ctx.setLineDash([5 * view.z, 9 * view.z]);
+    ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.ellipse(c0[0], c0[1], ORBITX * view.z, ORBITY * view.z, 0, 0, 6.284); ctx.stroke();
+    ctx.restore();
+
+    // 从属连线（实线）：父 → 子
+    for (var a = 0; a < MODS.length; a++){
+      var m = MODS[a];
+      if (!m.parent) continue;
+      var par = byId[m.parent];
+      if (m.v < 0.02) continue;
+      var p1 = toScreen(par.bx, par.by), p2 = toScreen(m.bx, m.by);
+      var hot = (hover === m || hover === par);
+      ctx.beginPath(); ctx.moveTo(p1[0], p1[1]); ctx.lineTo(p2[0], p2[1]);
+      ctx.strokeStyle = hot ? 'rgba(240,200,116,.55)' : 'rgba(217,164,65,' + (0.20 * m.v) + ')';
+      ctx.lineWidth = hot ? 1.8 : 1.1;
+      ctx.setLineDash([]);
+      ctx.stroke();
+    }
+
+    // 联动连线（虚线）
+    for (var b = 0; b < LINKS.length; b++){
+      var l = LINKS[b], na = byId[l.a], nb = byId[l.b];
+      if (!na || !nb) continue;
+      var vv = Math.min(na.v, nb.v);
+      if (vv < 0.02) continue;
+      var q1 = toScreen(na.bx, na.by), q2 = toScreen(nb.bx, nb.by);
+      var hotl = (hover === na || hover === nb);
+      ctx.save();
+      ctx.setLineDash([6 * view.z, 7 * view.z]);
+      ctx.beginPath(); ctx.moveTo(q1[0], q1[1]); ctx.lineTo(q2[0], q2[1]);
+      ctx.strokeStyle = hotl ? 'rgba(150,190,255,.6)' : 'rgba(150,190,255,' + (0.34 * vv) + ')';
+      ctx.lineWidth = hotl ? 1.6 : 1;
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    // 先画远的，中心最后，避免被盖住
+    FOCUS = null;
+    labelBoxes.length = 0;
+    for (var fi = 0; fi < MODS.length; fi++){
+      var fm = MODS[fi];
+      if (fm.level === 1 && fm.open && fm.kids.length){ FOCUS = fm.id; break; }
+    }
+    var order = MODS.slice().sort(function(x, y){
+      var dx = (x.bx * x.bx + x.by * x.by), dy = (y.bx * y.bx + y.by * y.by);
+      return dy - dx;   // 远的先画，靠近中心的（含中心球）后画，压在最上层
+    });
+    for (var k = 0; k < order.length; k++){
+      var nm = order[k];
+      var dim = FOCUS && nm.id !== FOCUS && nm.parent !== FOCUS;
+      ctx.globalAlpha = dim ? (nm.level === 0 ? 0.5 : 0.22) : 1;
+      drawNode(nm, t, hover === nm);
+      ctx.globalAlpha = 1;
+    }
+
+    if (!STATIC) requestAnimationFrame(draw);
+  }
+
+  var dragging = false, moved = 0, last = null, entering = false;
+  var vel = { x: 0, y: 0 };
+  var FRICTION = 0.94, VMAX = 48;
+
+  function leave(href){
+    if (entering) return;
+    entering = true;
+    document.body.classList.add('leaving');
+    setTimeout(function(){ location.href = href; }, 180);
+  }
+
+  function enterCreate(){
+    if (entering) return;
+    entering = true;
+    document.body.classList.add('leaving');
+    var t0 = performance.now(), dur = 340;
+    var z0 = view.z, z1 = Math.max(2.4, view.z * 2.2);
+    var x0 = view.x, y0 = view.y;
+    var cx = W / 2, cy = H / 2;
+    function step(now){
+      var k = Math.min(1, (now - t0) / dur);
+      var e = k * k * (3 - 2 * k);
+      view.z = z0 + (z1 - z0) * e;
+      view.x = cx - (cx - x0) * (view.z / z0);
+      view.y = cy - (cy - y0) * (view.z / z0);
+      if (k < 1) requestAnimationFrame(step);
+      else location.href = 'catalog.html?mod=create';
+    }
+    requestAnimationFrame(step);
+  }
+
+
+  function distSeg(px, py, ax, ay, bx, by){
+    var dx = bx - ax, dy = by - ay;
+    var len2 = dx*dx + dy*dy;
+    var t = len2 ? ((px-ax)*dx + (py-ay)*dy) / len2 : 0;
+    t = Math.max(0, Math.min(1, t));
+    return Math.hypot(px - (ax + t*dx), py - (ay + t*dy));
+  }
+
+  // 命中的连线（父→子），用于「点线也能进」
+  function hitLine(sx, sy){
+    var w = toWorld(sx, sy);
+    var best = null, bestD = 1e9;
+    for (var i = 0; i < MODS.length; i++){
+      var m = MODS[i];
+      if (!m.parent || m.v < 0.3) continue;
+      var par = byId[m.parent];
+      var d = distSeg(w[0], w[1], par.bx, par.by, m.bx, m.by);
+      var tol = 9 / view.z;
+      if (d <= tol && d < bestD){ best = m; bestD = d; }
+    }
+    return best;
+  }
+
+  function hitTest(sx, sy){
+    var w = toWorld(sx, sy);
+    var best = null, bestD = 1e9;
+    for (var i = 0; i < MODS.length; i++){
+      var m = MODS[i];
+      if (m.v < 0.45) continue;
+      var R = baseRadius(m) * (0.55 + 0.45 * m.v) + 10;
+      var d = Math.hypot(w[0] - m.bx, w[1] - m.by);
+      if (d <= R && d < bestD){ best = m; bestD = d; }
+    }
+    return best;
+  }
+
+  cv.addEventListener('pointerdown', function(e){
+    dragging = true; moved = 0; last = { x: e.clientX, y: e.clientY };
+    vel.x = 0; vel.y = 0;
+    cv.classList.add('drag');
+    try { cv.setPointerCapture(e.pointerId); } catch (err) {}
+  });
+
+  cv.addEventListener('pointermove', function(e){
+    if (!dragging){
+      hover = hitTest(e.clientX, e.clientY) || hitLine(e.clientX, e.clientY);
+      cv.classList.toggle('point', !!hover);
+      return;
+    }
+    var dx = e.clientX - last.x, dy = e.clientY - last.y;
+    moved += Math.abs(dx) + Math.abs(dy);
+    view.x += dx; view.y += dy;
+    vel.x = vel.x * 0.6 + dx * 0.4;
+    vel.y = vel.y * 0.6 + dy * 0.4;
+    last = { x: e.clientX, y: e.clientY };
+  });
+
+  cv.addEventListener('pointerup', function(e){
+    dragging = false; cv.classList.remove('drag');
+    if (moved < 6){
+      vel.x = 0; vel.y = 0;
+      var m = hitTest(e.clientX, e.clientY) || hitLine(e.clientX, e.clientY);
+      if (!m){
+        // 点空白处：收回已展开的二级节点
+        var closed = false;
+        for (var ci = 0; ci < MODS.length; ci++){
+          var cn = MODS[ci];
+          if (cn.level > 0 && cn.kids && cn.kids.length && cn.open){ cn.open = false; closed = true; }
+        }
+        if (closed) return;
+        return;
+      }
+      if (m.kids.length && !m.open && m.level > 0){
+        m.open = true;                 // 第一次点：把子节点放出来
+        return;
+      }
+      if (m.level === 0) enterCreate();
+      else leave(m.href);
+    } else {
+      var sp = Math.hypot(vel.x, vel.y);
+      if (sp > VMAX){ vel.x *= VMAX / sp; vel.y *= VMAX / sp; }
+      if (sp < 0.6){ vel.x = 0; vel.y = 0; }
+    }
+  });
+
+  window.addEventListener('keydown', function(e){
+    if (e.key === 'Escape'){
+      for (var ki = 0; ki < MODS.length; ki++){
+        var kn = MODS[ki];
+        if (kn.level > 0 && kn.kids && kn.kids.length) kn.open = false;
+      }
+    }
+  });
+
+  cv.addEventListener('pointercancel', function(){ dragging = false; cv.classList.remove('drag'); vel.x = 0; vel.y = 0; });
+
+  cv.addEventListener('wheel', function(e){
+    e.preventDefault();
+    var z0 = view.z;
+    var nz = Math.min(3, Math.max(0.35, z0 * (e.deltaY < 0 ? 1.12 : 1 / 1.12)));
+    view.x = e.clientX - (e.clientX - view.x) * (nz / z0);
+    view.y = e.clientY - (e.clientY - view.y) * (nz / z0);
+    view.z = nz;
+  }, { passive: false });
+
+  if (!LINKS.length){ var ld=document.getElementById('leg-dash'); if(ld) ld.style.display='none'; }
+
+  resize();
+  relayout();
+  fitView();
+  window.addEventListener('resize', function(){
+    resize();
+    relayout();
+    fitView();
+    if (STATIC) draw(performance.now());
+  });
+
+  // 首帧先画一次：图片加载完再补一帧（静态模式也不空白）
+  draw(0);
+  MODS.forEach(function(m){
+    m.img.addEventListener('load', function(){ if (STATIC) draw(performance.now()); });
+  });
+  if (STATIC) return;
+  requestAnimationFrame(draw);
+})();
+</script>
+</body>
+</html>

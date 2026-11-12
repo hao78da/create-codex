@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<title>Simulated Coasters · 附属模组 · Create Codex</title>
+<link rel="stylesheet" href="assets/style.css">
+<style>
+.wrap{max-width:1150px}
+.hero{padding:40px 0 14px;text-align:center}
+.hero img.big{width:96px;height:96px;border-radius:18px;background:#0d0b09}
+.hero h1{font-size:32px;margin:12px 0 4px}
+.hero .sub{color:var(--brass);font-size:14px;letter-spacing:.3em}
+.hero .tag{color:var(--muted);margin-top:8px}
+.grid-items{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:10px;align-items:start}
+.card{display:block;padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+.card .ci{float:left;width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:#14110c;border-radius:8px}
+.card .ci img{width:34px;height:34px;object-fit:contain;image-rendering:pixelated}
+.card .t{margin-left:54px;min-height:44px;display:flex;flex-direction:column;justify-content:center;gap:2px}
+.card .t b{font-size:13px}
+.card .t small{color:var(--muted);font-size:10px;word-break:break-all}
+.card .rec{clear:both;margin-top:10px;padding-top:8px;border-top:1px solid var(--line);display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.grid{display:grid;grid-template-columns:repeat(3,40px);gap:3px}
+.cell,.cell *{box-shadow:none!important;outline:none}
+.cell{width:40px;height:40px;display:flex;align-items:center;justify-content:center;background:#14110c;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.cell.empty{border-style:dashed;opacity:.45}
+.cell img{width:30px;height:30px;object-fit:contain;image-rendering:pixelated}
+.cell .ch{font-size:0;border:0;background:none;padding:0}
+.chips{display:flex;flex-wrap:wrap;gap:4px}
+.cell .ch:not(:has(img)){max-width:34px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:9px;line-height:1.1}
+.ch{display:inline-flex;align-items:center;gap:4px;font-size:11px;padding:3px 7px;border:1px solid var(--line);border-radius:999px;background:#14110c}
+.ch img{width:18px;height:18px;object-fit:contain;image-rendering:pixelated}
+.mach{color:var(--brass);font-size:10px}
+.arw{color:var(--muted)}
+.note2{color:var(--muted);font-size:11px}
+.ver{margin:18px 0;padding:10px 12px;border-left:2px solid var(--brass);background:#14110c;color:var(--muted);font-size:12px;line-height:1.7}
+</style></head><body>
+<header class="top"><div class="wrap"><span class="logo"><span class="gear"></span>CREATE CODEX</span>
+<a class="backbtn" href="index.html">← 返回关系图</a></div></header>
+<main class="wrap">
+<div class="hero"><img class="big" src="assets/icons/mod_simulated_coasters.png" alt="">
+<h1>Simulated Coasters</h1><div class="sub">附属模组</div><div class="tag">过山车轨道与车厢，接 Create 的机械结构</div></div>
+<div class="blk"><h2>这是什么</h2><p>在 Create 的装置上加过山车：轨道、锚点、车厢、铆钉，还有红气球装饰。轨道可以拼成弯道，车厢靠锚点定位。</p></div>
+<div class="ver"><b>命名空间：</b><code>simulatedcoasters</code>　<b>1.20.1 版本：</b>本页物品与配方直接取自该版本的 jar。</div>
+<div class="blk"><h2>轨道<span class="cnt">4</span></h2><div class="grid-items"><div class="card" id="it-simulatedcoasters-coaster_anchorpoint"><div class="ci"><img src="assets/icons/simulatedcoasters_coaster_anchorpoint.png" alt=""></div><div class="t"><b>Track Anchorpoint</b><small>simulatedcoasters:coaster_anchorpoint</small></div><div class="rec"><div class="grid" style="grid-template-columns:repeat(1,1fr)"><div class="cell"><a class="ch" href="items/metal_girder.html" title="metal girder"><img src="assets/icons/create_metal_girder.png" alt="">metal girder</a></div><div class="cell"><a class="ch" href="items/industrial_iron_block.html" title="industrial iron block"><img src="assets/icons/create_industrial_iron_block.png" alt="">industrial iron block</a></div></div><div class="arw">→</div>None<span class="mach">工作台</span></div></div><div class="card" id="it-simulatedcoasters-coaster_track"><div class="ci"><img src="assets/icons/simulatedcoasters_coaster_track.png" alt=""></div><div class="t"><b>Coaster Track</b><small>simulatedcoasters:coaster_track</small></div><div class="rec"><div class="chips"></div><div class="arw">→</div>None<span class="mach">机械动力</span></div></div><div class="card" id="it-simulatedcoasters-coaster_track_material"><div class="ci"><img src="assets/icons/_unknown.png" alt="" loading="lazy"></div><div class="t"><b>Coaster Track Material</b><small>simulatedcoasters:coaster_track_material</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-simulatedcoasters-incomplete_coaster_track"><div class="ci"><img src="assets/icons/simulatedcoasters_incomplete_coaster_track.png" alt=""></div><div class="t"><b>Incomplete Coaster Track</b><small>simulatedcoasters:incomplete_coaster_track</small></div><div class="note2">没有工作台/机器配方</div></div></div></div><div class="blk"><h2>车厢<span class="cnt">1</span></h2><div class="grid-items"><div class="card" id="it-simulatedcoasters-coaster_cart"><div class="ci"><img src="assets/icons/simulatedcoasters_coaster_cart.png" alt=""></div><div class="t"><b>Coaster Cart</b><small>simulatedcoasters:coaster_cart</small></div><div class="rec"><div class="grid" style="grid-template-columns:repeat(3,1fr)"><div class="cell empty"></div><div class="cell"><span class="ch">#minecraft:wooden slabs</span></div><div class="cell empty"></div><div class="cell"><a class="ch" href="vanilla/dried_kelp.html" title="dried kelp"><img src="assets/icons/minecraft_dried_kelp.png" alt="">dried kelp</a></div><div class="cell"><a class="ch" href="items/industrial_iron_block.html" title="industrial iron block"><img src="assets/icons/create_industrial_iron_block.png" alt="">industrial iron block</a></div><div class="cell"><a class="ch" href="vanilla/dried_kelp.html" title="dried kelp"><img src="assets/icons/minecraft_dried_kelp.png" alt="">dried kelp</a></div><div class="cell"><a class="ch" href="vanilla/dried_kelp.html" title="dried kelp"><img src="assets/icons/minecraft_dried_kelp.png" alt="">dried kelp</a></div><div class="cell"><a class="ch" href="items/shaft.html" title="shaft"><img src="assets/icons/3d_create_shaft.png" alt="">shaft</a></div><div class="cell"><a class="ch" href="vanilla/dried_kelp.html" title="dried kelp"><img src="assets/icons/minecraft_dried_kelp.png" alt="">dried kelp</a></div></div><div class="arw">→</div>None<span class="mach">工作台</span></div></div></div></div><div class="blk"><h2>零件与装饰<span class="cnt">2</span></h2><div class="grid-items"><div class="card" id="it-simulatedcoasters-red_balloon"><div class="ci"><img src="assets/icons/simulatedcoasters_red_balloon.png" alt=""></div><div class="t"><b>Red Balloon</b><small>simulatedcoasters:red_balloon</small></div><div class="rec"><div class="grid" style="grid-template-columns:repeat(1,1fr)"><div class="cell"><a class="ch" href="vanilla/red_wool.html" title="red wool"><img src="assets/icons/hh3d_red_wool.png" alt="">red wool</a></div><div class="cell"><a class="ch" href="vanilla/string.html" title="string"><img src="assets/icons/minecraft_string.png" alt="">string</a></div><div class="cell"><a class="ch" href="vanilla/iron_nugget.html" title="iron nugget"><img src="assets/icons/minecraft_iron_nugget.png" alt="">iron nugget</a></div></div><div class="arw">→</div>None<span class="mach">工作台</span></div></div><div class="card" id="it-simulatedcoasters-rivet"><div class="ci"><img src="assets/icons/simulatedcoasters_rivet.png" alt=""></div><div class="t"><b>Rivet</b><small>simulatedcoasters:rivet</small></div><div class="rec"><div class="grid" style="grid-template-columns:repeat(1,1fr)"><div class="cell"><a class="ch" href="items/iron_sheet.html" title="iron sheet"><img src="assets/icons/create_iron_sheet.png" alt="">iron sheet</a></div><div class="cell"><a class="ch" href="vanilla/iron_nugget.html" title="iron nugget"><img src="assets/icons/minecraft_iron_nugget.png" alt="">iron nugget</a></div></div><div class="arw">→</div>None<span class="mach">工作台</span></div></div></div></div>
+</main>
+<footer class="wrap foot">数据与图标来自 Simulated Coasters 的 1.20.1 jar · 本页不属于 Create 本体图鉴</footer>
+<script src="assets/anchors.js" defer></script></body></html>

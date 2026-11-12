@@ -1,0 +1,60 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>创造模式世界塑形器 — Create 机械动力图鉴</title>
+<link rel="preload" href="../assets/fonts/Minecraft.ttf" as="font" crossorigin>
+<link rel="stylesheet" href="../assets/style.css">
+</head><body><header class="top"><div class="wrap"><a class="logo" href="../index.html"><span class="gear"></span><span>CREATE CODEX<small>机械动力图鉴</small></span></a><nav><a href="../tags.html">标签</a><a href="https://github.com/Creators-of-Create/Create" target="_blank" rel="noopener">源码</a></nav></div></header><main class="wrap rise"><div class="crumb"><a href="../index.html">首页</a> / <a href="../catalog.html">全部物品</a> / 工具与装备 / <span>创造模式世界塑形器</span></div><div class="item-hero"><img class="big" src="../assets/icons/_unknown.png" alt=""><div><h1>创造模式世界塑形器</h1><div class="en">Creative Worldshaper</div><div class="idline"><span class="copyid">create:handheld_worldshaper</span><span class="badge">物品</span><a class="badge" href="../catalog.html#cat-tool">工具与装备</a></div></div></div><p class="tagline">创造专属的场景塑形工具。</p><section class="blk"><h2>参数</h2><div class="params"><div class="param"><span>获取</span><b>创造物品栏</b></div><div class="param"><span>类型</span><b>手持工具</b></div><div class="param"><span>场景</span><b>演示/测试</b></div></div></section><section class="blk"><h2>详细教程</h2><div class="prose"><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">怎么获得</h3><p>资料库里没有它的配方，正常游戏流程做不出来，只能在创造模式物品栏里取。整合包有时会把它塞进调试奖励，普通生存存档基本见不到。它只在创造模式出现，生存里既做不出来也没有替代品。</p><p>它是一件手持工具，不是方块，拿在手里就能用。造型像一把带刻度的长杆，和普通工具摆在一起很好认，别和建筑魔杖搞混。拿着它右键才会生效，放进物品栏只是一个占位物。</p><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">怎么用</h3><p>拍教程、搭演示场景时最有用：需要一块平整空地、一道临时墙体或者一片水面，用它比一块块摆快得多。做对比图时先把场地塑好，再放机器，画面会干净很多。改地形时一次只动一小片，范围调大容易把机器一起削掉。</p><p>它适合在超平坦测试存档里折腾，改坏了直接重开一个世界。正式建筑别用它收尾，手工摆的细节它给不了，最后还是要靠方块一块块补。大规模改造前先存一份备份，地形回滚起来很麻烦。</p><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">常见坑</h3><p>它是创造专属物品，生存里既做不出也修不了；别把重要结构建在它改过的地形上，回头想在生存复刻会发现根本对不上。生存存档里它不会自然掉落，别在地图里到处找。</p><p>它的作用范围比看上去大，用之前先退两步看清边界，不然容易把旁边的机器一起铲掉。改完地形记得检查脚下的方块有没有被掏空。落点比准星偏前一点，贴着墙操作容易削到自己脚下。</p></div></section><section class="blk"><h2>获取方式</h2><div class="prose"><p>这个物品<strong>没有合成配方</strong>：它由工具或机器直接生成/放置（例如用扳手、连接器、部署器，或作为其他配方的产物）。具体见上方教程。</p></div></section><section class="blk"><h2>相关物品</h2><div class="related"><a class="chip" href="creative_crate.html"><img src="../assets/icons/3d_create_creative_crate.png" alt="" loading="lazy" decoding="async"><span>创造板条箱</span></a><a class="chip" href="creative_fluid_tank.html"><img src="../assets/icons/3d_create_creative_fluid_tank.png" alt="" loading="lazy" decoding="async"><span>创造流体储罐</span></a><a class="chip" href="creative_blaze_cake.html"><img src="../assets/icons/create_creative_blaze_cake.png" alt="" loading="lazy" decoding="async"><span>创造烈焰蛋糕</span></a></div></section><div class="pager"><a href="hand_crank.html">← 手摇曲柄</a><a href="../catalog.html">返回目录</a><a href="haunted_bell.html">缠魂钟 →</a></div></main><footer><div class="wrap">
+<p>数据与图标来自 <a href="https://github.com/Creators-of-Create/Create" target="_blank" rel="noopener">Creators-of-Create/Create</a>（MIT）与 Minecraft 资源，仅用于学习与教学；Minecraft 版权归 Mojang 所有。</p>
+<p>标题字体 <a href="https://www.dafont.com/minecraft.font" target="_blank" rel="noopener">Minecraft（dafont.com）</a> · 配方与官方 Ponder 文本来自 Create 模组本地化文件（中文由模组自带）· 教程正文为本项目撰写：功能件逐条编写，同系列装饰件共用家族模板。</p>
+</div></footer>
+<div class="toast"></div><script>
+(function(){
+  var bar=document.querySelector('.searchbar input');
+  var cards=[].slice.call(document.querySelectorAll('#list .card'));
+  var btns=[].slice.call(document.querySelectorAll('.filters button'));
+  var empty=document.querySelector('.empty-msg');
+  var cat='all', q='';
+  var mod=(new URLSearchParams(location.search)).get('mod')||'';
+  var MODS={create:'\u673a\u68b0\u52a8\u529b'};
+  function apply(){
+    var n=0;
+    cards.forEach(function(c){
+      var okc=(cat==='all'||c.dataset.cat===cat);
+      var okm=!mod||c.dataset.mod===mod;
+      var okq=!q||c.dataset.k.indexOf(q)>-1;
+      var show=okc&&okq&&okm;
+      c.style.display=show?'':'none';
+      if(show)n++;
+    });
+    if(empty)empty.style.display=n?'none':'block';
+  }
+  (function(){
+    if(!mod) return;
+    var mb=document.getElementById('modbar'), mn=document.getElementById('modname');
+    if(mn) mn.textContent=MODS[mod]||mod;
+    if(mb) mb.hidden=false;
+  })();
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    btns.forEach(function(x){x.classList.remove('on')});
+    b.classList.add('on'); cat=b.dataset.cat; apply();
+  })});
+  if(bar){bar.addEventListener('input',function(){q=bar.value.trim().toLowerCase();apply();});}
+  (function(){
+    var h=location.hash;
+    if(h.indexOf('#cat-')===0){
+      var c=h.slice(5);
+      btns.forEach(function(b){ if(b.dataset.cat===c){ b.click(); } });
+    }
+  })();
+  document.querySelectorAll('.copyid').forEach(function(el){
+    el.addEventListener('click',function(){
+      var t=el.textContent.trim();
+      var done=function(){el.classList.add('ok');el.textContent='已复制';
+        setTimeout(function(){el.textContent=t;el.classList.remove('ok')},1200);};
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,done)}
+      else{var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();
+        try{document.execCommand('copy')}catch(e){}document.body.removeChild(ta);done();}
+    });
+  });
+})();
+</script></body></html>

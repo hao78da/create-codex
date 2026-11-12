@@ -1,0 +1,60 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>方解石柱 — Create 机械动力图鉴</title>
+<link rel="preload" href="../assets/fonts/Minecraft.ttf" as="font" crossorigin>
+<link rel="stylesheet" href="../assets/style.css">
+</head><body><header class="top"><div class="wrap"><a class="logo" href="../index.html"><span class="gear"></span><span>CREATE CODEX<small>机械动力图鉴</small></span></a><nav><a href="../tags.html">标签</a><a href="https://github.com/Creators-of-Create/Create" target="_blank" rel="noopener">源码</a></nav></div></header><main class="wrap rise"><div class="crumb"><a href="../index.html">首页</a> / <a href="../catalog.html">全部物品</a> / 装饰与建筑 / <span>方解石柱</span></div><div class="item-hero"><img class="big" src="../assets/icons/create_calcite_pillar.png" alt=""><div><h1>方解石柱</h1><div class="en">Calcite Pillar</div><div class="idline"><span class="copyid">create:calcite_pillar</span><span class="badge">方块</span><a class="badge" href="../catalog.html#cat-decor">装饰与建筑</a></div></div></div><p class="tagline">方解石柱：白色的垂直秩序。</p><section class="blk"><h2>参数</h2><div class="params"><div class="param"><span>材质</span><b>方解石</b></div><div class="param"><span>形制</span><b>柱</b></div><div class="param"><span>朝向</span><b>可旋转</b></div></div></section><section class="blk"><h2>详细教程</h2><div class="prose"><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">怎么获得</h3><p>方解石原石进切石机，能直接切出<strong>方解石柱</strong>，1:1。柱也在族里，和其它整块形状能互相切，一块换一块；只有柱切柱不行，一次要几根就切几根。</p><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">怎么用</h3><p>柱身四面是竖纹，顶面另有一套图案，<strong>可以旋转</strong>改变朝哪一面。承重柱、烟囱、装饰立柱都用得上：一根白柱在室内就是视觉锚点，四根围一圈就是回廊。做烟囱时让顶面朝上，口才像样。</p><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">搭配与坑</h3><p>横着摆的时候把顶面转到外侧，接口才不露没纹理的那一侧。方解石柱配<strong>金</strong>像神庙，配黑铁像现代馆；柱础叠两块磨制台阶，柱头用层叠块收，比例立刻稳。高了就得有横向的梁托住，单靠一根白柱撑不住整个厅。柱础用磨制台阶叠一圈，柱脚就有了落地感；柱头压一层层叠块，白柱上下都有交代。</p></div></section><section class="blk"><h2>获取方式</h2><div class="recipes"><div class="recipe"><div class="recipe-head"><span class="machine">切石机</span></div><div class="ings"><a class="chip tag" href="../tags/create_stone_types_calcite.html"><img src="../assets/icons/create_cut_calcite.png" alt="" loading="lazy" decoding="async">方解石</a></div><div class="arrow">→</div><div class="outs"><a class="chip" href="../items/calcite_pillar.html"><img src="../assets/icons/create_calcite_pillar.png" alt="" loading="lazy" decoding="async"><span>方解石柱</span><b>×1</b></a></div></div></div></section><section class="blk"><h2>相关物品</h2><div class="related"><a class="chip" href="cut_calcite.html"><img src="../assets/icons/create_cut_calcite.png" alt="" loading="lazy" decoding="async"><span>切制方解石</span></a><a class="chip" href="layered_calcite.html"><img src="../assets/icons/create_layered_calcite.png" alt="" loading="lazy" decoding="async"><span>层叠方解石</span></a><a class="chip" href="polished_cut_calcite.html"><img src="../assets/icons/create_polished_cut_calcite.png" alt="" loading="lazy" decoding="async"><span>磨制切制方解石</span></a></div></section><div class="pager"><a href="builders_tea.html">← 建筑工茶饮</a><a href="../catalog.html">返回目录</a><a href="cardboard.html">纸板 →</a></div></main><footer><div class="wrap">
+<p>数据与图标来自 <a href="https://github.com/Creators-of-Create/Create" target="_blank" rel="noopener">Creators-of-Create/Create</a>（MIT）与 Minecraft 资源，仅用于学习与教学；Minecraft 版权归 Mojang 所有。</p>
+<p>标题字体 <a href="https://www.dafont.com/minecraft.font" target="_blank" rel="noopener">Minecraft（dafont.com）</a> · 配方与官方 Ponder 文本来自 Create 模组本地化文件（中文由模组自带）· 教程正文为本项目撰写：功能件逐条编写，同系列装饰件共用家族模板。</p>
+</div></footer>
+<div class="toast"></div><script>
+(function(){
+  var bar=document.querySelector('.searchbar input');
+  var cards=[].slice.call(document.querySelectorAll('#list .card'));
+  var btns=[].slice.call(document.querySelectorAll('.filters button'));
+  var empty=document.querySelector('.empty-msg');
+  var cat='all', q='';
+  var mod=(new URLSearchParams(location.search)).get('mod')||'';
+  var MODS={create:'\u673a\u68b0\u52a8\u529b'};
+  function apply(){
+    var n=0;
+    cards.forEach(function(c){
+      var okc=(cat==='all'||c.dataset.cat===cat);
+      var okm=!mod||c.dataset.mod===mod;
+      var okq=!q||c.dataset.k.indexOf(q)>-1;
+      var show=okc&&okq&&okm;
+      c.style.display=show?'':'none';
+      if(show)n++;
+    });
+    if(empty)empty.style.display=n?'none':'block';
+  }
+  (function(){
+    if(!mod) return;
+    var mb=document.getElementById('modbar'), mn=document.getElementById('modname');
+    if(mn) mn.textContent=MODS[mod]||mod;
+    if(mb) mb.hidden=false;
+  })();
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    btns.forEach(function(x){x.classList.remove('on')});
+    b.classList.add('on'); cat=b.dataset.cat; apply();
+  })});
+  if(bar){bar.addEventListener('input',function(){q=bar.value.trim().toLowerCase();apply();});}
+  (function(){
+    var h=location.hash;
+    if(h.indexOf('#cat-')===0){
+      var c=h.slice(5);
+      btns.forEach(function(b){ if(b.dataset.cat===c){ b.click(); } });
+    }
+  })();
+  document.querySelectorAll('.copyid').forEach(function(el){
+    el.addEventListener('click',function(){
+      var t=el.textContent.trim();
+      var done=function(){el.classList.add('ok');el.textContent='已复制';
+        setTimeout(function(){el.textContent=t;el.classList.remove('ok')},1200);};
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,done)}
+      else{var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();
+        try{document.execCommand('copy')}catch(e){}document.body.removeChild(ta);done();}
+    });
+  });
+})();
+</script></body></html>

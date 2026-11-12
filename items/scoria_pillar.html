@@ -1,0 +1,60 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>熔渣柱 — Create 机械动力图鉴</title>
+<link rel="preload" href="../assets/fonts/Minecraft.ttf" as="font" crossorigin>
+<link rel="stylesheet" href="../assets/style.css">
+</head><body><header class="top"><div class="wrap"><a class="logo" href="../index.html"><span class="gear"></span><span>CREATE CODEX<small>机械动力图鉴</small></span></a><nav><a href="../tags.html">标签</a><a href="https://github.com/Creators-of-Create/Create" target="_blank" rel="noopener">源码</a></nav></div></header><main class="wrap rise"><div class="crumb"><a href="../index.html">首页</a> / <a href="../catalog.html">全部物品</a> / 装饰与建筑 / <span>熔渣柱</span></div><div class="item-hero"><img class="big" src="../assets/icons/create_scoria_pillar.png" alt=""><div><h1>熔渣柱</h1><div class="en">Scoria Pillar</div><div class="idline"><span class="copyid">create:scoria_pillar</span><span class="badge">方块</span><a class="badge" href="../catalog.html#cat-decor">装饰与建筑</a></div></div></div><p class="tagline">熔渣柱与厂区骨架</p><section class="blk"><h2>参数</h2><div class="params"><div class="param"><span>类型</span><b>装饰立柱</b></div><div class="param"><span>工艺</span><b>石切机 1 换 1</b></div><div class="param"><span>朝向</span><b>扳手可调</b></div></div></section><section class="blk"><h2>详细教程</h2><div class="prose"><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">怎么获得</h3><p>只能<strong>石切机</strong>切：焦黑熔渣或它的任一装饰变体放进去，选中柱子，一块换一根，没有工作台配方。</p><p>焦黑熔渣本身要在熔岩附近找，挖回来一箱就够把整座厂区的柱子切齐。</p><p>切之前把熔渣按深浅分堆，浅的做柱身、深的做柱头，整排柱子的层次会比单一色丰富。</p><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">怎么用</h3><p>柱子竖着放是立柱，横着放是横梁，用扳手能转轴向；厂房里按<strong>四格一根</strong>的间距排柱，梁的跨度刚好不显得空。</p><p>它的深褐色比深板岩暖，压在红砖地面或者铁轨旁边都不突兀，是做重工业场景的默认配色。</p><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">搭配</h3><p>和<strong>层叠熔渣</strong>搭配最有整体感：层叠做墙，柱子做骨架，再拿熔渣小砖墙围边，三种变体同源不同纹。</p><p>柱顶放一盏玫瑰石英灯，暖光顺着柱身往下淌，夜里的厂区会有种还在运转的错觉。</p><p>柱高四格、间距四格是最好记的比例，再密就显得挤，再疏梁会显得细。</p></div></section><section class="blk"><h2>获取方式</h2><div class="recipes"><div class="recipe"><div class="recipe-head"><span class="machine">切石机</span></div><div class="ings"><a class="chip tag" href="../tags/create_stone_types_scoria.html"><img src="../assets/icons/create_cut_scoria.png" alt="" loading="lazy" decoding="async">火山渣</a></div><div class="arrow">→</div><div class="outs"><a class="chip" href="../items/scoria_pillar.html"><img src="../assets/icons/create_scoria_pillar.png" alt="" loading="lazy" decoding="async"><span>熔渣柱</span><b>×1</b></a></div></div></div></section><section class="blk"><h2>相关物品</h2><div class="related"><a class="chip" href="layered_scoria.html"><img src="../assets/icons/create_layered_scoria.png" alt="" loading="lazy" decoding="async"><span>层叠熔渣</span></a><a class="chip" href="small_scorchia_bricks.html"><img src="../assets/icons/create_small_scorchia_bricks.png" alt="" loading="lazy" decoding="async"><span>焦黑熔渣小砖块</span></a><a class="chip" href="scoria.html"><img src="../assets/icons/create_scoria.png" alt="" loading="lazy" decoding="async"><span>熔渣</span></a></div></section><div class="pager"><a href="scoria.html">← 熔渣</a><a href="../catalog.html">返回目录</a><a href="secondary_linear_chassis.html">轴向底盘二号 →</a></div></main><footer><div class="wrap">
+<p>数据与图标来自 <a href="https://github.com/Creators-of-Create/Create" target="_blank" rel="noopener">Creators-of-Create/Create</a>（MIT）与 Minecraft 资源，仅用于学习与教学；Minecraft 版权归 Mojang 所有。</p>
+<p>标题字体 <a href="https://www.dafont.com/minecraft.font" target="_blank" rel="noopener">Minecraft（dafont.com）</a> · 配方与官方 Ponder 文本来自 Create 模组本地化文件（中文由模组自带）· 教程正文为本项目撰写：功能件逐条编写，同系列装饰件共用家族模板。</p>
+</div></footer>
+<div class="toast"></div><script>
+(function(){
+  var bar=document.querySelector('.searchbar input');
+  var cards=[].slice.call(document.querySelectorAll('#list .card'));
+  var btns=[].slice.call(document.querySelectorAll('.filters button'));
+  var empty=document.querySelector('.empty-msg');
+  var cat='all', q='';
+  var mod=(new URLSearchParams(location.search)).get('mod')||'';
+  var MODS={create:'\u673a\u68b0\u52a8\u529b'};
+  function apply(){
+    var n=0;
+    cards.forEach(function(c){
+      var okc=(cat==='all'||c.dataset.cat===cat);
+      var okm=!mod||c.dataset.mod===mod;
+      var okq=!q||c.dataset.k.indexOf(q)>-1;
+      var show=okc&&okq&&okm;
+      c.style.display=show?'':'none';
+      if(show)n++;
+    });
+    if(empty)empty.style.display=n?'none':'block';
+  }
+  (function(){
+    if(!mod) return;
+    var mb=document.getElementById('modbar'), mn=document.getElementById('modname');
+    if(mn) mn.textContent=MODS[mod]||mod;
+    if(mb) mb.hidden=false;
+  })();
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    btns.forEach(function(x){x.classList.remove('on')});
+    b.classList.add('on'); cat=b.dataset.cat; apply();
+  })});
+  if(bar){bar.addEventListener('input',function(){q=bar.value.trim().toLowerCase();apply();});}
+  (function(){
+    var h=location.hash;
+    if(h.indexOf('#cat-')===0){
+      var c=h.slice(5);
+      btns.forEach(function(b){ if(b.dataset.cat===c){ b.click(); } });
+    }
+  })();
+  document.querySelectorAll('.copyid').forEach(function(el){
+    el.addEventListener('click',function(){
+      var t=el.textContent.trim();
+      var done=function(){el.classList.add('ok');el.textContent='已复制';
+        setTimeout(function(){el.textContent=t;el.classList.remove('ok')},1200);};
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,done)}
+      else{var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();
+        try{document.execCommand('copy')}catch(e){}document.body.removeChild(ta);done();}
+    });
+  });
+})();
+</script></body></html>

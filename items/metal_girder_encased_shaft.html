@@ -1,0 +1,60 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>金属梁包住的传动杆 — Create 机械动力图鉴</title>
+<link rel="preload" href="../assets/fonts/Minecraft.ttf" as="font" crossorigin>
+<link rel="stylesheet" href="../assets/style.css">
+</head><body><header class="top"><div class="wrap"><a class="logo" href="../index.html"><span class="gear"></span><span>CREATE CODEX<small>机械动力图鉴</small></span></a><nav><a href="../tags.html">标签</a><a href="https://github.com/Creators-of-Create/Create" target="_blank" rel="noopener">源码</a></nav></div></header><main class="wrap rise"><div class="crumb"><a href="../index.html">首页</a> / <a href="../catalog.html">全部物品</a> / 动力与传动 / <span>金属梁包住的传动杆</span></div><div class="item-hero"><img class="big" src="../assets/icons/3d_create_metal_girder_encased_shaft.png" alt=""><div><h1>金属梁包住的传动杆</h1><div class="en">Metal Girder Encased Shaft</div><div class="idline"><span class="copyid">create:metal_girder_encased_shaft</span><span class="badge">方块</span><a class="badge" href="../catalog.html#cat-power">动力与传动</a></div></div></div><p class="tagline">金属梁里穿轴，天花板走线的门面。</p><section class="blk"><h2>参数</h2><div class="params"><div class="param"><span>材料</span><b>金属梁 + 1 传动杆</b></div><div class="param"><span>方向</span><b>仅水平</b></div><div class="param"><span>拆解</span><b>扳手退轴</b></div></div></section><section class="blk"><h2>详细教程</h2><div class="prose"><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">怎么获得</h3><p>先做<strong>金属梁</strong>：3 块铁板加 3 个安山合金，一次出 8 根；再手持传动杆右击一段水平金属梁，就得到包住轴的梁，一根梁吃一根轴。</p><p>注意只能水平施工，竖直的金属梁接不上轴；摆放前先确认这一段是横向走线，别等装完才发现方向反了，返工要拆一整片。竖直段改走锁链传动或普通包轴。</p><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">怎么用</h3><p>它就是被梁包住的水平轴，转速照常传递，外观是一整条带凹槽的梁，适合做<strong>天花板</strong>或墙面的明线，走线一目了然。转速经它传递不升也不降。</p><p>梁两端可以继续接普通传动杆或齿轮箱；因为梁体可含水，架在水池或喷泉上方也不会被冲掉，还能顺便当装饰承重，潮湿环境也不怕。</p><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">常见坑</h3><p>用扳手右击会拆回金属梁并退还 1 根<strong>传动杆</strong>，梁体本身保留；改线时基本不浪费材料，但拆一次就要重新对准轴心。拆装时相邻的梁和轴都不受影响。</p><p>竖直方向完全不能用，想上下走线得换普通轴或锁链传动；它也只吃水平轴，斜着摆不认，别对着墙硬试半天。斜放同样无效，只能沿一条直线铺。</p></div></section><section class="blk"><h2>获取方式</h2><div class="prose"><p>这个物品<strong>没有合成配方</strong>：它由工具或机器直接生成/放置（例如用扳手、连接器、部署器，或作为其他配方的产物）。具体见上方教程。</p></div></section><section class="blk"><h2>官方教程 · 使用传动杆传递旋转力</h2><ol class="steps"><li>传动杆能直线传递旋转力</li></ol></section><section class="blk"><h2>相关物品</h2><div class="related"><a class="chip" href="metal_girder.html"><img src="../assets/icons/create_metal_girder.png" alt="" loading="lazy" decoding="async"><span>金属梁</span></a><a class="chip" href="shaft.html"><img src="../assets/icons/3d_create_shaft.png" alt="" loading="lazy" decoding="async"><span>传动杆</span></a><a class="chip" href="andesite_encased_shaft.html"><img src="../assets/icons/3d_create_andesite_encased_shaft.png" alt="" loading="lazy" decoding="async"><span>安山传动杆箱</span></a></div></section><div class="pager"><a href="metal_girder.html">← 金属梁</a><a href="../catalog.html">返回目录</a><a href="millstone.html">石磨 →</a></div></main><footer><div class="wrap">
+<p>数据与图标来自 <a href="https://github.com/Creators-of-Create/Create" target="_blank" rel="noopener">Creators-of-Create/Create</a>（MIT）与 Minecraft 资源，仅用于学习与教学；Minecraft 版权归 Mojang 所有。</p>
+<p>标题字体 <a href="https://www.dafont.com/minecraft.font" target="_blank" rel="noopener">Minecraft（dafont.com）</a> · 配方与官方 Ponder 文本来自 Create 模组本地化文件（中文由模组自带）· 教程正文为本项目撰写：功能件逐条编写，同系列装饰件共用家族模板。</p>
+</div></footer>
+<div class="toast"></div><script>
+(function(){
+  var bar=document.querySelector('.searchbar input');
+  var cards=[].slice.call(document.querySelectorAll('#list .card'));
+  var btns=[].slice.call(document.querySelectorAll('.filters button'));
+  var empty=document.querySelector('.empty-msg');
+  var cat='all', q='';
+  var mod=(new URLSearchParams(location.search)).get('mod')||'';
+  var MODS={create:'\u673a\u68b0\u52a8\u529b'};
+  function apply(){
+    var n=0;
+    cards.forEach(function(c){
+      var okc=(cat==='all'||c.dataset.cat===cat);
+      var okm=!mod||c.dataset.mod===mod;
+      var okq=!q||c.dataset.k.indexOf(q)>-1;
+      var show=okc&&okq&&okm;
+      c.style.display=show?'':'none';
+      if(show)n++;
+    });
+    if(empty)empty.style.display=n?'none':'block';
+  }
+  (function(){
+    if(!mod) return;
+    var mb=document.getElementById('modbar'), mn=document.getElementById('modname');
+    if(mn) mn.textContent=MODS[mod]||mod;
+    if(mb) mb.hidden=false;
+  })();
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    btns.forEach(function(x){x.classList.remove('on')});
+    b.classList.add('on'); cat=b.dataset.cat; apply();
+  })});
+  if(bar){bar.addEventListener('input',function(){q=bar.value.trim().toLowerCase();apply();});}
+  (function(){
+    var h=location.hash;
+    if(h.indexOf('#cat-')===0){
+      var c=h.slice(5);
+      btns.forEach(function(b){ if(b.dataset.cat===c){ b.click(); } });
+    }
+  })();
+  document.querySelectorAll('.copyid').forEach(function(el){
+    el.addEventListener('click',function(){
+      var t=el.textContent.trim();
+      var done=function(){el.classList.add('ok');el.textContent='已复制';
+        setTimeout(function(){el.textContent=t;el.classList.remove('ok')},1200);};
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,done)}
+      else{var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();
+        try{document.execCommand('copy')}catch(e){}document.body.removeChild(ta);done();}
+    });
+  });
+})();
+</script></body></html>

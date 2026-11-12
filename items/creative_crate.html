@@ -1,0 +1,60 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>创造板条箱 — Create 机械动力图鉴</title>
+<link rel="preload" href="../assets/fonts/Minecraft.ttf" as="font" crossorigin>
+<link rel="stylesheet" href="../assets/style.css">
+</head><body><header class="top"><div class="wrap"><a class="logo" href="../index.html"><span class="gear"></span><span>CREATE CODEX<small>机械动力图鉴</small></span></a><nav><a href="../tags.html">标签</a><a href="https://github.com/Creators-of-Create/Create" target="_blank" rel="noopener">源码</a></nav></div></header><main class="wrap rise"><div class="crumb"><a href="../index.html">首页</a> / <a href="../catalog.html">全部物品</a> / 物流与仓储 / <span>创造板条箱</span></div><div class="item-hero"><img class="big" src="../assets/icons/3d_create_creative_crate.png" alt=""><div><h1>创造板条箱</h1><div class="en">Creative Crate</div><div class="idline"><span class="copyid">create:creative_crate</span><span class="badge">方块</span><a class="badge" href="../catalog.html#cat-logistics">物流与仓储</a></div></div></div><p class="tagline">创造模式的无底板条箱。</p><section class="blk"><h2>参数</h2><div class="params"><div class="param"><span>获取</span><b>创造物品栏</b></div><div class="param"><span>类型</span><b>无限容器</b></div><div class="param"><span>接口</span><b>传送带/漏斗</b></div></div></section><section class="blk"><h2>详细教程</h2><div class="prose"><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">怎么获得</h3><p>它只出现在创造模式物品栏，没有工作台配方，生存存档里做不出来也刷不出来。需要做演示时开创造直接拿一个，摆在产线尽头当收集端。创造模式专属，生存里没有任何途径获得。</p><p>外形是一只普通板条箱，侧面多一圈紫色光边，和创造储罐是同一套配色。它没有箱盖，从上面能直接看到内腔，一眼就能认出不是普通板条箱。放进去的东西取不完，拿它当测试仓库最省事。</p><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">怎么用</h3><p>接上传送带或漏斗，送进来的东西会被直接吞掉，箱体永远不会满。做测试产线时最省事：不用担心堵塞，也不用隔一会儿清一次箱子。和普通板条箱长得一样，只能靠光效分辨。</p><p>它也能当无限供给源：从里面取出的物品不会减少，配合<strong>机械臂</strong>和传送带可以做永不枯竭的原料站。演示整条自动化线时特别好用。接上打包机时它会一直供货，测产线很方便。</p><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">常见坑</h3><p>它只吞不吐，别指望从里面把东西拿回来；放进去就没了。要取物得用普通箱子或板条箱，别把贵重物品往里面丢。生存存档里它不会生成，别在箱子堆里翻。</p><p>生存里用它会毁掉产线的经济性，测试完记得换回真箱子。存档分享前检查一遍，别让创造方块混进正式建筑。拆掉时里面不会掉东西，别把它当储物箱。</p></div></section><section class="blk"><h2>获取方式</h2><div class="prose"><p>这个物品<strong>没有合成配方</strong>：它由工具或机器直接生成/放置（例如用扳手、连接器、部署器，或作为其他配方的产物）。具体见上方教程。</p></div></section><section class="blk"><h2>相关物品</h2><div class="related"><a class="chip" href="creative_fluid_tank.html"><img src="../assets/icons/3d_create_creative_fluid_tank.png" alt="" loading="lazy" decoding="async"><span>创造流体储罐</span></a><a class="chip" href="creative_blaze_cake.html"><img src="../assets/icons/create_creative_blaze_cake.png" alt="" loading="lazy" decoding="async"><span>创造烈焰蛋糕</span></a><a class="chip" href="cardboard_block.html"><img src="../assets/icons/create_cardboard_block.png" alt="" loading="lazy" decoding="async"><span>纸板块</span></a></div></section><div class="pager"><a href="creative_blaze_cake.html">← 创造烈焰蛋糕</a><a href="../catalog.html">返回目录</a><a href="creative_fluid_tank.html">创造流体储罐 →</a></div></main><footer><div class="wrap">
+<p>数据与图标来自 <a href="https://github.com/Creators-of-Create/Create" target="_blank" rel="noopener">Creators-of-Create/Create</a>（MIT）与 Minecraft 资源，仅用于学习与教学；Minecraft 版权归 Mojang 所有。</p>
+<p>标题字体 <a href="https://www.dafont.com/minecraft.font" target="_blank" rel="noopener">Minecraft（dafont.com）</a> · 配方与官方 Ponder 文本来自 Create 模组本地化文件（中文由模组自带）· 教程正文为本项目撰写：功能件逐条编写，同系列装饰件共用家族模板。</p>
+</div></footer>
+<div class="toast"></div><script>
+(function(){
+  var bar=document.querySelector('.searchbar input');
+  var cards=[].slice.call(document.querySelectorAll('#list .card'));
+  var btns=[].slice.call(document.querySelectorAll('.filters button'));
+  var empty=document.querySelector('.empty-msg');
+  var cat='all', q='';
+  var mod=(new URLSearchParams(location.search)).get('mod')||'';
+  var MODS={create:'\u673a\u68b0\u52a8\u529b'};
+  function apply(){
+    var n=0;
+    cards.forEach(function(c){
+      var okc=(cat==='all'||c.dataset.cat===cat);
+      var okm=!mod||c.dataset.mod===mod;
+      var okq=!q||c.dataset.k.indexOf(q)>-1;
+      var show=okc&&okq&&okm;
+      c.style.display=show?'':'none';
+      if(show)n++;
+    });
+    if(empty)empty.style.display=n?'none':'block';
+  }
+  (function(){
+    if(!mod) return;
+    var mb=document.getElementById('modbar'), mn=document.getElementById('modname');
+    if(mn) mn.textContent=MODS[mod]||mod;
+    if(mb) mb.hidden=false;
+  })();
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    btns.forEach(function(x){x.classList.remove('on')});
+    b.classList.add('on'); cat=b.dataset.cat; apply();
+  })});
+  if(bar){bar.addEventListener('input',function(){q=bar.value.trim().toLowerCase();apply();});}
+  (function(){
+    var h=location.hash;
+    if(h.indexOf('#cat-')===0){
+      var c=h.slice(5);
+      btns.forEach(function(b){ if(b.dataset.cat===c){ b.click(); } });
+    }
+  })();
+  document.querySelectorAll('.copyid').forEach(function(el){
+    el.addEventListener('click',function(){
+      var t=el.textContent.trim();
+      var done=function(){el.classList.add('ok');el.textContent='已复制';
+        setTimeout(function(){el.textContent=t;el.classList.remove('ok')},1200);};
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,done)}
+      else{var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();
+        try{document.execCommand('copy')}catch(e){}document.body.removeChild(ta);done();}
+    });
+  });
+})();
+</script></body></html>

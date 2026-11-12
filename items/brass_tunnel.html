@@ -1,0 +1,60 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>黄铜隧道 — Create 机械动力图鉴</title>
+<link rel="preload" href="../assets/fonts/Minecraft.ttf" as="font" crossorigin>
+<link rel="stylesheet" href="../assets/style.css">
+</head><body><header class="top"><div class="wrap"><a class="logo" href="../index.html"><span class="gear"></span><span>CREATE CODEX<small>机械动力图鉴</small></span></a><nav><a href="../tags.html">标签</a><a href="https://github.com/Creators-of-Create/Create" target="_blank" rel="noopener">源码</a></nav></div></header><main class="wrap rise"><div class="crumb"><a href="../index.html">首页</a> / <a href="../catalog.html">全部物品</a> / 物流与仓储 / <span>黄铜隧道</span></div><div class="item-hero"><img class="big" src="../assets/icons/3d_create_brass_tunnel.png" alt=""><div><h1>黄铜隧道</h1><div class="en">Brass Tunnel</div><div class="idline"><span class="copyid">create:brass_tunnel</span><span class="badge">方块</span><a class="badge" href="../catalog.html#cat-logistics">物流与仓储</a></div></div></div><p class="tagline">带过滤与分配模式的传送带隧道。</p><section class="blk"><h2>参数</h2><div class="params"><div class="param"><span>材料</span><b>黄铜锭×2 + 干海带×2 + 电子管</b></div><div class="param"><span>产量</span><b>一次 2 个</b></div><div class="param"><span>功能</span><b>过滤/分配</b></div></div></section><section class="blk"><h2>详细教程</h2><div class="prose"><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">怎么获得</h3><p>图案合成：左上电子管、中间两行黄铜锭、底部两行干海带，一次出 2 个；黄铜锭两枚、干海带两枚，电子管一根，材料不算便宜。</p><p>它套在<strong>传送带</strong>上使用，本身不搬东西；一条带子可以隔几格放一个隧道做分拣口，放之前先把带子铺好，位置错了要拆带重来，隧道认带子的方向。</p><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">怎么用</h3><p>每个开口面都有<strong>过滤槽</strong>：入口处的槽只挡不匹配的物品，出口处的槽按种类分流，多个有效出口时由分配模式决定去哪个，槽里放样品物品。</p><p>把两条平行传送带用隧道连成一组后，可以直接把物品塞进隧道方块，不必再摆漏斗；做仓库分拣时这个特性非常省地方，组内共享分拣规则。</p><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">进阶</h3><p>分配模式有七种：分流、强制分流、轮询调度、强制轮询调度、最近优先、随机和<strong>同步输入</strong>，右键面板里逐个切换，名字就是它的行为。</p><p>分流会把物品均摊到各出口，满了就跳过；强制分流宁可等也不跳过，适合保证某条线不断料；同步输入则等组内每条带都备好才放行。</p></div></section><section class="blk"><h2>获取方式</h2><div class="recipes"><div class="recipe"><div class="recipe-head"><span class="machine">工作台</span></div><div class="craft"><div class="grid" style="--n:2"><div class="cell"><img src="../assets/icons/create_electron_tube.png" alt="" loading="lazy" decoding="async"><em>电子管</em></div><div class="cell empty"></div><div class="cell"><a class="tagcell hasi" href="../tags/forge_ingots_brass.html" title="#黄铜锭"><img src="../assets/icons/create_brass_ingot.png" alt="" loading="lazy" decoding="async"><i>#</i></a></div><div class="cell"><a class="tagcell hasi" href="../tags/forge_ingots_brass.html" title="#黄铜锭"><img src="../assets/icons/create_brass_ingot.png" alt="" loading="lazy" decoding="async"><i>#</i></a></div><div class="cell"><img src="../assets/icons/minecraft_dried_kelp.png" alt="" loading="lazy" decoding="async"><em>干海带</em></div><div class="cell"><img src="../assets/icons/minecraft_dried_kelp.png" alt="" loading="lazy" decoding="async"><em>干海带</em></div></div></div><div class="arrow">→</div><div class="outs"><a class="chip" href="../items/brass_tunnel.html"><img src="../assets/icons/3d_create_brass_tunnel.png" alt="" loading="lazy" decoding="async"><span>黄铜隧道</span><b>×2</b></a></div></div></div></section><section class="blk"><h2>官方教程 · 黄铜隧道用法</h2><ol class="steps"><li>黄铜隧道可以遮掩住你的传送带</li><li>隧道的每一个开口面都有过滤槽</li><li>在输入处的过滤槽仅会阻挡住不匹配的物品</li><li>输出处的过滤槽可用于以种类为依据的物品整理</li><li>当通过的物品有多个有效输出端时，那么隧道的分配模式将会决定这些物品何去何从</li><li>连接了平行传送带的黄铜隧道，会将隧道、传送带组成一个组</li><li>输入的物品现在会分配到所有连接的输出端</li><li>在这一情况下，你也可以将物品直接输入到隧道方块中</li></ol></section><section class="blk"><h2>相关物品</h2><div class="related"><a class="chip" href="andesite_tunnel.html"><img src="../assets/icons/3d_create_andesite_tunnel.png" alt="" loading="lazy" decoding="async"><span>安山隧道</span></a><a class="chip" href="brass_funnel.html"><img src="../assets/icons/3d_create_brass_funnel.png" alt="" loading="lazy" decoding="async"><span>黄铜漏斗</span></a><a class="chip" href="belt_connector.html"><img src="../assets/icons/create_belt_connector.png" alt="" loading="lazy" decoding="async"><span>传送带</span></a></div></section><div class="pager"><a href="brass_table_cloth.html">← 黄铜桌面</a><a href="../catalog.html">返回目录</a><a href="brown_nixie_tube.html">棕色辉光管 →</a></div></main><footer><div class="wrap">
+<p>数据与图标来自 <a href="https://github.com/Creators-of-Create/Create" target="_blank" rel="noopener">Creators-of-Create/Create</a>（MIT）与 Minecraft 资源，仅用于学习与教学；Minecraft 版权归 Mojang 所有。</p>
+<p>标题字体 <a href="https://www.dafont.com/minecraft.font" target="_blank" rel="noopener">Minecraft（dafont.com）</a> · 配方与官方 Ponder 文本来自 Create 模组本地化文件（中文由模组自带）· 教程正文为本项目撰写：功能件逐条编写，同系列装饰件共用家族模板。</p>
+</div></footer>
+<div class="toast"></div><script>
+(function(){
+  var bar=document.querySelector('.searchbar input');
+  var cards=[].slice.call(document.querySelectorAll('#list .card'));
+  var btns=[].slice.call(document.querySelectorAll('.filters button'));
+  var empty=document.querySelector('.empty-msg');
+  var cat='all', q='';
+  var mod=(new URLSearchParams(location.search)).get('mod')||'';
+  var MODS={create:'\u673a\u68b0\u52a8\u529b'};
+  function apply(){
+    var n=0;
+    cards.forEach(function(c){
+      var okc=(cat==='all'||c.dataset.cat===cat);
+      var okm=!mod||c.dataset.mod===mod;
+      var okq=!q||c.dataset.k.indexOf(q)>-1;
+      var show=okc&&okq&&okm;
+      c.style.display=show?'':'none';
+      if(show)n++;
+    });
+    if(empty)empty.style.display=n?'none':'block';
+  }
+  (function(){
+    if(!mod) return;
+    var mb=document.getElementById('modbar'), mn=document.getElementById('modname');
+    if(mn) mn.textContent=MODS[mod]||mod;
+    if(mb) mb.hidden=false;
+  })();
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    btns.forEach(function(x){x.classList.remove('on')});
+    b.classList.add('on'); cat=b.dataset.cat; apply();
+  })});
+  if(bar){bar.addEventListener('input',function(){q=bar.value.trim().toLowerCase();apply();});}
+  (function(){
+    var h=location.hash;
+    if(h.indexOf('#cat-')===0){
+      var c=h.slice(5);
+      btns.forEach(function(b){ if(b.dataset.cat===c){ b.click(); } });
+    }
+  })();
+  document.querySelectorAll('.copyid').forEach(function(el){
+    el.addEventListener('click',function(){
+      var t=el.textContent.trim();
+      var done=function(){el.classList.add('ok');el.textContent='已复制';
+        setTimeout(function(){el.textContent=t;el.classList.remove('ok')},1200);};
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,done)}
+      else{var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();
+        try{document.execCommand('copy')}catch(e){}document.body.removeChild(ta);done();}
+    });
+  });
+})();
+</script></body></html>

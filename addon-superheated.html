@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<title>Create: Superheated · 附属模组 · Create Codex</title>
+<link rel="stylesheet" href="assets/style.css">
+<style>
+.wrap{max-width:1100px}
+.hero{padding:44px 0 18px;text-align:center}
+.hero img.big{width:96px;height:96px;border-radius:18px;background:#0d0b09}
+.hero h1{font-size:34px;margin:12px 0 4px}
+.hero .sub{color:var(--brass);font-size:14px;letter-spacing:.3em}
+.hero .tag{color:var(--muted);margin-top:8px}
+.grid-items{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:10px;align-items:start}
+.card{display:block;padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+.card .ci{float:left;width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:#14110c;border-radius:8px}
+.card .ci img{width:34px;height:34px;object-fit:contain;image-rendering:pixelated}
+.card .t{display:flex;flex-direction:column;gap:2px;margin-left:54px;min-height:44px;justify-content:center}
+.card .t b{font-size:13px}
+.card .t small{color:var(--muted);font-size:10px;word-break:break-all}
+.card .t i{color:var(--muted);font-size:11px;font-style:normal;line-height:1.5}
+.card .rec{clear:both;margin-top:10px;padding-top:8px;border-top:1px solid var(--line);display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.chips{display:flex;flex-wrap:wrap;gap:4px}
+.ch{display:inline-flex;align-items:center;gap:4px;font-size:11px;padding:3px 7px;border:1px solid var(--line);border-radius:999px;background:#14110c}
+.ch img{width:18px;height:18px;object-fit:contain;image-rendering:pixelated}
+.mach{color:var(--brass);font-size:10px}
+.arw{color:var(--muted)}
+.note2{color:var(--muted);font-size:11px}
+.ver{margin:22px 0;padding:10px 12px;border-left:2px solid var(--brass);background:#14110c;color:var(--muted);font-size:12px;line-height:1.7}
+</style></head><body>
+<header class="top"><div class="wrap"><span class="logo"><span class="gear"></span>CREATE CODEX</span>
+<a class="backbtn" href="index.html">← 返回关系图</a></div></header>
+<main class="wrap">
+<div class="hero"><img class="big" style="width:96px;height:96px;object-fit:contain;image-rendering:pixelated" src="assets/icons/mod_create_superheated.png" alt="">
+<h1>Create: Superheated</h1><div class="sub">附属模组</div>
+<div class="tag">把下界合金丢进岩浆里再升级一次</div></div>
+
+<div class="blk"><h2>这是什么</h2>
+<p>不是新的机械动力机器，而是给「下界合金」这条线加了一层：把下界合金锭灌进岩浆，得到<b>超热下界合金锭</b>；三块这样的锭再搅成一把<b>超热下界合金武士刀</b>；另有一瓶来历不明的<b>超载药剂</b>。</p>
+</div>
+
+<div class="ver"><b>版本说明：</b>本页依据的是该模组 <b>0.0.2+1.18.2-14（1.18.2 / Fabric）</b> 的源码。本站主目录针对 1.20.1，这个模组目前没有 1.20.1 版本，因此配方与物品只代表 1.18.2；将来作者更新到 1.20.1 后需要重新核对一遍。</div>
+
+<div class="blk"><h2>物品与配方<span class="cnt">3</span></h2>
+<div class="grid-items"><div class="card" id="it-superheated-superheated_netherite"><div class="ci"><img src="assets/icons/superheated_superheated_netherite.png" alt=""></div><div class="t"><b>超热下界合金锭</b><small>superheated:superheated_netherite</small><i>把下界合金锭灌进岩浆做出来的材料，是后面那把刀的唯一原料。</i></div><div class="rec"><div class="chips"><a href="vanilla/netherite_ingot.html" class="ch" title="netherite ingot"><img src="assets/icons/minecraft_netherite_ingot.png" alt="">netherite ingot</a><span class="ch" title="minecraft:lava">🌋 岩浆 81000mB</span></div><div class="arw">→</div><a href="#it-superheated-superheated_netherite" class="ch" title="超热下界合金锭"><img src="assets/icons/superheated_superheated_netherite.png" alt="">超热下界合金锭</a><span class="mach">注液器</span></div></div><div class="card" id="it-superheated-superheated_netherite_katana"><div class="ci"><img src="assets/icons/superheated_superheated_netherite_katana.png" alt=""></div><div class="t"><b>超热下界合金武士刀</b><small>superheated:superheated_netherite_katana</small><i>三块超热下界合金锭搅出来的传奇刀。</i></div><div class="rec"><div class="chips"><span class="ch" title="超热下界合金锭"><img src="assets/icons/superheated_superheated_netherite.png" alt="">超热下界合金锭 ×64</span><a href="vanilla/netherite_sword.html" class="ch" title="netherite sword">netherite sword</a></div><div class="arw">→</div><a href="#it-superheated-superheated_netherite_katana" class="ch" title="超热下界合金武士刀">超热下界合金武士刀</a><span class="mach">搅拌器</span></div></div><div class="card" id="it-superheated-supercharge"><div class="ci"><img src="assets/icons/superheated_supercharge.png" alt=""></div><div class="t"><b>超载药剂</b><small>superheated:supercharge</small><i>来历不明的药剂，喝下去强化身体。</i></div><div class="note2">没有 JSON 配方（代码注册或创造模式获取）</div></div></div></div>
+
+<div class="blk"><h2>怎么玩</h2>
+<p>整条线只有两步：注液器里放<b>下界合金锭 + 岩浆</b>（81000 mB 一桶的量）出超热锭；搅拌器里放<b>三块超热锭</b>出刀。所以只要你有稳定岩浆和一台注液器，这条线就是纯挂机产能。</p>
+</div>
+</main>
+<footer class="wrap foot">数据与图标来自 Create: Superheated 源码（1.18.2 分支）· 本页不属于 Create 本体图鉴</footer>
+<script src="assets/anchors.js" defer></script></body></html>

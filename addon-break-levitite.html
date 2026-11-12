@@ -1,0 +1,48 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Create: Break Levitite · Create Codex</title>
+<link rel="stylesheet" href="assets/style.css">
+<style>
+.pg{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.pg .hero{text-align:center;padding:34px 0 4px}
+.pg .hero img{width:96px;height:96px;object-fit:contain;image-rendering:pixelated}
+.pg h1{font-family:'Minecraft','Noto Sans SC',monospace;font-size:30px;color:var(--brass);margin:16px 0 6px;text-align:center}
+.pg .sub{color:var(--muted);font-size:14px;margin-bottom:8px;text-align:center}
+.pg h2{font-size:19px;margin:34px 0 10px;color:var(--text);border-left:3px solid var(--brass);padding-left:10px}
+.pg p,.pg li{line-height:1.85;color:#cfc7b8;font-size:15px}
+.pg ul{padding-left:22px;margin:8px 0}
+.pg .note{background:#181410;border:1px solid var(--line);border-left:3px solid var(--brass);border-radius:6px;padding:10px 14px;margin:14px 0;color:#bfb6a6;font-size:14px}
+.pg table{border-collapse:collapse;width:100%;margin:12px 0;font-size:14px}
+.pg th,.pg td{border-bottom:1px solid var(--line);padding:8px 10px;text-align:left;color:#cfc7b8}
+.pg th{color:var(--muted);font-weight:500}
+</style></head><body>
+<header class="top"><div class="wrap"><span class="logo"><span class="gear"></span>CREATE CODEX<small>机械动力图鉴</small></span>
+<a class="backbtn" href="index.html">← 返回关系图</a></div></header>
+<main class="pg">
+<div class="hero"><img src="assets/icons/mod_break_levitite.png" alt=""></div>
+<h1>Create: Break Levitite</h1>
+<p class="sub">附属模组 · 纯机制 · 让浮空石能被挖掉</p>
+<h2>这是什么</h2>
+<p>Aeronautics（Create 的飞空艇附属）里的 <b>Levitite（浮空石）</b>默认不是正常可挖的方块。这个模组加了两个 class：<code>BreakLevitite</code> 与 <code>LevititeDropHelper</code>，让浮空石<b>能被普通方式破坏并按规则掉落</b>。</p>
+<p>作者的描述是「Break Levitite for low cortisol :)」——不用为了拆一块石头去折腾专用手段，挖了就是。</p>
+
+<h2>包里有什么</h2>
+<p>两个 class、<code>pack.mcmeta</code>、一张 <code>pack.png</code>。没有物品、方块、模型、配方，所以本站没有它的图鉴页。</p>
+
+<h2>什么时候需要它</h2>
+<ul>
+<li>你在玩 Aeronautics，需要拆掉/回收浮空石结构</li>
+<li>做飞空艇改造时，浮空石挡路却挖不动</li>
+</ul>
+
+<h2>安装与版本</h2>
+<table>
+<tr><th>项目</th><td>内容</td></tr>
+<tr><th>版本</th><td>1.0.0（文件名 1.1.0）</td></tr>
+<tr><th>加载器</th><td>NeoForge 21.1.200+</td></tr>
+<tr><th>游戏版本</th><td>1.21.1</td></tr>
+<tr><th>依赖</th><td>Create、Aeronautics（<code>aeronautics</code>，AFTER）</td></tr>
+<tr><th>许可 / 作者</th><td>MIT / rymusov</td></tr>
+</table>
+<p class="note"><b>注意：</b>它不改掉落表以外的任何东西；如果你用别的模组也改过浮空石的破坏规则，两者可能互相覆盖。</p>
+</main><script src="assets/anchors.js" defer></script></body></html>

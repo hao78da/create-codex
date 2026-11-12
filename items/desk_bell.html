@@ -1,0 +1,60 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>呼唤铃 — Create 机械动力图鉴</title>
+<link rel="preload" href="../assets/fonts/Minecraft.ttf" as="font" crossorigin>
+<link rel="stylesheet" href="../assets/style.css">
+</head><body><header class="top"><div class="wrap"><a class="logo" href="../index.html"><span class="gear"></span><span>CREATE CODEX<small>机械动力图鉴</small></span></a><nav><a href="../tags.html">标签</a><a href="https://github.com/Creators-of-Create/Create" target="_blank" rel="noopener">源码</a></nav></div></header><main class="wrap rise"><div class="crumb"><a href="../index.html">首页</a> / <a href="../catalog.html">全部物品</a> / 红石与控制 / <span>呼唤铃</span></div><div class="item-hero"><img class="big" src="../assets/icons/3d_create_desk_bell.png" alt=""><div><h1>呼唤铃</h1><div class="en">Desk Bell</div><div class="idline"><span class="copyid">create:desk_bell</span><span class="badge">方块</span><a class="badge" href="../catalog.html#cat-redstone">红石与控制</a></div></div></div><p class="tagline">呼唤铃：敲一下就给红石信号。</p><section class="blk"><h2>参数</h2><div class="params"><div class="param"><span>配方</span><b>安山机壳+金板</b></div><div class="param"><span>输出</span><b>短红石信号</b></div></div></section><section class="blk"><h2>详细教程</h2><div class="prose"><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">怎么获得</h3><p>无序合成：一个<strong>安山机壳</strong>加一块<strong>金板</strong>，两样丢进工作台就出呼唤铃。安山机壳来自安山合金与木板，金板则是金锭压出来的，成本很低，可以一次多做几个。</p><p>它没有朝向限制，贴墙、放桌面、放在装置上都行；因为是无序配方，做的时候不用记图纸，材料齐了随便放格子即可。</p><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">怎么用</h3><p>空手或拿任意物品<strong>敲一下</strong>，它就会发出一次<strong>红石信号</strong>——注意是短脉冲式的触发，接在门、灯、发射器上都能当按钮用，而且外观比按钮体面得多，适合装在柜台、前台、站台值班室。</p><p>把它装在<strong>电梯装置</strong>上还有专门行为：轿厢到达<strong>目标楼层</strong>时会响一声铃，等于给电梯加了到站提示音，配合红石灯做「到层亮灯」也很自然。</p><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">搭配</h3><p>和<strong>脉冲中继器</strong>搭配能把这一下敲击变成定时长的信号；和<strong>无线红石信号终端</strong>搭配，则可以让柜台的铃声在另一栋楼里响起来，接收端 256 格内都有效。</p><p>装在电梯上时要确认铃是<strong>装置的一部分</strong>（跟着轿厢动），固定在井道墙上就不会有到站提示；这也是它和普通按钮最大的区别。</p></div></section><section class="blk"><h2>获取方式</h2><div class="recipes"><div class="recipe"><div class="recipe-head"><span class="machine">工作台</span></div><div class="ings"><a class="chip" href="../items/andesite_casing.html"><img src="../assets/icons/create_andesite_casing.png" alt="" loading="lazy" decoding="async"><span>安山机壳</span><b>×1</b></a><a class="chip tag" href="../tags/forge_plates_gold.html"><img src="../assets/icons/create_golden_sheet.png" alt="" loading="lazy" decoding="async">金板</a></div><div class="arrow">→</div><div class="outs"><a class="chip" href="../items/desk_bell.html"><img src="../assets/icons/3d_create_desk_bell.png" alt="" loading="lazy" decoding="async"><span>呼唤铃</span><b>×1</b></a></div></div></div></section><section class="blk"><h2>相关物品</h2><div class="related"><a class="chip" href="redstone_link.html"><img src="../assets/icons/3d_create_redstone_link.png" alt="" loading="lazy" decoding="async"><span>无线红石信号终端</span></a><a class="chip" href="elevator_pulley.html"><img src="../assets/icons/3d_create_elevator_pulley.png" alt="" loading="lazy" decoding="async"><span>升降机滑轮</span></a><a class="chip" href="pulse_repeater.html"><img src="../assets/icons/create_pulse_repeater.png" alt="" loading="lazy" decoding="async"><span>脉冲中继器</span></a></div></section><div class="pager"><a href="depot.html">← 置物台</a><a href="../catalog.html">返回目录</a><a href="diorite_pillar.html">闪长岩柱 →</a></div></main><footer><div class="wrap">
+<p>数据与图标来自 <a href="https://github.com/Creators-of-Create/Create" target="_blank" rel="noopener">Creators-of-Create/Create</a>（MIT）与 Minecraft 资源，仅用于学习与教学；Minecraft 版权归 Mojang 所有。</p>
+<p>标题字体 <a href="https://www.dafont.com/minecraft.font" target="_blank" rel="noopener">Minecraft（dafont.com）</a> · 配方与官方 Ponder 文本来自 Create 模组本地化文件（中文由模组自带）· 教程正文为本项目撰写：功能件逐条编写，同系列装饰件共用家族模板。</p>
+</div></footer>
+<div class="toast"></div><script>
+(function(){
+  var bar=document.querySelector('.searchbar input');
+  var cards=[].slice.call(document.querySelectorAll('#list .card'));
+  var btns=[].slice.call(document.querySelectorAll('.filters button'));
+  var empty=document.querySelector('.empty-msg');
+  var cat='all', q='';
+  var mod=(new URLSearchParams(location.search)).get('mod')||'';
+  var MODS={create:'\u673a\u68b0\u52a8\u529b'};
+  function apply(){
+    var n=0;
+    cards.forEach(function(c){
+      var okc=(cat==='all'||c.dataset.cat===cat);
+      var okm=!mod||c.dataset.mod===mod;
+      var okq=!q||c.dataset.k.indexOf(q)>-1;
+      var show=okc&&okq&&okm;
+      c.style.display=show?'':'none';
+      if(show)n++;
+    });
+    if(empty)empty.style.display=n?'none':'block';
+  }
+  (function(){
+    if(!mod) return;
+    var mb=document.getElementById('modbar'), mn=document.getElementById('modname');
+    if(mn) mn.textContent=MODS[mod]||mod;
+    if(mb) mb.hidden=false;
+  })();
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    btns.forEach(function(x){x.classList.remove('on')});
+    b.classList.add('on'); cat=b.dataset.cat; apply();
+  })});
+  if(bar){bar.addEventListener('input',function(){q=bar.value.trim().toLowerCase();apply();});}
+  (function(){
+    var h=location.hash;
+    if(h.indexOf('#cat-')===0){
+      var c=h.slice(5);
+      btns.forEach(function(b){ if(b.dataset.cat===c){ b.click(); } });
+    }
+  })();
+  document.querySelectorAll('.copyid').forEach(function(el){
+    el.addEventListener('click',function(){
+      var t=el.textContent.trim();
+      var done=function(){el.classList.add('ok');el.textContent='已复制';
+        setTimeout(function(){el.textContent=t;el.classList.remove('ok')},1200);};
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,done)}
+      else{var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();
+        try{document.execCommand('copy')}catch(e){}document.body.removeChild(ta);done();}
+    });
+  });
+})();
+</script></body></html>

@@ -1,0 +1,60 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>仓储链接站 — Create 机械动力图鉴</title>
+<link rel="preload" href="../assets/fonts/Minecraft.ttf" as="font" crossorigin>
+<link rel="stylesheet" href="../assets/style.css">
+</head><body><header class="top"><div class="wrap"><a class="logo" href="../index.html"><span class="gear"></span><span>CREATE CODEX<small>机械动力图鉴</small></span></a><nav><a href="../tags.html">标签</a><a href="https://github.com/Creators-of-Create/Create" target="_blank" rel="noopener">源码</a></nav></div></header><main class="wrap rise"><div class="crumb"><a href="../index.html">首页</a> / <a href="../catalog.html">全部物品</a> / 物流与仓储 / <span>仓储链接站</span></div><div class="item-hero"><img class="big" src="../assets/icons/3d_create_stock_link.png" alt=""><div><h1>仓储链接站</h1><div class="en">Stock Link</div><div class="idline"><span class="copyid">create:stock_link</span><span class="badge">方块</span><a class="badge" href="../catalog.html#cat-logistics">物流与仓储</a></div></div></div><p class="tagline">把仓库接进物流网</p><section class="blk"><h2>参数</h2><div class="params"><div class="param"><span>类型</span><b>物流元件</b></div><div class="param"><span>工艺</span><b>工作台合成</b></div><div class="param"><span>范围</span><b>全图</b></div></div></section><section class="blk"><h2>详细教程</h2><div class="prose"><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">怎么获得</h3><p>合成是两格竖排：上面<strong>发信线圈</strong>，下面<strong>物品保险库</strong>，一次做一个；还有专门的清除配方可以抹掉绑定。发信线圈要铜板绕铜线，物品保险库则是铁板包木桶。</p><p>发信线圈与保险库都要铜料，前期铜紧张时先做一两个，等仓库扩容再补，别一口气把铜全砸进去。清除配方只抹掉绑定，方块本身还会留在原地等重接。</p><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">怎么用</h3><p>直接放下去就会新建一张仓储网；放置前先右击已有链接站，则可以并进那张网，几排仓库就能共用一个收件口。一张网里可以有多个链接站，它们共用同一份库存清单。</p><p>把<strong>打包机</strong>接上链接站，它背后的箱子与保险库库存才算进网；信号范围没有距离限制，但包裹还得靠车船运送。打包机要贴着箱子放，隔开一格就读不到里面的东西。</p><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">常见坑</h3><p>给链接站满格红石信号会让它停止传输，做自动化时别把红石线顺手铺到它旁边；信号越强优先级反而越低。红石信号越强优先级越低，这条规则和直觉正好相反。</p><p>它只负责认库存，不负责搬货；发出去的包裹要有人送到目的地，光搭好网络不等于东西会瞬间到站。跨维度时包裹送不过去，远距离还是得靠列车与船。</p></div></section><section class="blk"><h2>获取方式</h2><div class="recipes"><div class="recipe"><div class="recipe-head"><span class="machine">工作台</span></div><div class="craft"><div class="grid" style="--n:1"><div class="cell"><img src="../assets/icons/create_transmitter.png" alt="" loading="lazy" decoding="async"><em>发信线圈</em></div><div class="cell"><img src="../assets/icons/create_item_vault.png" alt="" loading="lazy" decoding="async"><em>物品保险库</em></div></div></div><div class="arrow">→</div><div class="outs"><a class="chip" href="../items/stock_link.html"><img src="../assets/icons/3d_create_stock_link.png" alt="" loading="lazy" decoding="async"><span>仓储链接站</span><b>×1</b></a></div></div><div class="recipe"><div class="recipe-head"><span class="machine">工作台</span></div><div class="ings"><a class="chip" href="../items/stock_link.html"><img src="../assets/icons/3d_create_stock_link.png" alt="" loading="lazy" decoding="async"><span>仓储链接站</span><b>×1</b></a></div><div class="arrow">→</div><div class="outs"><a class="chip" href="../items/stock_link.html"><img src="../assets/icons/3d_create_stock_link.png" alt="" loading="lazy" decoding="async"><span>仓储链接站</span><b>×1</b></a></div></div></div></section><section class="blk"><h2>被谁使用</h2><p class="uses-note">被 <b>4</b> 个物品的 <b>4</b> 条配方用作材料。</p><div class="uses"><div class="use-group"><h3>工作台 <span>4 个</span></h3><div class="uses-chips"><a class="chip" href="stock_ticker.html"><img src="../assets/icons/3d_create_stock_ticker.png" alt="" loading="lazy" decoding="async"><span>仓储发报机</span><b>×1</b></a><a class="chip" href="stock_link.html"><img src="../assets/icons/3d_create_stock_link.png" alt="" loading="lazy" decoding="async"><span>仓储链接站</span><b>×1</b></a><a class="chip" href="factory_gauge.html"><img src="../assets/icons/3d_create_factory_gauge.png" alt="" loading="lazy" decoding="async"><span>工厂仪表</span><b>×1</b></a><a class="chip" href="redstone_requester.html"><img src="../assets/icons/3d_create_redstone_requester.png" alt="" loading="lazy" decoding="async"><span>红石请求器</span><b>×1</b></a></div></div></div></section><section class="blk"><h2>官方教程 · 物流网络和仓储链接站</h2><ol class="steps"><li>仓储链接站会在它被放置的时候创建一个新的库存网络</li><li>放置前，右击一个已存在的仓储链接站来绑定它们</li><li>仓储链接站所链接的打包机，会把连接的库存接入网络</li><li>网络上的其他组件可以寻找并请求其中的物品</li><li>根据请求，将库存中的物品放入包裹</li><li>仓储链接站的信号范围是无限的，但是包裹需要运输</li><li>满格的红石信号将阻止链接站的信号传输</li><li>红石信号越强，该链接器的信号优先级越低，相对提高其他链接器的优先级</li></ol></section><section class="blk"><h2>相关物品</h2><div class="related"><a class="chip" href="packager.html"><img src="../assets/icons/3d_create_packager.png" alt="" loading="lazy" decoding="async"><span>打包机</span></a><a class="chip" href="redstone_requester.html"><img src="../assets/icons/3d_create_redstone_requester.png" alt="" loading="lazy" decoding="async"><span>红石请求器</span></a><a class="chip" href="item_vault.html"><img src="../assets/icons/create_item_vault.png" alt="" loading="lazy" decoding="async"><span>物品保险库</span></a></div></section><div class="pager"><a href="sticky_mechanical_piston.html">← 黏性动力活塞</a><a href="../catalog.html">返回目录</a><a href="stock_ticker.html">仓储发报机 →</a></div></main><footer><div class="wrap">
+<p>数据与图标来自 <a href="https://github.com/Creators-of-Create/Create" target="_blank" rel="noopener">Creators-of-Create/Create</a>（MIT）与 Minecraft 资源，仅用于学习与教学；Minecraft 版权归 Mojang 所有。</p>
+<p>标题字体 <a href="https://www.dafont.com/minecraft.font" target="_blank" rel="noopener">Minecraft（dafont.com）</a> · 配方与官方 Ponder 文本来自 Create 模组本地化文件（中文由模组自带）· 教程正文为本项目撰写：功能件逐条编写，同系列装饰件共用家族模板。</p>
+</div></footer>
+<div class="toast"></div><script>
+(function(){
+  var bar=document.querySelector('.searchbar input');
+  var cards=[].slice.call(document.querySelectorAll('#list .card'));
+  var btns=[].slice.call(document.querySelectorAll('.filters button'));
+  var empty=document.querySelector('.empty-msg');
+  var cat='all', q='';
+  var mod=(new URLSearchParams(location.search)).get('mod')||'';
+  var MODS={create:'\u673a\u68b0\u52a8\u529b'};
+  function apply(){
+    var n=0;
+    cards.forEach(function(c){
+      var okc=(cat==='all'||c.dataset.cat===cat);
+      var okm=!mod||c.dataset.mod===mod;
+      var okq=!q||c.dataset.k.indexOf(q)>-1;
+      var show=okc&&okq&&okm;
+      c.style.display=show?'':'none';
+      if(show)n++;
+    });
+    if(empty)empty.style.display=n?'none':'block';
+  }
+  (function(){
+    if(!mod) return;
+    var mb=document.getElementById('modbar'), mn=document.getElementById('modname');
+    if(mn) mn.textContent=MODS[mod]||mod;
+    if(mb) mb.hidden=false;
+  })();
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    btns.forEach(function(x){x.classList.remove('on')});
+    b.classList.add('on'); cat=b.dataset.cat; apply();
+  })});
+  if(bar){bar.addEventListener('input',function(){q=bar.value.trim().toLowerCase();apply();});}
+  (function(){
+    var h=location.hash;
+    if(h.indexOf('#cat-')===0){
+      var c=h.slice(5);
+      btns.forEach(function(b){ if(b.dataset.cat===c){ b.click(); } });
+    }
+  })();
+  document.querySelectorAll('.copyid').forEach(function(el){
+    el.addEventListener('click',function(){
+      var t=el.textContent.trim();
+      var done=function(){el.classList.add('ok');el.textContent='已复制';
+        setTimeout(function(){el.textContent=t;el.classList.remove('ok')},1200);};
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,done)}
+      else{var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();
+        try{document.execCommand('copy')}catch(e){}document.body.removeChild(ta);done();}
+    });
+  });
+})();
+</script></body></html>

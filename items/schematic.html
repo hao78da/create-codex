@@ -1,0 +1,60 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>蓝图 — Create 机械动力图鉴</title>
+<link rel="preload" href="../assets/fonts/Minecraft.ttf" as="font" crossorigin>
+<link rel="stylesheet" href="../assets/style.css">
+</head><body><header class="top"><div class="wrap"><a class="logo" href="../index.html"><span class="gear"></span><span>CREATE CODEX<small>机械动力图鉴</small></span></a><nav><a href="../tags.html">标签</a><a href="https://github.com/Creators-of-Create/Create" target="_blank" rel="noopener">源码</a></nav></div></header><main class="wrap rise"><div class="crumb"><a href="../index.html">首页</a> / <a href="../catalog.html">全部物品</a> / 工具与装备 / <span>蓝图</span></div><div class="item-hero"><img class="big" src="../assets/icons/create_schematic.png" alt=""><div><h1>蓝图</h1><div class="en">Schematic</div><div class="idline"><span class="copyid">create:schematic</span><span class="badge">物品</span><a class="badge" href="../catalog.html#cat-tool">工具与装备</a></div></div></div><p class="tagline">蓝图：带坐标的建筑图纸。</p><section class="blk"><h2>参数</h2><div class="params"><div class="param"><span>来源</span><b>蓝图桌写入</b></div><div class="param"><span>用途</span><b>加农炮施工</b></div></div></section><section class="blk"><h2>详细教程</h2><div class="prose"><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">怎么获得</h3><p>它<strong>没有工作台配方</strong>，是在<strong>蓝图桌</strong>上把<strong>空白蓝图</strong>写进结构文件后得到的成品；没有文件就写不出蓝图，这一步绕不过去。</p><p>写好之后它记录的是完整的三维结构，可以复制、可以带走、可以给队友，等于把一栋建筑装进一张纸里。</p><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">怎么用</h3><p>拿在手上时会出现全息预览，可以调整位置与朝向；潜行右键可以输入<strong>坐标</strong>精确定位，适合把图纸对准已有地基。</p><p>真正施工靠<strong>蓝图加农炮</strong>：把蓝图交给炮，炮会按图消耗材料逐块放置，大型建筑用它比手搭快几十倍。</p><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">搭配</h3><p>和<strong>蓝图加农炮</strong>是一对：炮吃蓝图、供料靠<strong>箱子</strong>与<strong>传送带</strong>，缺料时炮会停下等，所以供料线要提前备足同种方块。</p><p>图纸对齐很关键：先在地上放一个标记方块再输坐标，比肉眼对位准；加农炮的放置范围有限，超大的图要分几段搬。</p></div></section><section class="blk"><h2>获取方式</h2><div class="prose"><p>这个物品<strong>没有合成配方</strong>：它由工具或机器直接生成/放置（例如用扳手、连接器、部署器，或作为其他配方的产物）。具体见上方教程。</p></div></section><section class="blk"><h2>相关物品</h2><div class="related"><a class="chip" href="schematicannon.html"><img src="../assets/icons/3d_create_schematicannon.png" alt="" loading="lazy" decoding="async"><span>蓝图加农炮</span></a><a class="chip" href="schematic_table.html"><img src="../assets/icons/3d_create_schematic_table.png" alt="" loading="lazy" decoding="async"><span>蓝图桌</span></a><a class="chip" href="empty_schematic.html"><img src="../assets/icons/create_empty_schematic.png" alt="" loading="lazy" decoding="async"><span>空白蓝图</span></a></div></section><div class="pager"><a href="schedule.html">← 列车时刻表</a><a href="../catalog.html">返回目录</a><a href="schematic_and_quill.html">蓝图与笔 →</a></div></main><footer><div class="wrap">
+<p>数据与图标来自 <a href="https://github.com/Creators-of-Create/Create" target="_blank" rel="noopener">Creators-of-Create/Create</a>（MIT）与 Minecraft 资源，仅用于学习与教学；Minecraft 版权归 Mojang 所有。</p>
+<p>标题字体 <a href="https://www.dafont.com/minecraft.font" target="_blank" rel="noopener">Minecraft（dafont.com）</a> · 配方与官方 Ponder 文本来自 Create 模组本地化文件（中文由模组自带）· 教程正文为本项目撰写：功能件逐条编写，同系列装饰件共用家族模板。</p>
+</div></footer>
+<div class="toast"></div><script>
+(function(){
+  var bar=document.querySelector('.searchbar input');
+  var cards=[].slice.call(document.querySelectorAll('#list .card'));
+  var btns=[].slice.call(document.querySelectorAll('.filters button'));
+  var empty=document.querySelector('.empty-msg');
+  var cat='all', q='';
+  var mod=(new URLSearchParams(location.search)).get('mod')||'';
+  var MODS={create:'\u673a\u68b0\u52a8\u529b'};
+  function apply(){
+    var n=0;
+    cards.forEach(function(c){
+      var okc=(cat==='all'||c.dataset.cat===cat);
+      var okm=!mod||c.dataset.mod===mod;
+      var okq=!q||c.dataset.k.indexOf(q)>-1;
+      var show=okc&&okq&&okm;
+      c.style.display=show?'':'none';
+      if(show)n++;
+    });
+    if(empty)empty.style.display=n?'none':'block';
+  }
+  (function(){
+    if(!mod) return;
+    var mb=document.getElementById('modbar'), mn=document.getElementById('modname');
+    if(mn) mn.textContent=MODS[mod]||mod;
+    if(mb) mb.hidden=false;
+  })();
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    btns.forEach(function(x){x.classList.remove('on')});
+    b.classList.add('on'); cat=b.dataset.cat; apply();
+  })});
+  if(bar){bar.addEventListener('input',function(){q=bar.value.trim().toLowerCase();apply();});}
+  (function(){
+    var h=location.hash;
+    if(h.indexOf('#cat-')===0){
+      var c=h.slice(5);
+      btns.forEach(function(b){ if(b.dataset.cat===c){ b.click(); } });
+    }
+  })();
+  document.querySelectorAll('.copyid').forEach(function(el){
+    el.addEventListener('click',function(){
+      var t=el.textContent.trim();
+      var done=function(){el.classList.add('ok');el.textContent='已复制';
+        setTimeout(function(){el.textContent=t;el.classList.remove('ok')},1200);};
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,done)}
+      else{var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();
+        try{document.execCommand('copy')}catch(e){}document.body.removeChild(ta);done();}
+    });
+  });
+})();
+</script></body></html>

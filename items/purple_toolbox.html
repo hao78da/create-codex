@@ -1,0 +1,60 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>紫色工具箱 — Create 机械动力图鉴</title>
+<link rel="preload" href="../assets/fonts/Minecraft.ttf" as="font" crossorigin>
+<link rel="stylesheet" href="../assets/style.css">
+</head><body><header class="top"><div class="wrap"><a class="logo" href="../index.html"><span class="gear"></span><span>CREATE CODEX<small>机械动力图鉴</small></span></a><nav><a href="../tags.html">标签</a><a href="https://github.com/Creators-of-Create/Create" target="_blank" rel="noopener">源码</a></nav></div></header><main class="wrap rise"><div class="crumb"><a href="../index.html">首页</a> / <a href="../catalog.html">全部物品</a> / 杂项 / <span>紫色工具箱</span></div><div class="item-hero"><img class="big" src="../assets/icons/3d_create_purple_toolbox.png" alt=""><div><h1>紫色工具箱</h1><div class="en">Purple Toolbox</div><div class="idline"><span class="copyid">create:purple_toolbox</span><span class="badge">方块</span><a class="badge" href="../catalog.html#cat-misc">杂项</a></div></div></div><p class="tagline">紫色工具箱：精密仪器与酿造配件箱。</p><section class="blk"><h2>参数</h2><div class="params"><div class="param"><span>颜色</span><b>紫色</b></div><div class="param"><span>形态</span><b>手持/放置</b></div><div class="param"><span>改色</span><b>染料右键</b></div></div></section><section class="blk"><h2>详细教程</h2><div class="prose"><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">拎在手上的背包</h3><p>紫工具箱装的是「怕碰」的东西：镜片、精密齿轮、酿造配料、校准工具。拿在手上右键打开，和快捷栏绑定后，装配时那一格的零件会自动补，不用把工作台翻乱。</p><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">放下与改色</h3><p>放下后是实验台上的配件箱，内容保留，挖走还在。它颜色贵气，放在精密区很合身份；接比较器能看余量，染料右键可改色，但紫色本身就是「小心轻放」的提示。</p><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">按颜色分工</h3><p>紫色代表<strong>精密与配方</strong>：酿造间一箱配料，装配台旁一箱镜片和齿轮，检验室一箱标准件。和紫色桌布一起构成「实验区」，和红、橙这类工业色明确分开。</p><ul><li>与快捷栏绑定后，装配时那一格的零件会自动补，工作台不会被翻乱。</li><li>挖走时内容还在，从实验台搬到检验台不用重新清点。</li><li>紫色本身就是“小心轻放”的提示，别拿它装扳手和螺栓。</li><li>接比较器看余量，镜片、齿轮这类小件用完了能第一时间发现。</li></ul><p>把它<strong>拿在手上右键</strong>，就是一只随身携带的<strong>便携背包</strong>：酿造台上，量瓶、滤网和备用原料分格放，切换配方很快。</p></div></section><section class="blk"><h2>获取方式</h2><div class="prose"><p>这个物品<strong>没有合成配方</strong>：它由工具或机器直接生成/放置（例如用扳手、连接器、部署器，或作为其他配方的产物）。具体见上方教程。</p></div></section><section class="blk"><h2>相关物品</h2><div class="related"><a class="chip" href="brass_casing.html"><img src="../assets/icons/create_brass_casing.png" alt="" loading="lazy" decoding="async"><span>黄铜机壳</span></a><a class="chip" href="brass_hand.html"><img src="../assets/icons/create_brass_hand.png" alt="" loading="lazy" decoding="async"><span>黄铜手部零件</span></a><a class="chip" href="purple_table_cloth.html"><img src="../assets/icons/create_purple_table_cloth.png" alt="" loading="lazy" decoding="async"><span>紫色桌布</span></a></div></section><div class="pager"><a href="purple_table_cloth.html">← 紫色桌布</a><a href="../catalog.html">返回目录</a><a href="purple_valve_handle.html">紫色阀门手轮 →</a></div></main><footer><div class="wrap">
+<p>数据与图标来自 <a href="https://github.com/Creators-of-Create/Create" target="_blank" rel="noopener">Creators-of-Create/Create</a>（MIT）与 Minecraft 资源，仅用于学习与教学；Minecraft 版权归 Mojang 所有。</p>
+<p>标题字体 <a href="https://www.dafont.com/minecraft.font" target="_blank" rel="noopener">Minecraft（dafont.com）</a> · 配方与官方 Ponder 文本来自 Create 模组本地化文件（中文由模组自带）· 教程正文为本项目撰写：功能件逐条编写，同系列装饰件共用家族模板。</p>
+</div></footer>
+<div class="toast"></div><script>
+(function(){
+  var bar=document.querySelector('.searchbar input');
+  var cards=[].slice.call(document.querySelectorAll('#list .card'));
+  var btns=[].slice.call(document.querySelectorAll('.filters button'));
+  var empty=document.querySelector('.empty-msg');
+  var cat='all', q='';
+  var mod=(new URLSearchParams(location.search)).get('mod')||'';
+  var MODS={create:'\u673a\u68b0\u52a8\u529b'};
+  function apply(){
+    var n=0;
+    cards.forEach(function(c){
+      var okc=(cat==='all'||c.dataset.cat===cat);
+      var okm=!mod||c.dataset.mod===mod;
+      var okq=!q||c.dataset.k.indexOf(q)>-1;
+      var show=okc&&okq&&okm;
+      c.style.display=show?'':'none';
+      if(show)n++;
+    });
+    if(empty)empty.style.display=n?'none':'block';
+  }
+  (function(){
+    if(!mod) return;
+    var mb=document.getElementById('modbar'), mn=document.getElementById('modname');
+    if(mn) mn.textContent=MODS[mod]||mod;
+    if(mb) mb.hidden=false;
+  })();
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    btns.forEach(function(x){x.classList.remove('on')});
+    b.classList.add('on'); cat=b.dataset.cat; apply();
+  })});
+  if(bar){bar.addEventListener('input',function(){q=bar.value.trim().toLowerCase();apply();});}
+  (function(){
+    var h=location.hash;
+    if(h.indexOf('#cat-')===0){
+      var c=h.slice(5);
+      btns.forEach(function(b){ if(b.dataset.cat===c){ b.click(); } });
+    }
+  })();
+  document.querySelectorAll('.copyid').forEach(function(el){
+    el.addEventListener('click',function(){
+      var t=el.textContent.trim();
+      var done=function(){el.classList.add('ok');el.textContent='已复制';
+        setTimeout(function(){el.textContent=t;el.classList.remove('ok')},1200);};
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,done)}
+      else{var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();
+        try{document.execCommand('copy')}catch(e){}document.body.removeChild(ta);done();}
+    });
+  });
+})();
+</script></body></html>

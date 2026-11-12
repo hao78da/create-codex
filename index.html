@@ -17,7 +17,7 @@
 @font-face{font-family:'Minecraft';src:url('assets/fonts/Minecraft.ttf') format('truetype');font-display:swap}
 :root{--brass:#d9a441;--brass2:#f0c874;--line:rgba(217,164,65,.28)}
 *{box-sizing:border-box}
-html,body{margin:0;height:100%;background:#070605;color:#e8e0d2;overflow:hidden;
+html,body{margin:0;height:100%;background:radial-gradient(1200px 700px at 50% 44%, #17161c 0%, #0f0e13 40%, #09090c 70%, #050508 100%), #050508;color:#e8e0d2;overflow:hidden;
   font-family:system-ui,-apple-system,'Segoe UI','Noto Sans SC','Microsoft YaHei',sans-serif}
 #sky{display:block;width:100vw;height:100vh;cursor:grab;touch-action:none}
 #sky.drag{cursor:grabbing}
@@ -51,9 +51,15 @@ body.leaving .topbar,body.leaving .hint,body.leaving .enter{opacity:0;transition
 .brand img{animation:brandPulse 4.2s ease-in-out infinite}
 .brand:hover img{animation-play-state:paused;box-shadow:0 0 0 2px rgba(240,200,116,.9),0 0 30px rgba(240,200,116,.55)}
 .brand{text-decoration:none}
+
+#veil{position:fixed;inset:0;background:#04040a;z-index:9999;pointer-events:none;
+  animation:veilOut 1.6s ease .12s forwards}
+@keyframes veilOut{from{opacity:1}to{opacity:0;visibility:hidden}}
+@media (prefers-reduced-motion:reduce){#veil{animation-duration:.01s}}
 </style>
 </head>
 <body>
+<div id="veil"></div>
 <canvas id="sky"></canvas>
 
 <div class="topbar">
@@ -454,9 +460,65 @@ body.leaving .topbar,body.leaving .hint,body.leaving .enter{opacity:0;transition
     advance();
     ctx.clearRect(0, 0, W, H);
 
-    var g = ctx.createRadialGradient(W * .5, H * .5, 40, W * .5, H * .5, Math.max(W, H) * .78);
-    g.addColorStop(0, '#12100c'); g.addColorStop(.55, '#0b0908'); g.addColorStop(1, '#050403');
+    // 背景：深空底 + 紫蓝星云（缓慢漂移）+ 极轻噪点 + 暗角
+    var g = ctx.createRadialGradient(W * .5, H * .46, 30, W * .5, H * .46, Math.max(W, H) * .85);
+    g.addColorStop(0, 'rgba(22,20,26,0.96)');
+    g.addColorStop(.45, 'rgba(11,11,16,0.98)');
+    g.addColorStop(1, 'rgba(4,4,7,1)');
     ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+
+    // 星云中心随极慢的正弦漂移（周期约 90 秒），肉眼几乎察觉不到，但画面不是死的
+    var tx = t * 0.001;
+    var px1 = W * (.34 + .020 * Math.sin(tx * .21)), py1 = H * (.28 + .016 * Math.cos(tx * .17));
+    var px2 = W * (.72 + .022 * Math.cos(tx * .18)), py2 = H * (.74 + .018 * Math.sin(tx * .23));
+
+    // 色相缓慢流动：紫 ⇄ 蓝，周期约 70 秒
+    var mix = 0.5 + 0.5 * Math.sin(t * 0.00009);
+    function mixc(a, b, k){ return [Math.round(a[0]+(b[0]-a[0])*k),
+                                   Math.round(a[1]+(b[1]-a[1])*k),
+                                   Math.round(a[2]+(b[2]-a[2])*k)]; }
+    var PUR1 = [96,72,150], BLU1 = [58,66,150];
+    var PUR2 = [36,74,140], BLU2 = [70,54,140];
+    var c1 = mixc(PUR1, BLU1, mix), c1b = mixc([70,52,120], [46,52,120], mix);
+    var c2 = mixc(PUR2, BLU2, 1 - mix), c2b = mixc([26,54,104], [52,44,112], 1 - mix);
+
+    var n1 = ctx.createRadialGradient(px1, py1, 0, px1, py1, Math.max(W, H) * .62);
+    n1.addColorStop(0, 'rgba(' + c1.join(',') + ',0.13)');
+    n1.addColorStop(.5, 'rgba(' + c1b.join(',') + ',0.06)');
+    n1.addColorStop(1, 'rgba(0,0,0,0)');
+    ctx.fillStyle = n1; ctx.fillRect(0, 0, W, H);
+
+    var n2 = ctx.createRadialGradient(px2, py2, 0, px2, py2, Math.max(W, H) * .58);
+    n2.addColorStop(0, 'rgba(' + c2.join(',') + ',0.12)');
+    n2.addColorStop(.55, 'rgba(' + c2b.join(',') + ',0.05)');
+    n2.addColorStop(1, 'rgba(0,0,0,0)');
+    ctx.fillStyle = n2; ctx.fillRect(0, 0, W, H);
+
+    var band = ctx.createLinearGradient(W * .1, H * .85, W * .9, H * .1);
+    band.addColorStop(0, 'rgba(0,0,0,0)');
+    band.addColorStop(.42, 'rgba(66,54,120,0.05)');
+    band.addColorStop(.58, 'rgba(40,72,130,0.05)');
+    band.addColorStop(1, 'rgba(0,0,0,0)');
+    ctx.fillStyle = band; ctx.fillRect(0, 0, W, H);
+
+    // 2% 噪点，压掉大面积渐变在 8bit 屏上的条带
+    if (!window.__NOISE){
+      var nc = document.createElement('canvas'); nc.width = nc.height = 128;
+      var nx = nc.getContext('2d'); var nd = nx.createImageData(128, 128);
+      for (var ni = 0; ni < nd.data.length; ni += 4){
+        var v = 128 + (Math.random() * 60 - 30);
+        nd.data[ni] = nd.data[ni+1] = nd.data[ni+2] = v; nd.data[ni+3] = 255;
+      }
+      nx.putImageData(nd, 0, 0); window.__NOISE = nc;
+    }
+    ctx.save(); ctx.globalAlpha = .022; ctx.globalCompositeOperation = 'overlay';
+    ctx.fillStyle = ctx.createPattern(window.__NOISE, 'repeat');
+    ctx.fillRect(0, 0, W, H); ctx.restore();
+
+    var vg = ctx.createRadialGradient(W / 2, H / 2, Math.min(W, H) * .28, W / 2, H / 2, Math.max(W, H) * .8);
+    vg.addColorStop(0, 'rgba(0,0,0,0)');
+    vg.addColorStop(1, 'rgba(0,0,0,0.52)');
+    ctx.fillStyle = vg; ctx.fillRect(0, 0, W, H);
 
     for (var i = 0; i < stars.length; i++){
       var s = stars[i], p = toScreen(s.x, s.y);

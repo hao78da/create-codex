@@ -1,0 +1,2 @@
+empty card icons: []
+tag pages without hero img: 184 ['createhalitosis_fan_processing_catalysts_halitosis.html', 'createliberate_dangerous_to_ses.html', 'createliberate_hellbomb_destroy_blocks.html', 'createliberate_seaf_artillery_rounds.html', 'createliberate_ses_supply_items.html', 'createpropulsion_blade.html']

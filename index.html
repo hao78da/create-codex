@@ -623,10 +623,16 @@ body.leaving .topbar,body.leaving .hint,body.leaving .enter{opacity:0;transition
   var vel = { x: 0, y: 0 };
   var FRICTION = 0.94, VMAX = 48;
 
+  // SAFETY_RESET：跳转若被拦截/中断，2 秒后恢复可点状态
+  function armReset(){ setTimeout(function(){
+    entering = false; document.body.classList.remove('leaving');
+  }, 2000); }
+
   function leave(href){
     if (entering) return;
     entering = true;
     document.body.classList.add('leaving');
+    armReset();
     setTimeout(function(){ location.href = href; }, 180);
   }
 
@@ -634,6 +640,7 @@ body.leaving .topbar,body.leaving .hint,body.leaving .enter{opacity:0;transition
     if (entering) return;
     entering = true;
     document.body.classList.add('leaving');
+    armReset();
     var t0 = performance.now(), dur = 340;
     var z0 = view.z, z1 = Math.max(2.4, view.z * 2.2);
     var x0 = view.x, y0 = view.y;
@@ -650,6 +657,16 @@ body.leaving .topbar,body.leaving .hint,body.leaving .enter{opacity:0;transition
     requestAnimationFrame(step);
   }
 
+
+  // 从缓存/历史返回时，重置「正在跳转」状态，否则页面会卡死点不动
+  window.addEventListener('pageshow', function(){
+    entering = false;
+    dragging = false;
+    vel.x = 0; vel.y = 0;
+    document.body.classList.remove('leaving');
+    _lastFrame = 0;
+    if (!STATIC) requestAnimationFrame(draw);
+  });
 
   function distSeg(px, py, ax, ay, bx, by){
     var dx = bx - ax, dy = by - ay;

@@ -31,6 +31,31 @@ for _c, _z in {'black': '黑色', 'blue': '蓝色', 'brown': '棕色', 'cyan': '
     SEAT_ZH[_c + '_floor_seat'] = _z + '地板椅'
 
 MODS = [
+    dict(slug='create-steam-n-rails', ns='railways', title="Create: Steam 'n' Rails",
+         tag='把 Create 的列车做成真正能开的一套铁路系统',
+         intro='Create 最出圈的扩展：机车、车厢、轨道、信号、站台一整套装备。'
+               '除了载具本身，还附大量按颜色分套的机车铁块、锅炉、烟箱、车窗与警纹装饰块，'
+               '足以把一条完整铁路线从车头铺到站台。',
+         groups=[('机车与车厢', ('locomotive', 'carriage', 'tender', 'cart', 'benchcart',
+                            'handcar', 'conductor')),
+                 ('轨道与信号', ('track', 'rail', 'signal', 'switch', 'buffer', 'semaphore',
+                            'coupler', 'bearing')),
+                 ('机车铁块与锅炉', ('locometal', 'boiler', 'smokebox', 'riveted', 'slashed',
+                              'wrapped')),
+                 ('车窗与门', ('window', 'pane', 'door', 'hatch')),
+                 ('装饰与警纹', ('hazard', 'stripe', 'chevron', 'plaque', 'lamp', 'whistle')),
+                 ('列车长装备', ('cap', 'uniform', 'goggles'))]),
+    dict(slug='createaddition', ns='createaddition', title='Create Crafts & Additions',
+         tag='把 Create 的动能接进电力系统',
+         intro='最老牌的 Create 扩展之一：用电动马达把应力换成电力、用交流发电机再把电力换回应力，'
+               '中间靠电线、线轴和连接器组网。另附轧机（压板）、生物质燃料链和一整套金属棒板。',
+         groups=[('电力设备', ('electric_motor', 'alternator', 'capacitor', 'accumulator',
+                            'connector', 'adapter', 'relay', 'coil', 'creative_energy',
+                            'portable_energy')),
+                 ('电线的材质', ('wire', 'spool')),
+                 ('金属棒与板', ('rod', 'sheet', 'nugget', 'ingot', 'grit', 'sandpaper')),
+                 ('燃料与生物质', ('biomass', 'bioethanol', 'seed_oil')),
+                 ('食物与杂项', ('cake', 'goblet', 'straw', 'wire', 'figurine'))]),
     dict(slug='create-cold-sweat', ns='cold_sweat', title='Create: Cold Sweat',
          tag='把体温、水分和恶化的环境变成一套生存压力',
          intro='不是新的动力机器，而是给生存加一层「环境」：体温、口渴、空气质量会随维度与天气变化，'
@@ -321,6 +346,10 @@ def build(spec):
             return '<a class="ch" href="%s" title="%s">%s%s%s</a>' % (
                 _h, nm(iid), ('<img src="%s" alt="">' % ic) if ic else '', nm(iid),
             (' ×%d' % cnt) if cnt > 1 else '')
+        # 没有对应页面（站内未收录该物品）时退化为纯文本 chip，
+        # 否则函数隐式返回 None，会让外层 ''.join() 抛 TypeError。
+        return '<span class="ch">%s%s</span>' % (
+            ('<img src="%s" alt="">' % ic) if ic else '', nm(iid))
 
     def rec(d):
         mach = {'minecraft:crafting_shaped': '工作台', 'minecraft:crafting_shapeless': '工作台',

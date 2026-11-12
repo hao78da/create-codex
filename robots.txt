@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hao78da.github.io/create-codex/sitemap.xml

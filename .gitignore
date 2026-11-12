@@ -1,3 +1,9 @@
 ﻿Thumbs.db
 .DS_Store
 
+__pycache__/
+*.pyc
+tools/__pycache__/
+tools/work/
+work/
+*.ipynb_checkpoints

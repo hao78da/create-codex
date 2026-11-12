@@ -1,0 +1,307 @@
+[
+ {
+  "id": "4637",
+  "title": "Create Chunkloading",
+  "en": "Create Chunkloading"
+ },
+ {
+  "id": "6877",
+  "title": "Create Chromatic Return",
+  "en": "Create Chromatic Return"
+ },
+ {
+  "id": "7205",
+  "title": "Ponder for KubeJS",
+  "en": "Ponder for KubeJS"
+ },
+ {
+  "id": "7529",
+  "title": "Create InfiniDrill",
+  "en": "Create InfiniDrill"
+ },
+ {
+  "id": "7737",
+  "title": "[KY]  跨越  (KuaYue)",
+  "en": "KuaYue"
+ },
+ {
+  "id": "9136",
+  "title": "机械龙库  (Create Dragon Lib)",
+  "en": "Create Dragon Lib"
+ },
+ {
+  "id": "9141",
+  "title": "Little Contraptions",
+  "en": "Little Contraptions"
+ },
+ {
+  "id": "9145",
+  "title": "Create Decoration Casing",
+  "en": "Create Decoration Casing"
+ },
+ {
+  "id": "9184",
+  "title": "机械动力：压缩经验  (Create Compact Exp)",
+  "en": "Create Compact Exp"
+ },
+ {
+  "id": "9974",
+  "title": "Create: Modern Train Parts",
+  "en": "Create: Modern Train Parts"
+ },
+ {
+  "id": "10331",
+  "title": "Create Blue Skies Compat",
+  "en": "Create Blue Skies Compat"
+ },
+ {
+  "id": "10548",
+  "title": "Create Gourmet",
+  "en": "Create Gourmet"
+ },
+ {
+  "id": "10882",
+  "title": "Create Air",
+  "en": "Create Air"
+ },
+ {
+  "id": "11140",
+  "title": "Create Sabers",
+  "en": "Create Sabers"
+ },
+ {
+  "id": "13210",
+  "title": "坍毁化合  (Destroy)",
+  "en": "Destroy"
+ },
+ {
+  "id": "13298",
+  "title": "[CCPA&CRC]  Config Custom Portal API And Create Rail Compact",
+  "en": "Config Custom Portal API And Create Rail Compact"
+ },
+ {
+  "id": "13399",
+  "title": "Jack's Economy (Create Edition)",
+  "en": "Create Edition"
+ },
+ {
+  "id": "13666",
+  "title": "Create Recycle Everything",
+  "en": "Create Recycle Everything"
+ },
+ {
+  "id": "13920",
+  "title": "机械动力：蓝图空位  (Create：Blueprint Void)",
+  "en": "Create：Blueprint Void"
+ },
+ {
+  "id": "14898",
+  "title": "Create: Armor Trim",
+  "en": "Create: Armor Trim"
+ },
+ {
+  "id": "14928",
+  "title": "Extreme Reactors Create Compat",
+  "en": "Extreme Reactors Create Compat"
+ },
+ {
+  "id": "15108",
+  "title": "Create: New Age / Alex's Caves Integration",
+  "en": "Create: New Age / Alex's Caves Integration"
+ },
+ {
+  "id": "15248",
+  "title": "Create: Nuka Cola Classic",
+  "en": "Create: Nuka Cola Classic"
+ },
+ {
+  "id": "15306",
+  "title": "[SCS]  智能动态结构存储  (SmarterContraptionStorage)",
+  "en": "SmarterContraptionStorage"
+ },
+ {
+  "id": "15325",
+  "title": "[LRC]  LAIN的随意创作  (Lain's random creation)",
+  "en": "Lain's random creation"
+ },
+ {
+  "id": "15365",
+  "title": "Create: Upgraded Armor",
+  "en": "Create: Upgraded Armor"
+ },
+ {
+  "id": "15746",
+  "title": "Create Thermal Compat",
+  "en": "Create Thermal Compat"
+ },
+ {
+  "id": "15828",
+  "title": "虚空动力  (Void Power)",
+  "en": "Void Power"
+ },
+ {
+  "id": "16247",
+  "title": "Create: Eureka!",
+  "en": "Create: Eureka!"
+ },
+ {
+  "id": "16369",
+  "title": "CC: Destroy Bridge",
+  "en": "CC: Destroy Bridge"
+ },
+ {
+  "id": "16400",
+  "title": "Mechano",
+  "en": "Mechano"
+ },
+ {
+  "id": "16815",
+  "title": "Ars Technica",
+  "en": "Ars Technica"
+ },
+ {
+  "id": "16921",
+  "title": "Create: Big Globe Compatability",
+  "en": "Create: Big Globe Compatability"
+ },
+ {
+  "id": "16926",
+  "title": "可配置的碰撞箱显示-机械动力功能附加  (Pretty Hitbox-Create Addition)",
+  "en": "Pretty Hitbox-Create Addition"
+ },
+ {
+  "id": "17067",
+  "title": "Create: Ad Astra Compatibility",
+  "en": "Create: Ad Astra Compatibility"
+ },
+ {
+  "id": "19733",
+  "title": "Create More Packages / CComunityBoxes",
+  "en": "Create More Packages / CComunityBoxes"
+ },
+ {
+  "id": "19837",
+  "title": "机械动力：防御  (Create: No Touching)",
+  "en": "Create: No Touching"
+ },
+ {
+  "id": "19838",
+  "title": "机械动力：天境工业  (Create Aether Industry)",
+  "en": "Create Aether Industry"
+ },
+ {
+  "id": "19878",
+  "title": "Applied Schematicannon",
+  "en": "Applied Schematicannon"
+ },
+ {
+  "id": "19977",
+  "title": "Pollution Of Create",
+  "en": "Pollution Of Create"
+ },
+ {
+  "id": "20484",
+  "title": "VS: Rotanator",
+  "en": "VS: Rotanator"
+ },
+ {
+  "id": "20501",
+  "title": "资源统合-机械动力配方附加  (Create Mt Integration)",
+  "en": "Create Mt Integration"
+ },
+ {
+  "id": "20846",
+  "title": "Create: Extend Bogeys",
+  "en": "Create: Extend Bogeys"
+ },
+ {
+  "id": "20848",
+  "title": "机械动力：臂力臂力炒菜  (Create: Arm-made Cuisine)",
+  "en": "Create: Arm-made Cuisine"
+ },
+ {
+  "id": "20995",
+  "title": "机械动力：臂力臂力烧烤  (Create : Arm-made Barbeque)",
+  "en": "Create : Arm-made Barbeque"
+ },
+ {
+  "id": "21207",
+  "title": "Create: Sophisticated Backpacks Compat",
+  "en": "Create: Sophisticated Backpacks Compat"
+ },
+ {
+  "id": "23851",
+  "title": "机械动力：哨戒动力臂  (Create: Sentry Mechanical Arm)",
+  "en": "Create: Sentry Mechanical Arm"
+ },
+ {
+  "id": "23954",
+  "title": "[TGRF]  通达铁路-for-Forge  (TongDaRailway for Forge)",
+  "en": "TongDaRailway for Forge"
+ },
+ {
+  "id": "28569",
+  "title": "[CWUC]  机械动力：轮椅轮椅  (Create: Wheels Upon Chairs)",
+  "en": "Create: Wheels Upon Chairs"
+ },
+ {
+  "id": "28005",
+  "title": "[VBM]  机械动力：量化蓝图  (VisualBlueprintMaterials)",
+  "en": "VisualBlueprintMaterials"
+ },
+ {
+  "id": "21746",
+  "title": "[CXPT]  机械动力：经验工具  (Create: XPTool)",
+  "en": "Create: XPTool"
+ },
+ {
+  "id": "27720",
+  "title": "Create: Armored Rails",
+  "en": "Create: Armored Rails"
+ },
+ {
+  "id": "28044",
+  "title": "[CVS]  机械动力：VVVF模拟器  (Create: VVVF-Simulator)",
+  "en": "Create: VVVF-Simulator"
+ },
+ {
+  "id": "28049",
+  "title": "Create: Gregified Storage",
+  "en": "Create: Gregified Storage"
+ },
+ {
+  "id": "29395",
+  "title": "[SCO]  StellarCreateOptimization",
+  "en": "StellarCreateOptimization"
+ },
+ {
+  "id": "28042",
+  "title": "存力合作  (RS on Create)",
+  "en": "RS on Create"
+ },
+ {
+  "id": "27792",
+  "title": "不要切削染梦合金块  (DONOT Cutting Dyedream Block)",
+  "en": "DONOT Cutting Dyedream Block"
+ },
+ {
+  "id": "28233",
+  "title": "机魂大悦  (The Machine Spirit is Pleased)",
+  "en": "The Machine Spirit is Pleased"
+ },
+ {
+  "id": "28237",
+  "title": "Trimmable Create Armor",
+  "en": "Trimmable Create Armor"
+ },
+ {
+  "id": "28714",
+  "title": "机械动力：药物和草药自动化  (Create: Meds and Herbs: Automated)",
+  "en": "Create: Meds and Herbs: Automated"
+ },
+ {
+  "id": "28809",
+  "title": "机械动力：冷却鼓风机  (Create Cooling Fan)",
+  "en": "Create Cooling Fan"
+ }
+]

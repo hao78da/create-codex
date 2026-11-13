@@ -22,7 +22,9 @@ SITE = ROOT
 TAGS = os.path.join(SITE, "tags")
 ICONS = os.path.join(SITE, "assets", "icons")
 OUT = _os.path.join(ROOT, 'tools', 'data')
-REPO = r"D:\frontend\_raw\create\Create-mc1.20.1-dev\src"
+# Create 模组源码根目录（可选）。默认放在 work/Create-mc1.20.1-dev/src，
+# 也可用环境变量 CREATE_SRC 指定；目录不存在时跳过该来源，不影响其它标签来源。
+REPO = _os.environ.get('CREATE_SRC') or _os.path.join(WORK, 'Create-mc1.20.1-dev', 'src')
 JARS = _os.path.join(WORK, 'mods_intake')
 
 DATA = json.load(io.open(os.path.join(OUT, "data.json"), encoding="utf-8"))

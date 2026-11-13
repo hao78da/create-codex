@@ -1,23 +1,23 @@
 # Create Codex · 机械动力物品教学图鉴
 
-[![在线浏览](https://img.shields.io/badge/%E5%9C%A8%E7%BA%BF%E6%B5%8F%E8%A7%88-hao78da.github.io%2Fcreate--codex-d9a441?style=for-the-badge&logo=githubpages&logoColor=black)](https://hao78da.github.io/create-codex/)
+[![在线浏览](https://img.shields.io/badge/%E5%9C%A8%E7%BA%BF%E6%B5%8F%E8%A7%88-lOrionl.github.io%2Fcreate--codex-d9a441?style=for-the-badge&logo=githubpages&logoColor=black)](https://lOrionl.github.io/create-codex/)
 [![740 物品](https://img.shields.io/badge/%E7%89%A9%E5%93%81-740-d9a441?style=flat-square)](#)
 [![断链](https://img.shields.io/badge/%E6%96%AD%E9%93%BE-0-3fb950?style=flat-square)](#)
 [![License](https://img.shields.io/badge/%E8%84%9A%E6%9C%AC-MIT-blue?style=flat-square)](LICENSE)
 [![Content](https://img.shields.io/badge/%E6%95%99%E7%A8%8B-CC%20BY--NC--SA%204.0-lightgrey?style=flat-square)](#)
 
-> **👉 在线打开：<https://hao78da.github.io/create-codex/>**
+> **👉 在线打开：<https://lOrionl.github.io/create-codex/>**
 >
 > 不用下载、不用装环境，点开就是关系图。
 
-一个纯静态的《我的世界》Create（机械动力）模组中文教学站，覆盖模组内 **740 个物品与方块**。
+一个纯静态的《我的世界》Create（机械动力）模组中文教学站，覆盖本体 **740 个物品** 与 **195 个附属模组的 9931 个物品**，站点共 1723 个可访问页面。
 
 ---
 
 ## 想在自己的电脑上跑 / 继续写？
 
 ```bash
-git clone https://github.com/hao78da/create-codex.git
+git clone https://github.com/lOrionl/create-codex.git
 cd create-codex/tools
 python gen_site.py        # 重新生成全部页面
 python validate_all2.py   # 自检：页数 / 引用数 / 断链数
@@ -33,8 +33,9 @@ python validate_all2.py   # 自检：页数 / 引用数 / 断链数
 直接双击 `index.html` 即可，不需要服务器、不需要联网。
 整个站点是相对路径的静态文件，可以直接拷进 U 盘、内网共享或 GitHub Pages。
 
-- 首页 `index.html`：模组关系图（可拖拽平移、滚轮缩放）。目前只有「机械动力」一个节点，点击节点进入物品图鉴；以后加附属模组就在这条轨道上挂新节点、用连线表示附属关系
-- 图鉴 `catalog.html`：740 张卡片，支持中文名 / 英文名 / 物品 ID 搜索，按 9 个分类筛选
+- 首页 `index.html`：模组关系图（可拖拽平移、滚轮缩放），共 **196 个节点**（机械动力本体 + 195 个附属模组）。节点用黄金角螺旋撒开、长短不一的射线连回中心，点球进入对应模组页
+- 图鉴 `catalog.html`：740 张本体卡片，支持中文名 / 英文名 / 物品 ID 搜索，按 9 个分类筛选
+- 模组总览 `mods.html`：195 个附属模组卡片，点进去是各模组的物品与配方
 - 详情页：每个物品一个 HTML（`items/<物品id>.html`），包含
   - 一句话定位 + 关键参数
   - 详细教程（怎么用 / 进阶 / 常见坑）
@@ -46,14 +47,24 @@ python validate_all2.py   # 自检：页数 / 引用数 / 断链数
 
 | 项目 | 数量 |
 | --- | --- |
-| 物品 / 方块 | 740 |
-| 配方条目 | 1302 |
+| 机械动力本体物品 / 方块 | 740 |
+| 附属模组物品 | 9931（来自 195 个附属模组） |
+| 页面总数 | 1723（被 validate_all2.py 实际扫到） |
+| 关系图节点 | 196 |
+| 附属模组 | 195 |
+| 配方条目 | 本体 1302 + 附属 10112 |
 | 有官方 Ponder 教程的物品 | 116 |
-| 逐条撰写教程 | 740（全部物品） |
-| 图标 | 1055 个 PNG（其中 119 个 3D 渲染图标，4 个物品用占位齿轮） |
+| 逐条撰写教程 | 740（本体全部物品） |
+| 图标 | 14453 个 PNG |
+| 标签页 | 387 |
+| 原版物品页 | 396 |
 
-分类：装饰与建筑 453、材料与零件 60、红石与控制 41、机器与加工 34、
+本体分类：装饰与建筑 453、材料与零件 60、红石与控制 41、机器与加工 34、
 物流与仓储 34、杂项 34、工具与装备 30、动力与传动 26、列车与轨道 21、动态结构与载具 7。
+
+附属模组数据取自各模组 jar 内的 `zh_cn.json` 与配方 JSON，
+模组清单来自 [MC百科](https://www.mcmod.cn/class/2021.html) 的「依赖机械动力的Mod」（Forge 1.20.1 分组），
+再逐个验证 Modrinth / CurseForge 的 1.20.1 Forge 构建。
 
 ## 数据来源与版权
 
@@ -61,6 +72,7 @@ python validate_all2.py   # 自检：页数 / 引用数 / 断链数
 - **原版物品与纹理**：Minecraft，版权归 Mojang 所有，仅用于教学展示。
 - **标题字体**：Minecraft 字体，来自 [dafont.com](https://www.dafont.com/minecraft.font)，仅用于标题与数字；该字体不含中文字形，正文使用系统黑体。
 - **教程正文**：本项目撰写。740 个条目全部逐条编写，每条 3 个小节（获得 / 用法 / 常见坑），正文不少于约 260 字。
+- **附属模组简介**：取自 [MC百科](https://www.mcmod.cn/) 各模组页的中文简介；物品名与配方来自各模组 jar 本体，遵循各自的许可证。
 
 ## 重新生成
 

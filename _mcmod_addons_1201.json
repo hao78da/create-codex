@@ -1,0 +1,1102 @@
+[
+ {
+  "id": "3378",
+  "title": "CreateTweaker"
+ },
+ {
+  "id": "3437",
+  "title": "[CC&A]  机械动力：创想附加  (Create Crafts & Additions)"
+ },
+ {
+  "id": "3779",
+  "title": "机械动力：物品附加  (Create Stuff 'N Additions)"
+ },
+ {
+  "id": "3931",
+  "title": "Create Goggles"
+ },
+ {
+  "id": "4637",
+  "title": "Create Chunkloading"
+ },
+ {
+  "id": "4871",
+  "title": "机械动力：甜食  (Create Confectionery)"
+ },
+ {
+  "id": "4944",
+  "title": "[SP]  蒸汽动力  (Create: Steam Powered)"
+ },
+ {
+  "id": "5157",
+  "title": "KubeJS Create"
+ },
+ {
+  "id": "5189",
+  "title": "Create Deco"
+ },
+ {
+  "id": "5617",
+  "title": "Ars Creo"
+ },
+ {
+  "id": "6016",
+  "title": "机械动力：咖啡馆  (Create Cafe)"
+ },
+ {
+  "id": "6054",
+  "title": "压缩动力  (Compressed Creativity)"
+ },
+ {
+  "id": "6142",
+  "title": "[IDAS]  地牢建筑统合  (Integrated Dungeons and Structures)"
+ },
+ {
+  "id": "6877",
+  "title": "Create Chromatic Return"
+ },
+ {
+  "id": "7178",
+  "title": "[CBC]  机械动力：火炮  (Create Big Cannons)"
+ },
+ {
+  "id": "7205",
+  "title": "Ponder for KubeJS"
+ },
+ {
+  "id": "7300",
+  "title": "[COE]  机械动力：矿石开掘  (Create Ore Excavation)"
+ },
+ {
+  "id": "7328",
+  "title": "Create Slice & Dice"
+ },
+ {
+  "id": "7338",
+  "title": "机械动力：喷气背包  (Create Jetpack)"
+ },
+ {
+  "id": "7454",
+  "title": "Create: Factory"
+ },
+ {
+  "id": "7464",
+  "title": "机械动力：实用物件  (Create : Misc & Things)"
+ },
+ {
+  "id": "7529",
+  "title": "Create InfiniDrill"
+ },
+ {
+  "id": "7614",
+  "title": "机械动力：晶莹剔透  (Create: Crystal Clear)"
+ },
+ {
+  "id": "7737",
+  "title": "[KY]  跨越  (KuaYue)"
+ },
+ {
+  "id": "7762",
+  "title": "机械动力：筛子  (Create Sifting)"
+ },
+ {
+  "id": "7824",
+  "title": "Create Mechanical Extruder"
+ },
+ {
+  "id": "7892",
+  "title": "[CEI]  机械动力：附魔工业  (Create: Enchantment Industry)"
+ },
+ {
+  "id": "8204",
+  "title": "[TFMG]  机械动力：工业长路  (Create: Industry/Create: The Factory Must Grow)"
+ },
+ {
+  "id": "8230",
+  "title": "[SnR]  机械动力：汽鸣铁道  (Create: Steam 'n' Rails)"
+ },
+ {
+  "id": "8482",
+  "title": "[CET]  机械动力：末影传输  (Create: Ender Transmission)"
+ },
+ {
+  "id": "8484",
+  "title": "机械动力：更多齿轮  (Create: Extended Cogwheels)"
+ },
+ {
+  "id": "8487",
+  "title": "CC:C Bridge"
+ },
+ {
+  "id": "8488",
+  "title": "Liquid Burner"
+ },
+ {
+  "id": "9136",
+  "title": "机械龙库  (Create Dragon Lib)"
+ },
+ {
+  "id": "9141",
+  "title": "Little Contraptions"
+ },
+ {
+  "id": "9145",
+  "title": "Create Decoration Casing"
+ },
+ {
+  "id": "9151",
+  "title": "[CCK]  机械动力：中央厨房  (Create: Central Kitchen)"
+ },
+ {
+  "id": "9184",
+  "title": "机械动力：压缩经验  (Create Compact Exp)"
+ },
+ {
+  "id": "9209",
+  "title": "机械动力：动力刷怪笼  (Create Mechanical Spawner)"
+ },
+ {
+  "id": "9612",
+  "title": "[CTM]  Create Track Map"
+ },
+ {
+  "id": "9800",
+  "title": "机械动力：封装工艺  (Create Encased)"
+ },
+ {
+  "id": "9936",
+  "title": "Create: Armory"
+ },
+ {
+  "id": "9968",
+  "title": "机械动力：传送器  (Create: Teleporters)"
+ },
+ {
+  "id": "9974",
+  "title": "Create: Modern Train Parts"
+ },
+ {
+  "id": "10038",
+  "title": "Create: Molten Vents"
+ },
+ {
+  "id": "10331",
+  "title": "Create Blue Skies Compat"
+ },
+ {
+  "id": "10544",
+  "title": "Create Weaponry"
+ },
+ {
+  "id": "10546",
+  "title": "[CAK]  机械动力：应用机械  (Create: Applied Kinetics)"
+ },
+ {
+  "id": "10548",
+  "title": "Create Gourmet"
+ },
+ {
+  "id": "10727",
+  "title": "机械动力：柴油动力  (Create: Diesel Generators)"
+ },
+ {
+  "id": "10732",
+  "title": "[CCI]  Create: Cobblemon Industrialized"
+ },
+ {
+  "id": "10871",
+  "title": "机械动力：梦想与欲望  (Create: Dreams & Desires)"
+ },
+ {
+  "id": "10882",
+  "title": "Create Air"
+ },
+ {
+  "id": "10950",
+  "title": "机械动力：实用物品  (Create Utilities)"
+ },
+ {
+  "id": "11077",
+  "title": "Create: Structures"
+ },
+ {
+  "id": "11090",
+  "title": "Create Guardian Beam Defense"
+ },
+ {
+  "id": "11092",
+  "title": "Expanding Technologies"
+ },
+ {
+  "id": "11140",
+  "title": "Create Sabers"
+ },
+ {
+  "id": "11149",
+  "title": "Create Compressed"
+ },
+ {
+  "id": "11297",
+  "title": "Rechiseled: Create"
+ },
+ {
+  "id": "11558",
+  "title": "Create: Fishing Bobber Detector"
+ },
+ {
+  "id": "11560",
+  "title": "Create: Balanced Flight"
+ },
+ {
+  "id": "11578",
+  "title": "机械动力：装食  (Create: Garnished)"
+ },
+ {
+  "id": "11918",
+  "title": "机械动力：电气时代  (Create: New Age)"
+ },
+ {
+  "id": "11940",
+  "title": "机械动力：高级遥控器  (Create: Tweaked Controllers)"
+ },
+ {
+  "id": "11960",
+  "title": "机械动力：内饰  (Create: Interiors)"
+ },
+ {
+  "id": "12177",
+  "title": "Create: Bells & Whistles"
+ },
+ {
+  "id": "12208",
+  "title": "Greate"
+ },
+ {
+  "id": "12598",
+  "title": "Create: Dynamic Village"
+ },
+ {
+  "id": "12605",
+  "title": "机械动力：更多钻头  (Create: More Drill Heads)"
+ },
+ {
+  "id": "12606",
+  "title": "机械动力：液体燃料  (Create: Liquid Fuel)"
+ },
+ {
+  "id": "12926",
+  "title": "Create : Creating Space"
+ },
+ {
+  "id": "13010",
+  "title": "机械动力：动力加载器  (Create: Power Loader)"
+ },
+ {
+  "id": "13105",
+  "title": "机械动力：创意传动  (Create: Connected)"
+ },
+ {
+  "id": "13163",
+  "title": "Create: Trimmed"
+ },
+ {
+  "id": "13210",
+  "title": "坍毁化合  (Destroy)"
+ },
+ {
+  "id": "13218",
+  "title": "机械动力：交互学  (Create: Interactive)"
+ },
+ {
+  "id": "13260",
+  "title": "Create: Food"
+ },
+ {
+  "id": "13298",
+  "title": "[CCPA&CRC]  Config Custom Portal API And Create Rail Compact"
+ },
+ {
+  "id": "13344",
+  "title": "Create: Bitterballen"
+ },
+ {
+  "id": "13360",
+  "title": "Create: Design n' Decor"
+ },
+ {
+  "id": "13386",
+  "title": "Create: Trains on Trains"
+ },
+ {
+  "id": "13399",
+  "title": "Jack's Economy (Create Edition)"
+ },
+ {
+  "id": "13402",
+  "title": "Tofu Create"
+ },
+ {
+  "id": "13412",
+  "title": "Create: Oxidized"
+ },
+ {
+  "id": "13477",
+  "title": "Create: Copies & Cats"
+ },
+ {
+  "id": "13488",
+  "title": "[CW]  机械动力：巫术  (Create: Wizardry)"
+ },
+ {
+  "id": "13503",
+  "title": "Create Hand Crafting"
+ },
+ {
+  "id": "13507",
+  "title": "Create: Easy Structures"
+ },
+ {
+  "id": "13528",
+  "title": "Create: Unbreakable Tools"
+ },
+ {
+  "id": "13535",
+  "title": "TFC Ore Excavation"
+ },
+ {
+  "id": "13550",
+  "title": "[CW]  Clockwork"
+ },
+ {
+  "id": "13646",
+  "title": "Create: Netherless"
+ },
+ {
+  "id": "13666",
+  "title": "Create Recycle Everything"
+ },
+ {
+  "id": "13686",
+  "title": "Create: Missions"
+ },
+ {
+  "id": "13760",
+  "title": "Create: Vintage Improvements"
+ },
+ {
+  "id": "13810",
+  "title": "Create: Love & War"
+ },
+ {
+  "id": "13829",
+  "title": "Create: Sweets & Treats"
+ },
+ {
+  "id": "13844",
+  "title": "机械动力：伪装方块+  (Create: Copycats+)"
+ },
+ {
+  "id": "13920",
+  "title": "机械动力：蓝图空位  (Create：Blueprint Void)"
+ },
+ {
+  "id": "13995",
+  "title": "[CRAT]  机械动力：齿轮与麦穗  (Create: Ratatouille)"
+ },
+ {
+  "id": "14005",
+  "title": "机械动力：原子计划  (Create: Oppenheimered)"
+ },
+ {
+  "id": "14070",
+  "title": "机械动力：瀚海雄心  (Create: Aquatic Ambitions)"
+ },
+ {
+  "id": "14089",
+  "title": "[CP]  机械动力：思索  (Create Ponder)"
+ },
+ {
+  "id": "14209",
+  "title": "Create: Train Perspective Fix"
+ },
+ {
+  "id": "14210",
+  "title": "Create: Metalwork"
+ },
+ {
+  "id": "14288",
+  "title": "Apotheotic Creation"
+ },
+ {
+  "id": "14296",
+  "title": "Create: Big Contraptions"
+ },
+ {
+  "id": "14360",
+  "title": "Create: Numismatics"
+ },
+ {
+  "id": "14419",
+  "title": "Creating space gravity addon"
+ },
+ {
+  "id": "14470",
+  "title": "Create Basic Additions"
+ },
+ {
+  "id": "14492",
+  "title": "EMI: Create Schematics"
+ },
+ {
+  "id": "14506",
+  "title": "Lijm's Expanse"
+ },
+ {
+  "id": "14598",
+  "title": "机械动力：油炸  (Create: Deepfried)"
+ },
+ {
+  "id": "14600",
+  "title": "[CRN]  机械动力：铁路导航  (Create Railways Navigator)"
+ },
+ {
+  "id": "14618",
+  "title": "Create: Molten Metals"
+ },
+ {
+  "id": "14619",
+  "title": "机械动力：光学  (Create Optical)"
+ },
+ {
+  "id": "14630",
+  "title": "Create: Amazing Trading"
+ },
+ {
+  "id": "14672",
+  "title": "Create Militarized"
+ },
+ {
+  "id": "14720",
+  "title": "Create: Nuke"
+ },
+ {
+  "id": "14888",
+  "title": "Create: More Features"
+ },
+ {
+  "id": "14898",
+  "title": "Create: Armor Trim"
+ },
+ {
+  "id": "14902",
+  "title": "Create Tab Fix"
+ },
+ {
+  "id": "14919",
+  "title": "机素防护  (Create: Protection Pixel)"
+ },
+ {
+  "id": "14928",
+  "title": "Extreme Reactors Create Compat"
+ },
+ {
+  "id": "14946",
+  "title": "机械动力：拳击刷怪笼  (Create: SpawnerBoxer)"
+ },
+ {
+  "id": "14998",
+  "title": "Create Cobblestone"
+ },
+ {
+  "id": "15052",
+  "title": "机械动力：冶金学  (Create: Metallurgy)"
+ },
+ {
+  "id": "15059",
+  "title": "Create: Klinks n' Klangs"
+ },
+ {
+  "id": "15107",
+  "title": "[PrMa]  机械动力：精制工艺  (Create: Precise Manufacturing)"
+ },
+ {
+  "id": "15108",
+  "title": "Create: New Age / Alex's Caves Integration"
+ },
+ {
+  "id": "15133",
+  "title": "Create: Mortar"
+ },
+ {
+  "id": "15160",
+  "title": "Create Heat JS"
+ },
+ {
+  "id": "15161",
+  "title": "Create: Addon Compatibility"
+ },
+ {
+  "id": "15248",
+  "title": "Create: Nuka Cola Classic"
+ },
+ {
+  "id": "15306",
+  "title": "[SCS]  智能动态结构存储  (SmarterContraptionStorage)"
+ },
+ {
+  "id": "15325",
+  "title": "[LRC]  LAIN的随意创作  (Lain's random creation)"
+ },
+ {
+  "id": "15365",
+  "title": "Create: Upgraded Armor"
+ },
+ {
+  "id": "15412",
+  "title": "Create: Curios Jetpack & Backtank / Create: Jetpack Curios"
+ },
+ {
+  "id": "15444",
+  "title": "Create Questing"
+ },
+ {
+  "id": "15445",
+  "title": "Create: Train Perspective"
+ },
+ {
+  "id": "15497",
+  "title": "Create High Pressure"
+ },
+ {
+  "id": "15498",
+  "title": "机械动力：多彩边框  (Create: Framed)"
+ },
+ {
+  "id": "15499",
+  "title": "驱动工艺  (Trackwork)"
+ },
+ {
+  "id": "15584",
+  "title": "Create: Ethium"
+ },
+ {
+  "id": "15585",
+  "title": "机械动力：动态终端  (Create Contraption Terminals)"
+ },
+ {
+  "id": "15689",
+  "title": "Create Planetary Tweaks"
+ },
+ {
+  "id": "15746",
+  "title": "Create Thermal Compat"
+ },
+ {
+  "id": "15748",
+  "title": "Create: Ironworks"
+ },
+ {
+  "id": "15828",
+  "title": "虚空动力  (Void Power)"
+ },
+ {
+  "id": "15865",
+  "title": "机械动力：北极星  (Create: Northstar)"
+ },
+ {
+  "id": "15866",
+  "title": "机械动力：模式蓝图  (Create: Pattern Schematics)"
+ },
+ {
+  "id": "15909",
+  "title": "[SCM]  简单动力  (Simply Create Model)"
+ },
+ {
+  "id": "15938",
+  "title": "Vintage KubeJS"
+ },
+ {
+  "id": "16140",
+  "title": "[CTD]  机械动力：坦克防御  (Create Tank Defenses)"
+ },
+ {
+  "id": "16148",
+  "title": "Create: Dynamic Lights"
+ },
+ {
+  "id": "16203",
+  "title": "机械动力：TaCZ自动化  (Create: TaCZ Automation)"
+ },
+ {
+  "id": "16246",
+  "title": "机械动力火器补丁  (Create Firearms Patch(kinetic pixel))"
+ },
+ {
+  "id": "16247",
+  "title": "Create: Eureka!"
+ },
+ {
+  "id": "16325",
+  "title": "Create: Halitosis"
+ },
+ {
+  "id": "16326",
+  "title": "Create: Unify"
+ },
+ {
+  "id": "16327",
+  "title": "Create: More Sandpapers"
+ },
+ {
+  "id": "16333",
+  "title": "Petrol 的机件  (Petrol's Parts)"
+ },
+ {
+  "id": "16369",
+  "title": "CC: Destroy Bridge"
+ },
+ {
+  "id": "16400",
+  "title": "Mechano"
+ },
+ {
+  "id": "16402",
+  "title": "Create: Enchantable Machinery"
+ },
+ {
+  "id": "16477",
+  "title": "Create: Let The Adventure Begin"
+ },
+ {
+  "id": "16548",
+  "title": "机械动力：交易站点  (Create: Trading Floor)"
+ },
+ {
+  "id": "16549",
+  "title": "[FCS]  Yu的机械动力附属  (Fishy Create Stuffs)"
+ },
+ {
+  "id": "16601",
+  "title": "Wooden Cog"
+ },
+ {
+  "id": "16628",
+  "title": "Create: Sky Village"
+ },
+ {
+  "id": "16725",
+  "title": "Create: Peaceful"
+ },
+ {
+  "id": "16757",
+  "title": "Create: Totem Factory"
+ },
+ {
+  "id": "16814",
+  "title": "机械动力：马力  (Create Horse Power)"
+ },
+ {
+  "id": "16815",
+  "title": "Ars Technica"
+ },
+ {
+  "id": "16921",
+  "title": "Create: Big Globe Compatability"
+ },
+ {
+  "id": "16926",
+  "title": "可配置的碰撞箱显示-机械动力功能附加  (Pretty Hitbox-Create Addition)"
+ },
+ {
+  "id": "17067",
+  "title": "Create: Ad Astra Compatibility"
+ },
+ {
+  "id": "17068",
+  "title": "Create Mechanical Chicken"
+ },
+ {
+  "id": "17155",
+  "title": "机械动力：更多燃烧室  (More Create Burners)"
+ },
+ {
+  "id": "17156",
+  "title": "Create Logistics"
+ },
+ {
+  "id": "17157",
+  "title": "Create: Pneumatic Equipment"
+ },
+ {
+  "id": "18083",
+  "title": "[SCTY]  趣亦合成  (So Crazy Try)"
+ },
+ {
+  "id": "18230",
+  "title": "机械动力：原子核动  (Create Nuclear)"
+ },
+ {
+  "id": "18580",
+  "title": "机械动力：冷汗  (Create: Cold Sweat)"
+ },
+ {
+  "id": "18629",
+  "title": "[CCG]  机械动力：赛博护目镜  (Create: Cyber Goggles)"
+ },
+ {
+  "id": "18697",
+  "title": "Create Waystones Recipes"
+ },
+ {
+  "id": "18707",
+  "title": "[CBCAT]  机械动力火炮：先进技术  (Create Big Cannons: Advanced Technologies)"
+ },
+ {
+  "id": "18758",
+  "title": "CBC: Nuclear"
+ },
+ {
+  "id": "18773",
+  "title": "[CBCMW]  机械动力火炮：现代战争  (CBC: Modern Warfare)"
+ },
+ {
+  "id": "18901",
+  "title": "Create: Copper & Zinc"
+ },
+ {
+  "id": "19138",
+  "title": "Create Ultimine"
+ },
+ {
+  "id": "19168",
+  "title": "Create: Advanced Logistics"
+ },
+ {
+  "id": "19200",
+  "title": "Sophisticated Storage Create Integration"
+ },
+ {
+  "id": "19209",
+  "title": "[CMP]  机械动力：无人机物流  (Create: Mobile Packages)"
+ },
+ {
+  "id": "19210",
+  "title": "Create: Cardboarded Conveynience"
+ },
+ {
+  "id": "19287",
+  "title": "机械动力：简单发电机  (Create: Simple Generator)"
+ },
+ {
+  "id": "19288",
+  "title": "Sophisticated Backpacks Create Integration"
+ },
+ {
+  "id": "19450",
+  "title": "机械动力：乡村结构  (Create: Rustic Structures)"
+ },
+ {
+  "id": "19600",
+  "title": "机械动力：推进工程  (Create: Propulsion)"
+ },
+ {
+  "id": "19617",
+  "title": "Create Unlimited"
+ },
+ {
+  "id": "19650",
+  "title": "Create Stock Bridge"
+ },
+ {
+  "id": "19651",
+  "title": "机械动力：自动扶梯  (Create: Escalated)"
+ },
+ {
+  "id": "19687",
+  "title": "机械动力：地铁列车装饰  (Train Deco)"
+ },
+ {
+  "id": "19731",
+  "title": "机械动力：直通溜槽  (Create: Direct Chute)"
+ },
+ {
+  "id": "19732",
+  "title": "Create: Packagers PSI Compat"
+ },
+ {
+  "id": "19733",
+  "title": "Create More Packages / CComunityBoxes"
+ },
+ {
+  "id": "19734",
+  "title": "机械动力：更多仪表  (Create: Extra Gauges)"
+ },
+ {
+  "id": "19750",
+  "title": "Create: Mechanical Companion"
+ },
+ {
+  "id": "19836",
+  "title": "机械动力：流体抽取限制  (Create: Limited Draining)"
+ },
+ {
+  "id": "19837",
+  "title": "机械动力：防御  (Create: No Touching)"
+ },
+ {
+  "id": "19838",
+  "title": "机械动力：天境工业  (Create Aether Industry)"
+ },
+ {
+  "id": "19839",
+  "title": "[CEC]  机械动力：实体控制  (Create: Entity Control)"
+ },
+ {
+  "id": "19878",
+  "title": "Applied Schematicannon"
+ },
+ {
+  "id": "19898",
+  "title": "机械动力：服装  (Create: Clothes)"
+ },
+ {
+  "id": "19899",
+  "title": "Create: Delivery Director"
+ },
+ {
+  "id": "19900",
+  "title": "Create: Cardboard Things"
+ },
+ {
+  "id": "19977",
+  "title": "Pollution Of Create"
+ },
+ {
+  "id": "20068",
+  "title": "Create: Pillager Arise"
+ },
+ {
+  "id": "20069",
+  "title": "Create: Quality Of Life"
+ },
+ {
+  "id": "20070",
+  "title": "机械动力：远程终端  (Create: Remote Terminal)"
+ },
+ {
+  "id": "20226",
+  "title": "机械动力：超级管道  (Create: Hypertubes)"
+ },
+ {
+  "id": "20250",
+  "title": "Create: Extended Wrenches"
+ },
+ {
+  "id": "20301",
+  "title": "World of Wonders"
+ },
+ {
+  "id": "20344",
+  "title": "Deep Space"
+ },
+ {
+  "id": "20484",
+  "title": "VS: Rotanator"
+ },
+ {
+  "id": "20485",
+  "title": "Create: Refilling Boxes"
+ },
+ {
+  "id": "20486",
+  "title": "[CBCCW]  机械动力火炮：化学与生物战争  (CBC: Chemical Warfare)"
+ },
+ {
+  "id": "20488",
+  "title": "Create: Colored"
+ },
+ {
+  "id": "20501",
+  "title": "资源统合-机械动力配方附加  (Create Mt Integration)"
+ },
+ {
+  "id": "20558",
+  "title": "[CCB]  Create: Collection Bundles"
+ },
+ {
+  "id": "20559",
+  "title": "Create: Enhanced Mastery"
+ },
+ {
+  "id": "20562",
+  "title": "机械动力：又在幻想了  (Create: Fantasizing Again)"
+ },
+ {
+  "id": "20640",
+  "title": "Create: Tools n Weapons"
+ },
+ {
+  "id": "20641",
+  "title": "Create: Pipe Networks"
+ },
+ {
+  "id": "20846",
+  "title": "Create: Extend Bogeys"
+ },
+ {
+  "id": "20847",
+  "title": "[CUTC6]  Create: Unify updated to Create 6"
+ },
+ {
+  "id": "20848",
+  "title": "机械动力：臂力臂力炒菜  (Create: Arm-made Cuisine)"
+ },
+ {
+  "id": "20849",
+  "title": "[CCC]  机械动力：栽培工艺  (Create: Cultivation Craft)"
+ },
+ {
+  "id": "20920",
+  "title": "[QR]  品质铁路  (Quality Railway)"
+ },
+ {
+  "id": "20950",
+  "title": "Create: Ornithopter Glider"
+ },
+ {
+  "id": "20995",
+  "title": "机械动力：臂力臂力烧烤  (Create : Arm-made Barbeque)"
+ },
+ {
+  "id": "21206",
+  "title": "Create Stuff & Netherite Additions"
+ },
+ {
+  "id": "21207",
+  "title": "Create: Sophisticated Backpacks Compat"
+ },
+ {
+  "id": "22656",
+  "title": "[TiG]  匠械  (Tinkers' Gears)"
+ },
+ {
+  "id": "23656",
+  "title": "机械动力：北极星 - 重制版  (Create: Northstar - Redux)"
+ },
+ {
+  "id": "23851",
+  "title": "机械动力：哨戒动力臂  (Create: Sentry Mechanical Arm)"
+ },
+ {
+  "id": "23954",
+  "title": "[TGRF]  通达铁路-for-Forge  (TongDaRailway for Forge)"
+ },
+ {
+  "id": "27489",
+  "title": "带有工作盆输出口的置物台  (Has Basin Output Faucet Depot)"
+ },
+ {
+  "id": "27492",
+  "title": "[VRE-C]  可视化机械动力配方编辑器  (Visual Recipe Edit-Create)"
+ },
+ {
+  "id": "28569",
+  "title": "[CWUC]  机械动力：轮椅轮椅  (Create: Wheels Upon Chairs)"
+ },
+ {
+  "id": "28005",
+  "title": "[VBM]  机械动力：量化蓝图  (VisualBlueprintMaterials)"
+ },
+ {
+  "id": "26348",
+  "title": "Create: Unclamped"
+ },
+ {
+  "id": "27483",
+  "title": "机械动力：生物科技  (Create: Biotech)"
+ },
+ {
+  "id": "21746",
+  "title": "[CXPT]  机械动力：经验工具  (Create: XPTool)"
+ },
+ {
+  "id": "27655",
+  "title": "机械动力：紧凑型传动  (Create: Compact Transmission)"
+ },
+ {
+  "id": "27720",
+  "title": "Create: Armored Rails"
+ },
+ {
+  "id": "28044",
+  "title": "[CVS]  机械动力：VVVF模拟器  (Create: VVVF-Simulator)"
+ },
+ {
+  "id": "28049",
+  "title": "Create: Gregified Storage"
+ },
+ {
+  "id": "29395",
+  "title": "[SCO]  StellarCreateOptimization"
+ },
+ {
+  "id": "28050",
+  "title": "Frequency Create"
+ },
+ {
+  "id": "28042",
+  "title": "存力合作  (RS on Create)"
+ },
+ {
+  "id": "28160",
+  "title": "机械动力：工厂控制台  (Create: Factory Controller)"
+ },
+ {
+  "id": "27792",
+  "title": "不要切削染梦合金块  (DONOT Cutting Dyedream Block)"
+ },
+ {
+  "id": "28045",
+  "title": "Create: Nowheel"
+ },
+ {
+  "id": "28233",
+  "title": "机魂大悦  (The Machine Spirit is Pleased)"
+ },
+ {
+  "id": "28237",
+  "title": "Trimmable Create Armor"
+ },
+ {
+  "id": "28627",
+  "title": "[GDR]  机械动力：并行理包  (Create: God Damn Repackager)"
+ },
+ {
+  "id": "28628",
+  "title": "Create: Blueprinted"
+ },
+ {
+  "id": "28714",
+  "title": "机械动力：药物和草药自动化  (Create: Meds and Herbs: Automated)"
+ },
+ {
+  "id": "28800",
+  "title": "Create: Apokinetics"
+ },
+ {
+  "id": "28809",
+  "title": "机械动力：冷却鼓风机  (Create Cooling Fan)"
+ },
+ {
+  "id": "28811",
+  "title": "Create: Lights & Controls"
+ },
+ {
+  "id": "30353",
+  "title": "机械动力：彩色连接线  (Create: Colored Connections)"
+ },
+ {
+  "id": "30804",
+  "title": "机械动力：列车门优化"
+ }
+]

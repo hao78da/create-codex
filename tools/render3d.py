@@ -18,33 +18,32 @@ import sys
 import numpy as np
 from PIL import Image
 
-CREATE = r'D:\frontend\_raw\create\Create-mc1.20.1-dev\src\main\resources\assets\create'
+# 资源目录（可选）：默认从 work/assets/<名字> 读取，也可用环境变量覆盖。
+# 目录不存在时脚本会因缺少模型而报错退出，这属于预期行为——渲染 3D 图标需要有模组资源。
+_ASSETS = os.environ.get('CREATE_ASSETS') or os.path.join(WORK, 'assets')
+CREATE = os.path.join(_ASSETS, 'create')
 MODELS = os.path.join(CREATE, 'models')
 TEXDIR = os.path.join(CREATE, 'textures')
-CG = r'D:\frontend\_raw\create-goggles\CreateGoggles-1.20.1\forge\src\main\resources\assets\creategoggles'
+CG = os.path.join(_ASSETS, 'creategoggles')
 CG_MODELS = os.path.join(CG, 'models')
 CG_TEX = os.path.join(CG, 'textures')
-CMS = r'D:\frontend\_raw\seats\assets\cms'
-SWEETS = r'D:\frontend\_raw\sweets_assets\assets\createsweetsandtreets'
+CMS = os.path.join(_ASSETS, 'cms')
+SWEETS = os.path.join(_ASSETS, 'createsweetsandtreets')
 SWEETS_MODELS = os.path.join(SWEETS, 'models')
 SWEETS_TEX = os.path.join(SWEETS, 'textures')
-SH = r'D:\frontend\_raw\sh_assets\assets\superheated'
-EI = r'D:\frontend\_raw\ei_assets\assets\create_enchantment_industry'
+SH = os.path.join(_ASSETS, 'superheated')
+EI = os.path.join(_ASSETS, 'create_enchantment_industry')
 EI_MODELS = os.path.join(EI, 'models')
 EI_TEX = os.path.join(EI, 'textures')
 SH_MODELS = os.path.join(SH, 'models')
 SH_TEX = os.path.join(SH, 'textures')
-SWEETS_MODELS = os.path.join(SWEETS, 'models')
-SWEETS_TEX = os.path.join(SWEETS, 'textures')
-CMS_MODELS = os.path.join(CMS, 'models')
-CMS_TEX = os.path.join(CMS, 'textures')
-PROP = r'D:\frontend\_raw\prop\assets\createpropulsion'
+PROP = os.path.join(_ASSETS, 'createpropulsion')
 PROP_MODELS = os.path.join(PROP, 'models')
 PROP_TEX = os.path.join(PROP, 'textures')
-VAN = os.path.join(r'D:\frontend\_raw\van_assets', 'assets', 'minecraft')
+VAN = os.path.join(_ASSETS, 'minecraft')
 VAN_MODELS = os.path.join(VAN, 'models')
 VAN_TEX = os.path.join(VAN, 'textures')
-ICONS = r'D:\frontend\create-codex\assets\icons'
+ICONS = os.path.join(ROOT, 'assets', 'icons')
 
 SIZE = 96
 SS = 4

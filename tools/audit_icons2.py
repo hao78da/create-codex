@@ -18,5 +18,5 @@ for f in glob.glob(os.path.join(SITE,"tags","*.html")):
     if not m or "<img" not in m.group(1): nohero.append(os.path.basename(f))
 out.append("empty card icons: %s"%empty)
 out.append("tag pages without hero img: %d %s"%(len(nohero), nohero[:6]))
-io.open(r"D:\frontend\_raw\out\audit2.txt","w",encoding="utf-8").write("\n".join(out))
-print("ok")
+io.open(os.path.join(DATA, "audit2.txt"),"w",encoding="utf-8").write("\n".join(out))
+print("\n".join(out))

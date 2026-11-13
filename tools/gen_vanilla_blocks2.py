@@ -18,13 +18,13 @@ os.makedirs(VDIR, exist_ok=True)
 
 ZH = {}
 try:
-    ZH = json.load(io.open(r"D:\frontend\_raw\out\mc_zh.json", encoding="utf-8"))
+    ZH = json.load(io.open(os.path.join(DATA, "mc_zh.json"), encoding="utf-8"))
 except Exception:
     pass
 
 TAGS = {}
 try:
-    TAGS = json.load(io.open(r"D:\frontend\_raw\out\vanilla_tags_all.json", encoding="utf-8"))
+    TAGS = json.load(io.open(os.path.join(DATA, "vanilla_tags_all.json"), encoding="utf-8"))
 except Exception:
     pass
 

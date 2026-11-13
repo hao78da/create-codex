@@ -8,3 +8,8 @@ docs/tags/**            linguist-generated=true
 docs/vanilla/**         linguist-generated=true
 docs/sitemap.xml        linguist-generated=true
 docs/robots.txt         linguist-generated=true
+
+# 生成站点不计入语言统计，语言栏只反映真正的源码
+docs/**                 linguist-vendored=true
+tools/data/*.json      linguist-generated=true
+

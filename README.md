@@ -24,13 +24,13 @@ python validate_all2.py   # 自检：页数 / 引用数 / 断链数
 ```
 
 - 需要 Python 3.10+，无第三方依赖（生成器只用标准库）
-- 生成结果直接写到仓库根目录（`index.html`、`catalog.html`、`items/`、`tags/` …）
+- 生成结果写进 `docs/`（`docs/index.html`、`docs/catalog.html`、`docs/items/`、`docs/tags/` …）。GitHub Pages 从 `main` 的 `/docs` 发布，站点根就是 `docs/`，所以公开 URL 仍是 `https://hao78da.github.io/create-codex/xxx.html`；脚本里的 `SITE` 常量已指向 `ROOT/docs`
 - 具体怎么加一个附属模组，见 [`tools/README.md`](tools/README.md)
 - 想参与内容或脚本，见 [`CONTRIBUTING.md`](CONTRIBUTING.md)
 
 ## 怎么用
 
-直接双击 `index.html` 即可，不需要服务器、不需要联网。
+直接双击 `docs/index.html` 即可，不需要服务器、不需要联网。
 整个站点是相对路径的静态文件，可以直接拷进 U 盘、内网共享或 GitHub Pages。
 
 - 首页 `index.html`：模组关系图（可拖拽平移、滚轮缩放），共 **196 个节点**（机械动力本体 + 195 个附属模组）。节点用黄金角螺旋撒开、长短不一的射线连回中心，点球进入对应模组页

@@ -1,6 +1,6 @@
 # Create Codex · 机械动力物品教学图鉴
 
-[![在线浏览](https://img.shields.io/badge/%E5%9C%A8%E7%BA%BF%E6%B5%8F%E8%A7%88-lOrionl.github.io%2Fcreate--codex-d9a441?style=for-the-badge&logo=githubpages&logoColor=black)](https://hao78da.github.io/create-codex/)
+[![在线浏览](https://img.shields.io/badge/%E5%9C%A8%E7%BA%BF%E6%B5%8F%E8%A7%88-hao78da.github.io%2Fcreate--codex-d9a441?style=for-the-badge&logo=githubpages&logoColor=black)](https://hao78da.github.io/create-codex/)
 [![740 物品](https://img.shields.io/badge/%E7%89%A9%E5%93%81-740-d9a441?style=flat-square)](#)
 [![断链](https://img.shields.io/badge/%E6%96%AD%E9%93%BE-0-3fb950?style=flat-square)](#)
 [![License](https://img.shields.io/badge/%E8%84%9A%E6%9C%AC-MIT-blue?style=flat-square)](LICENSE)

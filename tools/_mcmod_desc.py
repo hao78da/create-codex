@@ -77,7 +77,7 @@ def clean_block(h):
 def main():
     src = None
     for name in ('_mcmod_en.json', '_mcmod_addons_1201.json'):
-        p = os.path.join(ROOT, name)
+        p = os.path.join(ROOT, 'tools', 'data', name)
         if os.path.exists(p):
             src = json.load(io.open(p, encoding='utf-8'))
             print('数据源:', name, len(src), '条')
@@ -87,7 +87,7 @@ def main():
         return
 
     # 只抓还没抓到简介的
-    outp = os.path.join(ROOT, '_mcmod_desc.json')
+    outp = os.path.join(ROOT, 'tools', 'data', '_mcmod_desc.json')
     out = {}
     if os.path.exists(outp):
         out = json.load(io.open(outp, encoding='utf-8'))

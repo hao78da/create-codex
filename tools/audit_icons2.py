@@ -5,7 +5,7 @@ ROOT = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
 DATA = _os.path.join(ROOT, "tools", "data")
 WORK = _os.path.join(ROOT, "work")
 import io,re,glob,os
-SITE=ROOT
+SITE = _os.path.join(ROOT, "docs")
 out=[]
 empty=[]; nohero=[]
 for f in glob.glob(os.path.join(SITE,"addon-*.html")):

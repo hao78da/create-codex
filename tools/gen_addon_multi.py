@@ -14,7 +14,7 @@ import shutil
 import urllib.request as u
 import zipfile
 
-SITE = ROOT
+SITE = _os.path.join(ROOT, "docs")
 ICONS = os.path.join(SITE, 'assets', 'icons')
 MC_ZH = {}
 try:

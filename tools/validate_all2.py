@@ -5,7 +5,7 @@ ROOT = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
 DATA = _os.path.join(ROOT, "tools", "data")
 WORK = _os.path.join(ROOT, "work")
 import io,re,glob,os
-SITE=ROOT
+SITE = _os.path.join(ROOT, "docs")
 files=glob.glob(os.path.join(SITE,"*.html"))+glob.glob(os.path.join(SITE,"items","*.html"))+glob.glob(os.path.join(SITE,"tags","*.html"))+glob.glob(os.path.join(SITE,"vanilla","*.html"))+glob.glob(os.path.join(SITE,"mods","*.html"))
 bad=[];refs=0
 for p in files:

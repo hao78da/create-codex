@@ -12,7 +12,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import content
 
 OUT = _os.path.join(ROOT, 'tools', 'data')
-SITE = ROOT
+SITE = _os.path.join(ROOT, "docs")
 ICONS = os.path.join(SITE, "assets", "icons")
 PAGES = os.path.join(SITE, "items")
 

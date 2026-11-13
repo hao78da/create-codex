@@ -11,7 +11,7 @@ import json
 import os
 import re
 
-SITE = ROOT
+SITE = _os.path.join(ROOT, "docs")
 ICONS = os.path.join(SITE, "assets", "icons")
 VDIR = os.path.join(SITE, "vanilla")
 os.makedirs(VDIR, exist_ok=True)

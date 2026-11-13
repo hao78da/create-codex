@@ -14,7 +14,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import _dl_mods as D  # noqa: E402
 
-SLUGS = os.path.join(os.path.dirname(HERE), '_slugs.txt')
+SLUGS = os.path.join(os.path.dirname(HERE), 'tools', 'data', '_slugs.txt')
 
 
 def main():

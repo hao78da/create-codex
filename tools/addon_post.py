@@ -19,7 +19,7 @@ import re
 import glob
 import json
 
-SITE = ROOT
+SITE = _os.path.join(ROOT, "docs")
 DATA = os.path.join(ROOT, "tools", "data", "data.json")
 
 

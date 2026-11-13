@@ -11,7 +11,7 @@ import io
 import os
 import re
 
-SITE = ROOT
+SITE = _os.path.join(ROOT, "docs")
 TAGS = os.path.join(SITE, "tags")
 
 refs = set()

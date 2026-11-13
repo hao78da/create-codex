@@ -16,8 +16,8 @@ import urllib.parse
 import urllib.request
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-TODO = os.path.join(ROOT, '_mcmod_todo.json')
-OUT = os.path.join(ROOT, '_matched.json')
+TODO = os.path.join(ROOT, 'tools', 'data', '_mcmod_todo.json')
+OUT = os.path.join(ROOT, 'tools', 'data', '_matched.json')
 
 _PROXY = os.environ.get('MODS_PROXY', '').strip()
 if _PROXY:

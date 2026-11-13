@@ -18,7 +18,7 @@ import os
 import re
 import zipfile
 
-SITE = ROOT
+SITE = _os.path.join(ROOT, "docs")
 TAGS = os.path.join(SITE, "tags")
 ICONS = os.path.join(SITE, "assets", "icons")
 OUT = _os.path.join(ROOT, 'tools', 'data')

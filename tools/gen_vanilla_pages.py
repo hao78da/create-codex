@@ -18,7 +18,7 @@ import sys
 
 RAW = _os.path.join(WORK, 'raw')
 OUT = os.path.join(RAW, "out")
-SITE = ROOT
+SITE = _os.path.join(ROOT, "docs")
 PAGES = os.path.join(SITE, "vanilla")
 
 sys.path.insert(0, RAW)

@@ -12,7 +12,7 @@ import urllib.request
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
-CF_OK = os.path.join(ROOT, '_cf_ok.json')
+CF_OK = os.path.join(ROOT, 'tools', 'data', '_cf_ok.json')
 RAW = os.path.join(ROOT, 'work', 'mods_intake')
 os.makedirs(RAW, exist_ok=True)
 

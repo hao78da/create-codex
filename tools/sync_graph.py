@@ -12,7 +12,7 @@ import os
 import re
 import html as _html
 
-SITE = ROOT
+SITE = _os.path.join(ROOT, "docs")
 IDX = os.path.join(SITE, "index.html")
 
 pages = sorted(

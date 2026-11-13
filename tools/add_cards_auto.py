@@ -10,7 +10,7 @@ import io
 import os
 import re
 
-SITE = ROOT
+SITE = _os.path.join(ROOT, "docs")
 MODS = os.path.join(SITE, "mods.html")
 
 html = io.open(MODS, encoding="utf-8").read()

@@ -14,8 +14,8 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 
-NS_MAP = os.path.join(ROOT, '_ns_map.json')
-MATCHED = os.path.join(ROOT, '_matched_ok.json')
+NS_MAP = os.path.join(ROOT, 'tools', 'data', '_ns_map.json')
+MATCHED = os.path.join(ROOT, 'tools', 'data', '_matched_ok.json')
 
 
 def esc(s):
@@ -48,7 +48,7 @@ def main():
             "         groups=[])," % (
                 slug, ns, esc(mr_title), esc(tag), esc(intro)))
 
-    out = os.path.join(ROOT, 'specs.txt')
+    out = os.path.join(ROOT, 'tools', 'data', 'specs.txt')
     io.open(out, 'w', encoding='utf-8', newline='\n').write('\n'.join(lines) + '\n')
     print('生成 %d 条 spec ->' % len(lines), out)
     print()

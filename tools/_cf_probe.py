@@ -16,8 +16,8 @@ import urllib.request
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
-TODO = os.path.join(ROOT, '_cf_todo.json')
-OUT = os.path.join(ROOT, '_cf_result.json')
+TODO = os.path.join(ROOT, 'tools', 'data', '_cf_todo.json')
+OUT = os.path.join(ROOT, 'tools', 'data', '_cf_result.json')
 
 _PROXY = os.environ.get('MODS_PROXY', '').strip()
 if _PROXY:

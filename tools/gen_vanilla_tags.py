@@ -21,7 +21,7 @@ import glob
 
 RAW = _os.path.join(WORK, 'raw')
 OUT = os.path.join(RAW, "out")
-SITE = ROOT
+SITE = _os.path.join(ROOT, "docs")
 TAG_DIR = os.path.join(RAW, "create", "Create-mc1.20.1-dev", "src", "generated", "resources", "data")
 
 

@@ -13,7 +13,7 @@ import re
 import urllib.parse
 import urllib.request
 
-SITE = ROOT
+SITE = _os.path.join(ROOT, "docs")
 ICONS = os.path.join(SITE, "assets", "icons")
 TPL = io.open(os.path.join(SITE, "vanilla", "bamboo.html"), encoding="utf-8").read()
 MC_ZH = json.load(io.open(os.path.join(DATA, "mc_zh.json"), encoding="utf-8"))

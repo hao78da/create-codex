@@ -12,7 +12,7 @@ import os
 import re
 import zipfile
 
-SITE = ROOT
+SITE = _os.path.join(ROOT, "docs")
 ICONS = os.path.join(SITE, "assets", "icons")
 OUT = os.path.join(SITE, "addon-ultimate-factory.html")
 JAR = os.path.join(WORK, "mods_intake", "create_ultimate_factory-2.2.4-forge-1.20.1.jar")

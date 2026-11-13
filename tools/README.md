@@ -54,6 +54,15 @@ python validate_all2.py       # 必须看到 broken 0
 - 批量/覆盖：往 `batches/` 里加文件，按文件名顺序合并，后写覆盖先写
 - 改完 `python gen_site.py` 重新生成
 
+## 站点输出目录（2026-11 起）
+
+站点成品不再放在仓库根目录，而是 **`docs/`**：
+
+- GitHub Pages 的发布源是 `main` 分支的 `/docs` 目录，站点根 = `docs/`
+- 公开 URL 不变：`docs/addon-xxx.html` → `https://hao78da.github.io/create-codex/addon-xxx.html`
+- 所有生成脚本的 `SITE` 常量都指向 `ROOT/docs`，直接跑就会写进 `docs/`；**不要在根目录手动生成页面**
+- 根目录只保留 `README.md`、`CONTRIBUTING.md`、`tools/`、`docs/` 和 git 配置
+
 ## 注意
 
 - 所有脚本用相对路径（`ROOT` = 仓库根目录），不要写死盘符

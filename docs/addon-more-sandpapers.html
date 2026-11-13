@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<title>Create: More Sandpapers · 附属模组 · Create Codex</title>
+<link rel="stylesheet" href="assets/style.css">
+<style>
+.wrap{max-width:1150px}
+.hero{padding:40px 0 14px;text-align:center}
+.hero img.big{width:96px;height:96px;border-radius:18px;background:#0d0b09}
+.hero h1{font-size:32px;margin:12px 0 4px}
+.hero .sub{color:var(--brass);font-size:14px;letter-spacing:.3em}
+.hero .tag{color:var(--muted);margin-top:8px}
+.grid-items{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:10px;align-items:start}
+.card{display:block;padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+.card .ci{float:left;width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:#14110c;border-radius:8px}
+.card .ci img{width:34px;height:34px;object-fit:contain;image-rendering:pixelated}
+.card .t{margin-left:54px;min-height:44px;display:flex;flex-direction:column;justify-content:center;gap:2px}
+.card .t b{font-size:13px}
+.card .t small{color:var(--muted);font-size:10px;word-break:break-all}
+.card .rec{clear:both;margin-top:10px;padding-top:8px;border-top:1px solid var(--line);display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.grid{display:grid;grid-template-columns:repeat(3,40px);gap:3px}
+.cell,.cell *{box-shadow:none!important;outline:none}
+.cell{width:40px;height:40px;display:flex;align-items:center;justify-content:center;background:#14110c;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.cell.empty{border-style:dashed;opacity:.45}
+.cell img{width:30px;height:30px;object-fit:contain;image-rendering:pixelated}
+.cell .ch{font-size:0;border:0;background:none;padding:0}
+.chips{display:flex;flex-wrap:wrap;gap:4px}
+.cell .ch:not(:has(img)){max-width:34px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:9px;line-height:1.1}
+.ch{display:inline-flex;align-items:center;gap:4px;font-size:11px;padding:3px 7px;border:1px solid var(--line);border-radius:999px;background:#14110c}
+.ch img{width:18px;height:18px;object-fit:contain;image-rendering:pixelated}
+.mach{color:var(--brass);font-size:10px}
+.arw{color:var(--muted)}
+.note2{color:var(--muted);font-size:11px}
+.ver{margin:18px 0;padding:10px 12px;border-left:2px solid var(--brass);background:#14110c;color:var(--muted);font-size:12px;line-height:1.7}
+</style>
+
+
+<style>
+.grp{margin:26px 0 0}
+.grp>summary.grpsum{cursor:pointer;list-style:none;display:flex;align-items:center;gap:10px;
+  font-size:17px;font-weight:800;color:#e9dcc2;padding:6px 0;user-select:none}
+.grp>summary.grpsum::-webkit-details-marker{display:none}
+.grp>summary.grpsum::before{content:'▸';color:var(--brass);font-size:14px;transition:transform .15s}
+.grp[open]>summary.grpsum::before{transform:rotate(90deg)}
+.grp>summary.grpsum .cnt{font-size:12px;color:var(--muted);background:#1a1510;border:1px solid var(--line);
+  border-radius:20px;padding:1px 8px;font-weight:600}
+.itsearch{display:flex;align-items:center;gap:12px;margin:22px 0 4px}
+.itsearch input{flex:1;max-width:420px;background:#14110c;border:1px solid var(--line);border-radius:10px;
+  padding:9px 12px;color:#e9dcc2;font-size:13.5px;font-family:inherit}
+.itsearch input:focus{outline:none;border-color:var(--brass)}
+.itcount{color:var(--muted);font-size:12px}
+@media(max-width:620px){.itsearch input{max-width:none}}
+</style>
+</head><body>
+<header class="top"><div class="wrap"><span class="logo"><span class="gear"></span>CREATE CODEX</span>
+<a class="backbtn" href="index.html">← 返回关系图</a></div></header>
+<main class="wrap">
+<div class="hero"><img class="big" src="assets/icons/mod_create_more_sandpapers.png" alt="">
+<h1>Create: More Sandpapers</h1><div class="sub">附属模组</div><div class="tag">Create: More Sandpapers 附属模组</div></div>
+<div class="blk"><h2>这是什么</h2><p>该模组为 灵魂沙 以及来自 超多生物群系 、 你将去的生物群系 的沙子添加了对应的 砂纸 。</p></div>
+<div class="ver"><b>命名空间：</b><code>createsandpapers</code>　<b>1.20.1 版本：</b>本页物品与配方直接取自该版本的 jar。</div>
+<div class="blk"><h2>全部物品<span class="cnt">20</span></h2><div class="grid-items"><div class="card" id="it-createsandpapers-arid_sand_paper"><div class="ci"><img src="assets/icons/createsandpapers_arid_sand_paper.png" alt=""></div><div class="t"><b>Arid Sand Paper</b><small>createsandpapers:arid_sand_paper</small></div><div class="rec"><div class="chips"><a class="ch" href="vanilla/paper.html" title="paper"><img src="assets/icons/minecraft_paper.png" alt="">paper</a><span class="ch tag"><img src="assets/icons/createsandpapers_arid_sand_paper.png" alt="">creates arid sandpaper</span></div><div class="arw">→</div><a href="#it-createsandpapers-arid_sand_paper" class="ch"><img src="assets/icons/createsandpapers_arid_sand_paper.png" alt="">Arid Sand Paper</a><span class="mach">工作台</span></div></div><div class="card" id="it-createsandpapers-black_sand_paper"><div class="ci"><img src="assets/icons/createsandpapers_black_sand_paper.png" alt=""></div><div class="t"><b>Black Sand Paper</b><small>createsandpapers:black_sand_paper</small></div><div class="rec"><div class="chips"><a class="ch" href="vanilla/paper.html" title="paper"><img src="assets/icons/minecraft_paper.png" alt="">paper</a><span class="ch tag"><img src="assets/icons/createsandpapers_arid_sand_paper.png" alt="">creates black sandpaper</span></div><div class="arw">→</div><a href="#it-createsandpapers-black_sand_paper" class="ch"><img src="assets/icons/createsandpapers_black_sand_paper.png" alt="">Black Sand Paper</a><span class="mach">工作台</span></div></div><div class="card" id="it-createsandpapers-blue_sand_paper"><div class="ci"><img src="assets/icons/createsandpapers_blue_sand_paper.png" alt=""></div><div class="t"><b>Blue Sand Paper</b><small>createsandpapers:blue_sand_paper</small></div><div class="rec"><div class="chips"><a class="ch" href="vanilla/paper.html" title="paper"><img src="assets/icons/minecraft_paper.png" alt="">paper</a><span class="ch tag"><img src="assets/icons/createsandpapers_arid_sand_paper.png" alt="">creates blue sandpaper</span></div><div class="arw">→</div><a href="#it-createsandpapers-blue_sand_paper" class="ch"><img src="assets/icons/createsandpapers_blue_sand_paper.png" alt="">Blue Sand Paper</a><span class="mach">工作台</span></div></div><div class="card" id="it-createsandpapers-brown_sand_paper"><div class="ci"><img src="assets/icons/createsandpapers_brown_sand_paper.png" alt=""></div><div class="t"><b>Brown Sand Paper</b><small>createsandpapers:brown_sand_paper</small></div><div class="rec"><div class="chips"><a class="ch" href="vanilla/paper.html" title="paper"><img src="assets/icons/minecraft_paper.png" alt="">paper</a><span class="ch tag"><img src="assets/icons/createsandpapers_arid_sand_paper.png" alt="">creates brown sandpaper</span></div><div class="arw">→</div><a href="#it-createsandpapers-brown_sand_paper" class="ch"><img src="assets/icons/createsandpapers_brown_sand_paper.png" alt="">Brown Sand Paper</a><span class="mach">工作台</span></div></div><div class="card" id="it-createsandpapers-coral_sand_paper"><div class="ci"><img src="assets/icons/createsandpapers_coral_sand_paper.png" alt=""></div><div class="t"><b>Coral Sand Paper</b><small>createsandpapers:coral_sand_paper</small></div><div class="rec"><div class="chips"><a class="ch" href="vanilla/paper.html" title="paper"><img src="assets/icons/minecraft_paper.png" alt="">paper</a><span class="ch tag"><img src="assets/icons/createsandpapers_arid_sand_paper.png" alt="">creates coral sandpaper</span></div><div class="arw">→</div><a href="#it-createsandpapers-coral_sand_paper" class="ch"><img src="assets/icons/createsandpapers_coral_sand_paper.png" alt="">Coral Sand Paper</a><span class="mach">工作台</span></div></div><div class="card" id="it-createsandpapers-foamy_sand_paper"><div class="ci"><img src="assets/icons/createsandpapers_foamy_sand_paper.png" alt=""></div><div class="t"><b>Foamy Sand Paper</b><small>createsandpapers:foamy_sand_paper</small></div><div class="rec"><div class="chips"><a class="ch" href="vanilla/paper.html" title="paper"><img src="assets/icons/minecraft_paper.png" alt="">paper</a><span class="ch tag"><img src="assets/icons/createsandpapers_arid_sand_paper.png" alt="">creates foamy sandpaper</span></div><div class="arw">→</div><a href="#it-createsandpapers-foamy_sand_paper" class="ch"><img src="assets/icons/createsandpapers_foamy_sand_paper.png" alt="">Foamy Sand Paper</a><span class="mach">工作台</span></div></div><div class="card" id="it-createsandpapers-green_sand_paper"><div class="ci"><img src="assets/icons/createsandpapers_green_sand_paper.png" alt=""></div><div class="t"><b>Green Sand Paper</b><small>createsandpapers:green_sand_paper</small></div><div class="rec"><div class="chips"><a class="ch" href="vanilla/paper.html" title="paper"><img src="assets/icons/minecraft_paper.png" alt="">paper</a><span class="ch tag"><img src="assets/icons/createsandpapers_arid_sand_paper.png" alt="">creates green sandpaper</span></div><div class="arw">→</div><a href="#it-createsandpapers-green_sand_paper" class="ch"><img src="assets/icons/createsandpapers_green_sand_paper.png" alt="">Green Sand Paper</a><span class="mach">工作台</span></div></div><div class="card" id="it-createsandpapers-mars_sand_paper"><div class="ci"><img src="assets/icons/createsandpapers_mars_sand_paper.png" alt=""></div><div class="t"><b>Mars Sand Paper</b><small>createsandpapers:mars_sand_paper</small></div><div class="rec"><div class="chips"><a class="ch" href="vanilla/paper.html" title="paper"><img src="assets/icons/minecraft_paper.png" alt="">paper</a><span class="ch tag"><img src="assets/icons/createsandpapers_arid_sand_paper.png" alt="">creates mars sandpaper</span></div><div class="arw">→</div><a href="#it-createsandpapers-mars_sand_paper" class="ch"><img src="assets/icons/createsandpapers_mars_sand_paper.png" alt="">Mars Sand Paper</a><span class="mach">工作台</span></div></div><div class="card" id="it-createsandpapers-mineral_sand_paper"><div class="ci"><img src="assets/icons/createsandpapers_mineral_sand_paper.png" alt=""></div><div class="t"><b>Mineral Sand Paper</b><small>createsandpapers:mineral_sand_paper</small></div><div class="rec"><div class="chips"><a class="ch" href="vanilla/paper.html" title="paper"><img src="assets/icons/minecraft_paper.png" alt="">paper</a><span class="ch tag"><img src="assets/icons/createsandpapers_arid_sand_paper.png" alt="">creates mineral sandpaper</span></div><div class="arw">→</div><a href="#it-createsandpapers-mineral_sand_paper" class="ch"><img src="assets/icons/createsandpapers_mineral_sand_paper.png" alt="">Mineral Sand Paper</a><span class="mach">工作台</span></div></div><div class="card" id="it-createsandpapers-moon_sand_paper"><div class="ci"><img src="assets/icons/createsandpapers_moon_sand_paper.png" alt=""></div><div class="t"><b>Moon Sand Paper</b><small>createsandpapers:moon_sand_paper</small></div><div class="rec"><div class="chips"><a class="ch" href="vanilla/paper.html" title="paper"><img src="assets/icons/minecraft_paper.png" alt="">paper</a><span class="ch tag"><img src="assets/icons/createsandpapers_arid_sand_paper.png" alt="">creates moon sandpaper</span></div><div class="arw">→</div><a href="#it-createsandpapers-moon_sand_paper" class="ch"><img src="assets/icons/createsandpapers_moon_sand_paper.png" alt="">Moon Sand Paper</a><span class="mach">工作台</span></div></div><div class="card" id="it-createsandpapers-orange_sand_paper"><div class="ci"><img src="assets/icons/createsandpapers_orange_sand_paper.png" alt=""></div><div class="t"><b>Orange Sand Paper</b><small>createsandpapers:orange_sand_paper</small></div><div class="rec"><div class="chips"><a class="ch" href="vanilla/paper.html" title="paper"><img src="assets/icons/minecraft_paper.png" alt="">paper</a><span class="ch tag"><img src="assets/icons/createsandpapers_arid_sand_paper.png" alt="">creates orange sandpaper</span></div><div class="arw">→</div><a href="#it-createsandpapers-orange_sand_paper" class="ch"><img src="assets/icons/createsandpapers_orange_sand_paper.png" alt="">Orange Sand Paper</a><span class="mach">工作台</span></div></div><div class="card" id="it-createsandpapers-pink_sand_paper"><div class="ci"><img src="assets/icons/createsandpapers_pink_sand_paper.png" alt=""></div><div class="t"><b>Pink Sand Paper</b><small>createsandpapers:pink_sand_paper</small></div><div class="rec"><div class="chips"><a class="ch" href="vanilla/paper.html" title="paper"><img src="assets/icons/minecraft_paper.png" alt="">paper</a><span class="ch tag"><img src="assets/icons/createsandpapers_arid_sand_paper.png" alt="">creates pink sandpaper</span></div><div class="arw">→</div><a href="#it-createsandpapers-pink_sand_paper" class="ch"><img src="assets/icons/createsandpapers_pink_sand_paper.png" alt="">Pink Sand Paper</a><span class="mach">工作台</span></div></div><div class="card" id="it-createsandpapers-quartzite_sand_paper"><div class="ci"><img src="assets/icons/createsandpapers_quartzite_sand_paper.png" alt=""></div><div class="t"><b>Quartzite Sand Paper</b><small>createsandpapers:quartzite_sand_paper</small></div><div class="rec"><div class="chips"><a class="ch" href="vanilla/paper.html" title="paper"><img src="assets/icons/minecraft_paper.png" alt="">paper</a><span class="ch tag"><img src="assets/icons/createsandpapers_arid_sand_paper.png" alt="">creates quartzite sandpaper</span></div><div class="arw">→</div><a href="#it-createsandpapers-quartzite_sand_paper" class="ch"><img src="assets/icons/createsandpapers_quartzite_sand_paper.png" alt="">Quartzite Sand Paper</a><span class="mach">工作台</span></div></div><div class="card" id="it-createsandpapers-red_arid_sand_paper"><div class="ci"><img src="assets/icons/createsandpapers_red_arid_sand_paper.png" alt=""></div><div class="t"><b>Red Arid Sand Paper</b><small>createsandpapers:red_arid_sand_paper</small></div><div class="rec"><div class="chips"><a class="ch" href="vanilla/paper.html" title="paper"><img src="assets/icons/minecraft_paper.png" alt="">paper</a><span class="ch tag"><img src="assets/icons/createsandpapers_arid_sand_paper.png" alt="">creates red arid sandpaper</span></div><div class="arw">→</div><a href="#it-createsandpapers-red_arid_sand_paper" class="ch"><img src="assets/icons/createsandpapers_red_arid_sand_paper.png" alt="">Red Arid Sand Paper</a><span class="mach">工作台</span></div></div><div class="card" id="it-createsandpapers-soul_sand_paper"><div class="ci"><img src="assets/icons/createsandpapers_soul_sand_paper.png" alt=""></div><div class="t"><b>Soul Sand Paper</b><small>createsandpapers:soul_sand_paper</small></div><div class="rec"><div class="chips"><a class="ch" href="vanilla/paper.html" title="paper"><img src="assets/icons/minecraft_paper.png" alt="">paper</a><span class="ch tag"><img src="assets/icons/createsandpapers_arid_sand_paper.png" alt="">creates soul sandpaper</span></div><div class="arw">→</div><a href="#it-createsandpapers-soul_sand_paper" class="ch"><img src="assets/icons/createsandpapers_soul_sand_paper.png" alt="">Soul Sand Paper</a><span class="mach">工作台</span></div></div><div class="card" id="it-createsandpapers-soulless_sand_paper"><div class="ci"><img src="assets/icons/createsandpapers_soulless_sand_paper.png" alt=""></div><div class="t"><b>Soulless Sand Paper</b><small>createsandpapers:soulless_sand_paper</small></div><div class="rec"><div class="chips"><a class="ch" href="vanilla/paper.html" title="paper"><img src="assets/icons/minecraft_paper.png" alt="">paper</a><span class="ch tag"><img src="assets/icons/createsandpapers_arid_sand_paper.png" alt="">creates soulless sandpaper</span></div><div class="arw">→</div><a href="#it-createsandpapers-soulless_sand_paper" class="ch"><img src="assets/icons/createsandpapers_soulless_sand_paper.png" alt="">Soulless Sand Paper</a><span class="mach">工作台</span></div></div><div class="card" id="it-createsandpapers-venus_sand_paper"><div class="ci"><img src="assets/icons/createsandpapers_venus_sand_paper.png" alt=""></div><div class="t"><b>Venus Sand Paper</b><small>createsandpapers:venus_sand_paper</small></div><div class="rec"><div class="chips"><a class="ch" href="vanilla/paper.html" title="paper"><img src="assets/icons/minecraft_paper.png" alt="">paper</a><span class="ch tag"><img src="assets/icons/createsandpapers_arid_sand_paper.png" alt="">creates venus sandpaper</span></div><div class="arw">→</div><a href="#it-createsandpapers-venus_sand_paper" class="ch"><img src="assets/icons/createsandpapers_venus_sand_paper.png" alt="">Venus Sand Paper</a><span class="mach">工作台</span></div></div><div class="card" id="it-createsandpapers-violet_sand_paper"><div class="ci"><img src="assets/icons/createsandpapers_violet_sand_paper.png" alt=""></div><div class="t"><b>Violet Sand Paper</b><small>createsandpapers:violet_sand_paper</small></div><div class="rec"><div class="chips"><a class="ch" href="vanilla/paper.html" title="paper"><img src="assets/icons/minecraft_paper.png" alt="">paper</a><span class="ch tag"><img src="assets/icons/createsandpapers_arid_sand_paper.png" alt="">creates violet sandpaper</span></div><div class="arw">→</div><a href="#it-createsandpapers-violet_sand_paper" class="ch"><img src="assets/icons/createsandpapers_violet_sand_paper.png" alt="">Violet Sand Paper</a><span class="mach">工作台</span></div></div><div class="card" id="it-createsandpapers-white_sand_paper"><div class="ci"><img src="assets/icons/createsandpapers_white_sand_paper.png" alt=""></div><div class="t"><b>White Sand Paper</b><small>createsandpapers:white_sand_paper</small></div><div class="rec"><div class="chips"><a class="ch" href="vanilla/paper.html" title="paper"><img src="assets/icons/minecraft_paper.png" alt="">paper</a><span class="ch tag"><img src="assets/icons/createsandpapers_arid_sand_paper.png" alt="">creates white sandpaper</span></div><div class="arw">→</div><a href="#it-createsandpapers-white_sand_paper" class="ch"><img src="assets/icons/createsandpapers_white_sand_paper.png" alt="">White Sand Paper</a><span class="mach">工作台</span></div></div><div class="card" id="it-createsandpapers-windswept_sand_paper"><div class="ci"><img src="assets/icons/createsandpapers_windswept_sand_paper.png" alt=""></div><div class="t"><b>Windswept Sand Paper</b><small>createsandpapers:windswept_sand_paper</small></div><div class="rec"><div class="chips"><a class="ch" href="vanilla/paper.html" title="paper"><img src="assets/icons/minecraft_paper.png" alt="">paper</a><span class="ch tag"><img src="assets/icons/createsandpapers_arid_sand_paper.png" alt="">creates windswept sandpaper</span></div><div class="arw">→</div><a href="#it-createsandpapers-windswept_sand_paper" class="ch"><img src="assets/icons/createsandpapers_windswept_sand_paper.png" alt="">Windswept Sand Paper</a><span class="mach">工作台</span></div></div></div></div>
+</main>
+<footer class="wrap foot">数据与图标来自 Create: More Sandpapers 的 1.20.1 jar · 本页不属于 Create 本体图鉴</footer>
+<script src="assets/anchors.js" defer></script>
+
+
+<script>
+(function(){
+  var items = document.querySelectorAll('.grid-items');
+  if (!items.length) return;
+  var total = document.querySelectorAll('.card').length;
+
+  // 1) 每个分类包成 <details>
+  var groups = [];
+  items.forEach(function(g){
+    var h = g.previousElementSibling;
+    if (!h || h.tagName !== 'H2') return;
+    var d = document.createElement('details');
+    d.open = true;
+    d.className = 'grp';
+    h.parentNode.insertBefore(d, h);
+    var s = document.createElement('summary');
+    s.className = 'grpsum';
+    s.innerHTML = h.innerHTML;
+    d.appendChild(s);
+    d.appendChild(g);
+    h.remove();
+    groups.push(d);
+  });
+
+  // 2) 搜索框
+  var first = groups[0] || items[0].closest('.blk');
+  if (!first) return;
+  var box = document.createElement('div');
+  box.className = 'itsearch';
+  box.innerHTML = '<input type="search" placeholder="搜索物品名 / ID…" aria-label="搜索物品"><span class="itcount"></span>';
+  var host = (groups[0] || items[0]).parentNode;
+  host.insertBefore(box, (groups[0] || items[0]));
+  var input = box.querySelector('input');
+  var cnt = box.querySelector('.itcount');
+  var cards = document.querySelectorAll('.card');
+
+  function setCount(vis){
+    cnt.textContent = vis === total ? ('共 ' + total + ' 个物品') : (vis + ' / ' + total);
+  }
+  setCount(total);
+
+  input.addEventListener('input', function(){
+    var q = input.value.trim().toLowerCase();
+    var vis = 0;
+    groups.forEach(function(d){
+      var hit = 0;
+      d.querySelectorAll('.card').forEach(function(c){
+        var t = (c.textContent || '').toLowerCase();
+        var ok = !q || t.indexOf(q) >= 0;
+        c.style.display = ok ? '' : 'none';
+        if (ok) hit++;
+      });
+      d.style.display = hit ? '' : 'none';
+      if (q && hit) d.open = true;
+      vis += hit;
+    });
+    setCount(vis);
+  });
+})();
+</script>
+</body></html>

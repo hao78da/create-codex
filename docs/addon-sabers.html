@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<title>Create Sabers · 附属模组 · Create Codex</title>
+<link rel="stylesheet" href="assets/style.css">
+<style>
+.wrap{max-width:1150px}
+.hero{padding:40px 0 14px;text-align:center}
+.hero img.big{width:96px;height:96px;border-radius:18px;background:#0d0b09}
+.hero h1{font-size:32px;margin:12px 0 4px}
+.hero .sub{color:var(--brass);font-size:14px;letter-spacing:.3em}
+.hero .tag{color:var(--muted);margin-top:8px}
+.grid-items{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:10px;align-items:start}
+.card{display:block;padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+.card .ci{float:left;width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:#14110c;border-radius:8px}
+.card .ci img{width:34px;height:34px;object-fit:contain;image-rendering:pixelated}
+.card .t{margin-left:54px;min-height:44px;display:flex;flex-direction:column;justify-content:center;gap:2px}
+.card .t b{font-size:13px}
+.card .t small{color:var(--muted);font-size:10px;word-break:break-all}
+.card .rec{clear:both;margin-top:10px;padding-top:8px;border-top:1px solid var(--line);display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.grid{display:grid;grid-template-columns:repeat(3,40px);gap:3px}
+.cell,.cell *{box-shadow:none!important;outline:none}
+.cell{width:40px;height:40px;display:flex;align-items:center;justify-content:center;background:#14110c;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.cell.empty{border-style:dashed;opacity:.45}
+.cell img{width:30px;height:30px;object-fit:contain;image-rendering:pixelated}
+.cell .ch{font-size:0;border:0;background:none;padding:0}
+.chips{display:flex;flex-wrap:wrap;gap:4px}
+.cell .ch:not(:has(img)){max-width:34px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:9px;line-height:1.1}
+.ch{display:inline-flex;align-items:center;gap:4px;font-size:11px;padding:3px 7px;border:1px solid var(--line);border-radius:999px;background:#14110c}
+.ch img{width:18px;height:18px;object-fit:contain;image-rendering:pixelated}
+.mach{color:var(--brass);font-size:10px}
+.arw{color:var(--muted)}
+.note2{color:var(--muted);font-size:11px}
+.ver{margin:18px 0;padding:10px 12px;border-left:2px solid var(--brass);background:#14110c;color:var(--muted);font-size:12px;line-height:1.7}
+</style>
+
+
+<style>
+.grp{margin:26px 0 0}
+.grp>summary.grpsum{cursor:pointer;list-style:none;display:flex;align-items:center;gap:10px;
+  font-size:17px;font-weight:800;color:#e9dcc2;padding:6px 0;user-select:none}
+.grp>summary.grpsum::-webkit-details-marker{display:none}
+.grp>summary.grpsum::before{content:'▸';color:var(--brass);font-size:14px;transition:transform .15s}
+.grp[open]>summary.grpsum::before{transform:rotate(90deg)}
+.grp>summary.grpsum .cnt{font-size:12px;color:var(--muted);background:#1a1510;border:1px solid var(--line);
+  border-radius:20px;padding:1px 8px;font-weight:600}
+.itsearch{display:flex;align-items:center;gap:12px;margin:22px 0 4px}
+.itsearch input{flex:1;max-width:420px;background:#14110c;border:1px solid var(--line);border-radius:10px;
+  padding:9px 12px;color:#e9dcc2;font-size:13.5px;font-family:inherit}
+.itsearch input:focus{outline:none;border-color:var(--brass)}
+.itcount{color:var(--muted);font-size:12px}
+@media(max-width:620px){.itsearch input{max-width:none}}
+</style>
+</head><body>
+<header class="top"><div class="wrap"><span class="logo"><span class="gear"></span>CREATE CODEX</span>
+<a class="backbtn" href="index.html">← 返回关系图</a></div></header>
+<main class="wrap">
+<div class="hero"><img class="big" src="assets/icons/mod_create_sabers.png" alt="">
+<h1>Create Sabers</h1><div class="sub">附属模组</div><div class="tag">光剑据剑柄材料可分为 黄铜 、 铜 、 锌…</div></div>
+<div class="blk"><h2>这是什么</h2><p>光剑据剑柄材料可分为 黄铜 、 铜 、 锌 三种（同时区分基础数值），玩家也可以将光剑与四个染料合成，把光剑染成对应的颜色（有 9 种颜色可供选择）；</p></div>
+<div class="ver"><b>命名空间：</b><code>create_sabers</code>　<b>1.20.1 版本：</b>本页物品与配方直接取自该版本的 jar。</div>
+<div class="blk"><h2>全部物品<span class="cnt">13</span></h2><div class="grid-items"><div class="card" id="it-create_sabers-amethyst_dust"><div class="ci"><img src="assets/icons/create_sabers_amethyst_dust.png" alt=""></div><div class="t"><b>Amethyst Dust</b><small>create_sabers:amethyst_dust</small></div><div class="rec"><div class="chips"><a class="ch" href="vanilla/amethyst_shard.html" title="amethyst shard"><img src="assets/icons/minecraft_amethyst_shard.png" alt="">amethyst shard</a></div><div class="arw">→</div><a href="#it-create_sabers-amethyst_dust" class="ch"><img src="assets/icons/create_sabers_amethyst_dust.png" alt="">Amethyst Dust</a><span class="mach">机械动力</span></div></div><div class="card" id="it-create_sabers-banner_spacer"><div class="ci"><img src="assets/icons/create_sabers_banner_spacer.png" alt=""></div><div class="t"><b></b><small>create_sabers:banner_spacer</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-create_sabers-brass_saber"><div class="ci"><img src="assets/icons/_unknown.png" alt="" loading="lazy"></div><div class="t"><b>Brass Saber</b><small>create_sabers:brass_saber</small></div><div class="rec"><div class="chips"></div><div class="arw">→</div><a href="#it-create_sabers-brass_saber" class="ch">Brass Saber</a><span class="mach">机械动力</span></div></div><div class="card" id="it-create_sabers-brass_saber_galaxy"><div class="ci"><img src="assets/icons/_unknown.png" alt="" loading="lazy"></div><div class="t"><b>Galaxy Brass Saber</b><small>create_sabers:brass_saber_galaxy</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-create_sabers-copper_saber"><div class="ci"><img src="assets/icons/_unknown.png" alt="" loading="lazy"></div><div class="t"><b>Copper Saber</b><small>create_sabers:copper_saber</small></div><div class="rec"><div class="chips"></div><div class="arw">→</div><a href="#it-create_sabers-copper_saber" class="ch">Copper Saber</a><span class="mach">机械动力</span></div></div><div class="card" id="it-create_sabers-double_brass_saber"><div class="ci"><img src="assets/icons/_unknown.png" alt="" loading="lazy"></div><div class="t"><b>Double Brass Saber</b><small>create_sabers:double_brass_saber</small></div><div class="rec"><div class="chips"></div><div class="arw">→</div><a href="#it-create_sabers-double_brass_saber" class="ch">Double Brass Saber</a><span class="mach">机械动力</span></div></div><div class="card" id="it-create_sabers-double_copper_saber"><div class="ci"><img src="assets/icons/_unknown.png" alt="" loading="lazy"></div><div class="t"><b>Double Copper Saber</b><small>create_sabers:double_copper_saber</small></div><div class="rec"><div class="chips"></div><div class="arw">→</div><a href="#it-create_sabers-double_copper_saber" class="ch">Double Copper Saber</a><span class="mach">机械动力</span></div></div><div class="card" id="it-create_sabers-double_zinc_saber"><div class="ci"><img src="assets/icons/_unknown.png" alt="" loading="lazy"></div><div class="t"><b>Double Zinc Saber</b><small>create_sabers:double_zinc_saber</small></div><div class="rec"><div class="chips"></div><div class="arw">→</div><a href="#it-create_sabers-double_zinc_saber" class="ch">Double Zinc Saber</a><span class="mach">机械动力</span></div></div><div class="card" id="it-create_sabers-kyber_crystal"><div class="ci"><img src="assets/icons/create_sabers_kyber_crystal.png" alt=""></div><div class="t"><b>Kyber Crystal</b><small>create_sabers:kyber_crystal</small></div><div class="rec"><div class="chips"></div><div class="arw">→</div><a href="#it-create_sabers-kyber_crystal" class="ch"><img src="assets/icons/create_sabers_kyber_crystal.png" alt="">Kyber Crystal</a><span class="mach">机械动力</span></div></div><div class="card" id="it-create_sabers-saber_engine"><div class="ci"><img src="assets/icons/create_sabers_saber_engine.png" alt=""></div><div class="t"><b>Saber Engine</b><small>create_sabers:saber_engine</small></div><div class="rec"><div class="chips"></div><div class="arw">→</div><a href="#it-create_sabers-saber_engine" class="ch"><img src="assets/icons/create_sabers_saber_engine.png" alt="">Saber Engine</a><span class="mach">机械动力</span></div></div><div class="card" id="it-create_sabers-saber_engine_incomplete"><div class="ci"><img src="assets/icons/create_sabers_saber_engine_incomplete.png" alt=""></div><div class="t"><b>Incomplete Saber Engine</b><small>create_sabers:saber_engine_incomplete</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-create_sabers-saber_table"><div class="ci"><img src="assets/icons/create_sabers_saber_table.png" alt=""></div><div class="t"><b>Saber Table</b><small>create_sabers:saber_table</small></div><div class="rec"><div class="grid" style="grid-template-columns:repeat(3,1fr)"><div class="cell empty"></div><div class="cell empty"></div><div class="cell empty"></div><div class="cell empty"></div><div class="cell"><a class="celllink" href="#it-create_sabers-saber_engine" title="Saber Engine"><img src="assets/icons/create_sabers_saber_engine.png" alt="">Saber Engine</a></div><div class="cell empty"></div><div class="cell"><a class="ch" href="items/andesite_alloy.html" title="andesite alloy"><img src="assets/icons/create_andesite_alloy.png" alt="">andesite alloy</a></div><div class="cell"><a class="ch" href="items/depot.html" title="depot"><img src="assets/icons/3d_create_depot.png" alt="">depot</a></div><div class="cell"><a class="ch" href="items/andesite_alloy.html" title="andesite alloy"><img src="assets/icons/create_andesite_alloy.png" alt="">andesite alloy</a></div></div><div class="arw">→</div><a href="#it-create_sabers-saber_table" class="ch"><img src="assets/icons/create_sabers_saber_table.png" alt="">Saber Table</a><span class="mach">工作台</span></div></div><div class="card" id="it-create_sabers-zinc_saber"><div class="ci"><img src="assets/icons/_unknown.png" alt="" loading="lazy"></div><div class="t"><b>Zinc Saber</b><small>create_sabers:zinc_saber</small></div><div class="rec"><div class="chips"></div><div class="arw">→</div><a href="#it-create_sabers-zinc_saber" class="ch">Zinc Saber</a><span class="mach">机械动力</span></div></div></div></div>
+</main>
+<footer class="wrap foot">数据与图标来自 Create Sabers 的 1.20.1 jar · 本页不属于 Create 本体图鉴</footer>
+<script src="assets/anchors.js" defer></script>
+
+
+<script>
+(function(){
+  var items = document.querySelectorAll('.grid-items');
+  if (!items.length) return;
+  var total = document.querySelectorAll('.card').length;
+
+  // 1) 每个分类包成 <details>
+  var groups = [];
+  items.forEach(function(g){
+    var h = g.previousElementSibling;
+    if (!h || h.tagName !== 'H2') return;
+    var d = document.createElement('details');
+    d.open = true;
+    d.className = 'grp';
+    h.parentNode.insertBefore(d, h);
+    var s = document.createElement('summary');
+    s.className = 'grpsum';
+    s.innerHTML = h.innerHTML;
+    d.appendChild(s);
+    d.appendChild(g);
+    h.remove();
+    groups.push(d);
+  });
+
+  // 2) 搜索框
+  var first = groups[0] || items[0].closest('.blk');
+  if (!first) return;
+  var box = document.createElement('div');
+  box.className = 'itsearch';
+  box.innerHTML = '<input type="search" placeholder="搜索物品名 / ID…" aria-label="搜索物品"><span class="itcount"></span>';
+  var host = (groups[0] || items[0]).parentNode;
+  host.insertBefore(box, (groups[0] || items[0]));
+  var input = box.querySelector('input');
+  var cnt = box.querySelector('.itcount');
+  var cards = document.querySelectorAll('.card');
+
+  function setCount(vis){
+    cnt.textContent = vis === total ? ('共 ' + total + ' 个物品') : (vis + ' / ' + total);
+  }
+  setCount(total);
+
+  input.addEventListener('input', function(){
+    var q = input.value.trim().toLowerCase();
+    var vis = 0;
+    groups.forEach(function(d){
+      var hit = 0;
+      d.querySelectorAll('.card').forEach(function(c){
+        var t = (c.textContent || '').toLowerCase();
+        var ok = !q || t.indexOf(q) >= 0;
+        c.style.display = ok ? '' : 'none';
+        if (ok) hit++;
+      });
+      d.style.display = hit ? '' : 'none';
+      if (q && hit) d.open = true;
+      vis += hit;
+    });
+    setCount(vis);
+  });
+})();
+</script>
+</body></html>

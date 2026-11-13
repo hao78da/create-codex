@@ -1,0 +1,60 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>层叠皓蓝石 — Create 机械动力图鉴</title>
+<link rel="preload" href="../assets/fonts/Minecraft.ttf" as="font" crossorigin>
+<link rel="stylesheet" href="../assets/style.css">
+</head><body><header class="top"><div class="wrap"><a class="logo" href="../index.html"><span class="gear"></span><span>CREATE CODEX<small>机械动力图鉴</small></span></a><nav><a href="../tags.html">标签</a><a href="https://github.com/Creators-of-Create/Create" target="_blank" rel="noopener">源码</a></nav></div></header><main class="wrap rise"><div class="crumb"><a href="../index.html">首页</a> / <a href="../catalog.html">全部物品</a> / 装饰与建筑 / <span>层叠皓蓝石</span></div><div class="item-hero"><img class="big" src="../assets/icons/create_layered_asurine.png" alt=""><div><h1>层叠皓蓝石</h1><div class="en">Layered Asurine</div><div class="idline"><span class="copyid">create:layered_asurine</span><span class="badge">方块</span><a class="badge" href="../catalog.html#cat-decor">装饰与建筑</a></div></div></div><p class="tagline">层叠皓蓝石：把地层横着切开。</p><section class="blk"><h2>参数</h2><div class="params"><div class="param"><span>材质</span><b>皓蓝石</b></div><div class="param"><span>形制</span><b>层叠</b></div><div class="param"><span>纹理</span><b>横向条带</b></div></div></section><section class="blk"><h2>详细教程</h2><div class="prose"><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">怎么获得</h3><p>皓蓝石原石进切石机，除了切制，还能直接切出<strong>层叠皓蓝石</strong>，同样 1:1。它是这一族里的一档，和整块、柱一样能互相切，一块换一块；但层理只此一种，切出去就只剩层叠。</p><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">怎么用</h3><p>表面是横向条带，像被剖开的沉积层。<strong>崖壁、剖面、地下洞窟的侧壁</strong>是它的主场：几层叠着摆，高度差一拉开，就像天然的岩层。横过来贴在机器外壳上，还能当<strong>散热片</strong>的装饰，条带方向正好和气流一致。</p><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">搭配与坑</h3><p>单独立一面会像墙纸，得靠高低差才出效果——错开一两格、或者和柱子竖着拼，条带才会「断」，看起来才像石头。皓蓝石的条带偏冷，配<strong>滴水石</strong>那种暖黄会形成明显的地层对比，一冷一暖像两种矿物交错。层叠块横放和竖放的条带方向不同，做崖壁时最好统一一个方向，不然会像两段拼的。</p></div></section><section class="blk"><h2>获取方式</h2><div class="recipes"><div class="recipe"><div class="recipe-head"><span class="machine">切石机</span></div><div class="ings"><a class="chip tag" href="../tags/create_stone_types_asurine.html"><img src="../assets/icons/create_asurine.png" alt="" loading="lazy" decoding="async">天青石</a></div><div class="arrow">→</div><div class="outs"><a class="chip" href="../items/layered_asurine.html"><img src="../assets/icons/create_layered_asurine.png" alt="" loading="lazy" decoding="async"><span>层叠皓蓝石</span><b>×1</b></a></div></div></div></section><section class="blk"><h2>相关物品</h2><div class="related"><a class="chip" href="cut_asurine.html"><img src="../assets/icons/create_cut_asurine.png" alt="" loading="lazy" decoding="async"><span>切制皓蓝石</span></a><a class="chip" href="asurine_pillar.html"><img src="../assets/icons/create_asurine_pillar.png" alt="" loading="lazy" decoding="async"><span>皓蓝石柱</span></a><a class="chip" href="layered_deepslate.html"><img src="../assets/icons/create_layered_deepslate.png" alt="" loading="lazy" decoding="async"><span>层叠深板岩</span></a></div></section><div class="pager"><a href="layered_andesite.html">← 层叠安山岩</a><a href="../catalog.html">返回目录</a><a href="layered_calcite.html">层叠方解石 →</a></div></main><footer><div class="wrap">
+<p>数据与图标来自 <a href="https://github.com/Creators-of-Create/Create" target="_blank" rel="noopener">Creators-of-Create/Create</a>（MIT）与 Minecraft 资源，仅用于学习与教学；Minecraft 版权归 Mojang 所有。</p>
+<p>标题字体 <a href="https://www.dafont.com/minecraft.font" target="_blank" rel="noopener">Minecraft（dafont.com）</a> · 配方与官方 Ponder 文本来自 Create 模组本地化文件（中文由模组自带）· 教程正文为本项目撰写：功能件逐条编写，同系列装饰件共用家族模板。</p>
+</div></footer>
+<div class="toast"></div><script>
+(function(){
+  var bar=document.querySelector('.searchbar input');
+  var cards=[].slice.call(document.querySelectorAll('#list .card'));
+  var btns=[].slice.call(document.querySelectorAll('.filters button'));
+  var empty=document.querySelector('.empty-msg');
+  var cat='all', q='';
+  var mod=(new URLSearchParams(location.search)).get('mod')||'';
+  var MODS={create:'\u673a\u68b0\u52a8\u529b'};
+  function apply(){
+    var n=0;
+    cards.forEach(function(c){
+      var okc=(cat==='all'||c.dataset.cat===cat);
+      var okm=!mod||c.dataset.mod===mod;
+      var okq=!q||c.dataset.k.indexOf(q)>-1;
+      var show=okc&&okq&&okm;
+      c.style.display=show?'':'none';
+      if(show)n++;
+    });
+    if(empty)empty.style.display=n?'none':'block';
+  }
+  (function(){
+    if(!mod) return;
+    var mb=document.getElementById('modbar'), mn=document.getElementById('modname');
+    if(mn) mn.textContent=MODS[mod]||mod;
+    if(mb) mb.hidden=false;
+  })();
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    btns.forEach(function(x){x.classList.remove('on')});
+    b.classList.add('on'); cat=b.dataset.cat; apply();
+  })});
+  if(bar){bar.addEventListener('input',function(){q=bar.value.trim().toLowerCase();apply();});}
+  (function(){
+    var h=location.hash;
+    if(h.indexOf('#cat-')===0){
+      var c=h.slice(5);
+      btns.forEach(function(b){ if(b.dataset.cat===c){ b.click(); } });
+    }
+  })();
+  document.querySelectorAll('.copyid').forEach(function(el){
+    el.addEventListener('click',function(){
+      var t=el.textContent.trim();
+      var done=function(){el.classList.add('ok');el.textContent='已复制';
+        setTimeout(function(){el.textContent=t;el.classList.remove('ok')},1200);};
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,done)}
+      else{var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();
+        try{document.execCommand('copy')}catch(e){}document.body.removeChild(ta);done();}
+    });
+  });
+})();
+</script></body></html>

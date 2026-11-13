@@ -1,0 +1,112 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>附属模组 · Create: Artificial Meat — Create Codex</title><link rel="stylesheet" href="assets/style.css"><style>
+.hero{text-align:center;padding:64px 0 24px}
+.hero h1{font-size:44px;margin:0}
+.hero h1 span{display:block;font-size:15px;letter-spacing:.3em;color:var(--brass2);margin-top:10px}
+.hero p{color:var(--muted);margin-top:14px;font-size:14px}
+.blk{margin-top:38px}
+.blk h2{font-size:17px;margin:0 0 12px;padding-left:10px;border-left:3px solid var(--brass2)}
+.tagline{font-size:14.5px;color:#e8d3a7;margin:0 0 10px}
+.note{border-left:3px solid var(--line);padding:2px 0 2px 14px;color:var(--muted);font-size:13px;margin:12px 0 0;max-width:840px}
+.grid-items{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:12px;align-items:start}
+.card{display:flex;gap:12px;align-items:flex-start;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px;content-visibility:visible;contain-intrinsic-size:none;height:auto}
+.card .ci img{width:44px;height:44px;image-rendering:pixelated;border-radius:8px;background:#0d0b09;border:1px solid #2b2419;padding:3px}
+.card .ci{flex:0 0 52px}
+.card .t{min-width:0;flex:1}
+.card .t b{display:block;font-size:13.5px;font-weight:600}
+.card .t small{display:block;color:var(--muted);font-size:11px;font-family:ui-monospace,Consolas,monospace;word-break:break-all}
+.rec{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:8px;font-size:12px}
+.rec .ch{display:inline-flex;align-items:center;gap:4px;border:1px solid var(--line);border-radius:6px;padding:2px 6px;background:#14110c}
+.rec .ch img{width:16px;height:16px;image-rendering:pixelated}
+.rec .mach{color:var(--brass2);font-size:11.5px}
+.craft{display:flex;align-items:center;gap:10px;margin-top:8px}
+.craft .grid{display:grid !important;grid-template-columns:repeat(3,40px) !important;grid-auto-rows:40px;gap:3px;width:auto;max-width:none}
+.cell{width:40px;height:40px;border-radius:6px;background:#14110c;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;position:relative}
+.cell.empty{border-style:dashed;opacity:.45}
+.cell img{width:30px;height:30px;image-rendering:pixelated}
+.cell .tagcell{font-size:8.5px;line-height:1.05;color:var(--muted);text-align:center;word-break:break-all}
+.cell .hb{position:absolute;right:2px;bottom:0;font-size:9px;font-style:normal;color:var(--brass2)}
+.arw{color:var(--muted)}
+#q{width:100%;max-width:420px;padding:9px 12px;border-radius:8px;border:1px solid var(--line);background:#14110c;color:#e8d3a7;font-size:13px;margin:8px 0 16px}
+</style>
+
+
+<style>
+.grp{margin:26px 0 0}
+.grp>summary.grpsum{cursor:pointer;list-style:none;display:flex;align-items:center;gap:10px;
+  font-size:17px;font-weight:800;color:#e9dcc2;padding:6px 0;user-select:none}
+.grp>summary.grpsum::-webkit-details-marker{display:none}
+.grp>summary.grpsum::before{content:'▸';color:var(--brass);font-size:14px;transition:transform .15s}
+.grp[open]>summary.grpsum::before{transform:rotate(90deg)}
+.grp>summary.grpsum .cnt{font-size:12px;color:var(--muted);background:#1a1510;border:1px solid var(--line);
+  border-radius:20px;padding:1px 8px;font-weight:600}
+.itsearch{display:flex;align-items:center;gap:12px;margin:22px 0 4px}
+.itsearch input{flex:1;max-width:420px;background:#14110c;border:1px solid var(--line);border-radius:10px;
+  padding:9px 12px;color:#e9dcc2;font-size:13.5px;font-family:inherit}
+.itsearch input:focus{outline:none;border-color:var(--brass)}
+.itcount{color:var(--muted);font-size:12px}
+@media(max-width:620px){.itsearch input{max-width:none}}
+</style>
+</head><body><header class="top"><div class="wrap"><span class="logo"><span class="gear"></span><span>CREATE CODEX<small>机械动力图鉴</small></span></span><a class="backbtn" href="index.html">← 返回关系图</a></div></header><main class="wrap"><section class="hero"><img class="big" style="width:96px;height:96px;object-fit:contain;image-rendering:pixelated" src="assets/icons/mod_artificial_meat.png" alt=""><h1>Create: Artificial Meat</h1><p>用机器「培养」出肉，不必再养一大群动物。</p></section><section class="blk"><h2>这是什么</h2><p>把肉类生产搬进工厂：原料经过几道加工变成各种肉块与肉制品。</p><p class="note"><b>规模：</b>7 个物品、16 个方块、10 条配方；模组没有中文语言文件，名字按英文意译。</p></section><section class="blk"><h2>物品与配方</h2><div class="grid-items"><div class="card" id="amt-beefmothercell"><div class="ci"><img src="assets/icons/amt_beefmothercell.png" alt=""></div><div class="t"><b>beefmothercell</b><small>beefmothercell</small></div></div><div class="card" id="amt-celllaboratory"><div class="ci"><img src="assets/icons/amt_celllaboratory.png" alt=""></div><div class="t"><b>celllaboratory</b><small>celllaboratory</small></div></div><div class="card" id="amt-chickenmothercell"><div class="ci"><img src="assets/icons/amt_chickenmothercell.png" alt=""></div><div class="t"><b>chickenmothercell</b><small>chickenmothercell</small></div></div><div class="card" id="amt-liquid_nutrients"><div class="ci"><img src="assets/icons/amt_liquid_nutrients.png" alt=""></div><div class="t"><b>liquid nutrients</b><small>liquid_nutrients</small></div></div><div class="card" id="amt-liquid_nutrients_bucket"><div class="ci"><img src="assets/icons/amt_liquid_nutrients_bucket.png" alt=""></div><div class="t"><b>liquid nutrients bucket</b><small>liquid_nutrients_bucket</small></div></div><div class="card" id="amt-muttonmothercell"><div class="ci"><img src="assets/icons/amt_muttonmothercell.png" alt=""></div><div class="t"><b>muttonmothercell</b><small>muttonmothercell</small></div></div><div class="card" id="amt-porkchopmothercell"><div class="ci"><img src="assets/icons/amt_porkchopmothercell.png" alt=""></div><div class="t"><b>porkchopmothercell</b><small>porkchopmothercell</small></div></div><div class="card" id="amt-rabbitmothercell"><div class="ci"><img src="assets/icons/amt_rabbitmothercell.png" alt=""></div><div class="t"><b>rabbitmothercell</b><small>rabbitmothercell</small></div></div></div></section><footer class="foot"><p>Create: Artificial Meat · 资料来自模组 jar 内的 langs 与 recipes；本页不属于 Create 本体图鉴，只在「模组」入口出现。</p></footer></main><script src="assets/anchors.js" defer></script>
+
+
+<script>
+(function(){
+  var items = document.querySelectorAll('.grid-items');
+  if (!items.length) return;
+  var total = document.querySelectorAll('.card').length;
+
+  // 1) 每个分类包成 <details>
+  var groups = [];
+  items.forEach(function(g){
+    var h = g.previousElementSibling;
+    if (!h || h.tagName !== 'H2') return;
+    var d = document.createElement('details');
+    d.open = true;
+    d.className = 'grp';
+    h.parentNode.insertBefore(d, h);
+    var s = document.createElement('summary');
+    s.className = 'grpsum';
+    s.innerHTML = h.innerHTML;
+    d.appendChild(s);
+    d.appendChild(g);
+    h.remove();
+    groups.push(d);
+  });
+
+  // 2) 搜索框
+  var first = groups[0] || items[0].closest('.blk');
+  if (!first) return;
+  var box = document.createElement('div');
+  box.className = 'itsearch';
+  box.innerHTML = '<input type="search" placeholder="搜索物品名 / ID…" aria-label="搜索物品"><span class="itcount"></span>';
+  var host = (groups[0] || items[0]).parentNode;
+  host.insertBefore(box, (groups[0] || items[0]));
+  var input = box.querySelector('input');
+  var cnt = box.querySelector('.itcount');
+  var cards = document.querySelectorAll('.card');
+
+  function setCount(vis){
+    cnt.textContent = vis === total ? ('共 ' + total + ' 个物品') : (vis + ' / ' + total);
+  }
+  setCount(total);
+
+  input.addEventListener('input', function(){
+    var q = input.value.trim().toLowerCase();
+    var vis = 0;
+    groups.forEach(function(d){
+      var hit = 0;
+      d.querySelectorAll('.card').forEach(function(c){
+        var t = (c.textContent || '').toLowerCase();
+        var ok = !q || t.indexOf(q) >= 0;
+        c.style.display = ok ? '' : 'none';
+        if (ok) hit++;
+      });
+      d.style.display = hit ? '' : 'none';
+      if (q && hit) d.open = true;
+      vis += hit;
+    });
+    setCount(vis);
+  });
+})();
+</script>
+</body></html>

@@ -1,0 +1,60 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>蜂蜜桶 — Create 机械动力图鉴</title>
+<link rel="preload" href="../assets/fonts/Minecraft.ttf" as="font" crossorigin>
+<link rel="stylesheet" href="../assets/style.css">
+</head><body><header class="top"><div class="wrap"><a class="logo" href="../index.html"><span class="gear"></span><span>CREATE CODEX<small>机械动力图鉴</small></span></a><nav><a href="../tags.html">标签</a><a href="https://github.com/Creators-of-Create/Create" target="_blank" rel="noopener">源码</a></nav></div></header><main class="wrap rise"><div class="crumb"><a href="../index.html">首页</a> / <a href="../catalog.html">全部物品</a> / 材料与零件 / <span>蜂蜜桶</span></div><div class="item-hero"><img class="big" src="../assets/icons/create_honey_bucket.png" alt=""><div><h1>蜂蜜桶</h1><div class="en">Honey Bucket</div><div class="idline"><span class="copyid">create:honey_bucket</span><span class="badge">物品</span><a class="badge" href="../catalog.html#cat-material">材料与零件</a></div></div></div><p class="tagline">装蜂蜜用的那只桶。</p><section class="blk"><h2>参数</h2><div class="params"><div class="param"><span>类型</span><b>流体桶</b></div><div class="param"><span>容量</span><b>1000 mB</b></div><div class="param"><span>获取</span><b>舀取蜂蜜</b></div></div></section><section class="blk"><h2>详细教程</h2><div class="prose"><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">怎么获得</h3><p>资料库里没有它的合成配方，正常做法是拿一只空桶去舀现成的蜂蜜：对着蜂蜜流体右键，桶就装满。蜂蜜源块或储罐里都能舀，前提是流体够深。拿桶右键蜂巢或蜂箱，就能接满一桶蜂蜜。</p><p>空桶本身是三个铁锭围成的，做几个备用不亏。舀满的桶能倒回储罐，也能直接灌进注液器，形态换来换去不损失容量。右键地面能倒出一格蜂蜜流体，方便接进管道。</p><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">怎么用</h3><p>它是最简单的搬运工具：一小批蜂蜜不值得铺管道时，拿桶来回倒最快。倒进<strong>工作盆</strong>或储罐，蜂蜜就进了产线，桶会空出来继续用。倒出来的蜂蜜会让人减速，做陷阱很好用。</p><p>做甜食线时，先在储罐边摆一排桶，手工灌满再统一倒进注液器，比一根根接管子省事。量大了还是上泵，桶只适合应急和小批量。空桶右键流体源头可以再装回去。</p><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">常见坑</h3><p>它只能装蜂蜜，别拿它去舀水或岩浆，装错了桶里的东西会换掉。蜂蜜比水稠，舀的时候要多等一会儿才满。它不能直接喝，别当食物塞进嘴里。它只能当流体材料，装进管道里用。</p><p>倒的时候对准容器口，倒在地面上只会摊一滩，收不回来。桶也别和空桶混放，外观接近，拿错一次就要多跑一趟。和粘液球一样会拖慢掉落物，收集时注意别堆在桶边。</p></div></section><section class="blk"><h2>获取方式</h2><div class="prose"><p>这个物品<strong>没有合成配方</strong>：它由工具或机器直接生成/放置（例如用扳手、连接器、部署器，或作为其他配方的产物）。具体见上方教程。</p></div></section><section class="blk"><h2>相关物品</h2><div class="related"><a class="chip" href="honey.html"><img src="../assets/icons/create_honey_bucket.png" alt="" loading="lazy" decoding="async"><span>蜂蜜</span></a><a class="chip" href="fluid_tank.html"><img src="../assets/icons/3d_create_fluid_tank.png" alt="" loading="lazy" decoding="async"><span>流体储罐</span></a><a class="chip" href="spout.html"><img src="../assets/icons/3d_create_spout.png" alt="" loading="lazy" decoding="async"><span>注液器</span></a></div></section><div class="pager"><a href="honey.html">← 蜂蜜</a><a href="../catalog.html">返回目录</a><a href="honeyed_apple.html">蜜渍苹果 →</a></div></main><footer><div class="wrap">
+<p>数据与图标来自 <a href="https://github.com/Creators-of-Create/Create" target="_blank" rel="noopener">Creators-of-Create/Create</a>（MIT）与 Minecraft 资源，仅用于学习与教学；Minecraft 版权归 Mojang 所有。</p>
+<p>标题字体 <a href="https://www.dafont.com/minecraft.font" target="_blank" rel="noopener">Minecraft（dafont.com）</a> · 配方与官方 Ponder 文本来自 Create 模组本地化文件（中文由模组自带）· 教程正文为本项目撰写：功能件逐条编写，同系列装饰件共用家族模板。</p>
+</div></footer>
+<div class="toast"></div><script>
+(function(){
+  var bar=document.querySelector('.searchbar input');
+  var cards=[].slice.call(document.querySelectorAll('#list .card'));
+  var btns=[].slice.call(document.querySelectorAll('.filters button'));
+  var empty=document.querySelector('.empty-msg');
+  var cat='all', q='';
+  var mod=(new URLSearchParams(location.search)).get('mod')||'';
+  var MODS={create:'\u673a\u68b0\u52a8\u529b'};
+  function apply(){
+    var n=0;
+    cards.forEach(function(c){
+      var okc=(cat==='all'||c.dataset.cat===cat);
+      var okm=!mod||c.dataset.mod===mod;
+      var okq=!q||c.dataset.k.indexOf(q)>-1;
+      var show=okc&&okq&&okm;
+      c.style.display=show?'':'none';
+      if(show)n++;
+    });
+    if(empty)empty.style.display=n?'none':'block';
+  }
+  (function(){
+    if(!mod) return;
+    var mb=document.getElementById('modbar'), mn=document.getElementById('modname');
+    if(mn) mn.textContent=MODS[mod]||mod;
+    if(mb) mb.hidden=false;
+  })();
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    btns.forEach(function(x){x.classList.remove('on')});
+    b.classList.add('on'); cat=b.dataset.cat; apply();
+  })});
+  if(bar){bar.addEventListener('input',function(){q=bar.value.trim().toLowerCase();apply();});}
+  (function(){
+    var h=location.hash;
+    if(h.indexOf('#cat-')===0){
+      var c=h.slice(5);
+      btns.forEach(function(b){ if(b.dataset.cat===c){ b.click(); } });
+    }
+  })();
+  document.querySelectorAll('.copyid').forEach(function(el){
+    el.addEventListener('click',function(){
+      var t=el.textContent.trim();
+      var done=function(){el.classList.add('ok');el.textContent='已复制';
+        setTimeout(function(){el.textContent=t;el.classList.remove('ok')},1200);};
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,done)}
+      else{var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();
+        try{document.execCommand('copy')}catch(e){}document.body.removeChild(ta);done();}
+    });
+  });
+})();
+</script></body></html>

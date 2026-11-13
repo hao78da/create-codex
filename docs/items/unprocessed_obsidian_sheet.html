@@ -1,0 +1,60 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>未加工的黑曜石板 — Create 机械动力图鉴</title>
+<link rel="preload" href="../assets/fonts/Minecraft.ttf" as="font" crossorigin>
+<link rel="stylesheet" href="../assets/style.css">
+</head><body><header class="top"><div class="wrap"><a class="logo" href="../index.html"><span class="gear"></span><span>CREATE CODEX<small>机械动力图鉴</small></span></a><nav><a href="../tags.html">标签</a><a href="https://github.com/Creators-of-Create/Create" target="_blank" rel="noopener">源码</a></nav></div></header><main class="wrap rise"><div class="crumb"><a href="../index.html">首页</a> / <a href="../catalog.html">全部物品</a> / 材料与零件 / <span>未加工的黑曜石板</span></div><div class="item-hero"><img class="big" src="../assets/icons/create_unprocessed_obsidian_sheet.png" alt=""><div><h1>未加工的黑曜石板</h1><div class="en">Unprocessed Obsidian Sheet</div><div class="idline"><span class="copyid">create:unprocessed_obsidian_sheet</span><span class="badge">物品</span><a class="badge" href="../catalog.html#cat-material">材料与零件</a></div></div></div><p class="tagline">未加工的黑曜石板：装配线上的半成品。</p><section class="blk"><h2>参数</h2><div class="params"><div class="param"><span>来源</span><b>序列装配中间物</b></div><div class="param"><span>终点</span><b>坚固板</b></div></div></section><section class="blk"><h2>详细教程</h2><div class="prose"><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">怎么获得</h3><p>它<strong>没有工作台配方</strong>，也不是随便能拿到的物品：这是<strong>序列装配</strong>线上的一张过渡板。把黑曜石粉送进序列装配，注入 500mB <strong>岩浆</strong>压制后，停在半路的形态就是它。</p><p>整条链的终点是<strong>坚固板</strong>：同一张板在装配线上继续被压，两次压实之后才变成坚固板。也就是说它只是「还没压完的坚固板」，并非独立材料。</p><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">怎么用</h3><p>正常玩法里你不需要操作它：装配线会自动把它送进下一道工序，玩家看到它出现，说明<strong>注岩浆</strong>那一步成功了，接下来只等压床把它压成坚固板。</p><p>它的唯一去处就是被继续加工，没有任何配方拿它当原料；想中途拿走只能是调试或拆线，拿在手里也做不了什么。</p><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">常见坑</h3><p>装配线中途断电或压床转速不足时，板会卡在这个形态不动，看起来像「卡住了」；检查压床有没有旋转力、装配线有没有被堵。</p><p>别试图用工作台把它和别的东西拼起来，没有这种配方；也别把它当成黑曜石板的替代品去铺屋顶，它只是半成品，外观与用途都不是建材。</p></div></section><section class="blk"><h2>获取方式</h2><div class="prose"><p>这个物品<strong>没有合成配方</strong>：它由工具或机器直接生成/放置（例如用扳手、连接器、部署器，或作为其他配方的产物）。具体见上方教程。</p></div></section><section class="blk"><h2>相关物品</h2><div class="related"><a class="chip" href="sturdy_sheet.html"><img src="../assets/icons/create_sturdy_sheet.png" alt="" loading="lazy" decoding="async"><span>坚固板</span></a><a class="chip" href="mechanical_press.html"><img src="../assets/icons/3d_create_mechanical_press.png" alt="" loading="lazy" decoding="async"><span>动力冲压机</span></a><a class="chip" href="railway_casing.html"><img src="../assets/icons/create_railway_casing.png" alt="" loading="lazy" decoding="async"><span>列车机壳</span></a></div></section><div class="pager"><a href="turntable.html">← 转盘</a><a href="../catalog.html">返回目录</a><a href="veridium.html">辉绿岩 →</a></div></main><footer><div class="wrap">
+<p>数据与图标来自 <a href="https://github.com/Creators-of-Create/Create" target="_blank" rel="noopener">Creators-of-Create/Create</a>（MIT）与 Minecraft 资源，仅用于学习与教学；Minecraft 版权归 Mojang 所有。</p>
+<p>标题字体 <a href="https://www.dafont.com/minecraft.font" target="_blank" rel="noopener">Minecraft（dafont.com）</a> · 配方与官方 Ponder 文本来自 Create 模组本地化文件（中文由模组自带）· 教程正文为本项目撰写：功能件逐条编写，同系列装饰件共用家族模板。</p>
+</div></footer>
+<div class="toast"></div><script>
+(function(){
+  var bar=document.querySelector('.searchbar input');
+  var cards=[].slice.call(document.querySelectorAll('#list .card'));
+  var btns=[].slice.call(document.querySelectorAll('.filters button'));
+  var empty=document.querySelector('.empty-msg');
+  var cat='all', q='';
+  var mod=(new URLSearchParams(location.search)).get('mod')||'';
+  var MODS={create:'\u673a\u68b0\u52a8\u529b'};
+  function apply(){
+    var n=0;
+    cards.forEach(function(c){
+      var okc=(cat==='all'||c.dataset.cat===cat);
+      var okm=!mod||c.dataset.mod===mod;
+      var okq=!q||c.dataset.k.indexOf(q)>-1;
+      var show=okc&&okq&&okm;
+      c.style.display=show?'':'none';
+      if(show)n++;
+    });
+    if(empty)empty.style.display=n?'none':'block';
+  }
+  (function(){
+    if(!mod) return;
+    var mb=document.getElementById('modbar'), mn=document.getElementById('modname');
+    if(mn) mn.textContent=MODS[mod]||mod;
+    if(mb) mb.hidden=false;
+  })();
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    btns.forEach(function(x){x.classList.remove('on')});
+    b.classList.add('on'); cat=b.dataset.cat; apply();
+  })});
+  if(bar){bar.addEventListener('input',function(){q=bar.value.trim().toLowerCase();apply();});}
+  (function(){
+    var h=location.hash;
+    if(h.indexOf('#cat-')===0){
+      var c=h.slice(5);
+      btns.forEach(function(b){ if(b.dataset.cat===c){ b.click(); } });
+    }
+  })();
+  document.querySelectorAll('.copyid').forEach(function(el){
+    el.addEventListener('click',function(){
+      var t=el.textContent.trim();
+      var done=function(){el.classList.add('ok');el.textContent='已复制';
+        setTimeout(function(){el.textContent=t;el.classList.remove('ok')},1200);};
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,done)}
+      else{var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();
+        try{document.execCommand('copy')}catch(e){}document.body.removeChild(ta);done();}
+    });
+  });
+})();
+</script></body></html>

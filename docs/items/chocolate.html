@@ -1,0 +1,60 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>巧克力 — Create 机械动力图鉴</title>
+<link rel="preload" href="../assets/fonts/Minecraft.ttf" as="font" crossorigin>
+<link rel="stylesheet" href="../assets/style.css">
+</head><body><header class="top"><div class="wrap"><a class="logo" href="../index.html"><span class="gear"></span><span>CREATE CODEX<small>机械动力图鉴</small></span></a><nav><a href="../tags.html">标签</a><a href="https://github.com/Creators-of-Create/Create" target="_blank" rel="noopener">源码</a></nav></div></header><main class="wrap rise"><div class="crumb"><a href="../index.html">首页</a> / <a href="../catalog.html">全部物品</a> / 材料与零件 / <span>巧克力</span></div><div class="item-hero"><img class="big" src="../assets/icons/create_chocolate_bucket.png" alt=""><div><h1>巧克力</h1><div class="en">Chocolate</div><div class="idline"><span class="copyid">create:chocolate</span><span class="badge">方块</span><a class="badge" href="../catalog.html#cat-material">材料与零件</a></div></div></div><p class="tagline">能做甜点的深色巧克力。</p><section class="blk"><h2>参数</h2><div class="params"><div class="param"><span>类型</span><b>材料/流体</b></div><div class="param"><span>获取</span><b>整合包途径</b></div><div class="param"><span>用途</span><b>甜食配方</b></div></div></section><section class="blk"><h2>详细教程</h2><div class="prose"><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">怎么获得</h3><p>资料库里没有它的合成配方，属于需要整合包或特定途径才能拿到的材料。它常以流体或方块形态出现，用来做甜食类产线的中间料。它没有工作台配方，得靠流体加工拿到。</p><p>拿到手先看清是锭状、块状还是桶装：不同形态进不同的机器，拿错了既不能吃也合不成东西。整合包任务书里通常会写明获取路线。属于流体食物，装桶之后就能当巧克力桶用。</p><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">怎么用</h3><p>它主要进<strong>混合器</strong>或<strong>注液器</strong>，和其他材料拌成甜点、涂层或饮料。做糖果工坊时，把巧克力当主料，糖和奶当辅料，配方按任务书走。装进玻璃瓶能做成巧克力瓶，摆出来当装饰。</p><p>也能装进玻璃管道和储罐做装饰，深褐色液体在管里流动，配黄铜件很有老式糖果厂的味道。摆一排罐子当门面，比堆箱子好看得多。温度太低会凝在管里，管路走短一点更稳妥。</p><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">常见坑</h3><p>它不是食物，右键吃不出任何效果，别拿它当干粮。配方书里查不到的组合，搅再久也不会出产物，先确认整合包有没有这条线。别和蜂蜜倒进同一个储罐，混了就分不开。</p><p>流体形态别和<strong>蜂蜜</strong>混装，管道里残留一点就会污染下一批。换料前把管路排空，省得整条产线报废。洒出来的巧克力会黏住传送带，记得留排水口。做甜点产线时在下方留一格收集槽。</p></div></section><section class="blk"><h2>获取方式</h2><div class="prose"><p>这个物品<strong>没有合成配方</strong>：它由工具或机器直接生成/放置（例如用扳手、连接器、部署器，或作为其他配方的产物）。具体见上方教程。</p></div></section><section class="blk"><h2>相关物品</h2><div class="related"><a class="chip" href="honey.html"><img src="../assets/icons/create_honey_bucket.png" alt="" loading="lazy" decoding="async"><span>蜂蜜</span></a><a class="chip" href="chocolate_bucket.html"><img src="../assets/icons/create_chocolate_bucket.png" alt="" loading="lazy" decoding="async"><span>巧克力桶</span></a><a class="chip" href="basin.html"><img src="../assets/icons/3d_create_basin.png" alt="" loading="lazy" decoding="async"><span>工作盆</span></a></div></section><div class="pager"><a href="chest_minecart_contraption.html">← 装配过的运输矿车</a><a href="../catalog.html">返回目录</a><a href="chocolate_bucket.html">巧克力桶 →</a></div></main><footer><div class="wrap">
+<p>数据与图标来自 <a href="https://github.com/Creators-of-Create/Create" target="_blank" rel="noopener">Creators-of-Create/Create</a>（MIT）与 Minecraft 资源，仅用于学习与教学；Minecraft 版权归 Mojang 所有。</p>
+<p>标题字体 <a href="https://www.dafont.com/minecraft.font" target="_blank" rel="noopener">Minecraft（dafont.com）</a> · 配方与官方 Ponder 文本来自 Create 模组本地化文件（中文由模组自带）· 教程正文为本项目撰写：功能件逐条编写，同系列装饰件共用家族模板。</p>
+</div></footer>
+<div class="toast"></div><script>
+(function(){
+  var bar=document.querySelector('.searchbar input');
+  var cards=[].slice.call(document.querySelectorAll('#list .card'));
+  var btns=[].slice.call(document.querySelectorAll('.filters button'));
+  var empty=document.querySelector('.empty-msg');
+  var cat='all', q='';
+  var mod=(new URLSearchParams(location.search)).get('mod')||'';
+  var MODS={create:'\u673a\u68b0\u52a8\u529b'};
+  function apply(){
+    var n=0;
+    cards.forEach(function(c){
+      var okc=(cat==='all'||c.dataset.cat===cat);
+      var okm=!mod||c.dataset.mod===mod;
+      var okq=!q||c.dataset.k.indexOf(q)>-1;
+      var show=okc&&okq&&okm;
+      c.style.display=show?'':'none';
+      if(show)n++;
+    });
+    if(empty)empty.style.display=n?'none':'block';
+  }
+  (function(){
+    if(!mod) return;
+    var mb=document.getElementById('modbar'), mn=document.getElementById('modname');
+    if(mn) mn.textContent=MODS[mod]||mod;
+    if(mb) mb.hidden=false;
+  })();
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    btns.forEach(function(x){x.classList.remove('on')});
+    b.classList.add('on'); cat=b.dataset.cat; apply();
+  })});
+  if(bar){bar.addEventListener('input',function(){q=bar.value.trim().toLowerCase();apply();});}
+  (function(){
+    var h=location.hash;
+    if(h.indexOf('#cat-')===0){
+      var c=h.slice(5);
+      btns.forEach(function(b){ if(b.dataset.cat===c){ b.click(); } });
+    }
+  })();
+  document.querySelectorAll('.copyid').forEach(function(el){
+    el.addEventListener('click',function(){
+      var t=el.textContent.trim();
+      var done=function(){el.classList.add('ok');el.textContent='已复制';
+        setTimeout(function(){el.textContent=t;el.classList.remove('ok')},1200);};
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,done)}
+      else{var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();
+        try{document.execCommand('copy')}catch(e){}document.body.removeChild(ta);done();}
+    });
+  });
+})();
+</script></body></html>

@@ -1,0 +1,60 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>青色辉光管 — Create 机械动力图鉴</title>
+<link rel="preload" href="../assets/fonts/Minecraft.ttf" as="font" crossorigin>
+<link rel="stylesheet" href="../assets/style.css">
+</head><body><header class="top"><div class="wrap"><a class="logo" href="../index.html"><span class="gear"></span><span>CREATE CODEX<small>机械动力图鉴</small></span></a><nav><a href="../tags.html">标签</a><a href="https://github.com/Creators-of-Create/Create" target="_blank" rel="noopener">源码</a></nav></div></header><main class="wrap rise"><div class="crumb"><a href="../index.html">首页</a> / <a href="../catalog.html">全部物品</a> / 红石与控制 / <span>青色辉光管</span></div><div class="item-hero"><img class="big" src="../assets/icons/create_cyan_nixie_tube.png" alt=""><div><h1>青色辉光管</h1><div class="en">Cyan Nixie Tube</div><div class="idline"><span class="copyid">create:cyan_nixie_tube</span><span class="badge">方块</span><a class="badge" href="../catalog.html#cat-redstone">红石与控制</a></div></div></div><p class="tagline">青色辉光管：水下基地与全息面板的冷光。</p><section class="blk"><h2>参数</h2><div class="params"><div class="param"><span>主色</span><b>荧光青</b></div><div class="param"><span>显示</span><b>信号强度 / 剪贴板文本</b></div><div class="param"><span>改色</span><b>染料右键</b></div></div></section><section class="blk"><h2>详细教程</h2><div class="prose"><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">怎么用</h3><p>把辉光管装在墙面上，通红石看<strong>信号强度</strong>，用<strong>剪贴板</strong>写字，或者用<strong>显示链接器</strong>接一台机器当实时表盘。三种用法可以同时存在，一支管子只显示其中一种。</p><p>青色介于蓝与绿之间，亮起来带一点荧光感，在昏暗的水下建筑里尤其明显，像一块小型的全息投影。</p><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">这个颜色适合哪</h3><p>青色辉光管是<strong>水下基地、水处理厂、科技园区</strong>的标配：和海晶灯、青色玻璃、氧化过的铜机壳放在一起，整面墙会呈现一种「设备正在运行」的湿润冷光。做实验室的门牌号、反应釜的压力位也很贴切。</p><p>青管和绿管容易混：青偏蓝、更像水，绿偏黄、更像终端。水下和泳池用青，机房和计数用绿；摆在一起时中间隔几支白管就分得开，别让两种绿直接相邻。</p><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">搭配与常见坑</h3><p>青色和淡蓝色、蓝色挨着放时，远看会以为只是同一块屏幕的深浅变化，需要明确区分就把它们分到不同墙面。想要对比，用青色配品红，冷暖和明度都拉开了。</p></div></section><section class="blk"><h2>获取方式</h2><div class="prose"><p>这个物品<strong>没有合成配方</strong>：它由工具或机器直接生成/放置（例如用扳手、连接器、部署器，或作为其他配方的产物）。具体见上方教程。</p></div></section><section class="blk"><h2>相关物品</h2><div class="related"><a class="chip" href="display_link.html"><img src="../assets/icons/3d_create_display_link.png" alt="" loading="lazy" decoding="async"><span>显示链接器</span></a><a class="chip" href="display_board.html"><img src="../assets/icons/3d_create_display_board.png" alt="" loading="lazy" decoding="async"><span>翻牌显示器</span></a><a class="chip" href="copper_casing.html"><img src="../assets/icons/create_copper_casing.png" alt="" loading="lazy" decoding="async"><span>铜机壳</span></a></div></section><div class="pager"><a href="cut_veridium_wall.html">← 切制辉绿岩墙</a><a href="../catalog.html">返回目录</a><a href="cyan_postbox.html">青色邮箱 →</a></div></main><footer><div class="wrap">
+<p>数据与图标来自 <a href="https://github.com/Creators-of-Create/Create" target="_blank" rel="noopener">Creators-of-Create/Create</a>（MIT）与 Minecraft 资源，仅用于学习与教学；Minecraft 版权归 Mojang 所有。</p>
+<p>标题字体 <a href="https://www.dafont.com/minecraft.font" target="_blank" rel="noopener">Minecraft（dafont.com）</a> · 配方与官方 Ponder 文本来自 Create 模组本地化文件（中文由模组自带）· 教程正文为本项目撰写：功能件逐条编写，同系列装饰件共用家族模板。</p>
+</div></footer>
+<div class="toast"></div><script>
+(function(){
+  var bar=document.querySelector('.searchbar input');
+  var cards=[].slice.call(document.querySelectorAll('#list .card'));
+  var btns=[].slice.call(document.querySelectorAll('.filters button'));
+  var empty=document.querySelector('.empty-msg');
+  var cat='all', q='';
+  var mod=(new URLSearchParams(location.search)).get('mod')||'';
+  var MODS={create:'\u673a\u68b0\u52a8\u529b'};
+  function apply(){
+    var n=0;
+    cards.forEach(function(c){
+      var okc=(cat==='all'||c.dataset.cat===cat);
+      var okm=!mod||c.dataset.mod===mod;
+      var okq=!q||c.dataset.k.indexOf(q)>-1;
+      var show=okc&&okq&&okm;
+      c.style.display=show?'':'none';
+      if(show)n++;
+    });
+    if(empty)empty.style.display=n?'none':'block';
+  }
+  (function(){
+    if(!mod) return;
+    var mb=document.getElementById('modbar'), mn=document.getElementById('modname');
+    if(mn) mn.textContent=MODS[mod]||mod;
+    if(mb) mb.hidden=false;
+  })();
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    btns.forEach(function(x){x.classList.remove('on')});
+    b.classList.add('on'); cat=b.dataset.cat; apply();
+  })});
+  if(bar){bar.addEventListener('input',function(){q=bar.value.trim().toLowerCase();apply();});}
+  (function(){
+    var h=location.hash;
+    if(h.indexOf('#cat-')===0){
+      var c=h.slice(5);
+      btns.forEach(function(b){ if(b.dataset.cat===c){ b.click(); } });
+    }
+  })();
+  document.querySelectorAll('.copyid').forEach(function(el){
+    el.addEventListener('click',function(){
+      var t=el.textContent.trim();
+      var done=function(){el.classList.add('ok');el.textContent='已复制';
+        setTimeout(function(){el.textContent=t;el.classList.remove('ok')},1200);};
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,done)}
+      else{var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();
+        try{document.execCommand('copy')}catch(e){}document.body.removeChild(ta);done();}
+    });
+  });
+})();
+</script></body></html>

@@ -1,0 +1,60 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>光辉机壳 — Create 机械动力图鉴</title>
+<link rel="preload" href="../assets/fonts/Minecraft.ttf" as="font" crossorigin>
+<link rel="stylesheet" href="../assets/style.css">
+</head><body><header class="top"><div class="wrap"><a class="logo" href="../index.html"><span class="gear"></span><span>CREATE CODEX<small>机械动力图鉴</small></span></a><nav><a href="../tags.html">标签</a><a href="https://github.com/Creators-of-Create/Create" target="_blank" rel="noopener">源码</a></nav></div></header><main class="wrap rise"><div class="crumb"><a href="../index.html">首页</a> / <a href="../catalog.html">全部物品</a> / 装饰与建筑 / <span>光辉机壳</span></div><div class="item-hero"><img class="big" src="../assets/icons/create_refined_radiance_casing.png" alt=""><div><h1>光辉机壳</h1><div class="en">Radiant Casing</div><div class="idline"><span class="copyid">create:refined_radiance_casing</span><span class="badge">方块</span><a class="badge" href="../catalog.html#cat-decor">装饰与建筑</a></div></div></div><p class="tagline">发光机壳，旧版本的光辉余韵。</p><section class="blk"><h2>参数</h2><div class="params"><div class="param"><span>配方</span><b>本版无</b></div><div class="param"><span>类别</span><b>机壳/装饰</b></div><div class="param"><span>获取</span><b>创造或旧存档</b></div></div></section><section class="blk"><h2>详细教程</h2><div class="prose"><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">怎么获得</h3><p>这一版里它<strong>没有配方</strong>：合成表、机械合成和物品施加都查不到，只能靠创造模式物品栏、数据包或者旧存档带过来，生存里正常途径拿不到。</p><p>它属于<strong>机壳</strong>类方块，前身是旧版本的光辉石线；那条线靠收集光照产出光辉石，如今只剩装饰用的机壳还留在方块表里，别去找早已删除的机器。</p><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">怎么用</h3><p>它没有任何动力或物流功能，纯粹是一块<strong>发光外观</strong>的建筑方块；拿来拼灯带、做高光墙面或者给机器描边都好看，夜里几乎不用插火把。</p><p>因为登记在机壳标签里，少数接受机壳标签的配方能拿它顶替；但多数合成要求具体机壳，想量产还是回去做安山或黄铜版，别指望它省材料。</p><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">常见坑</h3><p>别把它当<strong>光源</strong>去算亮度：方块本身发光很弱，照亮范围有限，做矿井照明还得配火把或灯笼，不然会刷怪，装饰归装饰。照明另接一套线路。</p><p>拆的时候用对工具，镐子挖了会掉本体；但别指望拆出光辉石之类的材料，它就是一个整块，回收价值仅限方块本身，留着比拆了划算。</p></div></section><section class="blk"><h2>获取方式</h2><div class="prose"><p>这个物品<strong>没有合成配方</strong>：它由工具或机器直接生成/放置（例如用扳手、连接器、部署器，或作为其他配方的产物）。具体见上方教程。</p></div></section><section class="blk"><h2>相关物品</h2><div class="related"><a class="chip" href="brass_casing.html"><img src="../assets/icons/create_brass_casing.png" alt="" loading="lazy" decoding="async"><span>黄铜机壳</span></a><a class="chip" href="shadow_steel_casing.html"><img src="../assets/icons/create_shadow_steel_casing.png" alt="" loading="lazy" decoding="async"><span>暗影机壳</span></a><a class="chip" href="copper_casing.html"><img src="../assets/icons/create_copper_casing.png" alt="" loading="lazy" decoding="async"><span>铜机壳</span></a></div></section><div class="pager"><a href="refined_radiance.html">← 光辉石</a><a href="../catalog.html">返回目录</a><a href="repackager.html">理包机 →</a></div></main><footer><div class="wrap">
+<p>数据与图标来自 <a href="https://github.com/Creators-of-Create/Create" target="_blank" rel="noopener">Creators-of-Create/Create</a>（MIT）与 Minecraft 资源，仅用于学习与教学；Minecraft 版权归 Mojang 所有。</p>
+<p>标题字体 <a href="https://www.dafont.com/minecraft.font" target="_blank" rel="noopener">Minecraft（dafont.com）</a> · 配方与官方 Ponder 文本来自 Create 模组本地化文件（中文由模组自带）· 教程正文为本项目撰写：功能件逐条编写，同系列装饰件共用家族模板。</p>
+</div></footer>
+<div class="toast"></div><script>
+(function(){
+  var bar=document.querySelector('.searchbar input');
+  var cards=[].slice.call(document.querySelectorAll('#list .card'));
+  var btns=[].slice.call(document.querySelectorAll('.filters button'));
+  var empty=document.querySelector('.empty-msg');
+  var cat='all', q='';
+  var mod=(new URLSearchParams(location.search)).get('mod')||'';
+  var MODS={create:'\u673a\u68b0\u52a8\u529b'};
+  function apply(){
+    var n=0;
+    cards.forEach(function(c){
+      var okc=(cat==='all'||c.dataset.cat===cat);
+      var okm=!mod||c.dataset.mod===mod;
+      var okq=!q||c.dataset.k.indexOf(q)>-1;
+      var show=okc&&okq&&okm;
+      c.style.display=show?'':'none';
+      if(show)n++;
+    });
+    if(empty)empty.style.display=n?'none':'block';
+  }
+  (function(){
+    if(!mod) return;
+    var mb=document.getElementById('modbar'), mn=document.getElementById('modname');
+    if(mn) mn.textContent=MODS[mod]||mod;
+    if(mb) mb.hidden=false;
+  })();
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    btns.forEach(function(x){x.classList.remove('on')});
+    b.classList.add('on'); cat=b.dataset.cat; apply();
+  })});
+  if(bar){bar.addEventListener('input',function(){q=bar.value.trim().toLowerCase();apply();});}
+  (function(){
+    var h=location.hash;
+    if(h.indexOf('#cat-')===0){
+      var c=h.slice(5);
+      btns.forEach(function(b){ if(b.dataset.cat===c){ b.click(); } });
+    }
+  })();
+  document.querySelectorAll('.copyid').forEach(function(el){
+    el.addEventListener('click',function(){
+      var t=el.textContent.trim();
+      var done=function(){el.classList.add('ok');el.textContent='已复制';
+        setTimeout(function(){el.textContent=t;el.classList.remove('ok')},1200);};
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,done)}
+      else{var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();
+        try{document.execCommand('copy')}catch(e){}document.body.removeChild(ta);done();}
+    });
+  });
+})();
+</script></body></html>

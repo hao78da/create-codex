@@ -1,0 +1,60 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>蓝色辉光管 — Create 机械动力图鉴</title>
+<link rel="preload" href="../assets/fonts/Minecraft.ttf" as="font" crossorigin>
+<link rel="stylesheet" href="../assets/style.css">
+</head><body><header class="top"><div class="wrap"><a class="logo" href="../index.html"><span class="gear"></span><span>CREATE CODEX<small>机械动力图鉴</small></span></a><nav><a href="../tags.html">标签</a><a href="https://github.com/Creators-of-Create/Create" target="_blank" rel="noopener">源码</a></nav></div></header><main class="wrap rise"><div class="crumb"><a href="../index.html">首页</a> / <a href="../catalog.html">全部物品</a> / 红石与控制 / <span>蓝色辉光管</span></div><div class="item-hero"><img class="big" src="../assets/icons/create_blue_nixie_tube.png" alt=""><div><h1>蓝色辉光管</h1><div class="en">Blue Nixie Tube</div><div class="idline"><span class="copyid">create:blue_nixie_tube</span><span class="badge">方块</span><a class="badge" href="../catalog.html#cat-redstone">红石与控制</a></div></div></div><p class="tagline">蓝色辉光管：调度台与老电台的冷静底色。</p><section class="blk"><h2>参数</h2><div class="params"><div class="param"><span>主色</span><b>深海蓝</b></div><div class="param"><span>显示</span><b>信号强度 / 剪贴板文本</b></div><div class="param"><span>改色</span><b>染料右键</b></div></div></section><section class="blk"><h2>详细教程</h2><div class="prose"><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">怎么用</h3><p>辉光管是单字符显示器：接通红石后显示<strong>信号强度</strong>，从 0 到 15 逐级变亮；用写好的<strong>剪贴板</strong>右键可以改成自定义文本；接上<strong>显示链接器</strong>则能实时显示转速、应力或库存。</p><p>蓝色是冷色里最稳的一档，亮起来像老式电台的调谐窗，白天看也不会太刺眼，适合长时间挂在墙上当背景读数。</p><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">这个颜色适合哪</h3><p>蓝色辉光管最适合<strong>调度与排班</strong>场景：列车调度屏、站台时刻表、港口泊位号。它给人的暗示是「秩序、等待、按计划进行」，和蓝色邮箱、蓝色坐垫放在同一个候车区会非常统一。放在黄铜机壳上偏复古电台，放在白色机壳上偏现代仪表。</p><p>同系列里，蓝管比青管更沉、比淡蓝管更亮：要仪表在运行的冷静感选它，要清爽的水色才用青。它和绿管并排时，蓝当待机、绿当在线，正好是一对状态位；两者中间隔一支白管，读数会更清楚。</p><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">搭配与常见坑</h3><p>一排蓝管旁边如果又放青色或淡蓝色，层次会立刻糊掉，最好中间隔几格或者换一种亮度。做警报面板时别用它，蓝色太容易和「正常」混淆。</p></div></section><section class="blk"><h2>获取方式</h2><div class="prose"><p>这个物品<strong>没有合成配方</strong>：它由工具或机器直接生成/放置（例如用扳手、连接器、部署器，或作为其他配方的产物）。具体见上方教程。</p></div></section><section class="blk"><h2>相关物品</h2><div class="related"><a class="chip" href="display_link.html"><img src="../assets/icons/3d_create_display_link.png" alt="" loading="lazy" decoding="async"><span>显示链接器</span></a><a class="chip" href="clipboard.html"><img src="../assets/icons/3d_create_clipboard.png" alt="" loading="lazy" decoding="async"><span>剪贴板</span></a><a class="chip" href="display_board.html"><img src="../assets/icons/3d_create_display_board.png" alt="" loading="lazy" decoding="async"><span>翻牌显示器</span></a></div></section><div class="pager"><a href="blaze_cake_base.html">← 烈焰蛋糕胚</a><a href="../catalog.html">返回目录</a><a href="blue_postbox.html">蓝色邮箱 →</a></div></main><footer><div class="wrap">
+<p>数据与图标来自 <a href="https://github.com/Creators-of-Create/Create" target="_blank" rel="noopener">Creators-of-Create/Create</a>（MIT）与 Minecraft 资源，仅用于学习与教学；Minecraft 版权归 Mojang 所有。</p>
+<p>标题字体 <a href="https://www.dafont.com/minecraft.font" target="_blank" rel="noopener">Minecraft（dafont.com）</a> · 配方与官方 Ponder 文本来自 Create 模组本地化文件（中文由模组自带）· 教程正文为本项目撰写：功能件逐条编写，同系列装饰件共用家族模板。</p>
+</div></footer>
+<div class="toast"></div><script>
+(function(){
+  var bar=document.querySelector('.searchbar input');
+  var cards=[].slice.call(document.querySelectorAll('#list .card'));
+  var btns=[].slice.call(document.querySelectorAll('.filters button'));
+  var empty=document.querySelector('.empty-msg');
+  var cat='all', q='';
+  var mod=(new URLSearchParams(location.search)).get('mod')||'';
+  var MODS={create:'\u673a\u68b0\u52a8\u529b'};
+  function apply(){
+    var n=0;
+    cards.forEach(function(c){
+      var okc=(cat==='all'||c.dataset.cat===cat);
+      var okm=!mod||c.dataset.mod===mod;
+      var okq=!q||c.dataset.k.indexOf(q)>-1;
+      var show=okc&&okq&&okm;
+      c.style.display=show?'':'none';
+      if(show)n++;
+    });
+    if(empty)empty.style.display=n?'none':'block';
+  }
+  (function(){
+    if(!mod) return;
+    var mb=document.getElementById('modbar'), mn=document.getElementById('modname');
+    if(mn) mn.textContent=MODS[mod]||mod;
+    if(mb) mb.hidden=false;
+  })();
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    btns.forEach(function(x){x.classList.remove('on')});
+    b.classList.add('on'); cat=b.dataset.cat; apply();
+  })});
+  if(bar){bar.addEventListener('input',function(){q=bar.value.trim().toLowerCase();apply();});}
+  (function(){
+    var h=location.hash;
+    if(h.indexOf('#cat-')===0){
+      var c=h.slice(5);
+      btns.forEach(function(b){ if(b.dataset.cat===c){ b.click(); } });
+    }
+  })();
+  document.querySelectorAll('.copyid').forEach(function(el){
+    el.addEventListener('click',function(){
+      var t=el.textContent.trim();
+      var done=function(){el.classList.add('ok');el.textContent='已复制';
+        setTimeout(function(){el.textContent=t;el.classList.remove('ok')},1200);};
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,done)}
+      else{var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();
+        try{document.execCommand('copy')}catch(e){}document.body.removeChild(ta);done();}
+    });
+  });
+})();
+</script></body></html>

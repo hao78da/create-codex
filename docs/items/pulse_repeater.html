@@ -1,0 +1,60 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>脉冲中继器 — Create 机械动力图鉴</title>
+<link rel="preload" href="../assets/fonts/Minecraft.ttf" as="font" crossorigin>
+<link rel="stylesheet" href="../assets/style.css">
+</head><body><header class="top"><div class="wrap"><a class="logo" href="../index.html"><span class="gear"></span><span>CREATE CODEX<small>机械动力图鉴</small></span></a><nav><a href="../tags.html">标签</a><a href="https://github.com/Creators-of-Create/Create" target="_blank" rel="noopener">源码</a></nav></div></header><main class="wrap rise"><div class="crumb"><a href="../index.html">首页</a> / <a href="../catalog.html">全部物品</a> / 红石与控制 / <span>脉冲中继器</span></div><div class="item-hero"><img class="big" src="../assets/icons/create_pulse_repeater.png" alt=""><div><h1>脉冲中继器</h1><div class="en">Pulse Repeater</div><div class="idline"><span class="copyid">create:pulse_repeater</span><span class="badge">方块</span><a class="badge" href="../catalog.html#cat-redstone">红石与控制</a></div></div></div><p class="tagline">脉冲中继器：延迟一下，只响一次。</p><section class="blk"><h2>参数</h2><div class="params"><div class="param"><span>配方</span><b>红石粉+黄铜板+红石火把+石头</b></div><div class="param"><span>输出</span><b>单次短脉冲</b></div></div></section><section class="blk"><h2>详细教程</h2><div class="prose"><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">怎么获得</h3><p>有序合成：上排依次<strong>红石粉</strong>、<strong>黄铜板</strong>、<strong>红石火把</strong>，下排三块<strong>石头</strong>。红石火把要红石与木棍，黄铜板要黄铜锭压，属于中期红石件。</p><p>它和原版中继器长得像但行为不同：原版是延长信号，它是「延迟之后只发一个短脉冲」，用途完全不一样。</p><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">怎么用</h3><p>输入一次信号，它等设定的延迟后输出<strong>一个短脉冲</strong>，然后自己复位；点开侧面的<strong>数值面板</strong>可以调延迟，最长能到大约一小时，做定时任务很方便。</p><p>常见用法是「按一下按钮，十秒后开一次门」这类单次动作；需要循环就用<strong>脉冲计时器</strong>，两者别混。</p><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">搭配</h3><p>和<strong>呼唤铃</strong>、<strong>接触式红石信号发生器</strong>搭配，把一次触碰变成定时动作；和<strong>转换锁存器</strong>搭配可以做「延迟翻转」的开关。</p><p>调延迟时注意面板是有档位的，别指望输一个精确毫秒数；长时间延迟要确认它自己没被别的信号打断，否则会重新计时。</p></div></section><section class="blk"><h2>获取方式</h2><div class="recipes"><div class="recipe"><div class="recipe-head"><span class="machine">工作台</span></div><div class="craft"><div class="grid" style="--n:3"><div class="cell"><a class="tagcell hasi" href="../tags/forge_dusts_redstone.html" title="#红石粉"><img src="../assets/icons/minecraft_redstone.png" alt="" loading="lazy" decoding="async"><i>#</i></a></div><div class="cell"><a class="tagcell hasi" href="../tags/forge_plates_brass.html" title="#黄铜板"><img src="../assets/icons/create_brass_sheet.png" alt="" loading="lazy" decoding="async"><i>#</i></a></div><div class="cell"><img src="../assets/icons/minecraft_redstone_torch.png" alt="" loading="lazy" decoding="async"><em>红石火把</em></div><div class="cell"><a class="tagcell hasi" href="../tags/forge_stone.html" title="#石头"><img src="../assets/icons/hh3d_stone.png" alt="" loading="lazy" decoding="async"><i>#</i></a></div><div class="cell"><a class="tagcell hasi" href="../tags/forge_stone.html" title="#石头"><img src="../assets/icons/hh3d_stone.png" alt="" loading="lazy" decoding="async"><i>#</i></a></div><div class="cell"><a class="tagcell hasi" href="../tags/forge_stone.html" title="#石头"><img src="../assets/icons/hh3d_stone.png" alt="" loading="lazy" decoding="async"><i>#</i></a></div></div></div><div class="arrow">→</div><div class="outs"><a class="chip" href="../items/pulse_repeater.html"><img src="../assets/icons/create_pulse_repeater.png" alt="" loading="lazy" decoding="async"><span>脉冲中继器</span><b>×1</b></a></div></div></div></section><section class="blk"><h2>官方教程 · 使用脉冲中继器控制信号</h2><ol class="steps"><li>脉冲中继器会在延迟后发出一个短脉冲</li><li>通过面板，可以配置充能时间</li><li>配置的延迟时间最长可达 1 小时</li></ol></section><section class="blk"><h2>相关物品</h2><div class="related"><a class="chip" href="pulse_timer.html"><img src="../assets/icons/create_pulse_timer.png" alt="" loading="lazy" decoding="async"><span>脉冲计时器</span></a><a class="chip" href="powered_toggle_latch.html"><img src="../assets/icons/create_powered_toggle_latch.png" alt="" loading="lazy" decoding="async"><span>转换锁存器</span></a><a class="chip" href="redstone_contact.html"><img src="../assets/icons/3d_create_redstone_contact.png" alt="" loading="lazy" decoding="async"><span>接触式红石信号发生器</span></a></div></section><div class="pager"><a href="pulse_extender.html">← 脉冲延长器</a><a href="../catalog.html">返回目录</a><a href="pulse_timer.html">脉冲计时器 →</a></div></main><footer><div class="wrap">
+<p>数据与图标来自 <a href="https://github.com/Creators-of-Create/Create" target="_blank" rel="noopener">Creators-of-Create/Create</a>（MIT）与 Minecraft 资源，仅用于学习与教学；Minecraft 版权归 Mojang 所有。</p>
+<p>标题字体 <a href="https://www.dafont.com/minecraft.font" target="_blank" rel="noopener">Minecraft（dafont.com）</a> · 配方与官方 Ponder 文本来自 Create 模组本地化文件（中文由模组自带）· 教程正文为本项目撰写：功能件逐条编写，同系列装饰件共用家族模板。</p>
+</div></footer>
+<div class="toast"></div><script>
+(function(){
+  var bar=document.querySelector('.searchbar input');
+  var cards=[].slice.call(document.querySelectorAll('#list .card'));
+  var btns=[].slice.call(document.querySelectorAll('.filters button'));
+  var empty=document.querySelector('.empty-msg');
+  var cat='all', q='';
+  var mod=(new URLSearchParams(location.search)).get('mod')||'';
+  var MODS={create:'\u673a\u68b0\u52a8\u529b'};
+  function apply(){
+    var n=0;
+    cards.forEach(function(c){
+      var okc=(cat==='all'||c.dataset.cat===cat);
+      var okm=!mod||c.dataset.mod===mod;
+      var okq=!q||c.dataset.k.indexOf(q)>-1;
+      var show=okc&&okq&&okm;
+      c.style.display=show?'':'none';
+      if(show)n++;
+    });
+    if(empty)empty.style.display=n?'none':'block';
+  }
+  (function(){
+    if(!mod) return;
+    var mb=document.getElementById('modbar'), mn=document.getElementById('modname');
+    if(mn) mn.textContent=MODS[mod]||mod;
+    if(mb) mb.hidden=false;
+  })();
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    btns.forEach(function(x){x.classList.remove('on')});
+    b.classList.add('on'); cat=b.dataset.cat; apply();
+  })});
+  if(bar){bar.addEventListener('input',function(){q=bar.value.trim().toLowerCase();apply();});}
+  (function(){
+    var h=location.hash;
+    if(h.indexOf('#cat-')===0){
+      var c=h.slice(5);
+      btns.forEach(function(b){ if(b.dataset.cat===c){ b.click(); } });
+    }
+  })();
+  document.querySelectorAll('.copyid').forEach(function(el){
+    el.addEventListener('click',function(){
+      var t=el.textContent.trim();
+      var done=function(){el.classList.add('ok');el.textContent='已复制';
+        setTimeout(function(){el.textContent=t;el.classList.remove('ok')},1200);};
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,done)}
+      else{var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();
+        try{document.execCommand('copy')}catch(e){}document.body.removeChild(ta);done();}
+    });
+  });
+})();
+</script></body></html>

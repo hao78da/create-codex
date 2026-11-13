@@ -1,0 +1,60 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>层叠石灰岩 — Create 机械动力图鉴</title>
+<link rel="preload" href="../assets/fonts/Minecraft.ttf" as="font" crossorigin>
+<link rel="stylesheet" href="../assets/style.css">
+</head><body><header class="top"><div class="wrap"><a class="logo" href="../index.html"><span class="gear"></span><span>CREATE CODEX<small>机械动力图鉴</small></span></a><nav><a href="../tags.html">标签</a><a href="https://github.com/Creators-of-Create/Create" target="_blank" rel="noopener">源码</a></nav></div></header><main class="wrap rise"><div class="crumb"><a href="../index.html">首页</a> / <a href="../catalog.html">全部物品</a> / 装饰与建筑 / <span>层叠石灰岩</span></div><div class="item-hero"><img class="big" src="../assets/icons/create_layered_limestone.png" alt=""><div><h1>层叠石灰岩</h1><div class="en">Layered Limestone</div><div class="idline"><span class="copyid">create:layered_limestone</span><span class="badge">方块</span><a class="badge" href="../catalog.html#cat-decor">装饰与建筑</a></div></div></div><p class="tagline">层叠石灰岩：博物馆里的地层剖面。</p><section class="blk"><h2>参数</h2><div class="params"><div class="param"><span>材质</span><b>石灰岩</b></div><div class="param"><span>形制</span><b>层叠</b></div><div class="param"><span>硬度 / 抗爆</span><b>1.25 / 0.8</b></div></div></section><section class="blk"><h2>详细教程</h2><div class="prose"><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">怎么获得</h3><p>切石机 1:1，从任意石灰岩材质方块切来，没有工作台配方。米黄的条带深浅差很小，远看是一整面浅色，近看才发现层次。</p><p>它在材质标签里，能切回整块或改切台阶、墙，做展陈改动时不用重新挖料。</p><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">怎么用</h3><p>最适合<strong>地层剖面展示和博物馆展墙</strong>：把一层层岩层摊在观众面前，配说明牌就是一块活的剖面图。并排铺开时条带自动接续，像一整段岩芯。</p><p>做<strong>建筑的基座和台基</strong>也好看，浅色层理让台基显得比实际更厚。</p><p>展墙前留一排射灯，光斜着打在条带上，浅米的层理才会显出阴影；如果正对着灯，磨光和层叠都会变成一片发白的平面。</p><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">搭配与坑</h3><p>配<strong>化石、砂砾、深板岩、铜制说明牌</strong>；剖面上下用整块切制收边，中间才是层叠，主题更清楚。</p><p>坑是抗爆只有 0.8：室外挡土墙用它会整片崩掉，室外还是换花岗岩或凝灰岩。</p></div></section><section class="blk"><h2>获取方式</h2><div class="recipes"><div class="recipe"><div class="recipe-head"><span class="machine">切石机</span></div><div class="ings"><a class="chip tag" href="../tags/create_stone_types_limestone.html"><img src="../assets/icons/create_cut_limestone.png" alt="" loading="lazy" decoding="async">石灰岩</a></div><div class="arrow">→</div><div class="outs"><a class="chip" href="../items/layered_limestone.html"><img src="../assets/icons/create_layered_limestone.png" alt="" loading="lazy" decoding="async"><span>层叠石灰岩</span><b>×1</b></a></div></div></div></section><section class="blk"><h2>相关物品</h2><div class="related"><a class="chip" href="cut_limestone.html"><img src="../assets/icons/create_cut_limestone.png" alt="" loading="lazy" decoding="async"><span>切制石灰岩</span></a><a class="chip" href="limestone_pillar.html"><img src="../assets/icons/create_limestone_pillar.png" alt="" loading="lazy" decoding="async"><span>石灰岩柱</span></a><a class="chip" href="polished_cut_limestone.html"><img src="../assets/icons/create_polished_cut_limestone.png" alt="" loading="lazy" decoding="async"><span>磨制切制石灰岩</span></a></div></section><div class="pager"><a href="layered_granite.html">← 层叠花岗岩</a><a href="../catalog.html">返回目录</a><a href="layered_ochrum.html">层叠赭金砂 →</a></div></main><footer><div class="wrap">
+<p>数据与图标来自 <a href="https://github.com/Creators-of-Create/Create" target="_blank" rel="noopener">Creators-of-Create/Create</a>（MIT）与 Minecraft 资源，仅用于学习与教学；Minecraft 版权归 Mojang 所有。</p>
+<p>标题字体 <a href="https://www.dafont.com/minecraft.font" target="_blank" rel="noopener">Minecraft（dafont.com）</a> · 配方与官方 Ponder 文本来自 Create 模组本地化文件（中文由模组自带）· 教程正文为本项目撰写：功能件逐条编写，同系列装饰件共用家族模板。</p>
+</div></footer>
+<div class="toast"></div><script>
+(function(){
+  var bar=document.querySelector('.searchbar input');
+  var cards=[].slice.call(document.querySelectorAll('#list .card'));
+  var btns=[].slice.call(document.querySelectorAll('.filters button'));
+  var empty=document.querySelector('.empty-msg');
+  var cat='all', q='';
+  var mod=(new URLSearchParams(location.search)).get('mod')||'';
+  var MODS={create:'\u673a\u68b0\u52a8\u529b'};
+  function apply(){
+    var n=0;
+    cards.forEach(function(c){
+      var okc=(cat==='all'||c.dataset.cat===cat);
+      var okm=!mod||c.dataset.mod===mod;
+      var okq=!q||c.dataset.k.indexOf(q)>-1;
+      var show=okc&&okq&&okm;
+      c.style.display=show?'':'none';
+      if(show)n++;
+    });
+    if(empty)empty.style.display=n?'none':'block';
+  }
+  (function(){
+    if(!mod) return;
+    var mb=document.getElementById('modbar'), mn=document.getElementById('modname');
+    if(mn) mn.textContent=MODS[mod]||mod;
+    if(mb) mb.hidden=false;
+  })();
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    btns.forEach(function(x){x.classList.remove('on')});
+    b.classList.add('on'); cat=b.dataset.cat; apply();
+  })});
+  if(bar){bar.addEventListener('input',function(){q=bar.value.trim().toLowerCase();apply();});}
+  (function(){
+    var h=location.hash;
+    if(h.indexOf('#cat-')===0){
+      var c=h.slice(5);
+      btns.forEach(function(b){ if(b.dataset.cat===c){ b.click(); } });
+    }
+  })();
+  document.querySelectorAll('.copyid').forEach(function(el){
+    el.addEventListener('click',function(){
+      var t=el.textContent.trim();
+      var done=function(){el.classList.add('ok');el.textContent='已复制';
+        setTimeout(function(){el.textContent=t;el.classList.remove('ok')},1200);};
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,done)}
+      else{var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();
+        try{document.execCommand('copy')}catch(e){}document.body.removeChild(ta);done();}
+    });
+  });
+})();
+</script></body></html>

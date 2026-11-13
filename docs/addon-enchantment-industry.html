@@ -1,0 +1,112 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>附属模组 · Create: Enchantment Industry — Create Codex</title><link rel="stylesheet" href="assets/style.css"><style>
+.hero{text-align:center;padding:64px 0 24px}
+.hero h1{font-size:44px;margin:0}
+.hero h1 span{display:block;font-size:15px;letter-spacing:.3em;color:var(--brass2);margin-top:10px}
+.hero p{color:var(--muted);margin-top:14px;font-size:14px}
+.blk{margin-top:38px}
+.blk h2{font-size:17px;margin:0 0 12px;padding-left:10px;border-left:3px solid var(--brass2)}
+.tagline{font-size:14.5px;color:#e8d3a7;margin:0 0 10px}
+.note{border-left:3px solid var(--line);padding:2px 0 2px 14px;color:var(--muted);font-size:13px;margin:12px 0 0;max-width:840px}
+.grid-items{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:12px;align-items:start}
+.card{display:flex;gap:12px;align-items:flex-start;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px;content-visibility:visible;contain-intrinsic-size:none;height:auto}
+.card .ci img{width:44px;height:44px;image-rendering:pixelated;border-radius:8px;background:#0d0b09;border:1px solid #2b2419;padding:3px}
+.card .ci{flex:0 0 52px}
+.card .t{min-width:0;flex:1}
+.card .t b{display:block;font-size:13.5px;font-weight:600}
+.card .t small{display:block;color:var(--muted);font-size:11px;font-family:ui-monospace,Consolas,monospace;word-break:break-all}
+.rec{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:8px;font-size:12px}
+.rec .ch{display:inline-flex;align-items:center;gap:4px;border:1px solid var(--line);border-radius:6px;padding:2px 6px;background:#14110c}
+.rec .ch img{width:16px;height:16px;image-rendering:pixelated}
+.rec .mach{color:var(--brass2);font-size:11.5px}
+.craft{display:flex;align-items:center;gap:10px;margin-top:8px}
+.craft .grid{display:grid !important;grid-template-columns:repeat(3,40px) !important;grid-auto-rows:40px;gap:3px;width:auto;max-width:none}
+.cell{width:40px;height:40px;border-radius:6px;background:#14110c;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;position:relative}
+.cell.empty{border-style:dashed;opacity:.45}
+.cell img{width:30px;height:30px;image-rendering:pixelated}
+.cell .tagcell{font-size:8.5px;line-height:1.05;color:var(--muted);text-align:center;word-break:break-all}
+.cell .hb{position:absolute;right:2px;bottom:0;font-size:9px;font-style:normal;color:var(--brass2)}
+.arw{color:var(--muted)}
+#q{width:100%;max-width:420px;padding:9px 12px;border-radius:8px;border:1px solid var(--line);background:#14110c;color:#e8d3a7;font-size:13px;margin:8px 0 16px}
+</style>
+
+
+<style>
+.grp{margin:26px 0 0}
+.grp>summary.grpsum{cursor:pointer;list-style:none;display:flex;align-items:center;gap:10px;
+  font-size:17px;font-weight:800;color:#e9dcc2;padding:6px 0;user-select:none}
+.grp>summary.grpsum::-webkit-details-marker{display:none}
+.grp>summary.grpsum::before{content:'▸';color:var(--brass);font-size:14px;transition:transform .15s}
+.grp[open]>summary.grpsum::before{transform:rotate(90deg)}
+.grp>summary.grpsum .cnt{font-size:12px;color:var(--muted);background:#1a1510;border:1px solid var(--line);
+  border-radius:20px;padding:1px 8px;font-weight:600}
+.itsearch{display:flex;align-items:center;gap:12px;margin:22px 0 4px}
+.itsearch input{flex:1;max-width:420px;background:#14110c;border:1px solid var(--line);border-radius:10px;
+  padding:9px 12px;color:#e9dcc2;font-size:13.5px;font-family:inherit}
+.itsearch input:focus{outline:none;border-color:var(--brass)}
+.itcount{color:var(--muted);font-size:12px}
+@media(max-width:620px){.itsearch input{max-width:none}}
+</style>
+</head><body><header class="top"><div class="wrap"><span class="logo"><span class="gear"></span><span>CREATE CODEX<small>机械动力图鉴</small></span></span><a class="backbtn" href="index.html">← 返回关系图</a></div></header><main class="wrap"><section class="hero"><img class="big" style="width:96px;height:96px;object-fit:contain;image-rendering:pixelated" src="assets/icons/hero_enchantment_industry.png" alt=""><h1>Create: Enchantment Industry<span>附属模组</span></h1><p>把附魔变成可以流水线生产的东西——附魔书、词缀、液态经验。</p></section><section class="blk"><h2>这是什么</h2><p class="tagline">附魔台被拆成了「材料 → 书 → 词缀」三条支线。</p><p>它把附魔从「站在台子前刷随机数」变成可以规划的生产：烈焰附魔台负责把经验灌进书里，烈焰锻造台做词缀模板，烈焰谱写台把词缀写到工具上；配套还有液态经验（可以当流体运输、灌进储罐）、经验蛋糕、以及拆解/复制附魔的机器。</p><p class="note"><b>规模：</b>18 个物品、20 个方块、23 条配方。名字全部取自模组自带的中文语言文件。</p></section><section class="blk"><h2>全部内容</h2><div class="grid-items"><div class="card" id="ei-experience_lantern"><div class="ci"><img src="assets/icons/3d_ei_experience_lantern.png" alt=""></div><div class="t"><b>经验灯笼</b><small>create_enchantment_industry:experience_lantern</small><div class="rec"><div class="craft"><div class="grid"><div class="cell"><img src="assets/icons/3d_create_experience_block.png" alt=""></div><div class="cell"><span class="ch" title="未知材料">?</span></div><div class="cell"><img src="assets/icons/create_copper_casing.png" alt=""></div></div><span class="arw">→</span></div><a href="#ei-experience_lantern" class="ch"><img src="assets/icons/ei_experience_lantern.png" alt="">经验灯笼</a><span class="mach">工作台</span></div></div></div><div class="card" id="ei-mechanical_grindstone"><div class="ci"><img src="assets/icons/3d_ei_mechanical_grindstone.png" alt=""></div><div class="t"><b>动力砂轮</b><small>create_enchantment_industry:mechanical_grindstone</small><div class="rec"><div class="craft"><div class="grid"><div class="cell"><img src="assets/icons/create_andesite_alloy.png" alt=""></div><div class="cell"><img src="assets/icons/create_andesite_alloy.png" alt=""></div><div class="cell"><img src="assets/icons/create_andesite_alloy.png" alt=""></div><div class="cell"><img src="assets/icons/create_andesite_alloy.png" alt=""></div><div class="cell"><img src="assets/icons/3d_create_shaft.png" alt=""></div><div class="cell"><img src="assets/icons/create_andesite_alloy.png" alt=""></div><div class="cell"><img src="assets/icons/create_andesite_alloy.png" alt=""></div><div class="cell"><img src="assets/icons/create_andesite_alloy.png" alt=""></div><div class="cell"><img src="assets/icons/create_andesite_alloy.png" alt=""></div></div><span class="arw">→</span></div><a href="#ei-mechanical_grindstone" class="ch"><img src="assets/icons/ei_mechanical_grindstone.png" alt="">动力砂轮</a><span class="mach">工作台</span></div></div></div><div class="card" id="ei-printer"><div class="ci"><img src="assets/icons/ei_printer.png" alt=""></div><div class="t"><b>打印机</b><small>create_enchantment_industry:printer</small><div class="rec"><div class="craft"><div class="grid"><div class="cell"><span class="tagcell"  title="#forge:plates/brass">黄铜板</span></div><div class="cell"><img src="assets/icons/3d_create_spout.png" alt=""></div><div class="cell"><span class="tagcell"  title="#forge:storage_blocks/iron">铁块</span></div></div><span class="arw">→</span></div><a href="#ei-printer" class="ch"><img src="assets/icons/ei_printer.png" alt="">打印机</a><span class="mach">工作台</span></div></div></div><div class="card" id="ei-super_experience_block"><div class="ci"><img src="assets/icons/3d_ei_super_experience_block.png" alt=""></div><div class="t"><b>超越经验块</b><small>create_enchantment_industry:super_experience_block</small><div class="rec"><div class="craft"><div class="grid"><div class="cell"><img src="assets/icons/ei_super_experience_nugget.png" alt=""></div><div class="cell"><img src="assets/icons/ei_super_experience_nugget.png" alt=""></div><div class="cell"><img src="assets/icons/ei_super_experience_nugget.png" alt=""></div><div class="cell"><img src="assets/icons/ei_super_experience_nugget.png" alt=""></div><div class="cell"><img src="assets/icons/ei_super_experience_nugget.png" alt=""></div><div class="cell"><img src="assets/icons/ei_super_experience_nugget.png" alt=""></div><div class="cell"><img src="assets/icons/ei_super_experience_nugget.png" alt=""></div><div class="cell"><img src="assets/icons/ei_super_experience_nugget.png" alt=""></div><div class="cell"><img src="assets/icons/ei_super_experience_nugget.png" alt=""></div></div><span class="arw">→</span></div><a href="#ei-super_experience_block" class="ch"><img src="assets/icons/ei_super_experience_block.png" alt="">超越经验块</a><span class="mach">工作台</span></div></div></div></div></section><footer class="foot"><p>Create: Enchantment Industry · 资料来自模组 jar 内的 langs 与 recipes；本页不属于 Create 本体图鉴，只在「模组」入口出现。</p></footer></main><script src="assets/anchors.js" defer></script>
+
+
+<script>
+(function(){
+  var items = document.querySelectorAll('.grid-items');
+  if (!items.length) return;
+  var total = document.querySelectorAll('.card').length;
+
+  // 1) 每个分类包成 <details>
+  var groups = [];
+  items.forEach(function(g){
+    var h = g.previousElementSibling;
+    if (!h || h.tagName !== 'H2') return;
+    var d = document.createElement('details');
+    d.open = true;
+    d.className = 'grp';
+    h.parentNode.insertBefore(d, h);
+    var s = document.createElement('summary');
+    s.className = 'grpsum';
+    s.innerHTML = h.innerHTML;
+    d.appendChild(s);
+    d.appendChild(g);
+    h.remove();
+    groups.push(d);
+  });
+
+  // 2) 搜索框
+  var first = groups[0] || items[0].closest('.blk');
+  if (!first) return;
+  var box = document.createElement('div');
+  box.className = 'itsearch';
+  box.innerHTML = '<input type="search" placeholder="搜索物品名 / ID…" aria-label="搜索物品"><span class="itcount"></span>';
+  var host = (groups[0] || items[0]).parentNode;
+  host.insertBefore(box, (groups[0] || items[0]));
+  var input = box.querySelector('input');
+  var cnt = box.querySelector('.itcount');
+  var cards = document.querySelectorAll('.card');
+
+  function setCount(vis){
+    cnt.textContent = vis === total ? ('共 ' + total + ' 个物品') : (vis + ' / ' + total);
+  }
+  setCount(total);
+
+  input.addEventListener('input', function(){
+    var q = input.value.trim().toLowerCase();
+    var vis = 0;
+    groups.forEach(function(d){
+      var hit = 0;
+      d.querySelectorAll('.card').forEach(function(c){
+        var t = (c.textContent || '').toLowerCase();
+        var ok = !q || t.indexOf(q) >= 0;
+        c.style.display = ok ? '' : 'none';
+        if (ok) hit++;
+      });
+      d.style.display = hit ? '' : 'none';
+      if (q && hit) d.open = true;
+      vis += hit;
+    });
+    setCount(vis);
+  });
+})();
+</script>
+</body></html><div class="card" id="ei-experience_cake_base"><div class="ci"><img src="assets/icons/ei_experience_cake_base.png" alt=""></div><div class="t"><b>附魔蛋糕胚</b><small>create_enchantment_industry:experience_cake_base</small><div class="rec"><a href="vanilla/egg.html" class="ch"  title="#forge:eggs">#鸡蛋</a><a href="vanilla/sugar.html" class="ch"><img src="assets/icons/minecraft_sugar.png" alt="">糖</a><a href="vanilla/lapis_lazuli.html" class="ch"><img src="assets/icons/minecraft_lapis_lazuli.png" alt="">青金石</a><span class="arw">→</span><a href="#ei-experience_cake_base" class="ch"><img src="assets/icons/ei_experience_cake_base.png" alt="">附魔蛋糕胚</a><span class="mach">压床</span></div></div></div><div class="card" id="ei-enchanting_template"><div class="ci"><img src="assets/icons/ei_enchanting_template.png" alt=""></div><div class="t"><b>附魔模板</b><small>create_enchantment_industry:enchanting_template</small><div class="rec"><a href="items/experience_block.html" class="ch"><img src="assets/icons/3d_create_experience_block.png" alt="">经验块</a><span class="arw">→</span><a href="#ei-enchanting_template" class="ch"><img src="assets/icons/ei_enchanting_template.png" alt="">附魔模板</a><span class="mach">压床</span></div></div></div><div class="card" id="ei-experience_cake"><div class="ci"><img src="assets/icons/ei_experience_cake.png" alt=""></div><div class="t"><b>附魔蛋糕</b><small>create_enchantment_industry:experience_cake</small><div class="rec"><a href="#ei-experience_cake_base" class="ch"><img src="assets/icons/ei_experience_cake_base.png" alt="">附魔蛋糕胚</a><a href="#ei-experience" class="ch"><img src="assets/icons/ei_experience.png" alt="">液态经验</a><span class="arw">→</span><a href="#ei-experience_cake" class="ch"><img src="assets/icons/ei_experience_cake.png" alt="">附魔蛋糕</a><span class="mach">注液器</span></div></div></div><div class="card" id="ei-experience_cake_slice"><div class="ci"><img src="assets/icons/ei_experience_cake_slice.png" alt=""></div><div class="t"><b>附魔蛋糕切片</b><small>create_enchantment_industry:experience_cake_slice</small><div class="rec"><a href="#ei-experience_cake" class="ch"><img src="assets/icons/ei_experience_cake.png" alt="">附魔蛋糕</a><span class="arw">→</span><span class="ch"><img src="assets/icons/ei_experience_cake_slice.png" alt="">附魔蛋糕切片 ×4</span><span class="mach">机械锯</span></div></div></div><div class="card" id="ei-super_enchanting_template"><div class="ci"><img src="assets/icons/ei_super_enchanting_template.png" alt=""></div><div class="t"><b>超越附魔模板</b><small>create_enchantment_industry:super_enchanting_template</small><div class="rec"><a href="#ei-super_experience_block" class="ch"><img src="assets/icons/ei_super_experience_block.png" alt="">超越经验块</a><span class="arw">→</span><a href="#ei-super_enchanting_template" class="ch"><img src="assets/icons/ei_super_enchanting_template.png" alt="">超越附魔模板</a><span class="mach">压床</span></div></div></div><div class="card" id="ei-super_experience_nugget"><div class="ci"><img src="assets/icons/ei_super_experience_nugget.png" alt=""></div><div class="t"><b>超越经验颗粒</b><small>create_enchantment_industry:super_experience_nugget</small><div class="rec"><a href="#ei-super_experience_block" class="ch"><img src="assets/icons/ei_super_experience_block.png" alt="">超越经验块</a><span class="arw">→</span><span class="ch"><img src="assets/icons/ei_super_experience_nugget.png" alt="">超越经验颗粒 ×9</span><span class="mach">工作台</span></div></div></div><div class="card" id="ei-blaze_enchanter"><div class="ci"><img src="assets/icons/ei_blaze_enchanter.png" alt=""></div><div class="t"><b>烈焰人附魔室</b><small>create_enchantment_industry:blaze_enchanter</small><div class="rec"><span class="arw">→</span><a href="#ei-blaze_enchanter" class="ch"><img src="assets/icons/ei_blaze_enchanter.png" alt="">烈焰人附魔室</a><span class="mach">锻造台</span></div></div></div><div class="card" id="ei-blaze_forger"><div class="ci"><img src="assets/icons/ei_blaze_forger.png" alt=""></div><div class="t"><b>烈焰人锻造室</b><small>create_enchantment_industry:blaze_forger</small><div class="rec"><span class="arw">→</span><a href="#ei-blaze_forger" class="ch"><img src="assets/icons/ei_blaze_forger.png" alt="">烈焰人锻造室</a><span class="mach">锻造台</span></div></div></div><div class="card" id="ei-experience_hatch"><div class="ci"><img src="assets/icons/3d_ei_experience_hatch.png" alt=""></div><div class="t"><b>经验舱口</b><small>create_enchantment_industry:experience_hatch</small><div class="rec"><span class="ch">fluid hatch</span><a href="items/experience_block.html" class="ch"><img src="assets/icons/3d_create_experience_block.png" alt="">经验块</a><span class="arw">→</span><a href="#ei-experience_hatch" class="ch"><img src="assets/icons/ei_experience_hatch.png" alt="">经验舱口</a><span class="mach">机械手涂抹</span></div></div></div><div class="card" id="ei-apotheotic_affix_template"><div class="ci"><img src="assets/icons/ei_apotheotic_affix_template.png" alt=""></div><div class="t"><b>神化词缀模板</b><small>create_enchantment_industry:apotheotic_affix_template</small></div></div><div class="card" id="ei-apotheotic_essence_bucket"><div class="ci"><img src="assets/icons/ei_apotheotic_essence_bucket.png" alt=""></div><div class="t"><b>神化精粹桶</b><small>create_enchantment_industry:apotheotic_essence_bucket</small></div></div><div class="card" id="ei-blazes_enchanting_handbook"><div class="ci"><img src="assets/icons/ei_blazes_enchanting_handbook.png" alt=""></div><div class="t"><b>烈焰人附魔实用手册</b><small>create_enchantment_industry:blazes_enchanting_handbook</small></div></div><div class="card" id="ei-brass_affix_template"><div class="ci"><img src="assets/icons/ei_brass_affix_template.png" alt=""></div><div class="t"><b>黄铜词缀模板</b><small>create_enchantment_industry:brass_affix_template</small></div></div><div class="card" id="ei-crystal_affix_template"><div class="ci"><img src="assets/icons/ei_crystal_affix_template.png" alt=""></div><div class="t"><b>宝石词缀模板</b><small>create_enchantment_industry:crystal_affix_template</small></div></div><div class="card" id="ei-crystal_essence_bucket"><div class="ci"><img src="assets/icons/ei_crystal_essence_bucket.png" alt=""></div><div class="t"><b>宝石精粹桶</b><small>create_enchantment_industry:crystal_essence_bucket</small></div></div><div class="card" id="ei-experience_bucket"><div class="ci"><img src="assets/icons/ei_experience_bucket.png" alt=""></div><div class="t"><b>附魔之桶</b><small>create_enchantment_industry:experience_bucket</small></div></div><div class="card" id="ei-incomplete_apotheotic_affix_template"><div class="ci"><img src="assets/icons/ei_incomplete_apotheotic_affix_template.png" alt=""></div><div class="t"><b>神化词缀模板（半成品）</b><small>create_enchantment_industry:incomplete_apotheotic_affix_template</small></div></div><div class="card" id="ei-incomplete_brass_affix_template"><div class="ci"><img src="assets/icons/ei_incomplete_brass_affix_template.png" alt=""></div><div class="t"><b>黄铜词缀模板（半成品）</b><small>create_enchantment_industry:incomplete_brass_affix_template</small></div></div><div class="card" id="ei-incomplete_brass_bookshelf"><div class="ci"><img src="assets/icons/ei_incomplete_brass_bookshelf.png" alt=""></div><div class="t"><b>黄铜书架（半成品）</b><small>create_enchantment_industry:incomplete_brass_bookshelf</small></div></div><div class="card" id="ei-incomplete_crystal_affix_template"><div class="ci"><img src="assets/icons/ei_incomplete_crystal_affix_template.png" alt=""></div><div class="t"><b>宝石词缀模板（半成品）</b><small>create_enchantment_industry:incomplete_crystal_affix_template</small></div></div><div class="card" id="ei-infused_dragon_breath_bucket"><div class="ci"><img src="assets/icons/ei_infused_dragon_breath_bucket.png" alt=""></div><div class="t"><b>灌注龙息桶</b><small>create_enchantment_industry:infused_dragon_breath_bucket</small></div></div><div class="card" id="ei-affix_augmentor"><div class="ci"><img src="assets/icons/ei_affix_augmentor.png" alt=""></div><div class="t"><b>词缀强化仪</b><small>create_enchantment_industry:affix_augmentor</small></div></div><div class="card" id="ei-apotheotic_essence"><div class="ci"><img src="assets/icons/ei_apotheotic_essence.png" alt=""></div><div class="t"><b>神化精粹</b><small>create_enchantment_industry:apotheotic_essence</small></div></div><div class="card" id="ei-blaze_composer"><div class="ci"><img src="assets/icons/ei_blaze_composer.png" alt=""></div><div class="t"><b>烈焰人编构室</b><small>create_enchantment_industry:blaze_composer</small></div></div><div class="card" id="ei-brass_bookshelf"><div class="ci"><img src="assets/icons/3d_ei_brass_bookshelf.png" alt=""></div><div class="t"><b>黄铜书架</b><small>create_enchantment_industry:brass_bookshelf</small></div></div><div class="card" id="ei-classic_blaze_enchanter"><div class="ci"><img src="assets/icons/ei_classic_blaze_enchanter.png" alt=""></div><div class="t"><b>经典烈焰人附魔室</b><small>create_enchantment_industry:classic_blaze_enchanter</small></div></div><div class="card" id="ei-creative_bookshelf"><div class="ci"><img src="assets/icons/3d_ei_creative_bookshelf.png" alt=""></div><div class="t"><b>创造书架</b><small>create_enchantment_industry:creative_bookshelf</small></div></div><div class="card" id="ei-crystal_essence"><div class="ci"><img src="assets/icons/ei_crystal_essence.png" alt=""></div><div class="t"><b>宝石精粹</b><small>create_enchantment_industry:crystal_essence</small></div></div><div class="card" id="ei-ender_woven_bag"><div class="ci"><img src="assets/icons/ei_ender_woven_bag.png" alt=""></div><div class="t"><b>末影编织袋</b><small>create_enchantment_industry:ender_woven_bag</small></div></div><div class="card" id="ei-experience"><div class="ci"><img src="assets/icons/ei_experience.png" alt=""></div><div class="t"><b>液态经验</b><small>create_enchantment_industry:experience</small></div></div><div class="card" id="ei-gem_cutter"><div class="ci"><img src="assets/icons/ei_gem_cutter.png" alt=""></div><div class="t"><b>宝石切割机</b><small>create_enchantment_industry:gem_cutter</small></div></div><div class="card" id="ei-grindstone_drain"><div class="ci"><img src="assets/icons/ei_grindstone_drain.png" alt=""></div><div class="t"><b>砂轮分液池</b><small>create_enchantment_industry:grindstone_drain</small></div></div><div class="card" id="ei-infused_dragon_breath"><div class="ci"><img src="assets/icons/ei_infused_dragon_breath.png" alt=""></div><div class="t"><b>灌注龙息</b><small>create_enchantment_industry:infused_dragon_breath</small></div></div><div class="card" id="ei-infuser"><div class="ci"><img src="assets/icons/ei_infuser.png" alt=""></div><div class="t"><b>灌注机</b><small>create_enchantment_industry:infuser</small></div></div>

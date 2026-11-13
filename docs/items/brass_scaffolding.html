@@ -1,0 +1,60 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>黄铜脚手架 — Create 机械动力图鉴</title>
+<link rel="preload" href="../assets/fonts/Minecraft.ttf" as="font" crossorigin>
+<link rel="stylesheet" href="../assets/style.css">
+</head><body><header class="top"><div class="wrap"><a class="logo" href="../index.html"><span class="gear"></span><span>CREATE CODEX<small>机械动力图鉴</small></span></a><nav><a href="../tags.html">标签</a><a href="https://github.com/Creators-of-Create/Create" target="_blank" rel="noopener">源码</a></nav></div></header><main class="wrap rise"><div class="crumb"><a href="../index.html">首页</a> / <a href="../catalog.html">全部物品</a> / 装饰与建筑 / <span>黄铜脚手架</span></div><div class="item-hero"><img class="big" src="../assets/icons/create_brass_scaffolding.png" alt=""><div><h1>黄铜脚手架</h1><div class="en">Brass Scaffolding</div><div class="idline"><span class="copyid">create:brass_scaffolding</span><span class="badge">方块</span><a class="badge" href="../catalog.html#cat-decor">装饰与建筑</a></div></div></div><p class="tagline">黄铜脚手架，金色杆件的检修平台。</p><section class="blk"><h2>参数</h2><div class="params"><div class="param"><span>材质</span><b>黄铜</b></div><div class="param"><span>类型</span><b>脚手架</b></div><div class="param"><span>工艺</span><b>切石机 1 → 2</b></div></div></section><section class="blk"><h2>详细教程</h2><div class="prose"><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">怎么获得</h3><p>切石机里用 1 块<strong>黄铜锭</strong>切出 2 块脚手架。它和安山脚手架结构相同，区别只在金属色，所以同一座建筑里可以按“新旧”或“重要程度”分配颜色。</p><p>它的用量和建筑高度成正比，做塔之前先想好总高度，别边搭边补料。</p><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">怎么用</h3><p>踩上去可以攀爬，适合做储罐旁的检修架、吊车轨道的维护平台、站台雨棚的施工架。黄铜色会让它看起来像“有专人维护的高级设备”，而不是临时木架。</p><p>把它搭在<strong>黄铜机壳</strong>的机器旁边，整个机组就像一个完整的蒸汽动力单元。</p><h3 style="color:#e9c98d;font-size:15px;margin:18px 0 6px">搭配</h3><p>黄铜脚手架＋<strong>黄铜梯子</strong>＋<strong>黄铜栏杆</strong>是三件套：架子给平面，梯子给上下，栏杆给安全边，一套做完机房就不用再补别的方块。</p><p>想更工业一点，就在架子上放几个板条箱和压力表，让它看起来真的在用。</p><p>除了当脚手架，它也很适合做装饰框架：围绕吊灯搭一圈、给展示台做骨架，黄铜细杆比木架精致得多，拆的时候也不留痕迹。</p></div></section><section class="blk"><h2>获取方式</h2><div class="recipes"><div class="recipe"><div class="recipe-head"><span class="machine">切石机</span></div><div class="ings"><a class="chip tag" href="../tags/forge_ingots_brass.html"><img src="../assets/icons/create_brass_ingot.png" alt="" loading="lazy" decoding="async">黄铜锭</a></div><div class="arrow">→</div><div class="outs"><a class="chip" href="../items/brass_scaffolding.html"><img src="../assets/icons/create_brass_scaffolding.png" alt="" loading="lazy" decoding="async"><span>黄铜脚手架</span><b>×1</b></a></div></div></div></section><section class="blk"><h2>相关物品</h2><div class="related"><a class="chip" href="brass_ladder.html"><img src="../assets/icons/create_brass_ladder.png" alt="" loading="lazy" decoding="async"><span>黄铜梯子</span></a><a class="chip" href="brass_bars.html"><img src="../assets/icons/create_brass_bars.png" alt="" loading="lazy" decoding="async"><span>黄铜栏杆</span></a><a class="chip" href="andesite_scaffolding.html"><img src="../assets/icons/create_andesite_scaffolding.png" alt="" loading="lazy" decoding="async"><span>安山脚手架</span></a></div></section><div class="pager"><a href="brass_nugget.html">← 黄铜粒</a><a href="../catalog.html">返回目录</a><a href="brass_sheet.html">黄铜板 →</a></div></main><footer><div class="wrap">
+<p>数据与图标来自 <a href="https://github.com/Creators-of-Create/Create" target="_blank" rel="noopener">Creators-of-Create/Create</a>（MIT）与 Minecraft 资源，仅用于学习与教学；Minecraft 版权归 Mojang 所有。</p>
+<p>标题字体 <a href="https://www.dafont.com/minecraft.font" target="_blank" rel="noopener">Minecraft（dafont.com）</a> · 配方与官方 Ponder 文本来自 Create 模组本地化文件（中文由模组自带）· 教程正文为本项目撰写：功能件逐条编写，同系列装饰件共用家族模板。</p>
+</div></footer>
+<div class="toast"></div><script>
+(function(){
+  var bar=document.querySelector('.searchbar input');
+  var cards=[].slice.call(document.querySelectorAll('#list .card'));
+  var btns=[].slice.call(document.querySelectorAll('.filters button'));
+  var empty=document.querySelector('.empty-msg');
+  var cat='all', q='';
+  var mod=(new URLSearchParams(location.search)).get('mod')||'';
+  var MODS={create:'\u673a\u68b0\u52a8\u529b'};
+  function apply(){
+    var n=0;
+    cards.forEach(function(c){
+      var okc=(cat==='all'||c.dataset.cat===cat);
+      var okm=!mod||c.dataset.mod===mod;
+      var okq=!q||c.dataset.k.indexOf(q)>-1;
+      var show=okc&&okq&&okm;
+      c.style.display=show?'':'none';
+      if(show)n++;
+    });
+    if(empty)empty.style.display=n?'none':'block';
+  }
+  (function(){
+    if(!mod) return;
+    var mb=document.getElementById('modbar'), mn=document.getElementById('modname');
+    if(mn) mn.textContent=MODS[mod]||mod;
+    if(mb) mb.hidden=false;
+  })();
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    btns.forEach(function(x){x.classList.remove('on')});
+    b.classList.add('on'); cat=b.dataset.cat; apply();
+  })});
+  if(bar){bar.addEventListener('input',function(){q=bar.value.trim().toLowerCase();apply();});}
+  (function(){
+    var h=location.hash;
+    if(h.indexOf('#cat-')===0){
+      var c=h.slice(5);
+      btns.forEach(function(b){ if(b.dataset.cat===c){ b.click(); } });
+    }
+  })();
+  document.querySelectorAll('.copyid').forEach(function(el){
+    el.addEventListener('click',function(){
+      var t=el.textContent.trim();
+      var done=function(){el.classList.add('ok');el.textContent='已复制';
+        setTimeout(function(){el.textContent=t;el.classList.remove('ok')},1200);};
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,done)}
+      else{var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();
+        try{document.execCommand('copy')}catch(e){}document.body.removeChild(ta);done();}
+    });
+  });
+})();
+</script></body></html>

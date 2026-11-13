@@ -43,7 +43,9 @@ PROP_TEX = os.path.join(PROP, 'textures')
 VAN = os.path.join(_ASSETS, 'minecraft')
 VAN_MODELS = os.path.join(VAN, 'models')
 VAN_TEX = os.path.join(VAN, 'textures')
-ICONS = os.path.join(ROOT, 'assets', 'icons')
+# 站点已迁到 docs/，图标实际写在 docs/assets/icons（与其他脚本的 SITE 保持一致）
+SITE = os.path.join(ROOT, 'docs')
+ICONS = os.path.join(SITE, 'assets', 'icons')
 
 SIZE = 96
 SS = 2
@@ -53,6 +55,7 @@ MARGIN = 0.04
 # ---------------------------------------------------------------- 资源加载
 
 def _dyn_tex_roots():
+    """work/assets/<ns>/ 的父目录列表（拼 <ns>/textures/... 用）。"""
     global _DTEX
     if _DTEX is not None:
         return _DTEX
@@ -106,7 +109,8 @@ def load_chain(name):
         if p in seen or not os.path.exists(p):
             break
         seen.add(p)
-        with open(p, encoding='utf-8') as f:
+        # utf-8-sig：部分模组的模型 JSON 带 BOM，用 utf-8 会抛 JSONDecodeError
+        with open(p, encoding='utf-8-sig') as f:
             d = json.load(f)
         chain.append(d)
         cur = d.get('parent')
@@ -145,7 +149,8 @@ def tex_path(tex, ref):
     real = _tex_ref(tex, ref)
     if not real:
         return None
-    real = real.split(':')[-1] if real.startswith('minecraft:') else real
+    # 保留命名空间前缀：下面的分支都按 '<ns>:<path>' 判断，
+    # 之前这里对 minecraft: 做了 split(':')[-1]，导致所有原版贴图都解析失败
     if real.startswith('createsweetsandtreets:'):
         q = os.path.join(SWEETS_TEX, real.split(':', 1)[1].replace('/', os.sep) + '.png')
         return q if os.path.exists(q) else None
@@ -173,7 +178,7 @@ def tex_path(tex, ref):
     if ':' in real:
         ns, rel = real.split(':', 1)
         for root in _dyn_tex_roots():
-            q = os.path.join(root, ns, rel.replace('/', os.sep) + '.png')
+            q = os.path.join(root, ns, 'textures', rel.replace('/', os.sep) + '.png')
             if os.path.exists(q):
                 return q
     name = real.split('/')[-1]
@@ -232,6 +237,13 @@ SHADE_N = {
 
 
 def cuboid_tris(elements, tex, missing):
+    # missing 可能是 list 也可能是 set，统一到 set 上
+    if isinstance(missing, list):
+        _m = missing
+        class _S(set):
+            def add(self, x):
+                _m.append(x)
+        missing = _S()
     tris = []
     for el in elements:
         fx, fy, fz = el['from']

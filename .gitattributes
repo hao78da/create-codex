@@ -1,8 +1,10 @@
 # 生成物标记：GitHub 会把它们折叠起来，不再逐行展开
-*.html linguist-generated=true
-assets/icons/** linguist-generated=true
-assets/fonts/** linguist-generated=true
-items/** linguist-generated=true
-tags/** linguist-generated=true
-vanilla/** linguist-generated=true
-sitemap.xml linguist-generated=true
+# 站点已迁到 docs/，所以两套前缀都写上，避免移动目录后失效
+*.html                  linguist-generated=true
+docs/assets/**          linguist-generated=true
+assets/**               linguist-generated=true
+docs/items/**           linguist-generated=true
+docs/tags/**            linguist-generated=true
+docs/vanilla/**         linguist-generated=true
+docs/sitemap.xml        linguist-generated=true
+docs/robots.txt         linguist-generated=true

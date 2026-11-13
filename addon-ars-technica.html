@@ -31,7 +31,26 @@
 .arw{color:var(--muted)}
 .note2{color:var(--muted);font-size:11px}
 .ver{margin:18px 0;padding:10px 12px;border-left:2px solid var(--brass);background:#14110c;color:var(--muted);font-size:12px;line-height:1.7}
-</style></head><body>
+</style>
+
+
+<style>
+.grp{margin:26px 0 0}
+.grp>summary.grpsum{cursor:pointer;list-style:none;display:flex;align-items:center;gap:10px;
+  font-size:17px;font-weight:800;color:#e9dcc2;padding:6px 0;user-select:none}
+.grp>summary.grpsum::-webkit-details-marker{display:none}
+.grp>summary.grpsum::before{content:'▸';color:var(--brass);font-size:14px;transition:transform .15s}
+.grp[open]>summary.grpsum::before{transform:rotate(90deg)}
+.grp>summary.grpsum .cnt{font-size:12px;color:var(--muted);background:#1a1510;border:1px solid var(--line);
+  border-radius:20px;padding:1px 8px;font-weight:600}
+.itsearch{display:flex;align-items:center;gap:12px;margin:22px 0 4px}
+.itsearch input{flex:1;max-width:420px;background:#14110c;border:1px solid var(--line);border-radius:10px;
+  padding:9px 12px;color:#e9dcc2;font-size:13.5px;font-family:inherit}
+.itsearch input:focus{outline:none;border-color:var(--brass)}
+.itcount{color:var(--muted);font-size:12px}
+@media(max-width:620px){.itsearch input{max-width:none}}
+</style>
+</head><body>
 <header class="top"><div class="wrap"><span class="logo"><span class="gear"></span>CREATE CODEX</span>
 <a class="backbtn" href="index.html">← 返回关系图</a></div></header>
 <main class="wrap">
@@ -42,4 +61,67 @@
 <div class="blk"><h2>全部物品<span class="cnt">16</span></h2><div class="grid-items"><div class="card" id="it-ars_technica-amethyst_dust"><div class="ci"><img src="assets/icons/ars_technica_amethyst_dust.png" alt=""></div><div class="t"><b>Amethyst Dust</b><small>ars_technica:amethyst_dust</small></div><div class="rec"><div class="chips"><a class="ch" href="vanilla/amethyst_shard.html" title="amethyst shard"><img src="assets/icons/minecraft_amethyst_shard.png" alt="">amethyst shard</a></div><div class="arw">→</div><a href="#it-ars_technica-amethyst_dust" class="ch"><img src="assets/icons/ars_technica_amethyst_dust.png" alt="">Amethyst Dust</a><span class="mach">机械动力</span></div></div><div class="card" id="it-ars_technica-calibrated_precision_mechanism"><div class="ci"><img src="assets/icons/ars_technica_calibrated_precision_mechanism.png" alt=""></div><div class="t"><b>Calibrated Precision Mechanism</b><small>ars_technica:calibrated_precision_mechanism</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-ars_technica-gargantuan_experience_gem"><div class="ci"><img src="assets/icons/ars_technica_gargantuan_experience_gem.png" alt=""></div><div class="t"><b>Gargantuan Experience Gem</b><small>ars_technica:gargantuan_experience_gem</small></div><div class="rec"><div class="chips"><a href="#it-ars_technica-giant_experience_gem" class="ch"><img src="assets/icons/ars_technica_giant_experience_gem.png" alt="">Giant Experience Gem</a></div><div class="arw">→</div><a href="#it-ars_technica-gargantuan_experience_gem" class="ch"><img src="assets/icons/ars_technica_gargantuan_experience_gem.png" alt="">Gargantuan Experience Gem</a><span class="mach">工作台</span></div></div><div class="card" id="it-ars_technica-giant_experience_gem"><div class="ci"><img src="assets/icons/ars_technica_giant_experience_gem.png" alt=""></div><div class="t"><b>Giant Experience Gem</b><small>ars_technica:giant_experience_gem</small></div><div class="rec"><div class="chips"><span class="ch">greater experience gem</span></div><div class="arw">→</div><a href="#it-ars_technica-giant_experience_gem" class="ch"><img src="assets/icons/ars_technica_giant_experience_gem.png" alt="">Giant Experience Gem</a><span class="mach">工作台</span></div></div><div class="card" id="it-ars_technica-pocket_factory_disc"><div class="ci"><img src="assets/icons/ars_technica_pocket_factory_disc.png" alt=""></div><div class="t"><b>Music Disc</b><small>ars_technica:pocket_factory_disc</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-ars_technica-precise_relay"><div class="ci"><img src="assets/icons/_unknown.png" alt="" loading="lazy"></div><div class="t"><b>Precise Relay</b><small>ars_technica:precise_relay</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-ars_technica-quartz_dust"><div class="ci"><img src="assets/icons/ars_technica_quartz_dust.png" alt=""></div><div class="t"><b>Nether Quartz Dust</b><small>ars_technica:quartz_dust</small></div><div class="rec"><div class="chips"><a class="ch" href="vanilla/quartz.html" title="quartz"><img src="assets/icons/minecraft_quartz.png" alt="">quartz</a></div><div class="arw">→</div><a href="#it-ars_technica-quartz_dust" class="ch"><img src="assets/icons/ars_technica_quartz_dust.png" alt="">Nether Quartz Dust</a><span class="mach">机械动力</span></div></div><div class="card" id="it-ars_technica-runic_spanner"><div class="ci"><img src="assets/icons/ars_technica_runic_spanner.png" alt=""></div><div class="t"><b>Runic Spanner</b><small>ars_technica:runic_spanner</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-ars_technica-source_engine"><div class="ci"><img src="assets/icons/ars_technica_source_engine.png" alt=""></div><div class="t"><b>Source Motor</b><small>ars_technica:source_engine</small></div><div class="rec"><div class="grid" style="grid-template-columns:repeat(3,1fr)"><div class="cell"><a href="items/brass_ingot.html" class="ch tag"><img src="assets/icons/create_brass_ingot.png" alt="">黄铜锭</a></div><div class="cell"><a class="ch" href="items/electron_tube.html" title="electron tube"><img src="assets/icons/create_electron_tube.png" alt="">electron tube</a></div><div class="cell"><a href="items/brass_ingot.html" class="ch tag"><img src="assets/icons/create_brass_ingot.png" alt="">黄铜锭</a></div><div class="cell"><a class="ch" href="items/cogwheel.html" title="cogwheel"><img src="assets/icons/3d_create_cogwheel.png" alt="">cogwheel</a></div><div class="cell"><a class="celllink" href="#it-ars_technica-calibrated_precision_mechanism" title="Calibrated Precision Mechanism"><img src="assets/icons/ars_technica_calibrated_precision_mechanism.png" alt="">Calibrated Precision Mechanism</a></div><div class="cell"><a class="ch" href="items/cogwheel.html" title="cogwheel"><img src="assets/icons/3d_create_cogwheel.png" alt="">cogwheel</a></div><div class="cell"><a href="items/brass_ingot.html" class="ch tag"><img src="assets/icons/create_brass_ingot.png" alt="">黄铜锭</a></div><div class="cell"><a class="ch" href="items/cogwheel.html" title="cogwheel"><img src="assets/icons/3d_create_cogwheel.png" alt="">cogwheel</a></div><div class="cell"><a href="items/brass_ingot.html" class="ch tag"><img src="assets/icons/create_brass_ingot.png" alt="">黄铜锭</a></div></div><div class="arw">→</div><a href="#it-ars_technica-source_engine" class="ch"><img src="assets/icons/ars_technica_source_engine.png" alt="">Source Motor</a><span class="mach">工作台</span></div></div><div class="card" id="it-ars_technica-spy_monocle"><div class="ci"><img src="assets/icons/ars_technica_spy_monocle.png" alt=""></div><div class="t"><b>Spy Monocle</b><small>ars_technica:spy_monocle</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-ars_technica-technomancer_boots"><div class="ci"><img src="assets/icons/ars_technica_technomancer_boots.png" alt=""></div><div class="t"><b>Technomancer's Boots</b><small>ars_technica:technomancer_boots</small></div><div class="rec"><div class="chips"><span class="ch tag">#dyes</span><a href="#it-ars_technica-technomancer_boots" class="ch"><img src="assets/icons/ars_technica_technomancer_boots.png" alt="">Technomancer's Boots</a></div><div class="arw">→</div><a href="#it-ars_technica-technomancer_boots" class="ch"><img src="assets/icons/ars_technica_technomancer_boots.png" alt="">Technomancer's Boots</a><span class="mach">机械动力</span></div></div><div class="card" id="it-ars_technica-technomancer_chestplate"><div class="ci"><img src="assets/icons/ars_technica_technomancer_chestplate.png" alt=""></div><div class="t"><b>Technomancer's Robes</b><small>ars_technica:technomancer_chestplate</small></div><div class="rec"><div class="chips"><span class="ch tag">#dyes</span><a href="#it-ars_technica-technomancer_chestplate" class="ch"><img src="assets/icons/ars_technica_technomancer_chestplate.png" alt="">Technomancer's Robes</a></div><div class="arw">→</div><a href="#it-ars_technica-technomancer_chestplate" class="ch"><img src="assets/icons/ars_technica_technomancer_chestplate.png" alt="">Technomancer's Robes</a><span class="mach">机械动力</span></div></div><div class="card" id="it-ars_technica-technomancer_helmet"><div class="ci"><img src="assets/icons/ars_technica_technomancer_helmet.png" alt=""></div><div class="t"><b>Technomancer's Hat</b><small>ars_technica:technomancer_helmet</small></div><div class="rec"><div class="chips"><span class="ch tag">#dyes</span><a href="#it-ars_technica-technomancer_helmet" class="ch"><img src="assets/icons/ars_technica_technomancer_helmet.png" alt="">Technomancer's Hat</a></div><div class="arw">→</div><a href="#it-ars_technica-technomancer_helmet" class="ch"><img src="assets/icons/ars_technica_technomancer_helmet.png" alt="">Technomancer's Hat</a><span class="mach">机械动力</span></div></div><div class="card" id="it-ars_technica-technomancer_leggings"><div class="ci"><img src="assets/icons/ars_technica_technomancer_leggings.png" alt=""></div><div class="t"><b>Technomancer's Leggings</b><small>ars_technica:technomancer_leggings</small></div><div class="rec"><div class="chips"><span class="ch tag">#dyes</span><a href="#it-ars_technica-technomancer_leggings" class="ch"><img src="assets/icons/ars_technica_technomancer_leggings.png" alt="">Technomancer's Leggings</a></div><div class="arw">→</div><a href="#it-ars_technica-technomancer_leggings" class="ch"><img src="assets/icons/ars_technica_technomancer_leggings.png" alt="">Technomancer's Leggings</a><span class="mach">机械动力</span></div></div><div class="card" id="it-ars_technica-thread_pressure"><div class="ci"><img src="assets/icons/ars_technica_thread_pressure.png" alt=""></div><div class="t"><b>Pressure</b><small>ars_technica:thread_pressure</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-ars_technica-transmutation_focus"><div class="ci"><img src="assets/icons/ars_technica_transmutation_focus.png" alt=""></div><div class="t"><b>Focus of Transmutation</b><small>ars_technica:transmutation_focus</small></div><div class="note2">没有工作台/机器配方</div></div></div></div>
 </main>
 <footer class="wrap foot">数据与图标来自 Ars Technica 的 1.20.1 jar · 本页不属于 Create 本体图鉴</footer>
-<script src="assets/anchors.js" defer></script></body></html>
+<script src="assets/anchors.js" defer></script>
+
+
+<script>
+(function(){
+  var items = document.querySelectorAll('.grid-items');
+  if (!items.length) return;
+  var total = document.querySelectorAll('.card').length;
+
+  // 1) 每个分类包成 <details>
+  var groups = [];
+  items.forEach(function(g){
+    var h = g.previousElementSibling;
+    if (!h || h.tagName !== 'H2') return;
+    var d = document.createElement('details');
+    d.open = true;
+    d.className = 'grp';
+    h.parentNode.insertBefore(d, h);
+    var s = document.createElement('summary');
+    s.className = 'grpsum';
+    s.innerHTML = h.innerHTML;
+    d.appendChild(s);
+    d.appendChild(g);
+    h.remove();
+    groups.push(d);
+  });
+
+  // 2) 搜索框
+  var first = groups[0] || items[0].closest('.blk');
+  if (!first) return;
+  var box = document.createElement('div');
+  box.className = 'itsearch';
+  box.innerHTML = '<input type="search" placeholder="搜索物品名 / ID…" aria-label="搜索物品"><span class="itcount"></span>';
+  var host = (groups[0] || items[0]).parentNode;
+  host.insertBefore(box, (groups[0] || items[0]));
+  var input = box.querySelector('input');
+  var cnt = box.querySelector('.itcount');
+  var cards = document.querySelectorAll('.card');
+
+  function setCount(vis){
+    cnt.textContent = vis === total ? ('共 ' + total + ' 个物品') : (vis + ' / ' + total);
+  }
+  setCount(total);
+
+  input.addEventListener('input', function(){
+    var q = input.value.trim().toLowerCase();
+    var vis = 0;
+    groups.forEach(function(d){
+      var hit = 0;
+      d.querySelectorAll('.card').forEach(function(c){
+        var t = (c.textContent || '').toLowerCase();
+        var ok = !q || t.indexOf(q) >= 0;
+        c.style.display = ok ? '' : 'none';
+        if (ok) hit++;
+      });
+      d.style.display = hit ? '' : 'none';
+      if (q && hit) d.open = true;
+      vis += hit;
+    });
+    setCount(vis);
+  });
+})();
+</script>
+</body></html>

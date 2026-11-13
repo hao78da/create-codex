@@ -1,0 +1,8 @@
+# 生成物标记：GitHub 会把它们折叠起来，不再逐行展开
+*.html linguist-generated=true
+assets/icons/** linguist-generated=true
+assets/fonts/** linguist-generated=true
+items/** linguist-generated=true
+tags/** linguist-generated=true
+vanilla/** linguist-generated=true
+sitemap.xml linguist-generated=true

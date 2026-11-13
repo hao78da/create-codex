@@ -46,39 +46,55 @@ VAN_TEX = os.path.join(VAN, 'textures')
 ICONS = os.path.join(ROOT, 'assets', 'icons')
 
 SIZE = 96
-SS = 4
+SS = 2
 MARGIN = 0.04
 
 
 # ---------------------------------------------------------------- 资源加载
 
+def _dyn_tex_roots():
+    global _DTEX
+    if _DTEX is not None:
+        return _DTEX
+    _DTEX = [_ASSETS]
+    return _DTEX
+
+
+_DTEX = None
+
+
+_DYN = None
+
+
+def _dyn_roots():
+    """work/assets/<ns>/models 全部作为查找根（按需要缓存）。"""
+    global _DYN
+    if _DYN is not None:
+        return _DYN
+    roots = []
+    try:
+        for d in sorted(os.listdir(_ASSETS)):
+            m = os.path.join(_ASSETS, d, 'models')
+            if os.path.isdir(m):
+                roots.append(m)
+    except Exception:
+        pass
+    _DYN = roots
+    return roots
+
+
 def _mpath(name):
+    """按 work/assets/<ns>/models 动态查找；再退回 Create 本体。"""
     name = name.split(':')[-1] if ':' in name else name
-    p = os.path.join(MODELS, name.replace('/', os.sep) + '.json')
-    if os.path.exists(p):
-        return p
-    p2 = os.path.join(CG_MODELS, name.replace('/', os.sep) + '.json')
-    if os.path.exists(p2):
-        return p2
-    p3 = os.path.join(CMS_MODELS, name.replace('/', os.sep) + '.json')
-    if os.path.exists(p3):
-        return p3
-    p3 = os.path.join(PROP_MODELS, name.replace('/', os.sep) + '.json')
-    if os.path.exists(p3):
-        return p3
-    p3 = os.path.join(VAN_MODELS, name.replace('/', os.sep) + '.json')
-    if os.path.exists(p3):
-        return p3
-    p4 = os.path.join(SWEETS_MODELS, name.replace('/', os.sep) + '.json')
-    if os.path.exists(p4):
-        return p4
-    p5 = os.path.join(SH_MODELS, name.replace('/', os.sep) + '.json')
-    if os.path.exists(p5):
-        return p5
-    p6 = os.path.join(EI_MODELS, name.replace('/', os.sep) + '.json')
-    if os.path.exists(p6):
-        return p6
-    return p4
+    rel = name.replace('/', os.sep) + '.json'
+    for root in _dyn_roots():
+        q = os.path.join(root, rel)
+        if os.path.exists(q):
+            return q
+    q = os.path.join(MODELS, rel)
+    if os.path.exists(q):
+        return q
+    return os.path.join(MODELS, rel)
 
 
 def load_chain(name):
@@ -153,9 +169,19 @@ def tex_path(tex, ref):
     if real.startswith('create:'):
         p = os.path.join(TEXDIR, real.split(':', 1)[1].replace('/', os.sep) + '.png')
         return p if os.path.exists(p) else None
+    # 任意命名空间：work/assets/<ns>/textures/...
+    if ':' in real:
+        ns, rel = real.split(':', 1)
+        for root in _dyn_tex_roots():
+            q = os.path.join(root, ns, rel.replace('/', os.sep) + '.png')
+            if os.path.exists(q):
+                return q
     name = real.split('/')[-1]
-    p = os.path.join(ICONS, 'minecraft_' + name + '.png')
-    return p if os.path.exists(p) else None
+    for cand in ('minecraft_' + name + '.png', 'create_' + name + '.png', '3d_' + name + '.png'):
+        p = os.path.join(ICONS, cand)
+        if os.path.exists(p):
+            return p
+    return None
 
 
 _tex_cache = {}

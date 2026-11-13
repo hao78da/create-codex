@@ -31,7 +31,26 @@
 .arw{color:var(--muted)}
 .note2{color:var(--muted);font-size:11px}
 .ver{margin:18px 0;padding:10px 12px;border-left:2px solid var(--brass);background:#14110c;color:var(--muted);font-size:12px;line-height:1.7}
-</style></head><body>
+</style>
+
+
+<style>
+.grp{margin:26px 0 0}
+.grp>summary.grpsum{cursor:pointer;list-style:none;display:flex;align-items:center;gap:10px;
+  font-size:17px;font-weight:800;color:#e9dcc2;padding:6px 0;user-select:none}
+.grp>summary.grpsum::-webkit-details-marker{display:none}
+.grp>summary.grpsum::before{content:'▸';color:var(--brass);font-size:14px;transition:transform .15s}
+.grp[open]>summary.grpsum::before{transform:rotate(90deg)}
+.grp>summary.grpsum .cnt{font-size:12px;color:var(--muted);background:#1a1510;border:1px solid var(--line);
+  border-radius:20px;padding:1px 8px;font-weight:600}
+.itsearch{display:flex;align-items:center;gap:12px;margin:22px 0 4px}
+.itsearch input{flex:1;max-width:420px;background:#14110c;border:1px solid var(--line);border-radius:10px;
+  padding:9px 12px;color:#e9dcc2;font-size:13.5px;font-family:inherit}
+.itsearch input:focus{outline:none;border-color:var(--brass)}
+.itcount{color:var(--muted);font-size:12px}
+@media(max-width:620px){.itsearch input{max-width:none}}
+</style>
+</head><body>
 <header class="top"><div class="wrap"><span class="logo"><span class="gear"></span>CREATE CODEX</span>
 <a class="backbtn" href="index.html">← 返回关系图</a></div></header>
 <main class="wrap">
@@ -42,4 +61,67 @@
 <div class="blk"><h2>全部物品<span class="cnt">6</span></h2><div class="grid-items"><div class="card" id="it-apokinetics-apokinetic_shard"><div class="ci"><img src="assets/icons/apokinetics_apokinetic_shard.png" alt=""></div><div class="t"><b>Apokinetic Shard</b><small>apokinetics:apokinetic_shard</small></div><div class="rec"><div class="chips"><span class="ch">gem dust</span><a class="ch" href="items/powdered_obsidian.html" title="powdered obsidian"><img src="assets/icons/create_powdered_obsidian.png" alt="">powdered obsidian</a><a class="ch" href="vanilla/amethyst_shard.html" title="amethyst shard"><img src="assets/icons/minecraft_amethyst_shard.png" alt="">amethyst shard</a></div><div class="arw">→</div><a href="#it-apokinetics-apokinetic_shard" class="ch"><img src="assets/icons/apokinetics_apokinetic_shard.png" alt="">Apokinetic Shard</a><span class="mach">机械动力</span></div></div><div class="card" id="it-apokinetics-apokinetic_table"><div class="ci"><img src="assets/icons/apokinetics_apokinetic_table.png" alt=""></div><div class="t"><b>Apokinetic Table</b><small>apokinetics:apokinetic_table</small></div><div class="rec"><div class="grid" style="grid-template-columns:repeat(3,1fr)"><div class="cell empty"></div><div class="cell"><span class="ch">gem dust</span></div><div class="cell empty"></div><div class="cell"><a class="ch" href="items/shaft.html" title="shaft"><img src="assets/icons/3d_create_shaft.png" alt="">shaft</a></div><div class="cell"><a class="ch" href="items/brass_casing.html" title="brass casing"><img src="assets/icons/create_brass_casing.png" alt="">brass casing</a></div><div class="cell"><a class="ch" href="items/shaft.html" title="shaft"><img src="assets/icons/3d_create_shaft.png" alt="">shaft</a></div><div class="cell empty"></div><div class="cell"><a class="celllink" href="#it-apokinetics-apokinetic_shard" title="Apokinetic Shard"><img src="assets/icons/apokinetics_apokinetic_shard.png" alt="">Apokinetic Shard</a></div><div class="cell empty"></div></div><div class="arw">→</div><a href="#it-apokinetics-apokinetic_table" class="ch"><img src="assets/icons/apokinetics_apokinetic_table.png" alt="">Apokinetic Table</a><span class="mach">工作台</span></div></div><div class="card" id="it-apokinetics-apokinetic_wrench"><div class="ci"><img src="assets/icons/apokinetics_apokinetic_wrench.png" alt=""></div><div class="t"><b>Apokinetic Wrench</b><small>apokinetics:apokinetic_wrench</small></div><div class="rec"><div class="grid" style="grid-template-columns:repeat(3,1fr)"><div class="cell empty"></div><div class="cell"><a class="celllink" href="#it-apokinetics-apokinetic_shard" title="Apokinetic Shard"><img src="assets/icons/apokinetics_apokinetic_shard.png" alt="">Apokinetic Shard</a></div><div class="cell empty"></div><div class="cell empty"></div><div class="cell"><a class="ch" href="items/wrench.html" title="wrench"><img src="assets/icons/3d_create_wrench.png" alt="">wrench</a></div><div class="cell"><a class="ch" href="vanilla/redstone.html" title="redstone"><img src="assets/icons/minecraft_redstone.png" alt="">redstone</a></div><div class="cell"><a class="ch" href="vanilla/amethyst_shard.html" title="amethyst shard"><img src="assets/icons/minecraft_amethyst_shard.png" alt="">amethyst shard</a></div><div class="cell empty"></div><div class="cell empty"></div></div><div class="arw">→</div><a href="#it-apokinetics-apokinetic_wrench" class="ch"><img src="assets/icons/apokinetics_apokinetic_wrench.png" alt="">Apokinetic Wrench</a><span class="mach">工作台</span></div></div><div class="card" id="it-apokinetics-factory_locator"><div class="ci"><img src="assets/icons/apokinetics_factory_locator.png" alt=""></div><div class="t"><b>Factory Locator</b><small>apokinetics:factory_locator</small></div><div class="rec"><div class="grid" style="grid-template-columns:repeat(3,1fr)"><div class="cell"><a class="ch" href="items/andesite_alloy.html" title="andesite alloy"><img src="assets/icons/create_andesite_alloy.png" alt="">andesite alloy</a></div><div class="cell"><a class="ch" href="vanilla/redstone.html" title="redstone"><img src="assets/icons/minecraft_redstone.png" alt="">redstone</a></div><div class="cell"><a class="ch" href="items/andesite_alloy.html" title="andesite alloy"><img src="assets/icons/create_andesite_alloy.png" alt="">andesite alloy</a></div><div class="cell"><a class="ch" href="items/brass_sheet.html" title="brass sheet"><img src="assets/icons/create_brass_sheet.png" alt="">brass sheet</a></div><div class="cell"><a class="ch" href="vanilla/compass.html" title="compass"><img src="assets/icons/minecraft_compass.png" alt="">compass</a></div><div class="cell"><a class="ch" href="items/brass_sheet.html" title="brass sheet"><img src="assets/icons/create_brass_sheet.png" alt="">brass sheet</a></div><div class="cell"><a class="ch" href="items/andesite_alloy.html" title="andesite alloy"><img src="assets/icons/create_andesite_alloy.png" alt="">andesite alloy</a></div><div class="cell"><a class="celllink" href="#it-apokinetics-apokinetic_shard" title="Apokinetic Shard"><img src="assets/icons/apokinetics_apokinetic_shard.png" alt="">Apokinetic Shard</a></div><div class="cell"><a class="ch" href="items/andesite_alloy.html" title="andesite alloy"><img src="assets/icons/create_andesite_alloy.png" alt="">andesite alloy</a></div></div><div class="arw">→</div><a href="#it-apokinetics-factory_locator" class="ch"><img src="assets/icons/apokinetics_factory_locator.png" alt="">Factory Locator</a><span class="mach">工作台</span></div></div><div class="card" id="it-apokinetics-factory_scanner"><div class="ci"><img src="assets/icons/apokinetics_factory_scanner.png" alt=""></div><div class="t"><b>Factory Scanner</b><small>apokinetics:factory_scanner</small></div><div class="rec"><div class="grid" style="grid-template-columns:repeat(3,1fr)"><div class="cell"><a class="ch" href="items/electron_tube.html" title="electron tube"><img src="assets/icons/create_electron_tube.png" alt="">electron tube</a></div><div class="cell"><span class="ch">spyglass</span></div><div class="cell"><a class="ch" href="items/electron_tube.html" title="electron tube"><img src="assets/icons/create_electron_tube.png" alt="">electron tube</a></div><div class="cell"><a class="ch" href="items/precision_mechanism.html" title="precision mechanism"><img src="assets/icons/create_precision_mechanism.png" alt="">precision mechanism</a></div><div class="cell"><a class="celllink" href="#it-apokinetics-factory_locator" title="Factory Locator"><img src="assets/icons/apokinetics_factory_locator.png" alt="">Factory Locator</a></div><div class="cell"><a class="ch" href="items/precision_mechanism.html" title="precision mechanism"><img src="assets/icons/create_precision_mechanism.png" alt="">precision mechanism</a></div><div class="cell"><a class="ch" href="items/brass_sheet.html" title="brass sheet"><img src="assets/icons/create_brass_sheet.png" alt="">brass sheet</a></div><div class="cell"><a class="celllink" href="#it-apokinetics-apokinetic_shard" title="Apokinetic Shard"><img src="assets/icons/apokinetics_apokinetic_shard.png" alt="">Apokinetic Shard</a></div><div class="cell"><a class="ch" href="items/brass_sheet.html" title="brass sheet"><img src="assets/icons/create_brass_sheet.png" alt="">brass sheet</a></div></div><div class="arw">→</div><a href="#it-apokinetics-factory_scanner" class="ch"><img src="assets/icons/apokinetics_factory_scanner.png" alt="">Factory Scanner</a><span class="mach">工作台</span></div></div><div class="card" id="it-apokinetics-kinetic_pylon"><div class="ci"><img src="assets/icons/apokinetics_kinetic_pylon.png" alt=""></div><div class="t"><b>Kinetic Pylon</b><small>apokinetics:kinetic_pylon</small></div><div class="rec"><div class="grid" style="grid-template-columns:repeat(3,1fr)"><div class="cell"><span class="ch">gem dust</span></div><div class="cell"><span class="ch">bookshelf</span></div><div class="cell"><span class="ch">gem dust</span></div><div class="cell"><a class="ch" href="items/brass_sheet.html" title="brass sheet"><img src="assets/icons/create_brass_sheet.png" alt="">brass sheet</a></div><div class="cell"><a class="ch" href="items/brass_casing.html" title="brass casing"><img src="assets/icons/create_brass_casing.png" alt="">brass casing</a></div><div class="cell"><a class="ch" href="items/brass_sheet.html" title="brass sheet"><img src="assets/icons/create_brass_sheet.png" alt="">brass sheet</a></div><div class="cell"><a class="celllink" href="#it-apokinetics-apokinetic_shard" title="Apokinetic Shard"><img src="assets/icons/apokinetics_apokinetic_shard.png" alt="">Apokinetic Shard</a></div><div class="cell"><a class="ch" href="items/precision_mechanism.html" title="precision mechanism"><img src="assets/icons/create_precision_mechanism.png" alt="">precision mechanism</a></div><div class="cell"><a class="celllink" href="#it-apokinetics-apokinetic_shard" title="Apokinetic Shard"><img src="assets/icons/apokinetics_apokinetic_shard.png" alt="">Apokinetic Shard</a></div></div><div class="arw">→</div><a href="#it-apokinetics-kinetic_pylon" class="ch"><img src="assets/icons/apokinetics_kinetic_pylon.png" alt="">Kinetic Pylon</a><span class="mach">工作台</span></div></div></div></div>
 </main>
 <footer class="wrap foot">数据与图标来自 Create: Apokinetics 的 1.20.1 jar · 本页不属于 Create 本体图鉴</footer>
-<script src="assets/anchors.js" defer></script></body></html>
+<script src="assets/anchors.js" defer></script>
+
+
+<script>
+(function(){
+  var items = document.querySelectorAll('.grid-items');
+  if (!items.length) return;
+  var total = document.querySelectorAll('.card').length;
+
+  // 1) 每个分类包成 <details>
+  var groups = [];
+  items.forEach(function(g){
+    var h = g.previousElementSibling;
+    if (!h || h.tagName !== 'H2') return;
+    var d = document.createElement('details');
+    d.open = true;
+    d.className = 'grp';
+    h.parentNode.insertBefore(d, h);
+    var s = document.createElement('summary');
+    s.className = 'grpsum';
+    s.innerHTML = h.innerHTML;
+    d.appendChild(s);
+    d.appendChild(g);
+    h.remove();
+    groups.push(d);
+  });
+
+  // 2) 搜索框
+  var first = groups[0] || items[0].closest('.blk');
+  if (!first) return;
+  var box = document.createElement('div');
+  box.className = 'itsearch';
+  box.innerHTML = '<input type="search" placeholder="搜索物品名 / ID…" aria-label="搜索物品"><span class="itcount"></span>';
+  var host = (groups[0] || items[0]).parentNode;
+  host.insertBefore(box, (groups[0] || items[0]));
+  var input = box.querySelector('input');
+  var cnt = box.querySelector('.itcount');
+  var cards = document.querySelectorAll('.card');
+
+  function setCount(vis){
+    cnt.textContent = vis === total ? ('共 ' + total + ' 个物品') : (vis + ' / ' + total);
+  }
+  setCount(total);
+
+  input.addEventListener('input', function(){
+    var q = input.value.trim().toLowerCase();
+    var vis = 0;
+    groups.forEach(function(d){
+      var hit = 0;
+      d.querySelectorAll('.card').forEach(function(c){
+        var t = (c.textContent || '').toLowerCase();
+        var ok = !q || t.indexOf(q) >= 0;
+        c.style.display = ok ? '' : 'none';
+        if (ok) hit++;
+      });
+      d.style.display = hit ? '' : 'none';
+      if (q && hit) d.open = true;
+      vis += hit;
+    });
+    setCount(vis);
+  });
+})();
+</script>
+</body></html>

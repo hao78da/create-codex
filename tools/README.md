@@ -59,3 +59,25 @@ python validate_all2.py       # 必须看到 broken 0
 - 所有脚本用相对路径（`ROOT` = 仓库根目录），不要写死盘符
 - `data/` 里的 JSON 是中间数据，一般不需要手改
 - 图标在 `assets/icons/`，新增图标直接放进去，命名规则见 `gen_site.py` 的 `icon_file()`
+
+## 图标相关的脚本
+
+```powershell
+python fetch_missing_jars.py     # 按命名空间从 Modrinth 下 jar（校验含 assets/<ns>/）
+python extract_assets.py         # 解出所有 jar 的 models/ 与 textures/ 到 work/assets/
+python backfill_icons.py         # 模型链 → 贴图，生成 assets/icons/<ns>_<name>.png
+python render_missing.py         # 对剩余图标尝试 3D 渲染（多进程）
+python fix_placeholders.py       # 把页面上 _unknown.png 换成已生成的真图
+```
+
+`render3d.py` 的模型根是动态的：会扫描 `work/assets/*/models`，所以新模组解包后无需改代码。
+超采样默认 `SS=2`（4 太慢）；需要高质量可临时调回 4。
+
+## 附属页增强脚本
+
+```powershell
+python addon_search_groups.py    # 给附属页加搜索框 + 分类折叠
+python cluster_by_name.py        # 单分类页面按名字相似度重新分组
+python translate_groups.py       # 英文分组名 → 中文
+python mods_gen2.py              # 重建 mods.html（按物品数排序）
+```

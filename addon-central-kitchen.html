@@ -31,7 +31,26 @@
 .arw{color:var(--muted)}
 .note2{color:var(--muted);font-size:11px}
 .ver{margin:18px 0;padding:10px 12px;border-left:2px solid var(--brass);background:#14110c;color:var(--muted);font-size:12px;line-height:1.7}
-</style></head><body>
+</style>
+
+
+<style>
+.grp{margin:26px 0 0}
+.grp>summary.grpsum{cursor:pointer;list-style:none;display:flex;align-items:center;gap:10px;
+  font-size:17px;font-weight:800;color:#e9dcc2;padding:6px 0;user-select:none}
+.grp>summary.grpsum::-webkit-details-marker{display:none}
+.grp>summary.grpsum::before{content:'▸';color:var(--brass);font-size:14px;transition:transform .15s}
+.grp[open]>summary.grpsum::before{transform:rotate(90deg)}
+.grp>summary.grpsum .cnt{font-size:12px;color:var(--muted);background:#1a1510;border:1px solid var(--line);
+  border-radius:20px;padding:1px 8px;font-weight:600}
+.itsearch{display:flex;align-items:center;gap:12px;margin:22px 0 4px}
+.itsearch input{flex:1;max-width:420px;background:#14110c;border:1px solid var(--line);border-radius:10px;
+  padding:9px 12px;color:#e9dcc2;font-size:13.5px;font-family:inherit}
+.itsearch input:focus{outline:none;border-color:var(--brass)}
+.itcount{color:var(--muted);font-size:12px}
+@media(max-width:620px){.itsearch input{max-width:none}}
+</style>
+</head><body>
 <header class="top"><div class="wrap"><span class="logo"><span class="gear"></span>CREATE CODEX</span>
 <a class="backbtn" href="index.html">← 返回关系图</a></div></header>
 <main class="wrap">
@@ -42,4 +61,67 @@
 <div class="blk"><h2>厨具<span class="cnt">1</span></h2><div class="grid-items"><div class="card" id="it-create_central_kitchen-blaze_stove"><div class="ci"><img src="assets/icons/_unknown.png" alt="" loading="lazy"></div><div class="t"><b>烈焰人炉灶</b><small>create_central_kitchen:blaze_stove</small></div><div class="note2">没有工作台/机器配方</div></div></div></div><div class="blk"><h2>原料与半成品<span class="cnt">2</span></h2><div class="grid-items"><div class="card" id="it-create_central_kitchen-tomato_sauce"><div class="ci"><img src="assets/icons/create_central_kitchen_tomato_sauce.png" alt=""></div><div class="t"><b>番茄酱</b><small>create_central_kitchen:tomato_sauce</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-create_central_kitchen-tomato_sauce_bucket"><div class="ci"><img src="assets/icons/create_central_kitchen_tomato_sauce_bucket.png" alt=""></div><div class="t"><b>番茄酱桶</b><small>create_central_kitchen:tomato_sauce_bucket</small></div><div class="note2">没有工作台/机器配方</div></div></div></div><div class="blk"><h2>其它<span class="cnt">27</span></h2><div class="grid-items"><div class="card" id="it-create_central_kitchen-aloe_cake_slice"><div class="ci"><img src="assets/icons/create_central_kitchen_aloe_cake_slice.png" alt=""></div><div class="t"><b>芦荟蛋糕切片</b><small>create_central_kitchen:aloe_cake_slice</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-create_central_kitchen-chocolate_cake_slice"><div class="ci"><img src="assets/icons/create_central_kitchen_chocolate_cake_slice.png" alt=""></div><div class="t"><b>巧克力蛋糕切片</b><small>create_central_kitchen:chocolate_cake_slice</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-create_central_kitchen-cooking_guide"><div class="ci"><img src="assets/icons/create_central_kitchen_cooking_guide.png" alt=""></div><div class="t"><b>烹饪指南</b><small>create_central_kitchen:cooking_guide</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-create_central_kitchen-creative_tab_icon"><div class="ci"><img src="assets/icons/create_central_kitchen_creative_tab_icon.png" alt=""></div><div class="t"><b>创造模式物品栏图标</b><small>create_central_kitchen:creative_tab_icon</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-create_central_kitchen-honey_cake_slice"><div class="ci"><img src="assets/icons/create_central_kitchen_honey_cake_slice.png" alt=""></div><div class="t"><b>蜂蜜蛋糕切片</b><small>create_central_kitchen:honey_cake_slice</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-create_central_kitchen-incomplete_apple_pie"><div class="ci"><img src="assets/icons/create_central_kitchen_incomplete_apple_pie.png" alt=""></div><div class="t"><b>苹果派（半成品）</b><small>create_central_kitchen:incomplete_apple_pie</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-create_central_kitchen-incomplete_bacon_sandwich"><div class="ci"><img src="assets/icons/create_central_kitchen_incomplete_bacon_sandwich.png" alt=""></div><div class="t"><b>培根三明治（半成品）</b><small>create_central_kitchen:incomplete_bacon_sandwich</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-create_central_kitchen-incomplete_chicken_sandwich"><div class="ci"><img src="assets/icons/create_central_kitchen_incomplete_chicken_sandwich.png" alt=""></div><div class="t"><b>鸡肉三明治（半成品）</b><small>create_central_kitchen:incomplete_chicken_sandwich</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-create_central_kitchen-incomplete_chorus_flower_pie"><div class="ci"><img src="assets/icons/create_central_kitchen_incomplete_chorus_flower_pie.png" alt=""></div><div class="t"><b>紫颂花饼（半成品）</b><small>create_central_kitchen:incomplete_chorus_flower_pie</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-create_central_kitchen-incomplete_chorus_fruit_pie"><div class="ci"><img src="assets/icons/create_central_kitchen_incomplete_chorus_fruit_pie.png" alt=""></div><div class="t"><b>紫颂果派（半成品）</b><small>create_central_kitchen:incomplete_chorus_fruit_pie</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-create_central_kitchen-incomplete_egg_sandwich"><div class="ci"><img src="assets/icons/create_central_kitchen_incomplete_egg_sandwich.png" alt=""></div><div class="t"><b>鸡蛋三明治（半成品）</b><small>create_central_kitchen:incomplete_egg_sandwich</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-create_central_kitchen-incomplete_hamburger"><div class="ci"><img src="assets/icons/create_central_kitchen_incomplete_hamburger.png" alt=""></div><div class="t"><b>汉堡包（半成品）</b><small>create_central_kitchen:incomplete_hamburger</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-create_central_kitchen-incomplete_mulberry_pie"><div class="ci"><img src="assets/icons/create_central_kitchen_incomplete_mulberry_pie.png" alt=""></div><div class="t"><b>桑葚派（半成品）</b><small>create_central_kitchen:incomplete_mulberry_pie</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-create_central_kitchen-incomplete_mutton_wrap"><div class="ci"><img src="assets/icons/create_central_kitchen_incomplete_mutton_wrap.png" alt=""></div><div class="t"><b>羊肉卷饼（半成品）</b><small>create_central_kitchen:incomplete_mutton_wrap</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-create_central_kitchen-incomplete_pumpkin_pie"><div class="ci"><img src="assets/icons/create_central_kitchen_incomplete_pumpkin_pie.png" alt=""></div><div class="t"><b>南瓜派（半成品）</b><small>create_central_kitchen:incomplete_pumpkin_pie</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-create_central_kitchen-incomplete_sweet_berry_cheesecake"><div class="ci"><img src="assets/icons/create_central_kitchen_incomplete_sweet_berry_cheesecake.png" alt=""></div><div class="t"><b>甜浆果芝士派（半成品）</b><small>create_central_kitchen:incomplete_sweet_berry_cheesecake</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-create_central_kitchen-miners_cooking_guide"><div class="ci"><img src="assets/icons/create_central_kitchen_miners_cooking_guide.png" alt=""></div><div class="t"><b>矿工烹饪指南</b><small>create_central_kitchen:miners_cooking_guide</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-create_central_kitchen-mulberry_pie_slice"><div class="ci"><img src="assets/icons/create_central_kitchen_mulberry_pie_slice.png" alt=""></div><div class="t"><b>桑葚派切片</b><small>create_central_kitchen:mulberry_pie_slice</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-create_central_kitchen-passion_fruit_cake_slice"><div class="ci"><img src="assets/icons/create_central_kitchen_passion_fruit_cake_slice.png" alt=""></div><div class="t"><b>百香果蛋糕切片</b><small>create_central_kitchen:passion_fruit_cake_slice</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-create_central_kitchen-pumpkin_cake_slice"><div class="ci"><img src="assets/icons/create_central_kitchen_pumpkin_cake_slice.png" alt=""></div><div class="t"><b>南瓜蛋糕切片</b><small>create_central_kitchen:pumpkin_cake_slice</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-create_central_kitchen-pumpkin_pie_slice"><div class="ci"><img src="assets/icons/_unknown.png" alt="" loading="lazy"></div><div class="t"><b>南瓜派切片</b><small>create_central_kitchen:pumpkin_pie_slice</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-create_central_kitchen-sap"><div class="ci"><img src="assets/icons/create_central_kitchen_sap.png" alt=""></div><div class="t"><b>枫树树液</b><small>create_central_kitchen:sap</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-create_central_kitchen-sap_bucket"><div class="ci"><img src="assets/icons/create_central_kitchen_sap_bucket.png" alt=""></div><div class="t"><b>枫树树液桶</b><small>create_central_kitchen:sap_bucket</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-create_central_kitchen-sweet_berry_cake_slice"><div class="ci"><img src="assets/icons/create_central_kitchen_sweet_berry_cake_slice.png" alt=""></div><div class="t"><b>甜浆果蛋糕切片</b><small>create_central_kitchen:sweet_berry_cake_slice</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-create_central_kitchen-syrup"><div class="ci"><img src="assets/icons/create_central_kitchen_syrup.png" alt=""></div><div class="t"><b>枫糖浆</b><small>create_central_kitchen:syrup</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-create_central_kitchen-syrup_bucket"><div class="ci"><img src="assets/icons/create_central_kitchen_syrup_bucket.png" alt=""></div><div class="t"><b>枫糖浆桶</b><small>create_central_kitchen:syrup_bucket</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-create_central_kitchen-yucca_cake_slice"><div class="ci"><img src="assets/icons/create_central_kitchen_yucca_cake_slice.png" alt=""></div><div class="t"><b>丝兰蛋糕切片</b><small>create_central_kitchen:yucca_cake_slice</small></div><div class="note2">没有工作台/机器配方</div></div></div></div>
 </main>
 <footer class="wrap foot">数据与图标来自 Create: Central Kitchen 的 1.20.1 jar · 本页不属于 Create 本体图鉴</footer>
-<script src="assets/anchors.js" defer></script></body></html>
+<script src="assets/anchors.js" defer></script>
+
+
+<script>
+(function(){
+  var items = document.querySelectorAll('.grid-items');
+  if (!items.length) return;
+  var total = document.querySelectorAll('.card').length;
+
+  // 1) 每个分类包成 <details>
+  var groups = [];
+  items.forEach(function(g){
+    var h = g.previousElementSibling;
+    if (!h || h.tagName !== 'H2') return;
+    var d = document.createElement('details');
+    d.open = true;
+    d.className = 'grp';
+    h.parentNode.insertBefore(d, h);
+    var s = document.createElement('summary');
+    s.className = 'grpsum';
+    s.innerHTML = h.innerHTML;
+    d.appendChild(s);
+    d.appendChild(g);
+    h.remove();
+    groups.push(d);
+  });
+
+  // 2) 搜索框
+  var first = groups[0] || items[0].closest('.blk');
+  if (!first) return;
+  var box = document.createElement('div');
+  box.className = 'itsearch';
+  box.innerHTML = '<input type="search" placeholder="搜索物品名 / ID…" aria-label="搜索物品"><span class="itcount"></span>';
+  var host = (groups[0] || items[0]).parentNode;
+  host.insertBefore(box, (groups[0] || items[0]));
+  var input = box.querySelector('input');
+  var cnt = box.querySelector('.itcount');
+  var cards = document.querySelectorAll('.card');
+
+  function setCount(vis){
+    cnt.textContent = vis === total ? ('共 ' + total + ' 个物品') : (vis + ' / ' + total);
+  }
+  setCount(total);
+
+  input.addEventListener('input', function(){
+    var q = input.value.trim().toLowerCase();
+    var vis = 0;
+    groups.forEach(function(d){
+      var hit = 0;
+      d.querySelectorAll('.card').forEach(function(c){
+        var t = (c.textContent || '').toLowerCase();
+        var ok = !q || t.indexOf(q) >= 0;
+        c.style.display = ok ? '' : 'none';
+        if (ok) hit++;
+      });
+      d.style.display = hit ? '' : 'none';
+      if (q && hit) d.open = true;
+      vis += hit;
+    });
+    setCount(vis);
+  });
+})();
+</script>
+</body></html>

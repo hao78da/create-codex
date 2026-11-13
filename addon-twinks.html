@@ -27,4 +27,86 @@
 .cell .hb{position:absolute;right:2px;bottom:0;font-size:9px;font-style:normal;color:var(--brass2)}
 .arw{color:var(--muted)}
 #q{width:100%;max-width:420px;padding:9px 12px;border-radius:8px;border:1px solid var(--line);background:#14110c;color:#e8d3a7;font-size:13px;margin:8px 0 16px}
-</style></head><body><header class="top"><div class="wrap"><span class="logo"><span class="gear"></span><span>CREATE CODEX<small>机械动力图鉴</small></span></span><a class="backbtn" href="index.html">← 返回关系图</a></div></header><main class="wrap"><section class="hero"><img class="big" style="width:96px;height:96px;object-fit:contain;image-rendering:pixelated" src="assets/icons/hero_twinks.png" alt=""><h1>Create for twinks<span>附属模组</span></h1><p>把「石头三兄弟」变成可以批量生产的原料——玄武岩、深板岩、滴水石、凝灰岩。</p></section><section class="blk"><h2>这是什么</h2><p class="tagline">一条产线解决四种「挖起来烦、用起来多」的石头。</p><p>这四个方块在原版里要么只在特定地形生成（玄武岩在灵魂沙峡谷、滴水石在洞穴顶部），要么挖起来慢（深板岩硬度高）。这个模组给它们各配了一条 Create 加工路线，原料都是常见石头，可以完全自动化。</p><p class="note"><b>规模：</b>1 个中间物品 + 4 条配方，全部是搅拌/序列组装类，不需要新的机器。</p></section><section class="blk"><h2>物品与配方</h2><div class="grid-items"><div class="card" id="twk-basalt"><div class="ci"><img src="assets/icons/_unknown.png" alt="" loading="lazy"></div><div class="t"><b>basalt</b><small>minecraft:basalt</small><div class="rec"><a href="vanilla/blue_ice.html" class="ch">blue ice</a><a href="vanilla/lava.html" class="ch">lava</a><span class="arw">→</span><a href="#twk-basalt" class="ch">basalt</a><span class="mach">搅拌器</span></div></div></div><div class="card" id="twk-deepslate"><div class="ci"><img src="assets/icons/minecraft_deepslate.png" alt=""></div><div class="t"><b>深板岩</b><small>minecraft:deepslate</small><div class="rec"><a href="vanilla/stone.html" class="ch"><img src="assets/icons/minecraft_stone.png" alt="">石头</a><span class="arw">→</span><a href="#twk-deepslate" class="ch"><img src="assets/icons/minecraft_deepslate.png" alt="">深板岩</a><span class="mach">序列组装</span></div></div></div><div class="card" id="twk-pointed_dripstone"><div class="ci"><img src="assets/icons/_unknown.png" alt="" loading="lazy"></div><div class="t"><b>pointed dripstone</b><small>minecraft:pointed_dripstone</small><div class="rec"><a href="vanilla/stone.html" class="ch"><img src="assets/icons/minecraft_stone.png" alt="">石头</a><a href="vanilla/water.html" class="ch">water</a><span class="arw">→</span><a href="#twk-pointed_dripstone" class="ch">pointed dripstone</a><span class="mach">搅拌器</span></div></div></div><div class="card" id="twk-tuff"><div class="ci"><img src="assets/icons/minecraft_tuff.png" alt=""></div><div class="t"><b>凝灰岩</b><small>minecraft:tuff</small><div class="rec"><a href="vanilla/gravel.html" class="ch"><img src="assets/icons/minecraft_gravel.png" alt="">沙砾</a><a href="vanilla/lava.html" class="ch">lava</a><span class="arw">→</span><a href="#twk-tuff" class="ch"><img src="assets/icons/minecraft_tuff.png" alt="">凝灰岩</a><span class="mach">搅拌器</span></div></div></div></div></section><footer class="foot"><p>Create for twinks · 资料来自模组 jar 内的 langs 与 recipes；本页不属于 Create 本体图鉴，只在「模组」入口出现。</p></footer></main><script src="assets/anchors.js" defer></script></body></html>
+</style>
+
+
+<style>
+.grp{margin:26px 0 0}
+.grp>summary.grpsum{cursor:pointer;list-style:none;display:flex;align-items:center;gap:10px;
+  font-size:17px;font-weight:800;color:#e9dcc2;padding:6px 0;user-select:none}
+.grp>summary.grpsum::-webkit-details-marker{display:none}
+.grp>summary.grpsum::before{content:'▸';color:var(--brass);font-size:14px;transition:transform .15s}
+.grp[open]>summary.grpsum::before{transform:rotate(90deg)}
+.grp>summary.grpsum .cnt{font-size:12px;color:var(--muted);background:#1a1510;border:1px solid var(--line);
+  border-radius:20px;padding:1px 8px;font-weight:600}
+.itsearch{display:flex;align-items:center;gap:12px;margin:22px 0 4px}
+.itsearch input{flex:1;max-width:420px;background:#14110c;border:1px solid var(--line);border-radius:10px;
+  padding:9px 12px;color:#e9dcc2;font-size:13.5px;font-family:inherit}
+.itsearch input:focus{outline:none;border-color:var(--brass)}
+.itcount{color:var(--muted);font-size:12px}
+@media(max-width:620px){.itsearch input{max-width:none}}
+</style>
+</head><body><header class="top"><div class="wrap"><span class="logo"><span class="gear"></span><span>CREATE CODEX<small>机械动力图鉴</small></span></span><a class="backbtn" href="index.html">← 返回关系图</a></div></header><main class="wrap"><section class="hero"><img class="big" style="width:96px;height:96px;object-fit:contain;image-rendering:pixelated" src="assets/icons/hero_twinks.png" alt=""><h1>Create for twinks<span>附属模组</span></h1><p>把「石头三兄弟」变成可以批量生产的原料——玄武岩、深板岩、滴水石、凝灰岩。</p></section><section class="blk"><h2>这是什么</h2><p class="tagline">一条产线解决四种「挖起来烦、用起来多」的石头。</p><p>这四个方块在原版里要么只在特定地形生成（玄武岩在灵魂沙峡谷、滴水石在洞穴顶部），要么挖起来慢（深板岩硬度高）。这个模组给它们各配了一条 Create 加工路线，原料都是常见石头，可以完全自动化。</p><p class="note"><b>规模：</b>1 个中间物品 + 4 条配方，全部是搅拌/序列组装类，不需要新的机器。</p></section><section class="blk"><h2>物品与配方</h2><div class="grid-items"><div class="card" id="twk-basalt"><div class="ci"><img src="assets/icons/_unknown.png" alt="" loading="lazy"></div><div class="t"><b>basalt</b><small>minecraft:basalt</small><div class="rec"><a href="vanilla/blue_ice.html" class="ch">blue ice</a><a href="vanilla/lava.html" class="ch">lava</a><span class="arw">→</span><a href="#twk-basalt" class="ch">basalt</a><span class="mach">搅拌器</span></div></div></div><div class="card" id="twk-deepslate"><div class="ci"><img src="assets/icons/minecraft_deepslate.png" alt=""></div><div class="t"><b>深板岩</b><small>minecraft:deepslate</small><div class="rec"><a href="vanilla/stone.html" class="ch"><img src="assets/icons/minecraft_stone.png" alt="">石头</a><span class="arw">→</span><a href="#twk-deepslate" class="ch"><img src="assets/icons/minecraft_deepslate.png" alt="">深板岩</a><span class="mach">序列组装</span></div></div></div><div class="card" id="twk-pointed_dripstone"><div class="ci"><img src="assets/icons/_unknown.png" alt="" loading="lazy"></div><div class="t"><b>pointed dripstone</b><small>minecraft:pointed_dripstone</small><div class="rec"><a href="vanilla/stone.html" class="ch"><img src="assets/icons/minecraft_stone.png" alt="">石头</a><a href="vanilla/water.html" class="ch">water</a><span class="arw">→</span><a href="#twk-pointed_dripstone" class="ch">pointed dripstone</a><span class="mach">搅拌器</span></div></div></div><div class="card" id="twk-tuff"><div class="ci"><img src="assets/icons/minecraft_tuff.png" alt=""></div><div class="t"><b>凝灰岩</b><small>minecraft:tuff</small><div class="rec"><a href="vanilla/gravel.html" class="ch"><img src="assets/icons/minecraft_gravel.png" alt="">沙砾</a><a href="vanilla/lava.html" class="ch">lava</a><span class="arw">→</span><a href="#twk-tuff" class="ch"><img src="assets/icons/minecraft_tuff.png" alt="">凝灰岩</a><span class="mach">搅拌器</span></div></div></div></div></section><footer class="foot"><p>Create for twinks · 资料来自模组 jar 内的 langs 与 recipes；本页不属于 Create 本体图鉴，只在「模组」入口出现。</p></footer></main><script src="assets/anchors.js" defer></script>
+
+
+<script>
+(function(){
+  var items = document.querySelectorAll('.grid-items');
+  if (!items.length) return;
+  var total = document.querySelectorAll('.card').length;
+
+  // 1) 每个分类包成 <details>
+  var groups = [];
+  items.forEach(function(g){
+    var h = g.previousElementSibling;
+    if (!h || h.tagName !== 'H2') return;
+    var d = document.createElement('details');
+    d.open = true;
+    d.className = 'grp';
+    h.parentNode.insertBefore(d, h);
+    var s = document.createElement('summary');
+    s.className = 'grpsum';
+    s.innerHTML = h.innerHTML;
+    d.appendChild(s);
+    d.appendChild(g);
+    h.remove();
+    groups.push(d);
+  });
+
+  // 2) 搜索框
+  var first = groups[0] || items[0].closest('.blk');
+  if (!first) return;
+  var box = document.createElement('div');
+  box.className = 'itsearch';
+  box.innerHTML = '<input type="search" placeholder="搜索物品名 / ID…" aria-label="搜索物品"><span class="itcount"></span>';
+  var host = (groups[0] || items[0]).parentNode;
+  host.insertBefore(box, (groups[0] || items[0]));
+  var input = box.querySelector('input');
+  var cnt = box.querySelector('.itcount');
+  var cards = document.querySelectorAll('.card');
+
+  function setCount(vis){
+    cnt.textContent = vis === total ? ('共 ' + total + ' 个物品') : (vis + ' / ' + total);
+  }
+  setCount(total);
+
+  input.addEventListener('input', function(){
+    var q = input.value.trim().toLowerCase();
+    var vis = 0;
+    groups.forEach(function(d){
+      var hit = 0;
+      d.querySelectorAll('.card').forEach(function(c){
+        var t = (c.textContent || '').toLowerCase();
+        var ok = !q || t.indexOf(q) >= 0;
+        c.style.display = ok ? '' : 'none';
+        if (ok) hit++;
+      });
+      d.style.display = hit ? '' : 'none';
+      if (q && hit) d.open = true;
+      vis += hit;
+    });
+    setCount(vis);
+  });
+})();
+</script>
+</body></html>

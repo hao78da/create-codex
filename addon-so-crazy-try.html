@@ -31,7 +31,26 @@
 .arw{color:var(--muted)}
 .note2{color:var(--muted);font-size:11px}
 .ver{margin:18px 0;padding:10px 12px;border-left:2px solid var(--brass);background:#14110c;color:var(--muted);font-size:12px;line-height:1.7}
-</style></head><body>
+</style>
+
+
+<style>
+.grp{margin:26px 0 0}
+.grp>summary.grpsum{cursor:pointer;list-style:none;display:flex;align-items:center;gap:10px;
+  font-size:17px;font-weight:800;color:#e9dcc2;padding:6px 0;user-select:none}
+.grp>summary.grpsum::-webkit-details-marker{display:none}
+.grp>summary.grpsum::before{content:'▸';color:var(--brass);font-size:14px;transition:transform .15s}
+.grp[open]>summary.grpsum::before{transform:rotate(90deg)}
+.grp>summary.grpsum .cnt{font-size:12px;color:var(--muted);background:#1a1510;border:1px solid var(--line);
+  border-radius:20px;padding:1px 8px;font-weight:600}
+.itsearch{display:flex;align-items:center;gap:12px;margin:22px 0 4px}
+.itsearch input{flex:1;max-width:420px;background:#14110c;border:1px solid var(--line);border-radius:10px;
+  padding:9px 12px;color:#e9dcc2;font-size:13.5px;font-family:inherit}
+.itsearch input:focus{outline:none;border-color:var(--brass)}
+.itcount{color:var(--muted);font-size:12px}
+@media(max-width:620px){.itsearch input{max-width:none}}
+</style>
+</head><body>
 <header class="top"><div class="wrap"><span class="logo"><span class="gear"></span>CREATE CODEX</span>
 <a class="backbtn" href="index.html">← 返回关系图</a></div></header>
 <main class="wrap">
@@ -42,4 +61,67 @@
 <div class="blk"><h2>全部物品<span class="cnt">22</span></h2><div class="grid-items"><div class="card" id="it-so_crazy_try-concrete_slab"><div class="ci"><img src="assets/icons/_unknown.png" alt="" loading="lazy"></div><div class="t"><b>混凝土台阶</b><small>so_crazy_try:concrete_slab</small></div><div class="rec"><div class="grid" style="grid-template-columns:repeat(3,1fr)"><div class="cell"><a class="ch" href="vanilla/white_concrete.html" title="white concrete">white concrete</a></div><div class="cell"><a class="ch" href="vanilla/white_concrete.html" title="white concrete">white concrete</a></div><div class="cell"><a class="ch" href="vanilla/white_concrete.html" title="white concrete">white concrete</a></div></div><div class="arw">→</div><a href="#it-so_crazy_try-concrete_slab" class="ch">混凝土台阶</a><span class="mach">工作台</span></div></div><div class="card" id="it-so_crazy_try-concrete_stair"><div class="ci"><img src="assets/icons/_unknown.png" alt="" loading="lazy"></div><div class="t"><b>混凝土墙</b><small>so_crazy_try:concrete_stair</small></div><div class="rec"><div class="grid" style="grid-template-columns:repeat(3,1fr)"><div class="cell"><a class="ch" href="vanilla/white_concrete.html" title="white concrete">white concrete</a></div><div class="cell empty"></div><div class="cell empty"></div><div class="cell"><a class="ch" href="vanilla/white_concrete.html" title="white concrete">white concrete</a></div><div class="cell"><a class="ch" href="vanilla/white_concrete.html" title="white concrete">white concrete</a></div><div class="cell empty"></div><div class="cell"><span class="ch">white concrete powder</span></div><div class="cell"><a class="ch" href="vanilla/white_concrete.html" title="white concrete">white concrete</a></div><div class="cell"><a class="ch" href="vanilla/white_concrete.html" title="white concrete">white concrete</a></div></div><div class="arw">→</div><a href="#it-so_crazy_try-concrete_wall" class="ch">混凝土墙</a><span class="mach">工作台</span></div></div><div class="card" id="it-so_crazy_try-concrete_wall"><div class="ci"><img src="assets/icons/_unknown.png" alt="" loading="lazy"></div><div class="t"><b>混凝土墙</b><small>so_crazy_try:concrete_wall</small></div><div class="rec"><div class="grid" style="grid-template-columns:repeat(3,1fr)"><div class="cell"><a class="ch" href="vanilla/white_concrete.html" title="white concrete">white concrete</a></div><div class="cell"><a class="ch" href="vanilla/white_concrete.html" title="white concrete">white concrete</a></div><div class="cell"><a class="ch" href="vanilla/white_concrete.html" title="white concrete">white concrete</a></div><div class="cell"><a class="ch" href="vanilla/white_concrete.html" title="white concrete">white concrete</a></div><div class="cell"><a class="ch" href="vanilla/white_concrete.html" title="white concrete">white concrete</a></div><div class="cell"><a class="ch" href="vanilla/white_concrete.html" title="white concrete">white concrete</a></div></div><div class="arw">→</div><a href="#it-so_crazy_try-concrete_wall" class="ch">混凝土墙</a><span class="mach">工作台</span></div></div><div class="card" id="it-so_crazy_try-cookedegg"><div class="ci"><img src="assets/icons/so_crazy_try_cookedegg.png" alt=""></div><div class="t"><b>熟鸡蛋</b><small>so_crazy_try:cookedegg</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-so_crazy_try-diamondslabs"><div class="ci"><img src="assets/icons/_unknown.png" alt="" loading="lazy"></div><div class="t"><b>绿宝石台阶</b><small>so_crazy_try:diamondslabs</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-so_crazy_try-diamondstair"><div class="ci"><img src="assets/icons/_unknown.png" alt="" loading="lazy"></div><div class="t"><b>钻石楼梯</b><small>so_crazy_try:diamondstair</small></div><div class="rec"><div class="grid" style="grid-template-columns:repeat(3,1fr)"><div class="cell"><a class="ch" href="vanilla/diamond.html" title="diamond"><img src="assets/icons/minecraft_diamond.png" alt="">diamond</a></div><div class="cell empty"></div><div class="cell empty"></div><div class="cell"><a class="ch" href="vanilla/diamond.html" title="diamond"><img src="assets/icons/minecraft_diamond.png" alt="">diamond</a></div><div class="cell"><a class="ch" href="vanilla/diamond.html" title="diamond"><img src="assets/icons/minecraft_diamond.png" alt="">diamond</a></div><div class="cell empty"></div><div class="cell"><a class="ch" href="vanilla/diamond.html" title="diamond"><img src="assets/icons/minecraft_diamond.png" alt="">diamond</a></div><div class="cell"><a class="ch" href="vanilla/diamond.html" title="diamond"><img src="assets/icons/minecraft_diamond.png" alt="">diamond</a></div><div class="cell"><a class="ch" href="vanilla/diamond.html" title="diamond"><img src="assets/icons/minecraft_diamond.png" alt="">diamond</a></div></div><div class="arw">→</div><a href="#it-so_crazy_try-diamondstair" class="ch">钻石楼梯</a><span class="mach">工作台</span></div></div><div class="card" id="it-so_crazy_try-diamondwall"><div class="ci"><img src="assets/icons/_unknown.png" alt="" loading="lazy"></div><div class="t"><b>钻石墙</b><small>so_crazy_try:diamondwall</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-so_crazy_try-emeraldslab"><div class="ci"><img src="assets/icons/_unknown.png" alt="" loading="lazy"></div><div class="t"><b>绿宝石台阶</b><small>so_crazy_try:emeraldslab</small></div><div class="rec"><div class="grid" style="grid-template-columns:repeat(3,1fr)"><div class="cell"><a class="ch" href="vanilla/emerald.html" title="emerald"><img src="assets/icons/minecraft_emerald.png" alt="">emerald</a></div><div class="cell"><a class="ch" href="vanilla/emerald.html" title="emerald"><img src="assets/icons/minecraft_emerald.png" alt="">emerald</a></div><div class="cell"><a class="ch" href="vanilla/emerald.html" title="emerald"><img src="assets/icons/minecraft_emerald.png" alt="">emerald</a></div></div><div class="arw">→</div><a href="#it-so_crazy_try-emeraldslab" class="ch">绿宝石台阶</a><span class="mach">工作台</span></div></div><div class="card" id="it-so_crazy_try-emeraldstairs"><div class="ci"><img src="assets/icons/_unknown.png" alt="" loading="lazy"></div><div class="t"><b>绿宝石楼梯</b><small>so_crazy_try:emeraldstairs</small></div><div class="rec"><div class="grid" style="grid-template-columns:repeat(3,1fr)"><div class="cell"><a class="ch" href="vanilla/emerald.html" title="emerald"><img src="assets/icons/minecraft_emerald.png" alt="">emerald</a></div><div class="cell empty"></div><div class="cell empty"></div><div class="cell"><a class="ch" href="vanilla/emerald.html" title="emerald"><img src="assets/icons/minecraft_emerald.png" alt="">emerald</a></div><div class="cell"><a class="ch" href="vanilla/emerald.html" title="emerald"><img src="assets/icons/minecraft_emerald.png" alt="">emerald</a></div><div class="cell empty"></div><div class="cell"><a class="ch" href="vanilla/emerald.html" title="emerald"><img src="assets/icons/minecraft_emerald.png" alt="">emerald</a></div><div class="cell"><a class="ch" href="vanilla/emerald.html" title="emerald"><img src="assets/icons/minecraft_emerald.png" alt="">emerald</a></div><div class="cell"><a class="ch" href="vanilla/emerald.html" title="emerald"><img src="assets/icons/minecraft_emerald.png" alt="">emerald</a></div></div><div class="arw">→</div><a href="#it-so_crazy_try-emeraldstairs" class="ch">绿宝石楼梯</a><span class="mach">工作台</span></div></div><div class="card" id="it-so_crazy_try-goldslabs"><div class="ci"><img src="assets/icons/_unknown.png" alt="" loading="lazy"></div><div class="t"><b>金台阶</b><small>so_crazy_try:goldslabs</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-so_crazy_try-goldstairs"><div class="ci"><img src="assets/icons/_unknown.png" alt="" loading="lazy"></div><div class="t"><b>金楼梯</b><small>so_crazy_try:goldstairs</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-so_crazy_try-honeycombs"><div class="ci"><img src="assets/icons/_unknown.png" alt="" loading="lazy"></div><div class="t"><b>可食用蜜脾</b><small>so_crazy_try:honeycombs</small></div><div class="rec"><div class="chips"><a class="ch" href="vanilla/honeycomb.html" title="honeycomb"><img src="assets/icons/minecraft_honeycomb.png" alt="">honeycomb</a><a class="ch" href="vanilla/honey_bottle.html" title="honey bottle"><img src="assets/icons/minecraft_honey_bottle.png" alt="">honey bottle</a></div><div class="arw">→</div><a href="#it-so_crazy_try-honeycombs" class="ch">可食用蜜脾</a><span class="mach">工作台</span></div></div><div class="card" id="it-so_crazy_try-magnet_ingot"><div class="ci"><img src="assets/icons/so_crazy_try_magnet_ingot.png" alt=""></div><div class="t"><b>磁锭</b><small>so_crazy_try:magnet_ingot</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-so_crazy_try-magnet_ore"><div class="ci"><img src="assets/icons/so_crazy_try_magnet_ore.png" alt=""></div><div class="t"><b>磁矿</b><small>so_crazy_try:magnet_ore</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-so_crazy_try-netheriteingotstairs"><div class="ci"><img src="assets/icons/_unknown.png" alt="" loading="lazy"></div><div class="t"><b>下界合金楼梯</b><small>so_crazy_try:netheriteingotstairs</small></div><div class="rec"><div class="chips"></div><div class="arw">→</div><a href="#it-so_crazy_try-netheriteingotstairs" class="ch">下界合金楼梯</a><span class="mach">机械动力</span></div></div><div class="card" id="it-so_crazy_try-netheriteslabs"><div class="ci"><img src="assets/icons/_unknown.png" alt="" loading="lazy"></div><div class="t"><b>下界合金台阶</b><small>so_crazy_try:netheriteslabs</small></div><div class="rec"><div class="chips"></div><div class="arw">→</div><a href="#it-so_crazy_try-netheriteslabs" class="ch">下界合金台阶</a><span class="mach">机械动力</span></div></div><div class="card" id="it-so_crazy_try-netheritewall"><div class="ci"><img src="assets/icons/_unknown.png" alt="" loading="lazy"></div><div class="t"><b>下界合金墙</b><small>so_crazy_try:netheritewall</small></div><div class="rec"><div class="chips"></div><div class="arw">→</div><a href="#it-so_crazy_try-netheritewall" class="ch">下界合金墙</a><span class="mach">机械动力</span></div></div><div class="card" id="it-so_crazy_try-normal_goat_horn"><div class="ci"><img src="assets/icons/_unknown.png" alt="" loading="lazy"></div><div class="t"><b>普通山羊角</b><small>so_crazy_try:normal_goat_horn</small></div><div class="rec"><div class="grid" style="grid-template-columns:repeat(3,1fr)"><div class="cell"><a class="ch" href="vanilla/bone.html" title="bone"><img src="assets/icons/minecraft_bone.png" alt="">bone</a></div><div class="cell empty"></div><div class="cell empty"></div><div class="cell"><a class="ch" href="vanilla/bone.html" title="bone"><img src="assets/icons/minecraft_bone.png" alt="">bone</a></div><div class="cell"><a class="ch" href="vanilla/raw_iron.html" title="raw iron">raw iron</a></div><div class="cell empty"></div><div class="cell empty"></div><div class="cell"><a class="ch" href="vanilla/deepslate.html" title="deepslate"><img src="assets/icons/hh3d_deepslate.png" alt="">deepslate</a></div><div class="cell"><a class="ch" href="vanilla/bone.html" title="bone"><img src="assets/icons/minecraft_bone.png" alt="">bone</a></div></div><div class="arw">→</div><a href="#it-so_crazy_try-normal_goat_horn" class="ch">普通山羊角</a><span class="mach">工作台</span></div></div><div class="card" id="it-so_crazy_try-recordnormal"><div class="ci"><img src="assets/icons/so_crazy_try_recordnormal.png" alt=""></div><div class="t"><b>普通的未录入的唱片</b><small>so_crazy_try:recordnormal</small></div><div class="rec"><div class="grid" style="grid-template-columns:repeat(3,1fr)"><div class="cell empty"></div><div class="cell"><a class="ch" href="vanilla/redstone.html" title="redstone"><img src="assets/icons/minecraft_redstone.png" alt="">redstone</a></div><div class="cell empty"></div><div class="cell"><a class="ch" href="vanilla/coal.html" title="coal"><img src="assets/icons/minecraft_coal.png" alt="">coal</a></div><div class="cell"><a class="ch" href="vanilla/coal.html" title="coal"><img src="assets/icons/minecraft_coal.png" alt="">coal</a></div><div class="cell"><a class="ch" href="vanilla/coal.html" title="coal"><img src="assets/icons/minecraft_coal.png" alt="">coal</a></div></div><div class="arw">→</div><a href="#it-so_crazy_try-recordnormal" class="ch"><img src="assets/icons/so_crazy_try_recordnormal.png" alt="">普通的未录入的唱片</a><span class="mach">工作台</span></div></div><div class="card" id="it-so_crazy_try-recordnormalbroke"><div class="ci"><img src="assets/icons/so_crazy_try_recordnormalbroke.png" alt=""></div><div class="t"><b>破损的普通的唱片</b><small>so_crazy_try:recordnormalbroke</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-so_crazy_try-wheat_beer"><div class="ci"><img src="assets/icons/so_crazy_try_wheat_beer.png" alt=""></div><div class="t"><b>啤酒</b><small>so_crazy_try:wheat_beer</small></div><div class="rec"><div class="grid" style="grid-template-columns:repeat(3,1fr)"><div class="cell"><a class="ch" href="vanilla/wheat.html" title="wheat"><img src="assets/icons/minecraft_wheat.png" alt="">wheat</a></div><div class="cell"><a class="ch" href="vanilla/water_bucket.html" title="water bucket"><img src="assets/icons/minecraft_water_bucket.png" alt="">water bucket</a></div><div class="cell"><a class="ch" href="vanilla/wheat.html" title="wheat"><img src="assets/icons/minecraft_wheat.png" alt="">wheat</a></div><div class="cell empty"></div><div class="cell"><a class="ch" href="vanilla/wheat_seeds.html" title="wheat seeds"><img src="assets/icons/minecraft_wheat_seeds.png" alt="">wheat seeds</a></div><div class="cell empty"></div></div><div class="arw">→</div><a href="#it-so_crazy_try-wheat_beer" class="ch"><img src="assets/icons/so_crazy_try_wheat_beer.png" alt="">啤酒</a><span class="mach">工作台</span></div></div><div class="card" id="it-so_crazy_try-yogurt"><div class="ci"><img src="assets/icons/so_crazy_try_yogurt.png" alt=""></div><div class="t"><b>酸奶</b><small>so_crazy_try:yogurt</small></div><div class="rec"><div class="chips"><a class="ch" href="vanilla/milk_bucket.html" title="milk bucket"><img src="assets/icons/minecraft_milk_bucket.png" alt="">milk bucket</a><a class="ch" href="vanilla/dragon_breath.html" title="dragon breath">dragon breath</a></div><div class="arw">→</div><a href="#it-so_crazy_try-yogurt" class="ch"><img src="assets/icons/so_crazy_try_yogurt.png" alt="">酸奶</a><span class="mach">工作台</span></div></div></div></div>
 </main>
 <footer class="wrap foot">数据与图标来自 So crazy try 的 1.20.1 jar · 本页不属于 Create 本体图鉴</footer>
-<script src="assets/anchors.js" defer></script></body></html>
+<script src="assets/anchors.js" defer></script>
+
+
+<script>
+(function(){
+  var items = document.querySelectorAll('.grid-items');
+  if (!items.length) return;
+  var total = document.querySelectorAll('.card').length;
+
+  // 1) 每个分类包成 <details>
+  var groups = [];
+  items.forEach(function(g){
+    var h = g.previousElementSibling;
+    if (!h || h.tagName !== 'H2') return;
+    var d = document.createElement('details');
+    d.open = true;
+    d.className = 'grp';
+    h.parentNode.insertBefore(d, h);
+    var s = document.createElement('summary');
+    s.className = 'grpsum';
+    s.innerHTML = h.innerHTML;
+    d.appendChild(s);
+    d.appendChild(g);
+    h.remove();
+    groups.push(d);
+  });
+
+  // 2) 搜索框
+  var first = groups[0] || items[0].closest('.blk');
+  if (!first) return;
+  var box = document.createElement('div');
+  box.className = 'itsearch';
+  box.innerHTML = '<input type="search" placeholder="搜索物品名 / ID…" aria-label="搜索物品"><span class="itcount"></span>';
+  var host = (groups[0] || items[0]).parentNode;
+  host.insertBefore(box, (groups[0] || items[0]));
+  var input = box.querySelector('input');
+  var cnt = box.querySelector('.itcount');
+  var cards = document.querySelectorAll('.card');
+
+  function setCount(vis){
+    cnt.textContent = vis === total ? ('共 ' + total + ' 个物品') : (vis + ' / ' + total);
+  }
+  setCount(total);
+
+  input.addEventListener('input', function(){
+    var q = input.value.trim().toLowerCase();
+    var vis = 0;
+    groups.forEach(function(d){
+      var hit = 0;
+      d.querySelectorAll('.card').forEach(function(c){
+        var t = (c.textContent || '').toLowerCase();
+        var ok = !q || t.indexOf(q) >= 0;
+        c.style.display = ok ? '' : 'none';
+        if (ok) hit++;
+      });
+      d.style.display = hit ? '' : 'none';
+      if (q && hit) d.open = true;
+      vis += hit;
+    });
+    setCount(vis);
+  });
+})();
+</script>
+</body></html>

@@ -31,7 +31,26 @@
 .arw{color:var(--muted)}
 .note2{color:var(--muted);font-size:11px}
 .ver{margin:18px 0;padding:10px 12px;border-left:2px solid var(--brass);background:#14110c;color:var(--muted);font-size:12px;line-height:1.7}
-</style></head><body>
+</style>
+
+
+<style>
+.grp{margin:26px 0 0}
+.grp>summary.grpsum{cursor:pointer;list-style:none;display:flex;align-items:center;gap:10px;
+  font-size:17px;font-weight:800;color:#e9dcc2;padding:6px 0;user-select:none}
+.grp>summary.grpsum::-webkit-details-marker{display:none}
+.grp>summary.grpsum::before{content:'▸';color:var(--brass);font-size:14px;transition:transform .15s}
+.grp[open]>summary.grpsum::before{transform:rotate(90deg)}
+.grp>summary.grpsum .cnt{font-size:12px;color:var(--muted);background:#1a1510;border:1px solid var(--line);
+  border-radius:20px;padding:1px 8px;font-weight:600}
+.itsearch{display:flex;align-items:center;gap:12px;margin:22px 0 4px}
+.itsearch input{flex:1;max-width:420px;background:#14110c;border:1px solid var(--line);border-radius:10px;
+  padding:9px 12px;color:#e9dcc2;font-size:13.5px;font-family:inherit}
+.itsearch input:focus{outline:none;border-color:var(--brass)}
+.itcount{color:var(--muted);font-size:12px}
+@media(max-width:620px){.itsearch input{max-width:none}}
+</style>
+</head><body>
 <header class="top"><div class="wrap"><span class="logo"><span class="gear"></span>CREATE CODEX</span>
 <a class="backbtn" href="index.html">← 返回关系图</a></div></header>
 <main class="wrap">
@@ -42,4 +61,67 @@
 <div class="blk"><h2>全部物品<span class="cnt">13</span></h2><div class="grid-items"><div class="card" id="it-createappliedkinetics-energy_provider"><div class="ci"><img src="assets/icons/createappliedkinetics_energy_provider.png" alt=""></div><div class="t"><b>能量传输器</b><small>createappliedkinetics:energy_provider</small></div><div class="rec"><div class="grid" style="grid-template-columns:repeat(3,1fr)"><div class="cell empty"></div><div class="cell"><a class="ch" href="items/brass_sheet.html" title="brass sheet"><img src="assets/icons/create_brass_sheet.png" alt="">brass sheet</a></div><div class="cell empty"></div><div class="cell"><a class="ch" href="items/copper_sheet.html" title="copper sheet"><img src="assets/icons/create_copper_sheet.png" alt="">copper sheet</a></div><div class="cell"><a class="ch" href="items/brass_casing.html" title="brass casing"><img src="assets/icons/create_brass_casing.png" alt="">brass casing</a></div><div class="cell"><a class="ch" href="items/copper_sheet.html" title="copper sheet"><img src="assets/icons/create_copper_sheet.png" alt="">copper sheet</a></div><div class="cell"><a class="ch" href="items/brass_block.html" title="brass block"><img src="assets/icons/create_brass_block.png" alt="">brass block</a></div><div class="cell"><a class="ch" href="items/precision_mechanism.html" title="precision mechanism"><img src="assets/icons/create_precision_mechanism.png" alt="">precision mechanism</a></div><div class="cell"><a class="ch" href="items/brass_block.html" title="brass block"><img src="assets/icons/create_brass_block.png" alt="">brass block</a></div></div><div class="arw">→</div><a href="#it-createappliedkinetics-energy_provider" class="ch"><img src="assets/icons/createappliedkinetics_energy_provider.png" alt="">能量传输器</a><span class="mach">动力合成器</span></div></div><div class="card" id="it-createappliedkinetics-incomplete_calculation_processor"><div class="ci"><img src="assets/icons/createappliedkinetics_incomplete_calculation_processor.png" alt=""></div><div class="t"><b>Incomplete Calculation Processor</b><small>createappliedkinetics:incomplete_calculation_processor</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-createappliedkinetics-incomplete_calculation_processor_press"><div class="ci"><img src="assets/icons/createappliedkinetics_incomplete_calculation_processor_press.png" alt=""></div><div class="t"><b>Incomplete Calculation Processor Press</b><small>createappliedkinetics:incomplete_calculation_processor_press</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-createappliedkinetics-incomplete_engineering_processor"><div class="ci"><img src="assets/icons/createappliedkinetics_incomplete_engineering_processor.png" alt=""></div><div class="t"><b>Incomplete Engineering Processor</b><small>createappliedkinetics:incomplete_engineering_processor</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-createappliedkinetics-incomplete_engineering_processor_press"><div class="ci"><img src="assets/icons/createappliedkinetics_incomplete_engineering_processor_press.png" alt=""></div><div class="t"><b>Incomplete Engineering Processor Press</b><small>createappliedkinetics:incomplete_engineering_processor_press</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-createappliedkinetics-incomplete_logic_processor"><div class="ci"><img src="assets/icons/createappliedkinetics_incomplete_logic_processor.png" alt=""></div><div class="t"><b>Incomplete Logic Processor</b><small>createappliedkinetics:incomplete_logic_processor</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-createappliedkinetics-incomplete_logic_processor_press"><div class="ci"><img src="assets/icons/createappliedkinetics_incomplete_logic_processor_press.png" alt=""></div><div class="t"><b>Incomplete Logic Processor Press</b><small>createappliedkinetics:incomplete_logic_processor_press</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-createappliedkinetics-incomplete_printed_calculation_circuit"><div class="ci"><img src="assets/icons/createappliedkinetics_incomplete_printed_calculation_circuit.png" alt=""></div><div class="t"><b>Incomplete Printed Calculation Circuit</b><small>createappliedkinetics:incomplete_printed_calculation_circuit</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-createappliedkinetics-incomplete_printed_engineering_circuit"><div class="ci"><img src="assets/icons/createappliedkinetics_incomplete_printed_engineering_circuit.png" alt=""></div><div class="t"><b>Incomplete Printed Engineering Circuit</b><small>createappliedkinetics:incomplete_printed_engineering_circuit</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-createappliedkinetics-incomplete_printed_logic_circuit"><div class="ci"><img src="assets/icons/createappliedkinetics_incomplete_printed_logic_circuit.png" alt=""></div><div class="t"><b>Incomplete Printed Logic Circuit</b><small>createappliedkinetics:incomplete_printed_logic_circuit</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-createappliedkinetics-incomplete_silicon_press"><div class="ci"><img src="assets/icons/createappliedkinetics_incomplete_silicon_press.png" alt=""></div><div class="t"><b>Incomplete Silicon Press</b><small>createappliedkinetics:incomplete_silicon_press</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-createappliedkinetics-incomplete_silicon_print"><div class="ci"><img src="assets/icons/createappliedkinetics_incomplete_silicon_print.png" alt=""></div><div class="t"><b>Incomplete Silicon Print</b><small>createappliedkinetics:incomplete_silicon_print</small></div><div class="note2">没有工作台/机器配方</div></div><div class="card" id="it-createappliedkinetics-me_proxy"><div class="ci"><img src="assets/icons/createappliedkinetics_me_proxy.png" alt=""></div><div class="t"><b>ME储存代理器</b><small>createappliedkinetics:me_proxy</small></div><div class="rec"><div class="grid" style="grid-template-columns:repeat(3,1fr)"><div class="cell"><a href="vanilla/iron_ingot.html" class="ch tag"><img src="assets/icons/minecraft_iron_ingot.png" alt="">铁锭</a></div><div class="cell"><a href="vanilla/glass.html" class="ch tag"><img src="assets/icons/hh3d_glass.png" alt="">玻璃</a></div><div class="cell"><a href="vanilla/iron_ingot.html" class="ch tag"><img src="assets/icons/minecraft_iron_ingot.png" alt="">铁锭</a></div><div class="cell"><span class="ch">annihilation core</span></div><div class="cell"><span class="ch">logic processor</span></div><div class="cell"><span class="ch">formation core</span></div><div class="cell"><a href="vanilla/iron_ingot.html" class="ch tag"><img src="assets/icons/minecraft_iron_ingot.png" alt="">铁锭</a></div><div class="cell"><a href="vanilla/glass.html" class="ch tag"><img src="assets/icons/hh3d_glass.png" alt="">玻璃</a></div><div class="cell"><a href="vanilla/iron_ingot.html" class="ch tag"><img src="assets/icons/minecraft_iron_ingot.png" alt="">铁锭</a></div></div><div class="arw">→</div><a href="#it-createappliedkinetics-me_proxy" class="ch"><img src="assets/icons/createappliedkinetics_me_proxy.png" alt="">ME储存代理器</a><span class="mach">工作台</span></div></div></div></div>
 </main>
 <footer class="wrap foot">数据与图标来自 Create: Applied Kinetics 的 1.20.1 jar · 本页不属于 Create 本体图鉴</footer>
-<script src="assets/anchors.js" defer></script></body></html>
+<script src="assets/anchors.js" defer></script>
+
+
+<script>
+(function(){
+  var items = document.querySelectorAll('.grid-items');
+  if (!items.length) return;
+  var total = document.querySelectorAll('.card').length;
+
+  // 1) 每个分类包成 <details>
+  var groups = [];
+  items.forEach(function(g){
+    var h = g.previousElementSibling;
+    if (!h || h.tagName !== 'H2') return;
+    var d = document.createElement('details');
+    d.open = true;
+    d.className = 'grp';
+    h.parentNode.insertBefore(d, h);
+    var s = document.createElement('summary');
+    s.className = 'grpsum';
+    s.innerHTML = h.innerHTML;
+    d.appendChild(s);
+    d.appendChild(g);
+    h.remove();
+    groups.push(d);
+  });
+
+  // 2) 搜索框
+  var first = groups[0] || items[0].closest('.blk');
+  if (!first) return;
+  var box = document.createElement('div');
+  box.className = 'itsearch';
+  box.innerHTML = '<input type="search" placeholder="搜索物品名 / ID…" aria-label="搜索物品"><span class="itcount"></span>';
+  var host = (groups[0] || items[0]).parentNode;
+  host.insertBefore(box, (groups[0] || items[0]));
+  var input = box.querySelector('input');
+  var cnt = box.querySelector('.itcount');
+  var cards = document.querySelectorAll('.card');
+
+  function setCount(vis){
+    cnt.textContent = vis === total ? ('共 ' + total + ' 个物品') : (vis + ' / ' + total);
+  }
+  setCount(total);
+
+  input.addEventListener('input', function(){
+    var q = input.value.trim().toLowerCase();
+    var vis = 0;
+    groups.forEach(function(d){
+      var hit = 0;
+      d.querySelectorAll('.card').forEach(function(c){
+        var t = (c.textContent || '').toLowerCase();
+        var ok = !q || t.indexOf(q) >= 0;
+        c.style.display = ok ? '' : 'none';
+        if (ok) hit++;
+      });
+      d.style.display = hit ? '' : 'none';
+      if (q && hit) d.open = true;
+      vis += hit;
+    });
+    setCount(vis);
+  });
+})();
+</script>
+</body></html>

@@ -15,7 +15,7 @@
 ### 2. 直接改（Pull Request）
 
 ```bash
-git clone https://github.com/hao78da/create-codex.git
+git clone https://github.com/lOrionl/create-codex.git
 cd create-codex
 # 改内容：
 #   - 只改文案 → 直接编辑 items/*.html（会被下次生成覆盖，长期方案见下）

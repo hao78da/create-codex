@@ -1069,6 +1069,69 @@ def build(spec):
                 return 'vanilla/' + short_ + '.html'
         return None
 
+    # ── 标签的图标与中文名：从已生成的 tags/<file>.html 里读 ──
+    _tag_cache = {}
+    def tag_meta(tg):
+        """返回 (icon相对路径 或 None, 中文名 或 None)"""
+        if tg in _tag_cache:
+            return _tag_cache[tg]
+        # 标签页文件名规则（与 gen_site.py 的 tag 页命名一致）
+        fname = tg.replace(':', '_').replace('/', '_') + '.html'
+        path = os.path.join(SITE, 'tags', fname)
+        icon = name = None
+        if os.path.exists(path):
+            try:
+                h = io.open(path, encoding='utf-8').read()
+                m = re.search(r'<img class="big" src="\.\./(assets/icons/[^"]+)"', h)
+                if m:
+                    icon = m.group(1)
+                m2 = re.search(r'<h1><i class="hash">#</i>([^<]+)</h1>', h)
+                if m2:
+                    name = m2.group(1).strip()
+            except Exception:
+                pass
+        # 回退：裸标签（无命名空间，如 #steel）按成员名猜图标
+        if not icon:
+            seg = tg.split('/')[-1].split(':')[-1]
+            # 候选前缀：当前模组 ns 优先，其次通用
+            pres = [ns + '_', '', 'create_', 'minecraft_', '3d_create_',
+                    '3d_' + ns + '_', 'hh3d_']
+            for pre in pres:
+                cand = pre + seg + '.png'
+                if os.path.exists(os.path.join(ICONS, cand)):
+                    icon = 'assets/icons/' + cand
+                    break
+            # 再退一步：找任意 *<seg>_ingot / *<seg>_sheet 之类的代表图
+            if not icon:
+                for suf in ('_ingot', '_sheet', '_block'):
+                    for f in os.listdir(ICONS):
+                        if f.endswith(seg + suf + '.png'):
+                            icon = 'assets/icons/' + f
+                            break
+                    if icon:
+                        break
+            # 终极回退：用标签名的关键词在 icons 里模糊找一张同 ns 的图
+            if not icon:
+                ns_pre = (tg.split(':')[0] + '_') if ':' in tg else ''
+                words = [w for w in re.split(r'[_/\s]+', seg) if len(w) >= 4]
+                for w in words:
+                    best = None
+                    for f in os.listdir(ICONS):
+                        if not f.endswith('.png'):
+                            continue
+                        if ns_pre and not f.startswith(ns_pre):
+                            continue
+                        if w in f:
+                            best = f
+                            break
+                    if best:
+                        icon = 'assets/icons/' + best
+                        break
+            if not name:
+                name = seg.replace('_', ' ')
+        _tag_cache[tg] = (icon, name)
+        return icon, name
+
     def chip(st):
         if isinstance(st, list):
             st = st[0] if st else {}
@@ -1078,7 +1141,11 @@ def build(spec):
             return ''
         if st.get('tag'):
             tg = st['tag'].lstrip('#')
-            return '<span class="ch">#%s</span>' % tg.split('/')[-1].replace('_', ' ')
+            _ic, _nm = tag_meta(tg)
+            _label = _nm or tg.split('/')[-1].replace('_', ' ')
+            if _ic:
+                return '<span class="ch tag"><img src="%s" alt="">%s</span>' % (_ic, _label)
+            return '<span class="ch tag">#%s</span>' % _label
         if st.get('fluid'):
             _fl = st['fluid'].split(':')[-1]
             _fh = 'vanilla/%s.html' % _fl if os.path.exists(os.path.join(SITE, 'vanilla', _fl + '.html')) else None
@@ -1101,6 +1168,10 @@ def build(spec):
             ('<img src="%s" alt="">' % ic) if ic else '', nm(iid))
 
     def rec(d):
+        if isinstance(d, list):
+            d = d[0] if d and isinstance(d[0], dict) else {}
+        if not isinstance(d, dict):
+            d = {}
         mach = {'minecraft:crafting_shaped': '工作台', 'minecraft:crafting_shapeless': '工作台',
                 'create:mechanical_crafting': '动力合成器'}.get(d.get('type'), '机械动力')
         pat = d.get('pattern')
@@ -1116,12 +1187,21 @@ def build(spec):
                                  '<div class="cell">%s</div>' % chip(key.get(ch, {})))
             while len(cells) % w:
                 cells.append('<div class="cell empty"></div>')
-            out = (d.get('results') or [d.get('result')])[0]
+            _res = d.get('results') or d.get('result')
+            if isinstance(_res, list):
+                _res = _res[0] if _res else {}
+            if isinstance(_res, list):
+                _res = _res[0] if _res else {}
+            out = _res if isinstance(_res, dict) else {}
             return ('<div class="rec"><div class="grid" style="grid-template-columns:repeat(%d,1fr)">%s</div><div class="arw">→</div>%s'
                     '<span class="mach">%s</span></div>' % (w, ''.join(cells), chip(out), mach))
         ings = d.get('ingredients') or []
         agg, order = {}, []
         for x in ings:
+            if isinstance(x, list):
+                x = x[0] if x and isinstance(x[0], dict) else {}
+            if not isinstance(x, dict):
+                continue
             k = x.get('item') or x.get('fluid') or x.get('tag') or '?'
             if k not in agg:
                 agg[k] = {'st': dict(x), 'n': 0}
@@ -1132,7 +1212,12 @@ def build(spec):
             st = dict(agg[k]['st'])
             st['count'] = agg[k]['n']
             parts.append(chip(st))
-        out = (d.get('results') or [d.get('result')])[0]
+        _res = d.get('results') or d.get('result')
+        if isinstance(_res, list):
+            _res = _res[0] if _res else {}
+        if isinstance(_res, list):
+            _res = _res[0] if _res else {}
+        out = _res if isinstance(_res, dict) else {}
         if isinstance(out, list):
             out = out[0] if out else {}
         return ('<div class="rec"><div class="chips">%s</div><div class="arw">→</div>%s'
